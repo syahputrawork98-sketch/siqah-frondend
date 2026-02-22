@@ -12,6 +12,7 @@ import {
   X,
   Bell,
 } from "lucide-react";
+import { getCurrentYear } from "@/shared/lib";
 
 const menuItems = [
   { name: "Dashboard", icon: LayoutDashboard, path: "/superadmin" },
@@ -82,7 +83,7 @@ export default function Sidebar() {
 
         {/* Footer kecil di sidebar */}
         <div className="p-4 border-t border-[#eee6da] text-xs text-[#7a7368] bg-white/60 text-center">
-          © {new Date().getFullYear()} <span className="font-semibold">Siqah Aqiqah</span>
+          © {getCurrentYear()} <span className="font-semibold">Siqah Aqiqah</span>
         </div>
       </aside>
 
@@ -96,3 +97,4 @@ export default function Sidebar() {
     </>
   );
 }
+

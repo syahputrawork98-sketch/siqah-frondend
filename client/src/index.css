@@ -1,20 +1,25 @@
 /* client/src/index.css */
 /* src/index.css */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Montserrat:wght@400&display=swap');
+@import "./shared/styles/tokens.css";
 @import "tailwindcss";
 @plugin "daisyui";
 
 
 /* Override global font */
 html {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family-body);
+}
+
+body {
+    background-color: var(--color-bg-page);
+    color: var(--color-text-primary);
 }
 
 .font-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-family-heading);
 }
 
 .font-sans {
-
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family-body);
 }

@@ -3,6 +3,7 @@ import { Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import Modal from "../../../components/ui/Modal";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../../components/ui/Tabs";
+import { formatCurrencyIdr } from "@/shared/lib";
 
 export default function DataInvoice() {
   const [dataInvoice, setDataInvoice] = useState([]);
@@ -64,13 +65,6 @@ export default function DataInvoice() {
   };
 
   const filteredData = dataInvoice.filter((i) => i.status_invoice === tab);
-
-  const formatRupiah = (num) =>
-    new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-    }).format(num);
 
   return (
     <div className="p-6 space-y-6">
@@ -136,7 +130,7 @@ export default function DataInvoice() {
                         <td className="px-4 py-3">{i.id_pesanan}</td>
                         <td className="px-4 py-3">{i.tanggal_invoice}</td>
                         <td className="px-4 py-3 text-center">
-                          {formatRupiah(i.total_biaya)}
+                          {formatCurrencyIdr(i.total_biaya)}
                         </td>
                         <td className="px-4 py-3 text-center">
                           <span
@@ -199,7 +193,7 @@ export default function DataInvoice() {
               <p><strong>ID Pesanan:</strong> {selectedInvoice.id_pesanan}</p>
               <p><strong>Tanggal:</strong> {selectedInvoice.tanggal_invoice}</p>
               <p><strong>Status:</strong> {selectedInvoice.status_invoice}</p>
-              <p><strong>Total Biaya:</strong> {formatRupiah(selectedInvoice.total_biaya)}</p>
+              <p><strong>Total Biaya:</strong> {formatCurrencyIdr(selectedInvoice.total_biaya)}</p>
               <p className="col-span-2"><strong>Catatan Admin:</strong> {selectedInvoice.catatan_admin}</p>
             </div>
             {selectedInvoice.bukti_pembayaran && (

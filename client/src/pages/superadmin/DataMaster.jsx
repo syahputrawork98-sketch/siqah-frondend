@@ -3,6 +3,7 @@ import Table from "../../components/ui/Table";
 import Modal from "../../components/ui/Modal";
 import { Card, CardHeader, CardContent } from "../../components/ui/Card";
 import { PlusCircle, Edit2, Trash2 } from "lucide-react";
+import { formatCurrencyIdr } from "@/shared/lib";
 
 export default function DataMaster() {
   const [activeTab, setActiveTab] = useState("hewan");
@@ -32,11 +33,7 @@ export default function DataMaster() {
       {
         header: "Harga",
         accessor: "harga_final",
-        render: (row) =>
-          new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-          }).format(row.harga_final),
+        render: (row) => formatCurrencyIdr(row.harga_final),
       },
       { header: "Aksi", render: (row) => <ActionButtons row={row} /> },
     ],
@@ -51,11 +48,7 @@ export default function DataMaster() {
       {
         header: "Harga Paket",
         accessor: "harga_paket",
-        render: (row) =>
-          new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-          }).format(row.harga_paket),
+        render: (row) => formatCurrencyIdr(row.harga_paket),
       },
       { header: "Aksi", render: (row) => <ActionButtons row={row} /> },
     ],

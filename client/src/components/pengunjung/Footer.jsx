@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { getCurrentYear } from "@/shared/lib";
 
 export function Footer() {
   const [visible, setVisible] = useState(false);
@@ -119,10 +120,11 @@ export function Footer() {
 
       {/* Garis bawah & hak cipta */}
       <div className="relative z-10 mt-12 text-center border-t border-white/20 pt-6 text-sm text-gray-300">
-        © {new Date().getFullYear()} Siap Aqiqah. All rights reserved.
+        © {getCurrentYear()} Siap Aqiqah. All rights reserved.
       </div>
     </footer>
   );
 }
 
 export default Footer;
+

@@ -4,6 +4,7 @@ import { Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import Modal from "../../../components/ui/Modal";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../../components/ui/Tabs";
+import { formatCurrencyIdr } from "@/shared/lib";
 
 export default function DataPembayaran() {
   const [dataPembayaran, setDataPembayaran] = useState([]);
@@ -68,13 +69,6 @@ export default function DataPembayaran() {
     (p) => p.status_pembayaran === tab
   );
 
-  const formatRupiah = (num) =>
-    new Intl.NumberFormat("id-ID", {
-      style: "currency",
-      currency: "IDR",
-      minimumFractionDigits: 0,
-    }).format(num);
-
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
@@ -138,7 +132,7 @@ export default function DataPembayaran() {
                         <td className="px-4 py-3">{p.id_invoice}</td>
                         <td className="px-4 py-3">{p.tanggal_pembayaran}</td>
                         <td className="px-4 py-3 text-center">
-                          {formatRupiah(p.jumlah_bayar)}
+                          {formatCurrencyIdr(p.jumlah_bayar)}
                         </td>
                         <td className="px-4 py-3 text-center">{p.metode_pembayaran}</td>
                         <td className="px-4 py-3 text-center">
@@ -202,7 +196,7 @@ export default function DataPembayaran() {
               <p><strong>ID Invoice:</strong> {selectedPembayaran.id_invoice}</p>
               <p><strong>Tanggal:</strong> {selectedPembayaran.tanggal_pembayaran}</p>
               <p><strong>Metode:</strong> {selectedPembayaran.metode_pembayaran}</p>
-              <p><strong>Jumlah Bayar:</strong> {formatRupiah(selectedPembayaran.jumlah_bayar)}</p>
+              <p><strong>Jumlah Bayar:</strong> {formatCurrencyIdr(selectedPembayaran.jumlah_bayar)}</p>
               <p><strong>Status:</strong> {selectedPembayaran.status_pembayaran}</p>
               <p className="col-span-2"><strong>Catatan Admin:</strong> {selectedPembayaran.catatan_admin}</p>
             </div>

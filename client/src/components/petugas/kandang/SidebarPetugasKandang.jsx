@@ -13,6 +13,7 @@ import {
   ChevronRight,
   BarChart3,
 } from "lucide-react";
+import { getCurrentYear } from "@/shared/lib";
 
 const menuItems = [
   { name: "Dashboard", icon: LayoutDashboard, path: "/petugas-kandang" },
@@ -148,7 +149,7 @@ export default function SidebarPetugasKandang() {
 
         {/* Footer */}
         <div className="p-4 border-t border-[#eee6da] text-xs text-[#7a7368] bg-white/60 text-center">
-          © {new Date().getFullYear()}{" "}
+          © {getCurrentYear()}{" "}
           <span className="font-semibold">Siqah Aqiqah</span>
         </div>
       </aside>
@@ -163,3 +164,4 @@ export default function SidebarPetugasKandang() {
     </>
   );
 }
+

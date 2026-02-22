@@ -22,6 +22,10 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Menambahkan alias import root untuk target struktur (`@`, `@/app`, `@/features`, `@/entities`, `@/widgets`, `@/shared`).
 - [x] Menambahkan baseline environment config di root (`.env.example`) dan runtime config terpusat (`client/src/shared/config/runtimeConfig.js`).
 - [x] Update `README.md` agar workflow command default berjalan dari root project.
+- [x] Memulai Phase 2: membuat design token tunggal di `client/src/shared/styles/tokens.css` dan menghubungkannya ke `client/src/index.css`.
+- [x] Memindahkan komponen reusable dasar (`Card`, `CardSummary`, `Label`, `Modal`, `Table`, `Tabs`) ke `client/src/shared/ui`.
+- [x] Menjaga backward compatibility: `client/src/components/ui/*` kini menjadi re-export ke `shared/ui` agar migrasi bertahap aman.
+- [x] Menambahkan `client/src/shared/lib` untuk util umum (`formatCurrencyIdr`, `getCurrentYear`) dan migrasi pemakaian util duplikat pada modul terkait.
 
 ## Tujuan Refactor
 
@@ -93,9 +97,9 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Setup env config (`.env.example`) dan runtime config.
 
 ### Phase 2 - Shared Layer
-- [ ] Migrasi komponen UI reusable ke `shared/ui`.
-- [ ] Buat design token tunggal (theme, typography, spacing).
-- [ ] Migrasi helper/util common ke `shared/lib`.
+- [x] Migrasi komponen UI reusable ke `shared/ui`.
+- [x] Buat design token tunggal (theme, typography, spacing).
+- [x] Migrasi helper/util common ke `shared/lib`.
 
 ### Phase 3 - Feature-by-Feature Migration
 - [ ] Migrasi `pengunjung` ke struktur baru.
