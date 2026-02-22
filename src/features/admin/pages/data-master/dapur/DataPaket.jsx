@@ -70,7 +70,7 @@ export default function DataPaket() {
         </div>
         <button
           onClick={() => setModalTambah(true)}
-          className="flex items-center gap-2 bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition"
+          className="siqah-btn-primary shadow-sm"
         >
           <Plus size={16} />
           Tambah Paket
@@ -78,10 +78,10 @@ export default function DataPaket() {
       </div>
 
       {/* Table */}
-      <Card className="border border-[#eee6da] shadow-sm rounded-2xl overflow-hidden">
+      <Card className="siqah-table-card overflow-hidden">
         <CardContent className="p-0">
           <table className="w-full text-sm text-left border-collapse">
-            <thead className="bg-[#fdfaf6] border-b border-[#eee6da]">
+            <thead className="siqah-table-head">
               <tr>
                 <th className="px-4 py-3">Kode Paket</th>
                 <th className="px-4 py-3">Nama Paket</th>
@@ -95,7 +95,7 @@ export default function DataPaket() {
               {dataPaket.map((p) => (
                 <tr
                   key={p.id_paket}
-                  className="border-b border-[#f3eee6] hover:bg-[#f9f6ef]/60 transition"
+                  className="siqah-table-row"
                 >
                   <td className="px-4 py-3">{p.kode_paket}</td>
                   <td className="px-4 py-3">{p.nama_paket}</td>
@@ -105,10 +105,10 @@ export default function DataPaket() {
                   </td>
                   <td className="px-4 py-3 text-center">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      className={`siqah-status-badge ${
                         p.status_aktif
-                          ? "bg-green-100 text-green-700"
-                          : "bg-red-100 text-red-700"
+                          ? "siqah-status-success"
+                          : "siqah-status-danger"
                       }`}
                     >
                       {p.status_aktif ? "Aktif" : "Nonaktif"}
@@ -118,19 +118,19 @@ export default function DataPaket() {
                     <div className="flex justify-center gap-2">
                       <button
                         onClick={() => handleView(p)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-[#e2b97f]"
+                        className="siqah-icon-action siqah-icon-action-view"
                       >
                         <Eye size={16} />
                       </button>
                       <button
                         onClick={() => handleEdit(p)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-blue-500"
+                        className="siqah-icon-action siqah-icon-action-edit"
                       >
                         <Pencil size={16} />
                       </button>
                       <button
                         onClick={() => handleDelete(p)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-red-500"
+                        className="siqah-icon-action siqah-icon-action-delete"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -177,14 +177,14 @@ export default function DataPaket() {
                 <input
                   type="text"
                   defaultValue={selectedPaket.nama_paket}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
                 <label className="text-sm font-medium">Deskripsi</label>
                 <textarea
                   defaultValue={selectedPaket.deskripsi}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                   rows="3"
                 />
               </div>
@@ -194,14 +194,14 @@ export default function DataPaket() {
                   <input
                     type="number"
                     defaultValue={selectedPaket.harga}
-                    className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                    className="siqah-field"
                   />
                 </div>
                 <div>
                   <label className="text-sm font-medium">Status</label>
                   <select
                     defaultValue={selectedPaket.status_aktif ? "Aktif" : "Nonaktif"}
-                    className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                    className="siqah-field"
                   >
                     <option value="Aktif">Aktif</option>
                     <option value="Nonaktif">Nonaktif</option>
@@ -212,7 +212,7 @@ export default function DataPaket() {
                 <button
                   type="button"
                   onClick={() => setModalEdit(false)}
-                  className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                  className="siqah-btn-primary"
                 >
                   Simpan Perubahan
                 </button>
@@ -236,13 +236,13 @@ export default function DataPaket() {
             <div className="flex justify-center gap-3 pt-2">
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm border border-[#e7e1d8] hover:bg-[#f9f6ef]"
+                className="siqah-btn-secondary"
               >
                 Batal
               </button>
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm bg-red-500 hover:bg-red-600 text-white"
+                className="siqah-btn-danger"
               >
                 Hapus
               </button>
@@ -263,7 +263,7 @@ export default function DataPaket() {
               <input
                 type="text"
                 placeholder="Masukkan nama paket"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
@@ -271,7 +271,7 @@ export default function DataPaket() {
               <textarea
                 placeholder="Masukkan deskripsi paket"
                 rows="3"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -280,12 +280,12 @@ export default function DataPaket() {
                 <input
                   type="number"
                   placeholder="Masukkan harga paket"
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
                 <label className="text-sm font-medium">Status</label>
-                <select className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm">
+                <select className="siqah-field">
                   <option value="Aktif">Aktif</option>
                   <option value="Nonaktif">Nonaktif</option>
                 </select>
@@ -295,7 +295,7 @@ export default function DataPaket() {
               <button
                 type="button"
                 onClick={() => setModalTambah(false)}
-                className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                className="siqah-btn-primary"
               >
                 Simpan
               </button>
@@ -306,6 +306,8 @@ export default function DataPaket() {
     </div>
   );
 }
+
+
 
 
 

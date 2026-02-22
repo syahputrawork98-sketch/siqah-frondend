@@ -258,7 +258,7 @@ export default function DashboardLaporan() {
               {recentTransaksi.map((trx, i) => (
                 <tr
                   key={i}
-                  className="border-b border-[#f3eee6] hover:bg-[#f9f6ef]/60 transition"
+                  className="siqah-table-row"
                 >
                   <td className="py-2">{trx.tanggal}</td>
                   <td className="py-2 font-medium">{trx.kode}</td>
@@ -284,6 +284,8 @@ export default function DashboardLaporan() {
     </div>
   );
 }
+
+
 
 
 

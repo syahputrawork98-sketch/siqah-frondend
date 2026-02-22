@@ -78,7 +78,7 @@ export default function DataPetugasKandang() {
         </div>
         <button
           onClick={() => setModalTambah(true)}
-          className="flex items-center gap-2 bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition"
+          className="siqah-btn-primary shadow-sm"
         >
           <Plus size={16} />
           Tambah Petugas
@@ -86,10 +86,10 @@ export default function DataPetugasKandang() {
       </div>
 
       {/* Table */}
-      <Card className="border border-[#eee6da] shadow-sm rounded-2xl overflow-hidden">
+      <Card className="siqah-table-card overflow-hidden">
         <CardContent className="p-0">
           <table className="w-full text-sm text-left border-collapse">
-            <thead className="bg-[#fdfaf6] border-b border-[#eee6da]">
+            <thead className="siqah-table-head">
               <tr>
                 <th className="px-4 py-3">Kode Petugas</th>
                 <th className="px-4 py-3">Nama Petugas</th>
@@ -104,7 +104,7 @@ export default function DataPetugasKandang() {
               {dataPetugas.map((p) => (
                 <tr
                   key={p.id_petugas_kandang}
-                  className="border-b border-[#f3eee6] hover:bg-[#f9f6ef]/60 transition"
+                  className="siqah-table-row"
                 >
                   <td className="px-4 py-3">{p.kode_petugas}</td>
                   <td className="px-4 py-3">{p.nama_petugas}</td>
@@ -113,10 +113,10 @@ export default function DataPetugasKandang() {
                   <td className="px-4 py-3 text-center">{p.jumlah_hewan}</td>
                   <td className="px-4 py-3 text-center">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      className={`siqah-status-badge ${
                         p.status === "Aktif"
-                          ? "bg-green-100 text-green-700"
-                          : "bg-red-100 text-red-700"
+                          ? "siqah-status-success"
+                          : "siqah-status-danger"
                       }`}
                     >
                       {p.status}
@@ -126,19 +126,19 @@ export default function DataPetugasKandang() {
                     <div className="flex justify-center gap-2">
                       <button
                         onClick={() => handleView(p)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-[#e2b97f]"
+                        className="siqah-icon-action siqah-icon-action-view"
                       >
                         <Eye size={16} />
                       </button>
                       <button
                         onClick={() => handleEdit(p)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-blue-500"
+                        className="siqah-icon-action siqah-icon-action-edit"
                       >
                         <Pencil size={16} />
                       </button>
                       <button
                         onClick={() => handleDelete(p)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-red-500"
+                        className="siqah-icon-action siqah-icon-action-delete"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -186,7 +186,7 @@ export default function DataPetugasKandang() {
                 <input
                   type="text"
                   defaultValue={selectedPetugas.nama_petugas}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
@@ -194,14 +194,14 @@ export default function DataPetugasKandang() {
                 <input
                   type="text"
                   defaultValue={selectedPetugas.no_telp}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
                 <label className="text-sm font-medium">Alamat</label>
                 <textarea
                   defaultValue={selectedPetugas.alamat}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                   rows="3"
                 />
               </div>
@@ -209,7 +209,7 @@ export default function DataPetugasKandang() {
                 <label className="text-sm font-medium">Status</label>
                 <select
                   defaultValue={selectedPetugas.status}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 >
                   <option value="Aktif">Aktif</option>
                   <option value="Tidak Aktif">Tidak Aktif</option>
@@ -219,7 +219,7 @@ export default function DataPetugasKandang() {
                 <button
                   type="button"
                   onClick={() => setModalEdit(false)}
-                  className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                  className="siqah-btn-primary"
                 >
                   Simpan Perubahan
                 </button>
@@ -243,13 +243,13 @@ export default function DataPetugasKandang() {
             <div className="flex justify-center gap-3 pt-2">
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm border border-[#e7e1d8] hover:bg-[#f9f6ef]"
+                className="siqah-btn-secondary"
               >
                 Batal
               </button>
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm bg-red-500 hover:bg-red-600 text-white"
+                className="siqah-btn-danger"
               >
                 Hapus
               </button>
@@ -270,7 +270,7 @@ export default function DataPetugasKandang() {
               <input
                 type="text"
                 placeholder="Masukkan nama petugas"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
@@ -278,7 +278,7 @@ export default function DataPetugasKandang() {
               <input
                 type="text"
                 placeholder="Masukkan nomor telepon"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
@@ -286,12 +286,12 @@ export default function DataPetugasKandang() {
               <textarea
                 placeholder="Masukkan alamat petugas"
                 rows="3"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
               <label className="text-sm font-medium">Status</label>
-              <select className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm">
+              <select className="siqah-field">
                 <option value="Aktif">Aktif</option>
                 <option value="Tidak Aktif">Tidak Aktif</option>
               </select>
@@ -300,7 +300,7 @@ export default function DataPetugasKandang() {
               <button
                 type="button"
                 onClick={() => setModalTambah(false)}
-                className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                className="siqah-btn-primary"
               >
                 Simpan
               </button>
@@ -311,6 +311,8 @@ export default function DataPetugasKandang() {
     </div>
   );
 }
+
+
 
 
 

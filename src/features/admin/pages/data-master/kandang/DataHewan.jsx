@@ -76,7 +76,7 @@ export default function DataHewan() {
         </div>
         <button
           onClick={() => setModalTambah(true)}
-          className="flex items-center gap-2 bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition"
+          className="siqah-btn-primary shadow-sm"
         >
           <Plus size={16} />
           Tambah Hewan
@@ -84,10 +84,10 @@ export default function DataHewan() {
       </div>
 
       {/* Table */}
-      <Card className="border border-[#eee6da] shadow-sm rounded-2xl overflow-hidden">
+      <Card className="siqah-table-card overflow-hidden">
         <CardContent className="p-0">
           <table className="w-full text-sm text-left border-collapse">
-            <thead className="bg-[#fdfaf6] border-b border-[#eee6da]">
+            <thead className="siqah-table-head">
               <tr>
                 <th className="px-4 py-3">Kode Hewan</th>
                 <th className="px-4 py-3">Jenis Hewan</th>
@@ -103,7 +103,7 @@ export default function DataHewan() {
               {dataHewan.map((h) => (
                 <tr
                   key={h.id_hewan}
-                  className="border-b border-[#f3eee6] hover:bg-[#f9f6ef]/60 transition"
+                  className="siqah-table-row"
                 >
                   <td className="px-4 py-3">{h.kode_hewan}</td>
                   <td className="px-4 py-3">{h.jenis_hewan}</td>
@@ -114,12 +114,12 @@ export default function DataHewan() {
                   </td>
                   <td className="px-4 py-3 text-center">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      className={`siqah-status-badge ${
                         h.status === "Aktif"
-                          ? "bg-green-100 text-green-700"
+                          ? "siqah-status-success"
                           : h.status === "Terjual"
-                          ? "bg-red-100 text-red-700"
-                          : "bg-yellow-100 text-yellow-700"
+                          ? "siqah-status-danger"
+                          : "siqah-status-warning"
                       }`}
                     >
                       {h.status}
@@ -130,19 +130,19 @@ export default function DataHewan() {
                     <div className="flex justify-center gap-2">
                       <button
                         onClick={() => handleView(h)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-[#e2b97f]"
+                        className="siqah-icon-action siqah-icon-action-view"
                       >
                         <Eye size={16} />
                       </button>
                       <button
                         onClick={() => handleEdit(h)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-blue-500"
+                        className="siqah-icon-action siqah-icon-action-edit"
                       >
                         <Pencil size={16} />
                       </button>
                       <button
                         onClick={() => handleDelete(h)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-red-500"
+                        className="siqah-icon-action siqah-icon-action-delete"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -188,7 +188,7 @@ export default function DataHewan() {
                 <label className="text-sm font-medium">Jenis Hewan</label>
                 <select
                   defaultValue={selectedHewan.jenis_hewan}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 >
                   <option value="Kambing">Kambing</option>
                   <option value="Domba">Domba</option>
@@ -200,7 +200,7 @@ export default function DataHewan() {
                 <input
                   type="text"
                   defaultValue={selectedHewan.nama_kandang}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -209,7 +209,7 @@ export default function DataHewan() {
                   <input
                     type="number"
                     defaultValue={selectedHewan.berat}
-                    className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                    className="siqah-field"
                   />
                 </div>
                 <div>
@@ -217,7 +217,7 @@ export default function DataHewan() {
                   <input
                     type="number"
                     defaultValue={selectedHewan.harga}
-                    className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                    className="siqah-field"
                   />
                 </div>
               </div>
@@ -225,7 +225,7 @@ export default function DataHewan() {
                 <label className="text-sm font-medium">Status</label>
                 <select
                   defaultValue={selectedHewan.status}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 >
                   <option value="Aktif">Aktif</option>
                   <option value="Terjual">Terjual</option>
@@ -236,7 +236,7 @@ export default function DataHewan() {
                 <button
                   type="button"
                   onClick={() => setModalEdit(false)}
-                  className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                  className="siqah-btn-primary"
                 >
                   Simpan Perubahan
                 </button>
@@ -261,13 +261,13 @@ export default function DataHewan() {
             <div className="flex justify-center gap-3 pt-2">
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm border border-[#e7e1d8] hover:bg-[#f9f6ef]"
+                className="siqah-btn-secondary"
               >
                 Batal
               </button>
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm bg-red-500 hover:bg-red-600 text-white"
+                className="siqah-btn-danger"
               >
                 Hapus
               </button>
@@ -285,7 +285,7 @@ export default function DataHewan() {
           <form className="space-y-3">
             <div>
               <label className="text-sm font-medium">Jenis Hewan</label>
-              <select className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm">
+              <select className="siqah-field">
                 <option>Kambing</option>
                 <option>Domba</option>
                 <option>Sapi</option>
@@ -296,7 +296,7 @@ export default function DataHewan() {
               <input
                 type="text"
                 placeholder="Masukkan nama kandang"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -305,7 +305,7 @@ export default function DataHewan() {
                 <input
                   type="number"
                   placeholder="Masukkan berat"
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
@@ -313,7 +313,7 @@ export default function DataHewan() {
                 <input
                   type="number"
                   placeholder="Masukkan harga"
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
             </div>
@@ -321,14 +321,14 @@ export default function DataHewan() {
               <label className="text-sm font-medium">Upload Foto</label>
               <input
                 type="file"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm bg-white"
+                className="siqah-field bg-white"
               />
             </div>
             <div className="flex justify-end pt-3">
               <button
                 type="button"
                 onClick={() => setModalTambah(false)}
-                className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                className="siqah-btn-primary"
               >
                 Simpan
               </button>
@@ -339,6 +339,8 @@ export default function DataHewan() {
     </div>
   );
 }
+
+
 
 
 

@@ -30,10 +30,10 @@ Status terakhir diverifikasi pada 2026-02-23.
 - [x] Jaga naming dan import convention tetap konsisten.
 
 ### 3) Component-Based Styling
-- [ ] Jadikan `src/shared/ui` sebagai source of truth komponen reusable.
-- [ ] Kurangi style ad-hoc berulang di level page/feature.
-- [ ] Standarkan state style (`hover`, `focus`, `active`, `disabled`, `loading`, `error`).
-- [ ] Gunakan token desain konsisten di komponen aktif.
+- [x] Jadikan `src/shared/ui` sebagai source of truth komponen reusable.
+- [x] Kurangi style ad-hoc berulang di level page/feature.
+- [x] Standarkan state style (`hover`, `focus`, `active`, `disabled`, `loading`, `error`).
+- [x] Gunakan token desain konsisten di komponen aktif.
 
 ### 4) Data & State
 - [ ] Pertahankan service layer sebagai pintu data tunggal.
@@ -109,6 +109,7 @@ Status terakhir diverifikasi pada 2026-02-23.
 - [x] Finalisasi `B2-6`: dokumentasi arsitektur diperbarui untuk boundary `features/admin/pages/data-master` dan `src/pages/data-master` sebagai compatibility layer.
 - [x] Best Architecture guardrail: tambah aturan lint `no-restricted-imports` untuk mencegah dependensi silang (`features -> app` dan `shared -> app/features/entities/widgets`).
 - [x] Clean Code finalisasi: hapus legacy wrapper `src/pages/data-master/*` yang tidak dipakai, rapikan TODO lama tersisa, konsolidasikan impor UI data-master admin ke `@/shared/ui`, dan konsistenkan istilah `public` di dokumentasi kontribusi.
+- [x] Component-Based Styling finalisasi: tambah utility class berbasis token untuk tombol/field/tabel/badge di `src/index.css`, terapkan ke halaman admin data-master aktif, dan perkuat state interaction pada `shared/ui` (`Button`, `Tabs`, `Modal`).
 
 ## Definition of Done Batch 2
 

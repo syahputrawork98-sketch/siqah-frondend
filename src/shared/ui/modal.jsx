@@ -8,7 +8,8 @@ export default function Modal({ isOpen, onClose, title, children }) {
           <h3 className="text-lg font-semibold text-[var(--color-text-primary)]">{title}</h3>
           <button
             onClick={onClose}
-            className="text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition"
+            className="rounded-md px-2 py-1 text-[var(--color-text-muted)] hover:bg-[var(--color-brand-primary-soft)] hover:text-[var(--color-text-secondary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-primary)] transition"
+            aria-label="Tutup modal"
           >
             x
           </button>

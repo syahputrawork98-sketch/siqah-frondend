@@ -75,7 +75,7 @@ export default function DataKonsumen() {
         </div>
         <button
           onClick={() => setModalTambah(true)}
-          className="flex items-center gap-2 bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition"
+          className="siqah-btn-primary shadow-sm"
         >
           <Plus size={16} />
           Tambah Konsumen
@@ -83,10 +83,10 @@ export default function DataKonsumen() {
       </div>
 
       {/* Table */}
-      <Card className="border border-[#eee6da] shadow-sm rounded-2xl overflow-hidden">
+      <Card className="siqah-table-card overflow-hidden">
         <CardContent className="p-0">
           <table className="w-full text-sm text-left border-collapse">
-            <thead className="bg-[#fdfaf6] border-b border-[#eee6da]">
+            <thead className="siqah-table-head">
               <tr>
                 <th className="px-4 py-3">Kode Konsumen</th>
                 <th className="px-4 py-3">Nama Lengkap</th>
@@ -100,7 +100,7 @@ export default function DataKonsumen() {
               {dataKonsumen.map((k) => (
                 <tr
                   key={k.id_konsumen}
-                  className="border-b border-[#f3eee6] hover:bg-[#f9f6ef]/60 transition"
+                  className="siqah-table-row"
                 >
                   <td className="px-4 py-3">{k.kode_konsumen}</td>
                   <td className="px-4 py-3">{k.nama_lengkap}</td>
@@ -108,10 +108,10 @@ export default function DataKonsumen() {
                   <td className="px-4 py-3">{k.email}</td>
                   <td className="px-4 py-3 text-center">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      className={`siqah-status-badge ${
                         k.status_aktif
-                          ? "bg-green-100 text-green-700"
-                          : "bg-red-100 text-red-700"
+                          ? "siqah-status-success"
+                          : "siqah-status-danger"
                       }`}
                     >
                       {k.status_aktif ? "Aktif" : "Nonaktif"}
@@ -121,19 +121,19 @@ export default function DataKonsumen() {
                     <div className="flex justify-center gap-2">
                       <button
                         onClick={() => handleView(k)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-[#e2b97f]"
+                        className="siqah-icon-action siqah-icon-action-view"
                       >
                         <Eye size={16} />
                       </button>
                       <button
                         onClick={() => handleEdit(k)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-blue-500"
+                        className="siqah-icon-action siqah-icon-action-edit"
                       >
                         <Pencil size={16} />
                       </button>
                       <button
                         onClick={() => handleDelete(k)}
-                        className="p-2 rounded-md hover:bg-[#f9f6ef] text-red-500"
+                        className="siqah-icon-action siqah-icon-action-delete"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -180,7 +180,7 @@ export default function DataKonsumen() {
                 <input
                   type="text"
                   defaultValue={selectedKonsumen.nama_lengkap}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
@@ -188,7 +188,7 @@ export default function DataKonsumen() {
                 <input
                   type="text"
                   defaultValue={selectedKonsumen.no_hp}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
@@ -196,7 +196,7 @@ export default function DataKonsumen() {
                 <input
                   type="email"
                   defaultValue={selectedKonsumen.email}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
@@ -204,14 +204,14 @@ export default function DataKonsumen() {
                 <textarea
                   defaultValue={selectedKonsumen.alamat}
                   rows="3"
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 />
               </div>
               <div>
                 <label className="text-sm font-medium">Status</label>
                 <select
                   defaultValue={selectedKonsumen.status_aktif ? "Aktif" : "Nonaktif"}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 >
                   <option value="Aktif">Aktif</option>
                   <option value="Nonaktif">Nonaktif</option>
@@ -221,7 +221,7 @@ export default function DataKonsumen() {
                 <button
                   type="button"
                   onClick={() => setModalEdit(false)}
-                  className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                  className="siqah-btn-primary"
                 >
                   Simpan Perubahan
                 </button>
@@ -245,13 +245,13 @@ export default function DataKonsumen() {
             <div className="flex justify-center gap-3 pt-2">
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm border border-[#e7e1d8] hover:bg-[#f9f6ef]"
+                className="siqah-btn-secondary"
               >
                 Batal
               </button>
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm bg-red-500 hover:bg-red-600 text-white"
+                className="siqah-btn-danger"
               >
                 Hapus
               </button>
@@ -272,7 +272,7 @@ export default function DataKonsumen() {
               <input
                 type="text"
                 placeholder="Masukkan nama konsumen"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
@@ -280,7 +280,7 @@ export default function DataKonsumen() {
               <input
                 type="text"
                 placeholder="Masukkan nomor telepon"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
@@ -288,7 +288,7 @@ export default function DataKonsumen() {
               <input
                 type="email"
                 placeholder="Masukkan email konsumen"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
@@ -296,12 +296,12 @@ export default function DataKonsumen() {
               <textarea
                 placeholder="Masukkan alamat konsumen"
                 rows="3"
-                className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                className="siqah-field"
               />
             </div>
             <div>
               <label className="text-sm font-medium">Status</label>
-              <select className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm">
+              <select className="siqah-field">
                 <option value="Aktif">Aktif</option>
                 <option value="Nonaktif">Nonaktif</option>
               </select>
@@ -310,7 +310,7 @@ export default function DataKonsumen() {
               <button
                 type="button"
                 onClick={() => setModalTambah(false)}
-                className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                className="siqah-btn-primary"
               >
                 Simpan
               </button>
@@ -321,6 +321,8 @@ export default function DataKonsumen() {
     </div>
   );
 }
+
+
 
 
 

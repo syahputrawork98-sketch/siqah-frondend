@@ -191,7 +191,7 @@ export default function DashboardPembayaran() {
                 {activities.map((act, i) => (
                   <tr
                     key={i}
-                    className="border-b border-[#f3eee6] hover:bg-[#f9f6ef]/60 transition"
+                    className="siqah-table-row"
                   >
                     <td className="py-2">{act.tanggal}</td>
                     <td className="py-2">{act.user}</td>
@@ -206,6 +206,8 @@ export default function DashboardPembayaran() {
     </div>
   );
 }
+
+
 
 
 

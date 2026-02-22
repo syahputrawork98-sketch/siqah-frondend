@@ -108,10 +108,10 @@ export default function DataPengajuan() {
 
         {/* Konten Tab */}
         <TabsContent value={tab}>
-          <Card className="border border-[#eee6da] shadow-sm rounded-2xl overflow-hidden">
+          <Card className="siqah-table-card overflow-hidden">
             <CardContent className="p-0">
               <table className="w-full text-sm text-left border-collapse">
-                <thead className="bg-[#fdfaf6] border-b border-[#eee6da]">
+                <thead className="siqah-table-head">
                   <tr>
                     <th className="px-4 py-3">ID Validasi</th>
                     <th className="px-4 py-3">ID Pesanan</th>
@@ -127,19 +127,19 @@ export default function DataPengajuan() {
                     filteredData.map((v) => (
                       <tr
                         key={v.id_validasi}
-                        className="border-b border-[#f3eee6] hover:bg-[#f9f6ef]/60 transition"
+                        className="siqah-table-row"
                       >
                         <td className="px-4 py-3">{v.id_validasi}</td>
                         <td className="px-4 py-3">{v.id_pesanan}</td>
                         <td className="px-4 py-3">{v.tanggal_validasi}</td>
                         <td className="px-4 py-3 text-center">
                           <span
-                            className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            className={`siqah-status-badge ${
                               v.status_validasi === "DISETUJUI"
-                                ? "bg-green-100 text-green-700"
+                                ? "siqah-status-success"
                                 : v.status_validasi === "MENUNGGU"
-                                ? "bg-yellow-100 text-yellow-700"
-                                : "bg-red-100 text-red-700"
+                                ? "siqah-status-warning"
+                                : "siqah-status-danger"
                             }`}
                           >
                             {v.status_validasi}
@@ -155,19 +155,19 @@ export default function DataPengajuan() {
                           <div className="flex justify-center gap-2">
                             <button
                               onClick={() => handleView(v)}
-                              className="p-2 rounded-md hover:bg-[#f9f6ef] text-[#e2b97f]"
+                              className="siqah-icon-action siqah-icon-action-view"
                             >
                               <Eye size={16} />
                             </button>
                             <button
                               onClick={() => handleEdit(v)}
-                              className="p-2 rounded-md hover:bg-[#f9f6ef] text-blue-500"
+                              className="siqah-icon-action siqah-icon-action-edit"
                             >
                               <Pencil size={16} />
                             </button>
                             <button
                               onClick={() => handleDelete(v)}
-                              className="p-2 rounded-md hover:bg-[#f9f6ef] text-red-500"
+                              className="siqah-icon-action siqah-icon-action-delete"
                             >
                               <Trash2 size={16} />
                             </button>
@@ -217,7 +217,7 @@ export default function DataPengajuan() {
                 <label className="text-sm font-medium">Status Validasi</label>
                 <select
                   defaultValue={selectedPengajuan.status_validasi}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 >
                   <option value="MENUNGGU">MENUNGGU</option>
                   <option value="DISETUJUI">DISETUJUI</option>
@@ -228,14 +228,14 @@ export default function DataPengajuan() {
                 <label className="text-sm font-medium">Catatan Admin</label>
                 <textarea
                   defaultValue={selectedPengajuan.catatan_admin}
-                  className="w-full border border-[#e7e1d8] rounded-lg px-3 py-2 mt-1 text-sm"
+                  className="siqah-field"
                 ></textarea>
               </div>
               <div className="flex justify-end pt-3">
                 <button
                   type="button"
                   onClick={() => setModalEdit(false)}
-                  className="bg-[#e2b97f] hover:bg-[#d7aa6b] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                  className="siqah-btn-primary"
                 >
                   Simpan Perubahan
                 </button>
@@ -259,13 +259,13 @@ export default function DataPengajuan() {
             <div className="flex justify-center gap-3 pt-2">
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm border border-[#e7e1d8] hover:bg-[#f9f6ef]"
+                className="siqah-btn-secondary"
               >
                 Batal
               </button>
               <button
                 onClick={() => setModalDelete(false)}
-                className="px-4 py-2 rounded-lg text-sm bg-red-500 hover:bg-red-600 text-white"
+                className="siqah-btn-danger"
               >
                 Hapus
               </button>
@@ -276,6 +276,8 @@ export default function DataPengajuan() {
     </div>
   );
 }
+
+
 
 
 
