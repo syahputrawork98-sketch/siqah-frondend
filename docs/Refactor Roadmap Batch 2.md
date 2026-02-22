@@ -79,9 +79,9 @@ Status terakhir diverifikasi pada 2026-02-23.
 
 ### B2-5 - Data Contract Readiness
 
-- [ ] Rapikan halaman admin yang masih bercampur dengan legacy `src/pages/data-master/*`.
-- [ ] Definisikan kontrak endpoint final per modul aktif.
-- [ ] Siapkan skenario transisi dari JSON mock ke API riil per endpoint.
+- [x] Rapikan halaman admin yang masih bercampur dengan legacy `src/pages/data-master/*`.
+- [x] Definisikan kontrak endpoint final per modul aktif.
+- [x] Siapkan skenario transisi dari JSON mock ke API riil per endpoint.
 
 ### B2-6 - Test & Final Pass
 
@@ -104,6 +104,7 @@ Status terakhir diverifikasi pada 2026-02-23.
 - [x] Lanjutan `B2-4`: migrasi aksi tombol berulang di halaman admin/superadmin core pages ke `Button` reusable + utility class token.
 - [x] Lanjutan `B2-4`: rollout utility class component-based styling ke public core (`Navbar`, `Footer`, CTA/Hero utama, section paket, contact form`) dengan state hover/focus yang konsisten.
 - [x] Finalisasi `B2-4`: rollout lanjutan ke section public `home/services` serta area `contact/paket` untuk konsistensi accent + CTA state style.
+- [x] Implementasi `B2-5`: boundary admin data-master dipindah ke `features/admin/pages/data-master` (router tidak lagi impor langsung dari legacy path) + kontrak endpoint final dan runbook transisi mock ke API riil didokumentasikan di `docs/DATA_CONTRACT_READINESS.md`.
 
 ## Definition of Done Batch 2
 
