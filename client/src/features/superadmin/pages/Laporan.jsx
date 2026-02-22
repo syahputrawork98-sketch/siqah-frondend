@@ -1,6 +1,13 @@
 import { useState } from "react";
-import { Table } from "@/shared/ui";
-import { Card, CardContent, CardHeader } from "@/shared/ui";
+import {
+  Table,
+  Card,
+  CardContent,
+  CardHeader,
+  EmptyState,
+  ErrorState,
+  LoadingState,
+} from "@/shared/ui";
 import {
   BarChart,
   Bar,
@@ -11,23 +18,24 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { FileDown } from "lucide-react";
+import { formatCurrencyIdr } from "@/shared/lib";
+import { useAsyncData } from "@/shared/hooks";
+import { fetchReportChart, fetchReports } from "@/features/superadmin/api/superadminApi";
 
 export default function Laporan() {
   const [filter, setFilter] = useState("bulan");
-
-  // 📊 Data dummy laporan pembayaran
-  const laporan = [
-    { id: 1, tanggal: "2025-10-29", konsumen: "Ahmad Fauzi", total: 3500000, status: "Lunas" },
-    { id: 2, tanggal: "2025-10-30", konsumen: "Budi Santoso", total: 2500000, status: "Pending" },
-    { id: 3, tanggal: "2025-11-01", konsumen: "Citra Dewi", total: 4000000, status: "Lunas" },
-  ];
-
-  // 📈 Data grafik pendapatan
-  const dataChart = [
-    { bulan: "September", total: 12000000 },
-    { bulan: "Oktober", total: 21000000 },
-    { bulan: "November", total: 16500000 },
-  ];
+  const {
+    data: laporan,
+    error: laporanError,
+    isLoading: laporanLoading,
+    reload: reloadLaporan,
+  } = useAsyncData(fetchReports, { initialData: [] });
+  const {
+    data: dataChart,
+    error: chartError,
+    isLoading: chartLoading,
+    reload: reloadChart,
+  } = useAsyncData(fetchReportChart, { initialData: [] });
 
   const columns = [
     { header: "Tanggal", accessor: "tanggal" },
@@ -35,9 +43,7 @@ export default function Laporan() {
     {
       header: "Total Pembayaran",
       render: (row) => (
-        <span className="font-medium text-[#45624B]">
-          Rp {row.total.toLocaleString("id-ID")}
-        </span>
+        <span className="font-medium text-[#45624B]">{formatCurrencyIdr(row.total)}</span>
       ),
     },
     {
@@ -58,7 +64,6 @@ export default function Laporan() {
 
   return (
     <div className="space-y-6">
-      {/* ======== KARTU LAPORAN ======== */}
       <Card className="border border-[#e7e1d8] bg-white/90 backdrop-blur-md rounded-2xl shadow-md">
         <CardHeader
           title={<span className="text-[#45624B] font-semibold text-lg">Laporan Pembayaran & Aktivitas</span>}
@@ -66,7 +71,6 @@ export default function Laporan() {
         />
 
         <CardContent>
-          {/* Filter Periode */}
           <div className="flex flex-wrap justify-between items-center mb-6">
             <div className="flex gap-3 border-b border-[#e7e1d8]">
               {["hari", "minggu", "bulan"].map((p) => (
@@ -93,50 +97,67 @@ export default function Laporan() {
             </button>
           </div>
 
-          {/* Tabel Laporan */}
-          <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
-            <Table columns={columns} data={laporan} />
-          </div>
+          {laporanLoading ? (
+            <LoadingState message="Memuat laporan..." />
+          ) : laporanError ? (
+            <ErrorState
+              message={laporanError?.message || "Gagal memuat data laporan."}
+              onRetry={reloadLaporan}
+            />
+          ) : laporan.length === 0 ? (
+            <EmptyState message="Belum ada data laporan." />
+          ) : (
+            <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
+              <Table columns={columns} data={laporan} />
+            </div>
+          )}
         </CardContent>
       </Card>
 
-      {/* ======== GRAFIK PENDAPATAN ======== */}
       <Card className="border border-[#e7e1d8] bg-white/90 backdrop-blur-md rounded-2xl shadow-md">
         <CardHeader
           title={<span className="text-[#45624B] font-semibold text-lg">Grafik Pendapatan Bulanan</span>}
           subtitle="Visualisasi total pemasukan berdasarkan bulan"
         />
         <CardContent>
-          <div className="w-full h-72">
-            <ResponsiveContainer>
-              <BarChart data={dataChart}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#E7E1D8" />
-                <XAxis dataKey="bulan" tick={{ fill: "#45624B", fontSize: 12 }} />
-                <YAxis tick={{ fill: "#45624B", fontSize: 12 }} />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "rgba(255,255,255,0.9)",
-                    border: "1px solid #E7E1D8",
-                    borderRadius: "8px",
-                    color: "#45624B",
-                  }}
-                  formatter={(value) =>
-                    `Rp ${value.toLocaleString("id-ID")}`
-                  }
-                />
-                <Bar dataKey="total" fill="url(#gradientSiqah)" radius={[6, 6, 0, 0]} />
-                <defs>
-                  <linearGradient id="gradientSiqah" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#B9914D" />
-                    <stop offset="100%" stopColor="#45624B" />
-                  </linearGradient>
-                </defs>
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+          {chartLoading ? (
+            <LoadingState message="Memuat grafik pendapatan..." />
+          ) : chartError ? (
+            <ErrorState
+              message={chartError?.message || "Gagal memuat grafik pendapatan."}
+              onRetry={reloadChart}
+            />
+          ) : dataChart.length === 0 ? (
+            <EmptyState message="Belum ada data grafik pendapatan." />
+          ) : (
+            <div className="w-full h-72">
+              <ResponsiveContainer>
+                <BarChart data={dataChart}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E7E1D8" />
+                  <XAxis dataKey="bulan" tick={{ fill: "#45624B", fontSize: 12 }} />
+                  <YAxis tick={{ fill: "#45624B", fontSize: 12 }} />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "rgba(255,255,255,0.9)",
+                      border: "1px solid #E7E1D8",
+                      borderRadius: "8px",
+                      color: "#45624B",
+                    }}
+                    formatter={(value) => formatCurrencyIdr(value)}
+                  />
+                  <Bar dataKey="total" fill="url(#gradientSiqah)" radius={[6, 6, 0, 0]} />
+                  <defs>
+                    <linearGradient id="gradientSiqah" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#B9914D" />
+                      <stop offset="100%" stopColor="#45624B" />
+                    </linearGradient>
+                  </defs>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>
   );
 }
-

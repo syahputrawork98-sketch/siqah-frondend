@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "nama": "Superadmin Siqah",
+    "email": "superadmin@siqah.id",
+    "role": "Superadmin"
+  },
+  {
+    "id": 2,
+    "nama": "Admin Aqiqah",
+    "email": "admin@siqah.id",
+    "role": "Admin"
+  },
+  {
+    "id": 3,
+    "nama": "Petugas Kandang 1",
+    "email": "kandang1@siqah.id",
+    "role": "Petugas Kandang"
+  },
+  {
+    "id": 4,
+    "nama": "Petugas Dapur 1",
+    "email": "dapur1@siqah.id",
+    "role": "Petugas Dapur"
+  },
+  {
+    "id": 5,
+    "nama": "Petugas Kurir 1",
+    "email": "kurir1@siqah.id",
+    "role": "Petugas Kurir"
+  },
+  {
+    "id": 6,
+    "nama": "Konsumen 1",
+    "email": "konsumen1@siqah.id",
+    "role": "Konsumen"
+  }
+]
+

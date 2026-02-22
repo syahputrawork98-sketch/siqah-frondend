@@ -1,0 +1,43 @@
+{
+  "hewan": [
+    {
+      "id": 1,
+      "jenis_hewan": "Kambing Etawa",
+      "jenis_kelamin": "Jantan",
+      "harga_final": 3000000
+    },
+    {
+      "id": 2,
+      "jenis_hewan": "Kambing Jawa",
+      "jenis_kelamin": "Betina",
+      "harga_final": 2500000
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "nama_menu": "Gule Kambing",
+      "kategori_menu": "Masakan Utama"
+    },
+    {
+      "id": 2,
+      "nama_menu": "Sate",
+      "kategori_menu": "Lauk"
+    }
+  ],
+  "paket": [
+    {
+      "id": 1,
+      "nama_paket": "Paket Hemat",
+      "deskripsi": "1 Ekor + Sate + Gule",
+      "harga_paket": 3500000
+    },
+    {
+      "id": 2,
+      "nama_paket": "Paket Premium",
+      "deskripsi": "2 Ekor + Sate + Tongseng",
+      "harga_paket": 6000000
+    }
+  ]
+}
+

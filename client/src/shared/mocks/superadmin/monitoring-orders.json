@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "konsumen": "Ahmad Fauzi",
+    "paket": "Paket Premium",
+    "tanggal": "2025-11-01",
+    "status": "Selesai",
+    "kandang": "Selesai",
+    "dapur": "Selesai",
+    "kurir": "Terkirim"
+  },
+  {
+    "id": 2,
+    "konsumen": "Budi Santoso",
+    "paket": "Paket Hemat",
+    "tanggal": "2025-11-01",
+    "status": "Proses",
+    "kandang": "Selesai",
+    "dapur": "Proses",
+    "kurir": "Menunggu"
+  },
+  {
+    "id": 3,
+    "konsumen": "Citra Dewi",
+    "paket": "Paket Standar",
+    "tanggal": "2025-10-30",
+    "status": "Menunggu",
+    "kandang": "Menunggu",
+    "dapur": "Menunggu",
+    "kurir": "Menunggu"
+  }
+]
+

@@ -1,0 +1,37 @@
+{
+  "id": "ORD-00122",
+  "tanggal": "2025-11-01",
+  "total": 1800000,
+  "status": "Diproses",
+  "konsumen": {
+    "nama": "Rina Marlina",
+    "telepon": "0812-3456-7890",
+    "alamat": "Jl. Melati No. 12, Bandung"
+  },
+  "pembayaran": {
+    "status": "Diterima",
+    "metode": "Transfer BCA",
+    "bukti": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Example.jpg/300px-Example.jpg"
+  },
+  "progress": [
+    {
+      "tahap": "Penyembelihan",
+      "petugas": "Ahmad Fauzi",
+      "waktu": "2025-11-01 08:30",
+      "foto": "https://placehold.co/100x100?text=Kandang"
+    },
+    {
+      "tahap": "Pemotongan & Dapur",
+      "petugas": "Siti Aminah",
+      "waktu": "2025-11-01 10:00",
+      "foto": "https://placehold.co/100x100?text=Dapur"
+    },
+    {
+      "tahap": "Pengantaran",
+      "petugas": "Rizal Fathoni",
+      "waktu": "2025-11-01 12:30",
+      "foto": "https://placehold.co/100x100?text=Kurir"
+    }
+  ]
+}
+

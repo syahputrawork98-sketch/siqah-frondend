@@ -1,0 +1,27 @@
+{
+  "totalPesanan": 120,
+  "pesananDiproses": 38,
+  "pesananSelesai": 67,
+  "pembayaranMenunggu": 15,
+  "pesananTerbaru": [
+    {
+      "id": "ORD-00120",
+      "nama": "Ahmad Fauzi",
+      "tanggal": "2025-11-01",
+      "status": "Menunggu Pembayaran"
+    },
+    {
+      "id": "ORD-00119",
+      "nama": "Nur Aini",
+      "tanggal": "2025-11-01",
+      "status": "Diproses"
+    },
+    {
+      "id": "ORD-00118",
+      "nama": "Rizal Fathoni",
+      "tanggal": "2025-10-31",
+      "status": "Selesai"
+    }
+  ]
+}
+

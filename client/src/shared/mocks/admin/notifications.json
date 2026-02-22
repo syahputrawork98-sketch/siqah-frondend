@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "judul": "Pembayaran Baru Diterima",
+    "pesan": "Konsumen Ahmad telah mengirim bukti pembayaran sebesar Rp 2.500.000 untuk pesanan PSN-00124.",
+    "tipe": "Pembayaran",
+    "waktu": "03 Nov 2025, 09:45",
+    "status_baca": false
+  },
+  {
+    "id": 2,
+    "judul": "Pesanan Baru Masuk",
+    "pesan": "Pesanan baru dari konsumen Rina Mulyani (Paket Hemat A).",
+    "tipe": "Pesanan",
+    "waktu": "02 Nov 2025, 14:30",
+    "status_baca": true
+  },
+  {
+    "id": 3,
+    "judul": "Proses Kandang Selesai",
+    "pesan": "Petugas Kandang A telah menyelesaikan penyembelihan hewan untuk pesanan PSN-00120.",
+    "tipe": "Operasional",
+    "waktu": "01 Nov 2025, 10:15",
+    "status_baca": false
+  },
+  {
+    "id": 4,
+    "judul": "Sistem Backup Otomatis Berhasil",
+    "pesan": "Backup database otomatis berhasil dilakukan pada 31 Okt 2025 pukul 23:59.",
+    "tipe": "Sistem",
+    "waktu": "31 Okt 2025, 23:59",
+    "status_baca": true
+  }
+]
+

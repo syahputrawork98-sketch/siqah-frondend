@@ -1,33 +1,36 @@
-import { useState } from "react";
-import { Table } from "@/shared/ui";
-import { Modal } from "@/shared/ui";
-import { Card, CardContent, CardHeader } from "@/shared/ui";
+import { useMemo, useState } from "react";
+import {
+  Table,
+  Modal,
+  Card,
+  CardContent,
+  CardHeader,
+  EmptyState,
+  ErrorState,
+  LoadingState,
+} from "@/shared/ui";
 import { PlusCircle, Edit2, Trash2 } from "lucide-react";
+import { useAsyncData } from "@/shared/hooks";
+import { fetchUsers } from "@/features/superadmin/api/superadminApi";
 
 export default function Users() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formMode, setFormMode] = useState("Tambah");
   const [activeTab, setActiveTab] = useState("semua");
+  const { data: users, error, isLoading, reload } = useAsyncData(fetchUsers, {
+    initialData: [],
+  });
 
-  // 🧩 Data simulasi user
-  const users = [
-    { id: 1, nama: "Superadmin Siqah", email: "superadmin@siqah.id", role: "Superadmin" },
-    { id: 2, nama: "Admin Aqiqah", email: "admin@siqah.id", role: "Admin" },
-    { id: 3, nama: "Petugas Kandang 1", email: "kandang1@siqah.id", role: "Petugas Kandang" },
-    { id: 4, nama: "Petugas Dapur 1", email: "dapur1@siqah.id", role: "Petugas Dapur" },
-    { id: 5, nama: "Petugas Kurir 1", email: "kurir1@siqah.id", role: "Petugas Kurir" },
-    { id: 6, nama: "Konsumen 1", email: "konsumen1@siqah.id", role: "Konsumen" },
-  ];
+  const filteredUsers = useMemo(() => {
+    if (activeTab === "semua") {
+      return users;
+    }
+    if (activeTab === "petugas") {
+      return users.filter((item) => item.role.includes("Petugas"));
+    }
+    return users.filter((item) => item.role.toLowerCase() === activeTab);
+  }, [activeTab, users]);
 
-  // 🔎 Filter data berdasarkan tab aktif
-  const filteredUsers =
-    activeTab === "semua"
-      ? users
-      : activeTab === "petugas"
-      ? users.filter((u) => u.role.includes("Petugas"))
-      : users.filter((u) => u.role.toLowerCase() === activeTab);
-
-  // 🧱 Kolom tabel
   const columns = [
     { header: "Nama", accessor: "nama" },
     { header: "Email", accessor: "email" },
@@ -87,7 +90,6 @@ export default function Users() {
     }
   };
 
-  // 🧭 Daftar tab
   const tabs = [
     { key: "semua", label: "Semua" },
     { key: "superadmin", label: "Superadmin" },
@@ -105,7 +107,6 @@ export default function Users() {
         />
 
         <CardContent>
-          {/* Tabs Filter */}
           <div className="flex flex-wrap gap-3 mb-6 border-b border-[#e7e1d8]">
             {tabs.map((tab) => (
               <button
@@ -122,7 +123,6 @@ export default function Users() {
             ))}
           </div>
 
-          {/* Tombol Tambah */}
           <div className="flex justify-end mb-4">
             <button
               onClick={handleAdd}
@@ -133,14 +133,23 @@ export default function Users() {
             </button>
           </div>
 
-          {/* Tabel User */}
-          <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
-            <Table columns={columns} data={filteredUsers} />
-          </div>
+          {isLoading ? (
+            <LoadingState message="Memuat data user..." />
+          ) : error ? (
+            <ErrorState
+              message={error?.message || "Gagal memuat data user."}
+              onRetry={reload}
+            />
+          ) : filteredUsers.length === 0 ? (
+            <EmptyState message="Belum ada data user pada filter ini." />
+          ) : (
+            <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
+              <Table columns={columns} data={filteredUsers} />
+            </div>
+          )}
         </CardContent>
       </Card>
 
-      {/* Modal Tambah/Edit User */}
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -198,4 +207,3 @@ export default function Users() {
     </div>
   );
 }
-

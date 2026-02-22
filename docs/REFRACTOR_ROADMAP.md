@@ -41,7 +41,13 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Memulai Phase 4: menambahkan hook server-state sederhana `client/src/shared/hooks/useAsyncData.js`.
 - [x] Memulai Phase 4: migrasi data layer fitur admin (`DashboardAdmin`, `PembayaranAdmin`, `LogNotifikasiAdmin`) ke `client/src/features/admin/api/adminApi.js`.
 - [x] Menambahkan global `AppErrorBoundary` di `client/src/app/providers/AppErrorBoundary.jsx` dan mengaktifkannya di `client/src/main.jsx`.
-- [ ] Sisa halaman admin/superadmin lain masih menggunakan dummy data dan akan dimigrasikan bertahap di lanjutan Phase 4.
+- [x] Menstandarkan sumber dummy data admin ke file JSON terpusat di `client/src/shared/mocks/admin/*.json`.
+- [x] `mockAdminApi` sekarang membaca data dari JSON (bukan hardcode di komponen).
+- [x] Melanjutkan Phase 4: migrasi `DetailPesananAdmin` dan `PengaturanAdmin` ke service layer + mock JSON terpusat.
+- [x] Melanjutkan Phase 4: menambahkan data layer `superadmin` (`api`, `model/mappers`) dan mock JSON terpusat di `client/src/shared/mocks/superadmin/*.json`.
+- [x] Migrasi halaman `superadmin` (`Dashboard`, `Monitoring`, `Laporan`, `Notifikasi`, `Users`, `DataMaster`, `Pengaturan`) serta komponen `Topbar`/`NotificationDropdown` ke service layer + async state standar.
+- [x] Bersih dari dummy inline di area aktif `features/admin` dan `features/superadmin` (dummy dipusatkan ke JSON mock).
+- [x] Seluruh halaman aktif pada `features/admin` dan `features/superadmin` sudah menggunakan service layer + JSON mock terpusat.
 
 ## Tujuan Refactor
 
@@ -125,24 +131,42 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Tiap fitur: move -> fix import -> test -> build.
 
 ### Phase 4 - Data Layer & API Integration
-- [ ] Ganti dummy data dengan API service layer (ongoing, prioritas admin selesai sebagian).
+- [ ] Ganti dummy data inline menjadi API service layer + mock JSON terpusat (ongoing, digunakan sementara sampai frontend selesai).
 - [x] Tambahkan error boundary, loading state, empty state standar.
-- [ ] Standarkan model data lintas fitur (ongoing, dimulai dari mapper admin).
+- [ ] Standarkan model data lintas fitur (ongoing, mapper diterapkan di admin + superadmin).
+- [x] Keputusan scope: selama frontend belum final, seluruh data tetap memakai dummy JSON terpusat.
+- [ ] Integrasi backend API riil dikerjakan setelah fase frontend selesai di repo backend Siqah; kontrak endpoint dipertahankan di service layer frontend.
 
 ### Phase 5 - Quality Gate & Cleanup
 - [ ] Tambahkan test coverage minimum yang disepakati.
 - [ ] Aktifkan CI pipeline.
-- [ ] Hapus folder lama `client/` setelah parity fitur tercapai.
+- [ ] Relokasi source aktif dari `client/src` ke root `src` (fase mekanis, tanpa ubah behavior).
+- [ ] Update konfigurasi/alias/import setelah relokasi path dan pastikan aplikasi tetap berjalan.
+- [ ] Smoke test lintas role setelah relokasi (`pengunjung`, `admin`, `superadmin`).
+- [ ] Hapus folder lama `client/` hanya setelah parity fitur tercapai dan seluruh verifikasi lolos.
 - [ ] Final pass: lint, build, test, docs update.
+
+### Aturan Relokasi `client/` -> `src/`
+
+- [x] Folder `client/` tidak dihapus pada Phase 4.
+- [ ] Relokasi dilakukan setelah fitur stabil dan parity tercapai.
+- [ ] Penghapusan `client/` adalah langkah terakhir cleanup, bukan langkah migrasi awal.
 
 ## Definition of Done (Per Task Refactor)
 
 - [ ] Kode mengikuti struktur folder baru.
-- [ ] Tidak ada hardcoded dummy data untuk flow production.
+- [ ] Tidak ada hardcoded dummy data di komponen; gunakan service layer + file JSON mock terpusat selama backend belum tersedia.
 - [ ] Tidak ada warning/error lint di file yang diubah.
 - [ ] Build sukses.
 - [ ] Test yang relevan ditambahkan/diupdate.
 - [ ] Dokumentasi perubahan ditulis singkat di PR.
+
+## Catatan Scope Sementara (Frontend-Only)
+
+- [x] Pengerjaan saat ini dibatasi sampai endpoint contract di frontend (service layer).
+- [x] Backend API riil akan dikerjakan terpisah di repo backend Siqah setelah fase frontend ini selesai.
+- [x] Selama masa transisi, data dummy wajib disimpan dalam file JSON agar mudah disambungkan ke backend nantinya.
+- [x] Phase 4 saat ini difokuskan pada kesiapan arsitektur data (service, mapper, state standar), bukan koneksi backend riil.
 
 ## Working Agreement Tim
 

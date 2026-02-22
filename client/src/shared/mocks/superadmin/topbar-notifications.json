@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Pesanan Baru",
+    "message": "Konsumen baru melakukan pesanan."
+  },
+  {
+    "id": 2,
+    "title": "Pembayaran Divalidasi",
+    "message": "Admin telah memverifikasi pembayaran."
+  },
+  {
+    "id": 3,
+    "title": "Proses Dapur Dimulai",
+    "message": "Petugas dapur memulai pengolahan."
+  }
+]
+

@@ -1,44 +1,14 @@
 import { useState } from "react";
-import { Table } from "@/shared/ui";
-import { Card, CardContent, CardHeader } from "@/shared/ui";
+import { Table, Card, CardContent, CardHeader, EmptyState, ErrorState, LoadingState } from "@/shared/ui";
 import { Eye, CheckCircle2, Clock, XCircle } from "lucide-react";
+import { useAsyncData } from "@/shared/hooks";
+import { fetchMonitoringOrders } from "@/features/superadmin/api/superadminApi";
 
 export default function Monitoring() {
   const [selectedOrder, setSelectedOrder] = useState(null);
-
-  // 📋 Data dummy (nantinya dari tb_pesanan + tb_progress_pesanan)
-  const orders = [
-    {
-      id: 1,
-      konsumen: "Ahmad Fauzi",
-      paket: "Paket Premium",
-      tanggal: "2025-11-01",
-      status: "Selesai",
-      kandang: "Selesai",
-      dapur: "Selesai",
-      kurir: "Terkirim",
-    },
-    {
-      id: 2,
-      konsumen: "Budi Santoso",
-      paket: "Paket Hemat",
-      tanggal: "2025-11-01",
-      status: "Proses",
-      kandang: "Selesai",
-      dapur: "Proses",
-      kurir: "Menunggu",
-    },
-    {
-      id: 3,
-      konsumen: "Citra Dewi",
-      paket: "Paket Standar",
-      tanggal: "2025-10-30",
-      status: "Menunggu",
-      kandang: "Menunggu",
-      dapur: "Menunggu",
-      kurir: "Menunggu",
-    },
-  ];
+  const { data: orders, error, isLoading, reload } = useAsyncData(fetchMonitoringOrders, {
+    initialData: [],
+  });
 
   const columns = [
     { header: "Nama Konsumen", accessor: "konsumen" },
@@ -82,17 +52,27 @@ export default function Monitoring() {
           subtitle="Pantau setiap tahap penyembelihan, pengolahan, dan pengantaran"
         />
         <CardContent>
-          <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
-            <Table columns={columns} data={orders} />
-          </div>
+          {isLoading ? (
+            <LoadingState message="Memuat data monitoring..." />
+          ) : error ? (
+            <ErrorState
+              message={error?.message || "Gagal memuat monitoring proses."}
+              onRetry={reload}
+            />
+          ) : orders.length === 0 ? (
+            <EmptyState message="Belum ada pesanan untuk dimonitor." />
+          ) : (
+            <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
+              <Table columns={columns} data={orders} />
+            </div>
+          )}
         </CardContent>
       </Card>
 
-      {/* Detail Proses */}
       {selectedOrder && (
         <div className="border border-[#E7E1D8] bg-white/90 backdrop-blur-md rounded-2xl shadow-md p-6">
           <h2 className="text-lg font-semibold text-[#45624B] mb-4">
-            Detail Proses — {selectedOrder.konsumen}
+            Detail Proses - {selectedOrder.konsumen}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -126,8 +106,6 @@ export default function Monitoring() {
     </div>
   );
 }
-
-// -------------------- Komponen Pendukung --------------------
 
 function StatusBadge({ status }) {
   const colors = {
@@ -173,4 +151,3 @@ function StageCard({ title, status, detail }) {
     </div>
   );
 }
-

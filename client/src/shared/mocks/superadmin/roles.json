@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "nama_role": "Superadmin",
+    "deskripsi": "Hak akses penuh ke seluruh sistem"
+  },
+  {
+    "id": 2,
+    "nama_role": "Admin",
+    "deskripsi": "Kelola pesanan dan pembayaran"
+  },
+  {
+    "id": 3,
+    "nama_role": "Petugas Kandang",
+    "deskripsi": "Menginput penyembelihan"
+  },
+  {
+    "id": 4,
+    "nama_role": "Petugas Dapur",
+    "deskripsi": "Menginput proses dapur"
+  },
+  {
+    "id": 5,
+    "nama_role": "Petugas Kurir",
+    "deskripsi": "Menginput pengantaran"
+  },
+  {
+    "id": 6,
+    "nama_role": "Konsumen",
+    "deskripsi": "Melihat pesanan dan status"
+  }
+]
+

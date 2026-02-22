@@ -1,6 +1,10 @@
-// client/src/pages/superadmin/Dashboard.jsx
+import { useMemo } from "react";
 import { Users, ShoppingBag, CreditCard, Bell } from "lucide-react";
-import { Card, CardContent } from "@/shared/ui";
+import { Card, CardContent, EmptyState, ErrorState, LoadingState } from "@/shared/ui";
+import { formatCurrencyIdr } from "@/shared/lib";
+import { useAsyncData } from "@/shared/hooks";
+import { fetchSuperadminDashboard } from "@/features/superadmin/api/superadminApi";
+import { DEFAULT_SUPERADMIN_DASHBOARD } from "@/features/superadmin/model/superadminDataMappers";
 import {
   PieChart,
   Pie,
@@ -10,23 +14,21 @@ import {
   Legend,
 } from "recharts";
 
+const COLORS = ["#45624B", "#B9914D", "#EBD9B4"];
+
 export default function Dashboard() {
-  const stats = {
-    totalUsers: 120,
-    totalOrders: 87,
-    waitingPayments: 5,
-    totalRevenue: 22500000,
-    newNotifications: 4,
-  };
+  const { data, error, isLoading, reload } = useAsyncData(fetchSuperadminDashboard, {
+    initialData: DEFAULT_SUPERADMIN_DASHBOARD,
+  });
 
-  const dataChart = [
-    { name: "Total Pesanan", value: stats.totalOrders },
-    { name: "Menunggu Pembayaran", value: stats.waitingPayments },
-    { name: "Notifikasi Baru", value: stats.newNotifications },
-  ];
-
-  // Warna utama Siqah
-  const COLORS = ["#45624B", "#B9914D", "#EBD9B4"];
+  const dataChart = useMemo(
+    () => [
+      { name: "Total Pesanan", value: data.totalOrders },
+      { name: "Menunggu Pembayaran", value: data.waitingPayments },
+      { name: "Notifikasi Baru", value: data.newNotifications },
+    ],
+    [data]
+  );
 
   return (
     <div
@@ -35,7 +37,6 @@ export default function Dashboard() {
         backgroundImage: "linear-gradient(to bottom, #fefbf7, #f9f6ef)",
       }}
     >
-      {/* Judul */}
       <div className="text-center">
         <h1 className="text-3xl font-bold text-[#45624B]">
           Dashboard <span className="text-[#B9914D]">Superadmin</span>
@@ -45,82 +46,91 @@ export default function Dashboard() {
         </p>
       </div>
 
-      {/* Statistik */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <StatCard
-          icon={<Users className="text-[#45624B]" />}
-          title="Total Pengguna"
-          value={stats.totalUsers}
-          colorFrom="#E3EBD2"
-          colorTo="#F5F0E1"
+      {isLoading ? (
+        <LoadingState message="Memuat dashboard superadmin..." />
+      ) : error ? (
+        <ErrorState
+          message={error?.message || "Gagal memuat dashboard superadmin."}
+          onRetry={reload}
         />
-        <StatCard
-          icon={<ShoppingBag className="text-[#B9914D]" />}
-          title="Total Pesanan"
-          value={stats.totalOrders}
-          colorFrom="#FAF6E7"
-          colorTo="#EBD9B4"
-        />
-        <StatCard
-          icon={<CreditCard className="text-[#45624B]" />}
-          title="Total Pendapatan"
-          value={`Rp ${stats.totalRevenue.toLocaleString("id-ID")}`}
-          colorFrom="#EAE8E2"
-          colorTo="#F8F4E3"
-        />
-        <StatCard
-          icon={<Bell className="text-[#B9914D]" />}
-          title="Notifikasi Baru"
-          value={stats.newNotifications}
-          colorFrom="#F8F4E3"
-          colorTo="#E9D5B4"
-        />
-      </div>
-
-      {/* Grafik */}
-      <Card className="rounded-2xl shadow-md border-0 bg-white">
-        <CardContent className="p-6">
-          <h2 className="text-lg font-semibold mb-4 text-[#45624B]">
-            Distribusi Aktivitas Sistem
-          </h2>
-          <div className="w-full h-72">
-            <ResponsiveContainer>
-              <PieChart>
-                <Pie
-                  data={dataChart}
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={100}
-                  fill="#8884d8"
-                  dataKey="value"
-                  label
-                >
-                  {dataChart.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
-                    />
-                  ))}
-                </Pie>
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "#fff",
-                    borderRadius: "10px",
-                    border: "1px solid #EBD9B4",
-                    color: "#45624B",
-                  }}
-                />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <StatCard
+              icon={<Users className="text-[#45624B]" />}
+              title="Total Pengguna"
+              value={data.totalUsers}
+              colorFrom="#E3EBD2"
+              colorTo="#F5F0E1"
+            />
+            <StatCard
+              icon={<ShoppingBag className="text-[#B9914D]" />}
+              title="Total Pesanan"
+              value={data.totalOrders}
+              colorFrom="#FAF6E7"
+              colorTo="#EBD9B4"
+            />
+            <StatCard
+              icon={<CreditCard className="text-[#45624B]" />}
+              title="Total Pendapatan"
+              value={formatCurrencyIdr(data.totalRevenue)}
+              colorFrom="#EAE8E2"
+              colorTo="#F8F4E3"
+            />
+            <StatCard
+              icon={<Bell className="text-[#B9914D]" />}
+              title="Notifikasi Baru"
+              value={data.newNotifications}
+              colorFrom="#F8F4E3"
+              colorTo="#E9D5B4"
+            />
           </div>
-        </CardContent>
-      </Card>
+
+          <Card className="rounded-2xl shadow-md border-0 bg-white">
+            <CardContent className="p-6">
+              <h2 className="text-lg font-semibold mb-4 text-[#45624B]">
+                Distribusi Aktivitas Sistem
+              </h2>
+              {dataChart.every((item) => item.value === 0) ? (
+                <EmptyState message="Belum ada data distribusi aktivitas." />
+              ) : (
+                <div className="w-full h-72">
+                  <ResponsiveContainer>
+                    <PieChart>
+                      <Pie
+                        data={dataChart}
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={100}
+                        fill="#8884d8"
+                        dataKey="value"
+                        label
+                      >
+                        {dataChart.map((entry, index) => (
+                          <Cell key={`cell-${entry.name}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                      </Pie>
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: "#fff",
+                          borderRadius: "10px",
+                          border: "1px solid #EBD9B4",
+                          color: "#45624B",
+                        }}
+                      />
+                      <Legend />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </>
+      )}
     </div>
   );
 }
 
-// Komponen Kartu Statistik dengan dua warna lembut
 function StatCard({ icon, title, value, colorFrom, colorTo }) {
   return (
     <Card
@@ -141,4 +151,3 @@ function StatCard({ icon, title, value, colorFrom, colorTo }) {
     </Card>
   );
 }
-

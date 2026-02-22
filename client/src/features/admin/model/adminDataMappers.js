@@ -6,6 +6,33 @@ const DEFAULT_DASHBOARD = {
   pesananTerbaru: [],
 };
 
+const DEFAULT_ORDER_DETAIL = {
+  id: "-",
+  tanggal: "-",
+  total: 0,
+  status: "-",
+  konsumen: {
+    nama: "-",
+    telepon: "-",
+    alamat: "-",
+  },
+  pembayaran: {
+    status: "-",
+    metode: "-",
+    bukti: "",
+  },
+  progress: [],
+};
+
+const DEFAULT_ADMIN_PROFILE = {
+  username: "",
+  email: "",
+  nama_admin: "",
+  no_telp: "",
+  alamat: "",
+  foto: "",
+};
+
 const toSafeArray = (value) => (Array.isArray(value) ? value : []);
 
 export const normalizeDashboardData = (raw) => {
@@ -56,5 +83,42 @@ export const normalizeNotificationList = (raw) => {
   }));
 };
 
-export { DEFAULT_DASHBOARD };
+export const normalizeOrderDetail = (raw) => {
+  const source = raw?.data ?? raw ?? {};
+  return {
+    id: source.id ?? DEFAULT_ORDER_DETAIL.id,
+    tanggal: source.tanggal ?? DEFAULT_ORDER_DETAIL.tanggal,
+    total: Number(source.total ?? 0),
+    status: source.status ?? DEFAULT_ORDER_DETAIL.status,
+    konsumen: {
+      nama: source.konsumen?.nama ?? DEFAULT_ORDER_DETAIL.konsumen.nama,
+      telepon: source.konsumen?.telepon ?? DEFAULT_ORDER_DETAIL.konsumen.telepon,
+      alamat: source.konsumen?.alamat ?? DEFAULT_ORDER_DETAIL.konsumen.alamat,
+    },
+    pembayaran: {
+      status: source.pembayaran?.status ?? DEFAULT_ORDER_DETAIL.pembayaran.status,
+      metode: source.pembayaran?.metode ?? DEFAULT_ORDER_DETAIL.pembayaran.metode,
+      bukti: source.pembayaran?.bukti ?? DEFAULT_ORDER_DETAIL.pembayaran.bukti,
+    },
+    progress: toSafeArray(source.progress).map((item) => ({
+      tahap: item.tahap ?? "-",
+      petugas: item.petugas ?? "-",
+      waktu: item.waktu ?? "-",
+      foto: item.foto ?? "",
+    })),
+  };
+};
 
+export const normalizeAdminProfile = (raw) => {
+  const source = raw?.data ?? raw ?? {};
+  return {
+    username: source.username ?? DEFAULT_ADMIN_PROFILE.username,
+    email: source.email ?? DEFAULT_ADMIN_PROFILE.email,
+    nama_admin: source.nama_admin ?? source.namaAdmin ?? DEFAULT_ADMIN_PROFILE.nama_admin,
+    no_telp: source.no_telp ?? source.noTelp ?? DEFAULT_ADMIN_PROFILE.no_telp,
+    alamat: source.alamat ?? DEFAULT_ADMIN_PROFILE.alamat,
+    foto: source.foto ?? source.avatar ?? DEFAULT_ADMIN_PROFILE.foto,
+  };
+};
+
+export { DEFAULT_ADMIN_PROFILE, DEFAULT_DASHBOARD, DEFAULT_ORDER_DETAIL };

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "tanggal": "2025-10-29",
+    "konsumen": "Ahmad Fauzi",
+    "total": 3500000,
+    "status": "Lunas"
+  },
+  {
+    "id": 2,
+    "tanggal": "2025-10-30",
+    "konsumen": "Budi Santoso",
+    "total": 2500000,
+    "status": "Pending"
+  },
+  {
+    "id": 3,
+    "tanggal": "2025-11-01",
+    "konsumen": "Citra Dewi",
+    "total": 4000000,
+    "status": "Lunas"
+  }
+]
+

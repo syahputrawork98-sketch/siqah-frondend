@@ -1,30 +1,26 @@
 import { useState } from "react";
-import { Table } from "@/shared/ui";
-import { Modal } from "@/shared/ui";
-import { Card, CardContent, CardHeader } from "@/shared/ui";
+import {
+  Table,
+  Modal,
+  Card,
+  CardContent,
+  CardHeader,
+  EmptyState,
+  ErrorState,
+  LoadingState,
+} from "@/shared/ui";
 import { PlusCircle, Edit2, Trash2 } from "lucide-react";
 import { formatCurrencyIdr } from "@/shared/lib";
+import { useAsyncData } from "@/shared/hooks";
+import { fetchDataMaster } from "@/features/superadmin/api/superadminApi";
 
 export default function DataMaster() {
   const [activeTab, setActiveTab] = useState("hewan");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formMode, setFormMode] = useState("Tambah");
-
-  // Dummy Data
-  const data = {
-    hewan: [
-      { id: 1, jenis_hewan: "Kambing Etawa", jenis_kelamin: "Jantan", harga_final: 3000000 },
-      { id: 2, jenis_hewan: "Kambing Jawa", jenis_kelamin: "Betina", harga_final: 2500000 },
-    ],
-    menu: [
-      { id: 1, nama_menu: "Gule Kambing", kategori_menu: "Masakan Utama" },
-      { id: 2, nama_menu: "Sate", kategori_menu: "Lauk" },
-    ],
-    paket: [
-      { id: 1, nama_paket: "Paket Hemat", deskripsi: "1 Ekor + Sate + Gule", harga_paket: 3500000 },
-      { id: 2, nama_paket: "Paket Premium", deskripsi: "2 Ekor + Sate + Tongseng", harga_paket: 6000000 },
-    ],
-  };
+  const { data, error, isLoading, reload } = useAsyncData(fetchDataMaster, {
+    initialData: { hewan: [], menu: [], paket: [] },
+  });
 
   const columns = {
     hewan: [
@@ -70,6 +66,8 @@ export default function DataMaster() {
     </div>
   );
 
+  const currentData = data[activeTab] || [];
+
   return (
     <div className="space-y-6">
       <Card className="border border-[#e7e1d8] bg-white/90 backdrop-blur-md rounded-2xl shadow-md">
@@ -79,7 +77,6 @@ export default function DataMaster() {
         />
 
         <CardContent>
-          {/* Tabs */}
           <div className="flex flex-wrap gap-3 mb-6 border-b border-[#e7e1d8]">
             {["hewan", "menu", "paket"].map((tab) => (
               <button
@@ -96,7 +93,6 @@ export default function DataMaster() {
             ))}
           </div>
 
-          {/* Tombol Tambah */}
           <div className="flex justify-end mb-4">
             <button
               onClick={handleAdd}
@@ -107,14 +103,23 @@ export default function DataMaster() {
             </button>
           </div>
 
-          {/* Tabel */}
-          <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
-            <Table columns={columns[activeTab]} data={data[activeTab]} />
-          </div>
+          {isLoading ? (
+            <LoadingState message="Memuat data master..." />
+          ) : error ? (
+            <ErrorState
+              message={error?.message || "Gagal memuat data master."}
+              onRetry={reload}
+            />
+          ) : currentData.length === 0 ? (
+            <EmptyState message={`Belum ada data ${activeTab}.`} />
+          ) : (
+            <div className="overflow-x-auto rounded-xl border border-[#E7E1D8]">
+              <Table columns={columns[activeTab]} data={currentData} />
+            </div>
+          )}
         </CardContent>
       </Card>
 
-      {/* Modal */}
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -152,4 +157,3 @@ export default function DataMaster() {
     </div>
   );
 }
-

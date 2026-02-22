@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "aksi": "Login Sistem",
+    "user": "Superadmin Siqah",
+    "waktu": "2025-11-02 07:20",
+    "keterangan": "Superadmin berhasil login ke dashboard"
+  },
+  {
+    "id": 2,
+    "aksi": "Edit Role",
+    "user": "Superadmin Siqah",
+    "waktu": "2025-11-01 20:55",
+    "keterangan": "Mengubah hak akses Petugas Dapur"
+  },
+  {
+    "id": 3,
+    "aksi": "Tambah User",
+    "user": "Superadmin Siqah",
+    "waktu": "2025-11-01 18:12",
+    "keterangan": "Menambahkan akun Petugas Kurir 1"
+  }
+]
+

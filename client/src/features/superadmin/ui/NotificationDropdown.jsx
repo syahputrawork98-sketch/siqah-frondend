@@ -1,10 +1,8 @@
-
 import { useEffect, useRef } from "react";
 
-export default function NotificationDropdown({ onClose }) {
+export default function NotificationDropdown({ notifications = [], onClose }) {
   const ref = useRef();
 
-  // Tutup dropdown saat klik di luar
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -15,12 +13,6 @@ export default function NotificationDropdown({ onClose }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [onClose]);
 
-  const dummyNotif = [
-    { id: 1, title: "Pesanan Baru", message: "Konsumen baru melakukan pesanan." },
-    { id: 2, title: "Pembayaran Divalidasi", message: "Admin telah memverifikasi pembayaran." },
-    { id: 3, title: "Proses Dapur Dimulai", message: "Petugas dapur memulai pengolahan." },
-  ];
-
   return (
     <div
       ref={ref}
@@ -28,8 +20,8 @@ export default function NotificationDropdown({ onClose }) {
     >
       <p className="text-sm font-semibold mb-2 text-gray-700">Notifikasi</p>
       <div className="max-h-64 overflow-y-auto">
-        {dummyNotif.length > 0 ? (
-          dummyNotif.map((notif) => (
+        {notifications.length > 0 ? (
+          notifications.map((notif) => (
             <div
               key={notif.id}
               className="p-2 mb-1 rounded-md hover:bg-gray-50 cursor-pointer"

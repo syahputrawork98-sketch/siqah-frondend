@@ -1,0 +1,31 @@
+[
+  {
+    "id": "PAY-001",
+    "konsumen": "Ahmad Fauzi",
+    "tanggal": "2025-11-01",
+    "jumlah": 1500000,
+    "status": "Pengajuan"
+  },
+  {
+    "id": "PAY-002",
+    "konsumen": "Rina Marlina",
+    "tanggal": "2025-11-01",
+    "jumlah": 1800000,
+    "status": "Menunggu Validasi"
+  },
+  {
+    "id": "PAY-003",
+    "konsumen": "Siti Lestari",
+    "tanggal": "2025-10-31",
+    "jumlah": 1600000,
+    "status": "Diterima"
+  },
+  {
+    "id": "PAY-004",
+    "konsumen": "Rizal Fathoni",
+    "tanggal": "2025-10-30",
+    "jumlah": 1500000,
+    "status": "Lunas"
+  }
+]
+
