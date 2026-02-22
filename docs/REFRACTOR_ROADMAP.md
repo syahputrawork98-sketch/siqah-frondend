@@ -1,4 +1,4 @@
-﻿# Refactor Roadmap
+# Refactor Roadmap
 
 Siqah Akikah adalah layanan akikah terpercaya dari Bandung sejak 2025, dengan fokus pada layanan yang praktis, amanah, dan sesuai syariat.
 
@@ -26,6 +26,10 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Memindahkan komponen reusable dasar (`Card`, `CardSummary`, `Label`, `Modal`, `Table`, `Tabs`) ke `client/src/shared/ui`.
 - [x] Menjaga backward compatibility: `client/src/components/ui/*` kini menjadi re-export ke `shared/ui` agar migrasi bertahap aman.
 - [x] Menambahkan `client/src/shared/lib` untuk util umum (`formatCurrencyIdr`, `getCurrentYear`) dan migrasi pemakaian util duplikat pada modul terkait.
+- [x] Memulai Phase 3: migrasi fitur `pengunjung` ke struktur baru `client/src/features/public` (pages + ui) dan route publik diarahkan ke module baru.
+- [x] Menambahkan `client/src/app/layouts/PublicLayout.jsx` sebagai layout publik di layer `app`.
+- [x] Menjaga compatibility selama transisi: file legacy `pages/pengunjung/*` dan `components/pengunjung/{Navbar,Footer}` menjadi wrapper ke module baru.
+- [x] Standardisasi naming clean code: istilah module dari `pengunjung` diganti menjadi `public`.
 
 ## Tujuan Refactor
 
@@ -102,7 +106,7 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Migrasi helper/util common ke `shared/lib`.
 
 ### Phase 3 - Feature-by-Feature Migration
-- [ ] Migrasi `pengunjung` ke struktur baru.
+- [x] Migrasi `pengunjung` ke struktur baru.
 - [ ] Migrasi `admin`.
 - [ ] Migrasi `superadmin`.
 - [ ] Migrasi `petugas-kandang`.
@@ -134,3 +138,4 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [ ] Hindari PR besar yang campur banyak domain.
 - [ ] Review fokus pada correctness, maintainability, dan regresi.
 - [ ] Setiap perubahan arsitektur dicatat di dokumen ini.
+

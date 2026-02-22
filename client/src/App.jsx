@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Layouts
-import MainLayout from "./layouts/MainLayout";
+import PublicLayout from "@/app/layouts/PublicLayout";
 import SuperadminLayout from "./layouts/SuperadminLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import PetugasKandangLayout from "./layouts/PetugasKandangLayout";
@@ -61,11 +61,11 @@ import Dashboard from "./pages/superadmin/Dashboard";
  import Notifikasi from "./pages/superadmin/Notifikasi";
 
 // Public Pages
-import Home from "./pages/pengunjung/Home";
-import About from "./pages/pengunjung/About";
-import Services from "./pages/pengunjung/Services";
-import Paket from "./pages/pengunjung/Paket";
-import Contact from "./pages/pengunjung/Contact";
+import Home from "@/features/public/pages/Home";
+import About from "@/features/public/pages/About";
+import Services from "@/features/public/pages/Services";
+import Paket from "@/features/public/pages/Paket";
+import Contact from "@/features/public/pages/Contact";
 
 function App() {
   return (
@@ -73,7 +73,7 @@ function App() {
       <Routes>
 
         {/* 🔹 ROUTE UNTUK PENGUNJUNG (LAYOUT UMUM) */}
-        <Route element={<MainLayout />}>
+        <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/tentang" element={<About />} />
           <Route path="/layanan" element={<Services />} />
@@ -144,3 +144,4 @@ function App() {
 }
 
 export default App;
+
