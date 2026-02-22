@@ -43,6 +43,7 @@ npm run preview
 - [Refactor Roadmap (Legacy Pointer)](docs/REFRACTOR_ROADMAP.md)
 - [Architecture Guide](docs/ARCHITECTURE.md)
 - [Contributing Guide](docs/CONTRIBUTING.md)
+- [Web Architecture & Role Extension Guide](docs/WEB_ARCHITECTURE_AND_ROLE_GUIDE.md)
 
 ## Catatan
 
