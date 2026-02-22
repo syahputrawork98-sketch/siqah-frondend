@@ -16,10 +16,9 @@ Frontend aplikasi Siqah Aqiqah untuk kanal pengunjung, admin, superadmin, dan pe
 
 ## Menjalankan Project
 
-Saat ini source utama masih berada di folder `client/`.
+Konfigurasi project utama sudah dijalankan dari root, sementara source utama masih berada di `client/src`.
 
 ```bash
-cd client
 npm install
 npm run dev
 ```
@@ -34,7 +33,8 @@ npm run preview
 
 ## Struktur Saat Ini
 
-- `client/` source frontend aktif
+- `client/src/` source frontend aktif (migrasi bertahap)
+- root (`package.json`, `vite.config.js`, `eslint.config.js`, `tailwind.config.js`, `postcss.config.js`, `index.html`) sebagai fondasi konfigurasi
 - `docs/` dokumentasi arsitektur, roadmap, dan pedoman tim
 
 ## Dokumentasi

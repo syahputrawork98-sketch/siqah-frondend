@@ -18,6 +18,10 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] `npm run lint` berhasil setelah perbaikan konfigurasi dan cleanup unused code.
 - [x] Validasi ulang `npm run build` berhasil setelah fix lint.
 - [ ] Masih ada warning non-blocking di build: ukuran bundle > 500kB dan warning CSS `@property`.
+- [x] Menambahkan fondasi konfigurasi di root: `package.json`, `vite.config.js`, `eslint.config.js`, `tailwind.config.js`, `postcss.config.js`, `index.html`.
+- [x] Menambahkan alias import root untuk target struktur (`@`, `@/app`, `@/features`, `@/entities`, `@/widgets`, `@/shared`).
+- [x] Menambahkan baseline environment config di root (`.env.example`) dan runtime config terpusat (`client/src/shared/config/runtimeConfig.js`).
+- [x] Update `README.md` agar workflow command default berjalan dari root project.
 
 ## Tujuan Refactor
 
@@ -84,9 +88,9 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Inventaris area yang masih dummy data.
 
 ### Phase 1 - Foundation di Root
-- [ ] Pindahkan konfigurasi inti dari `client/` ke root (`package`, `vite`, `tailwind`, `eslint`, `index.html`).
-- [ ] Setup alias import (`@/app`, `@/features`, `@/shared`, dll).
-- [ ] Setup env config (`.env.example`) dan runtime config.
+- [x] Pindahkan konfigurasi inti dari `client/` ke root (`package`, `vite`, `tailwind`, `eslint`, `index.html`).
+- [x] Setup alias import (`@/app`, `@/features`, `@/shared`, dll).
+- [x] Setup env config (`.env.example`) dan runtime config.
 
 ### Phase 2 - Shared Layer
 - [ ] Migrasi komponen UI reusable ke `shared/ui`.

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["client/src/*"],
+      "@/app/*": ["client/src/app/*"],
+      "@/features/*": ["client/src/features/*"],
+      "@/entities/*": ["client/src/entities/*"],
+      "@/widgets/*": ["client/src/widgets/*"],
+      "@/shared/*": ["client/src/shared/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "client/node_modules", "client/dist"]
+}
