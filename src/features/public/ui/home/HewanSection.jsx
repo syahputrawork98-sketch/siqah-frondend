@@ -84,7 +84,7 @@ const HewanSection = () => {
                 />
                 {/* Badge Ready */}
                 {hewan.ready && (
-                  <div className="absolute top-4 left-4 bg-[#B9914D] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                  <div className="absolute top-4 left-4 siqah-public-btn px-3 py-1 text-xs font-semibold shadow-md">
                     <FaCheckCircle className="inline-block mr-1 mb-[2px]" />
                     Siap Aqiqah
                   </div>
@@ -99,10 +99,10 @@ const HewanSection = () => {
                 <p className="text-sm text-[#45624B]/80 mb-1">
                   Berat: {hewan.berat}
                 </p>
-                <p className="text-lg font-bold text-[#B9914D]">{hewan.harga}</p>
+                <p className="text-lg font-bold siqah-public-accent">{hewan.harga}</p>
 
                 {/* CTA */}
-                <button className="mt-4 bg-[#45624B] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#39523d] transition">
+                <button className="mt-4 siqah-public-btn px-5 py-2 text-sm font-semibold">
                   Pilih Sekarang
                 </button>
               </div>

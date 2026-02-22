@@ -73,9 +73,9 @@ Status terakhir diverifikasi pada 2026-02-23.
 
 ### B2-4 - Component Styling Standardization
 
-- [ ] Audit komponen yang masih styling ad-hoc di role aktif (`public`, `admin`, `superadmin`).
-- [ ] Refactor style berulang ke komponen `src/shared/ui` atau wrapper reusable per fitur.
-- [ ] Terapkan token desain dan state style standar pada halaman prioritas.
+- [x] Audit komponen yang masih styling ad-hoc di role aktif (`public`, `admin`, `superadmin`).
+- [x] Refactor style berulang ke komponen `src/shared/ui` atau wrapper reusable per fitur.
+- [x] Terapkan token desain dan state style standar pada halaman prioritas (admin/superadmin core pages + public core/section utama selesai; hardcoded dekoratif minor tetap dipertahankan).
 
 ### B2-5 - Data Contract Readiness
 
@@ -100,6 +100,10 @@ Status terakhir diverifikasi pada 2026-02-23.
 - [x] Verifikasi lokal: `npm run build` lulus (masih ada warning chunk > 500kB, non-blocking).
 - [x] Implementasi `B2-2`: route dipusatkan ke `src/app/router/AppRouter.jsx` + `RoleGuard` dengan policy role eksplisit.
 - [x] Implementasi `B2-3`: hapus wrapper/duplikasi legacy non-runtime (`pages`, `components`, `features/pengunjung`, `layouts` lama) dan bersihkan jejak komentar `client/src`.
+- [x] Implementasi bertahap `B2-4`: tambah utility class berbasis token di `src/index.css`, tambah `Button` reusable di `src/shared/ui/button.jsx`, dan migrasi style shell admin/superadmin serta modal validasi ke pola reusable.
+- [x] Lanjutan `B2-4`: migrasi aksi tombol berulang di halaman admin/superadmin core pages ke `Button` reusable + utility class token.
+- [x] Lanjutan `B2-4`: rollout utility class component-based styling ke public core (`Navbar`, `Footer`, CTA/Hero utama, section paket, contact form`) dengan state hover/focus yang konsisten.
+- [x] Finalisasi `B2-4`: rollout lanjutan ke section public `home/services` serta area `contact/paket` untuk konsistensi accent + CTA state style.
 
 ## Definition of Done Batch 2
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Card,
+  Button,
   CardHeader,
   CardContent,
   EmptyState,
@@ -51,7 +52,7 @@ export default function PembayaranAdmin() {
     <div className="space-y-6">
       <div>
         <h2 className="text-xl font-semibold text-[#3b3b3b] tracking-wide">
-          Manajemen <span className="text-[#e2b97f]">Pembayaran</span>
+          Manajemen <span className="siqah-accent-text">Pembayaran</span>
         </h2>
         <p className="text-sm text-[#7a7368]">
           Kelola dan validasi pembayaran konsumen.
@@ -128,13 +129,15 @@ export default function PembayaranAdmin() {
                                   <StatusBadge status={item.status} />
                                 </td>
                                 <td className="py-2 px-3 text-center">
-                                  <button
+                                  <Button
                                     onClick={() => handleOpenModal(item)}
-                                    className="flex items-center gap-1 text-[#e2b97f] hover:text-[#c49b61] mx-auto transition-all"
+                                    variant="ghost"
+                                    size="sm"
+                                    className="mx-auto"
                                   >
                                     <Eye size={16} />
                                     <span className="text-sm">Lihat</span>
-                                  </button>
+                                  </Button>
                                 </td>
                               </tr>
                             ))}

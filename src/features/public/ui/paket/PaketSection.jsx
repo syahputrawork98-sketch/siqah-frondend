@@ -79,10 +79,10 @@ const PaketSection = () => {
                 <p className="text-gray-700 mb-4 text-sm md:text-base">
                   {paket.deskripsi}
                 </p>
-                <p className="text-xl font-bold text-[#B9914D] mb-4">
+                <p className="text-xl font-bold siqah-public-accent mb-4">
                   Rp {paket.harga.toLocaleString("id-ID")}
                 </p>
-                <button className="px-6 py-2 bg-[#45624B] text-white rounded-full hover:bg-[#36503a] transition-colors duration-300">
+                <button className="px-6 py-2 siqah-public-btn">
                   Lihat Detail
                 </button>
               </div>

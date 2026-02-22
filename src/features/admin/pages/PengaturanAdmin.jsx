@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, CardContent, ErrorState, LoadingState } from "@/shared/ui";
+import { Button, Card, CardContent, ErrorState, LoadingState } from "@/shared/ui";
 import { Camera, Save, KeyRound } from "lucide-react";
 import { useAsyncData } from "@/shared/hooks";
 import { fetchAdminProfile } from "@/features/admin/api/adminApi";
@@ -132,20 +132,14 @@ export default function PengaturanAdmin() {
               </div>
 
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-4">
-                <button
-                  type="button"
-                  className="flex items-center gap-2 px-4 py-2 border border-[#e2b97f] text-[#e2b97f] rounded-lg hover:bg-[#e2b97f] hover:text-white transition"
-                >
+                <Button type="button" variant="ghost" className="border border-[#e2b97f]">
                   <KeyRound size={16} />
                   Ubah Password
-                </button>
-                <button
-                  type="submit"
-                  className="flex items-center gap-2 px-6 py-2 bg-[#e2b97f] text-white rounded-lg hover:bg-[#caa268] transition"
-                >
+                </Button>
+                <Button type="submit" variant="primary" size="lg">
                   <Save size={18} />
                   Simpan Perubahan
-                </button>
+                </Button>
               </div>
 
               {success && (

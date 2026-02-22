@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, CardHeader, CardContent } from "@/shared/ui";
+import { Button, Card, CardHeader, CardContent } from "@/shared/ui";
 import { Search, Filter, Eye, CheckCircle, Clock, Package } from "lucide-react";
 
 export default function PesananAdmin() {
@@ -41,7 +41,7 @@ export default function PesananAdmin() {
       {/* Judul halaman */}
       <div>
         <h2 className="text-xl font-semibold text-[#3b3b3b] tracking-wide">
-          Manajemen <span className="text-[#e2b97f]">Pesanan</span>
+          Manajemen <span className="siqah-accent-text">Pesanan</span>
         </h2>
         <p className="text-sm text-[#7a7368]">
           Lihat, filter, dan kelola data pesanan konsumen.
@@ -119,10 +119,10 @@ export default function PesananAdmin() {
                         <StatusBadge status={p.status} />
                       </td>
                       <td className="py-2 px-3 text-center">
-                        <button className="flex items-center gap-1 text-[#e2b97f] hover:text-[#c49b61] mx-auto transition-all">
+                        <Button variant="ghost" size="sm" className="mx-auto">
                           <Eye size={16} />
                           <span className="text-sm">Detail</span>
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                   ))

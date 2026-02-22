@@ -92,7 +92,7 @@ const TimSection = () => {
               <h3 className="text-lg font-cormorant font-bold text-[#45624B] mb-1">
                 {person.nama}
               </h3>
-              <p className="text-sm text-[#B9914D] font-semibold mb-3">
+              <p className="text-sm siqah-public-accent font-semibold mb-3">
                 {person.role}
               </p>
 

@@ -41,15 +41,15 @@ export default function Sidebar() {
       <aside
         className={`fixed z-40 top-0 left-0 h-full w-64 transform transition-transform duration-300 lg:translate-x-0
         ${open ? "translate-x-0" : "-translate-x-full"}
-        bg-white/90 backdrop-blur-md border-r border-[#e7e1d8] shadow-[0_4px_12px_rgba(0,0,0,0.04)] flex flex-col`}
+        siqah-sidebar-shell flex flex-col`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-5 border-b border-[#eee6da] bg-gradient-to-r from-[#fefbf7] to-[#f9f6ef]">
+        <div className="siqah-sidebar-header flex items-center justify-between p-5">
           <h1 className="text-lg font-semibold text-[#3b3b3b] tracking-wide">
-            <span className="text-[#e2b97f] font-bold">Siqah</span> Admin
+            <span className="siqah-accent-text font-bold">Siqah</span> Superadmin
           </h1>
           <button
-            className="lg:hidden p-2 rounded hover:bg-[#f9f6ef]"
+            className="lg:hidden siqah-icon-button"
             onClick={() => setOpen(false)}
           >
             <X size={20} className="text-[#3b3b3b]" />
@@ -66,11 +66,11 @@ export default function Sidebar() {
               <NavLink
                 key={item.name}
                 to={item.path}
-                className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all
+                className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium
                   ${
                     isActive
-                      ? "bg-[#e2b97f]/90 text-white shadow-sm"
-                      : "text-[#3b3b3b] hover:bg-[#f9f6ef] hover:text-[#e2b97f]"
+                      ? "siqah-nav-item-active"
+                      : "siqah-nav-item"
                   }`}
               >
                 <Icon size={18} />
@@ -81,14 +81,14 @@ export default function Sidebar() {
         </nav>
 
         {/* Footer kecil di sidebar */}
-        <div className="p-4 border-t border-[#eee6da] text-xs text-[#7a7368] bg-white/60 text-center">
-          Â© {getCurrentYear()} <span className="font-semibold">Siqah Aqiqah</span>
+        <div className="siqah-sidebar-footer p-4 text-xs text-center">
+          (c) {getCurrentYear()} <span className="font-semibold">Siqah Aqiqah</span>
         </div>
       </aside>
 
       {/* Tombol buka sidebar di layar kecil */}
       <button
-        className="lg:hidden fixed top-4 left-4 z-50 bg-white/90 backdrop-blur-md p-2 rounded-md shadow-md border border-[#e7e1d8]"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md shadow-md border border-[#e7e1d8] siqah-sidebar-shell"
         onClick={() => setOpen(true)}
       >
         <Menu size={20} className="text-[#3b3b3b]" />

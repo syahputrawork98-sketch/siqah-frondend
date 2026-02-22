@@ -39,7 +39,7 @@ export default function Dashboard() {
     >
       <div className="text-center">
         <h1 className="text-3xl font-bold text-[#45624B]">
-          Dashboard <span className="text-[#B9914D]">Superadmin</span>
+          Dashboard <span className="siqah-accent-text">Superadmin</span>
         </h1>
         <p className="text-sm text-[#6f6b5b]">
           Ringkasan aktivitas sistem dan performa operasional Siqah Aqiqah
@@ -64,7 +64,7 @@ export default function Dashboard() {
               colorTo="#F5F0E1"
             />
             <StatCard
-              icon={<ShoppingBag className="text-[#B9914D]" />}
+              icon={<ShoppingBag className="siqah-accent-text" />}
               title="Total Pesanan"
               value={data.totalOrders}
               colorFrom="#FAF6E7"
@@ -78,7 +78,7 @@ export default function Dashboard() {
               colorTo="#F8F4E3"
             />
             <StatCard
-              icon={<Bell className="text-[#B9914D]" />}
+              icon={<Bell className="siqah-accent-text" />}
               title="Notifikasi Baru"
               value={data.newNotifications}
               colorFrom="#F8F4E3"

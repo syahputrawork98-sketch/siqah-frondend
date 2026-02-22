@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Table, Card, CardContent, CardHeader, EmptyState, ErrorState, LoadingState } from "@/shared/ui";
+import { Button, Table, Card, CardContent, CardHeader, EmptyState, ErrorState, LoadingState } from "@/shared/ui";
 import { Eye, CheckCircle2, Clock, XCircle } from "lucide-react";
 import { useAsyncData } from "@/shared/hooks";
 import { fetchMonitoringOrders } from "@/features/superadmin/api/superadminApi";
@@ -33,13 +33,15 @@ export default function Monitoring() {
     {
       header: "Aksi",
       render: (row) => (
-        <button
+        <Button
           onClick={() => setSelectedOrder(row)}
-          className="flex items-center gap-1 text-[#45624B] hover:bg-[#E3EBD2]/60 px-3 py-1.5 rounded-md transition"
+          variant="ghost"
+          size="sm"
+          className="text-[#45624B] hover:bg-[#E3EBD2]/60"
         >
           <Eye size={16} />
           Lihat
-        </button>
+        </Button>
       ),
     },
   ];
@@ -94,12 +96,12 @@ export default function Monitoring() {
           </div>
 
           <div className="flex justify-end mt-6">
-            <button
+            <Button
               onClick={() => setSelectedOrder(null)}
-              className="bg-gradient-to-r from-[#45624B] to-[#B9914D] text-white px-5 py-2 rounded-lg shadow hover:opacity-90 transition"
+              variant="primary"
             >
               Tutup
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -145,9 +147,9 @@ function StageCard({ title, status, detail }) {
         <StatusBadge status={status} />
       </div>
       <p className="text-sm text-gray-500 mb-3">{detail}</p>
-      <button className="text-sm text-[#45624B] hover:text-[#B9914D] font-medium transition">
+      <Button variant="ghost" size="sm" className="text-[#45624B] hover:text-[#B9914D] px-0">
         Lihat Bukti
-      </button>
+      </Button>
     </div>
   );
 }

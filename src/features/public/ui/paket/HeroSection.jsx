@@ -19,7 +19,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-4xl md:text-5xl font-cormorant font-bold mb-4 text-[#B9914D]">
+        <h1 className="text-4xl md:text-5xl font-cormorant font-bold mb-4 siqah-public-accent">
           Pilih Paket Aqiqah Terbaik untuk Keluarga Anda
         </h1>
         <p className="text-lg md:text-xl font-montserrat text-gray-100">

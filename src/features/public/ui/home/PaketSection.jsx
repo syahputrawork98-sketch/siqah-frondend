@@ -102,13 +102,13 @@ const PaketSection = () => {
                 <p className="text-[#45624B]/80 font-montserrat mb-3">
                   {paket.deskripsi}
                 </p>
-                <p className="text-[#B9914D] font-bold mb-4 text-lg">
+                <p className="siqah-public-accent font-bold mb-4 text-lg">
                   {paket.harga}
                 </p>
 
                 <motion.a
                   href="#transaksi"
-                  className="inline-block bg-[#B9914D] hover:bg-[#a37f3e] text-white font-semibold px-6 py-2 rounded-full shadow-md transition"
+                  className="inline-block siqah-public-btn px-6 py-2 shadow-md"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { Card, CardContent, EmptyState, ErrorState, LoadingState } from "@/shared/ui";
+﻿import { useMemo, useState } from "react";
+import { Button, Card, CardContent, EmptyState, ErrorState, LoadingState } from "@/shared/ui";
 import {
   Bell,
   MailOpen,
@@ -170,12 +170,13 @@ export default function LogNotifikasiAdmin() {
                           )}
                         </td>
                         <td className="py-2 px-2">
-                          <button
+                          <Button
                             onClick={() => setSelected(item)}
-                            className="text-[#e2b97f] hover:text-[#c59e63] text-sm font-medium"
+                            variant="ghost"
+                            size="sm"
                           >
                             Lihat
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                     ))}
@@ -190,27 +191,29 @@ export default function LogNotifikasiAdmin() {
       {selected && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl shadow-xl p-6 w-[90%] sm:w-[500px] border border-[#eee6da] relative">
-            <button
+            <Button
               className="absolute top-3 right-3 text-[#a8a093] hover:text-[#3b3b3b]"
+              variant="ghost"
+              size="sm"
               onClick={() => setSelected(null)}
             >
               <X size={18} />
-            </button>
+            </Button>
             <h2 className="text-lg font-semibold text-[#3b3b3b] mb-2">{selected.judul}</h2>
             <p className="text-sm text-[#7a7368] mb-4">
-              {selected.waktu} � <span className="font-medium text-[#e2b97f]">{selected.tipe}</span>
+              {selected.waktu} · <span className="font-medium siqah-accent-text">{selected.tipe}</span>
             </p>
             <p className="text-[#4a4a4a] text-sm leading-relaxed mb-6">{selected.pesan}</p>
             {!selected.status_baca && (
-              <button
+              <Button
                 onClick={() => {
                   markAsRead(selected.id);
                   setSelected((prev) => (prev ? { ...prev, status_baca: true } : prev));
                 }}
-                className="px-4 py-2 bg-[#e2b97f] text-white rounded-lg hover:bg-[#caa268] transition"
+                variant="primary"
               >
                 Tandai Dibaca
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -218,3 +221,4 @@ export default function LogNotifikasiAdmin() {
     </div>
   );
 }
+

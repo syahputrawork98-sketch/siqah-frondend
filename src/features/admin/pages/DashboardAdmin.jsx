@@ -17,7 +17,7 @@ export default function DashboardAdmin() {
       {/* Judul Halaman */}
       <div>
         <h2 className="text-xl font-semibold text-[#3b3b3b] tracking-wide">
-          Selamat Datang, <span className="text-[#e2b97f]">Admin Siqah</span>
+          Selamat Datang, <span className="siqah-accent-text">Admin Siqah</span>
         </h2>
         <p className="text-sm text-[#7a7368]">
           Pantau aktivitas dan data pesanan terkini.
@@ -118,7 +118,7 @@ function StatCard({ icon: Icon, title, value, color }) {
     >
       <div className="flex items-center gap-3 mb-2">
         <div className="p-2 bg-[#e2b97f]/10 rounded-lg">
-          <Icon size={20} className="text-[#e2b97f]" />
+          <Icon size={20} className="siqah-accent-text" />
         </div>
         <p className="text-sm font-medium text-[#7a7368]">{title}</p>
       </div>

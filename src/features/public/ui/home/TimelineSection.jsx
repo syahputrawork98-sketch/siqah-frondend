@@ -13,37 +13,37 @@ const TimelineSection = () => {
   const steps = [
     {
       id: 1,
-      icon: <FiShoppingCart className="text-3xl text-[#B9914D]" />,
+      icon: <FiShoppingCart className="text-3xl siqah-public-accent" />,
       title: "Pemesanan",
       desc: "Konsumen memesan paket aqiqah sesuai kebutuhan dan budget.",
     },
     {
       id: 2,
-      icon: <GiGoat className="text-3xl text-[#B9914D]" />,
+      icon: <GiGoat className="text-3xl siqah-public-accent" />,
       title: "Pemilihan Hewan",
       desc: "Hewan dipilih langsung dari petugas kandang yang terpercaya.",
     },
     {
       id: 3,
-      icon: <FiScissors className="text-3xl text-[#B9914D]" />,
+      icon: <FiScissors className="text-3xl siqah-public-accent" />,
       title: "Pemotongan",
       desc: "Proses penyembelihan dilakukan sesuai syariat Islam.",
     },
     {
       id: 4,
-      icon: <GiCook className="text-3xl text-[#B9914D]" />,
+      icon: <GiCook className="text-3xl siqah-public-accent" />,
       title: "Pengolahan Dapur",
       desc: "Tim dapur menyiapkan hidangan dengan cita rasa terbaik.",
     },
     {
       id: 5,
-      icon: <FiTruck className="text-3xl text-[#B9914D]" />,
+      icon: <FiTruck className="text-3xl siqah-public-accent" />,
       title: "Pengantaran",
       desc: "Pesanan dikirim tepat waktu oleh kurir Siqah ke rumah Anda.",
     },
     {
       id: 6,
-      icon: <FiCheckCircle className="text-3xl text-[#B9914D]" />,
+      icon: <FiCheckCircle className="text-3xl siqah-public-accent" />,
       title: "Selesai",
       desc: "Aqiqah terselenggara dengan lancar, penuh keberkahan. ðŸ¤²",
     },

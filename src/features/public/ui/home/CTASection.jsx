@@ -16,7 +16,7 @@ const CTASection = () => {
       <div className="relative z-10 max-w-4xl mx-auto text-white">
         {/* Judul */}
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-cormorant font-bold text-[#B9914D] mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl font-cormorant font-bold siqah-public-accent mb-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -46,16 +46,10 @@ const CTASection = () => {
           transition={{ delay: 0.6, duration: 1 }}
           viewport={{ once: true }}
         >
-          <a
-            href="#paket"
-            className="bg-[#B9914D] hover:bg-[#a37f3e] text-white font-semibold px-8 py-3 rounded-full shadow-md transition"
-          >
+          <a href="#paket" className="siqah-public-btn px-8 py-3 shadow-md">
             Lihat Paket Aqiqah
           </a>
-          <a
-            href="#kontak"
-            className="bg-[#B9914D] hover:bg-[#a37f3e] text-white font-semibold px-8 py-3 rounded-full shadow-md transition"
-          >
+          <a href="#kontak" className="siqah-public-btn px-8 py-3 shadow-md">
             Konsultasi Sekarang
           </a>
         </motion.div>

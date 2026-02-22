@@ -24,14 +24,14 @@ const CTASection = () => {
         viewport={{ once: true }}
       >
         {/* Judul utama */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#B9914D] drop-shadow-lg">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 siqah-public-accent drop-shadow-lg">
           Siap Memulai Aqiqah Bersama Siqah?
         </h2>
 
         {/* Deskripsi singkat */}
         <p className="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed max-w-2xl mx-auto">
           Wujudkan momen penuh berkah dan kebahagiaan keluarga Anda dengan layanan aqiqah yang 
-          <span className="text-[#B9914D] font-semibold"> amanah, profesional, dan sesuai syariat.</span>
+          <span className="siqah-public-accent font-semibold"> amanah, profesional, dan sesuai syariat.</span>
         </p>
 
         {/* Tombol CTA */}
@@ -40,7 +40,7 @@ const CTASection = () => {
             href="/kontak"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#B9914D] hover:bg-[#a47e3a] text-white px-8 py-3 rounded-xl font-semibold shadow-md transition"
+            className="siqah-public-btn px-8 py-3 rounded-xl shadow-md"
           >
             Konsultasi Sekarang
           </motion.a>
@@ -49,7 +49,7 @@ const CTASection = () => {
             href="/paket"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="border border-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#45624B] transition"
+            className="siqah-public-btn-outline px-8 py-3 rounded-xl"
           >
             Lihat Paket Aqiqah
           </motion.a>

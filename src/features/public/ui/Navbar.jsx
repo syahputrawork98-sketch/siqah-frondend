@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiLogIn } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/shared/ui";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -44,7 +45,7 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   className={`transition-colors duration-300 ${
-                    isActive ? "text-[#B9914D]" : "hover:text-[#B9914D]"
+                    isActive ? "siqah-public-accent" : "siqah-public-link"
                   }`}
                 >
                   {item.name}
@@ -72,9 +73,12 @@ const Navbar = () => {
 
         {/* ========== KANAN: LOGIN & MENU MOBILE ========== */}
         <div className="flex items-center gap-4">
-          <button className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl bg-[#B9914D] text-white font-semibold hover:bg-[#A07E3F] transition-all duration-300">
+          <Button
+            variant="primary"
+            className="hidden lg:flex rounded-xl bg-[#B9914D] hover:bg-[#A07E3F] px-4 py-2"
+          >
             <FiLogIn className="text-lg" /> Login
-          </button>
+          </Button>
 
           {/* Tombol toggle mobile */}
           <button
@@ -115,7 +119,7 @@ const Navbar = () => {
                   to={item.path}
                   onClick={() => setMobileOpen(false)}
                   className={`text-lg ${
-                    isActive ? "text-[#B9914D]" : "hover:text-[#B9914D]"
+                    isActive ? "siqah-public-accent" : "siqah-public-link"
                   }`}
                 >
                   {item.name}
@@ -123,9 +127,12 @@ const Navbar = () => {
               </li>
             );
           })}
-          <button className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[#B9914D] text-white font-semibold hover:bg-[#A07E3F] transition-all duration-300">
+          <Button
+            variant="primary"
+            className="flex rounded-xl bg-[#B9914D] hover:bg-[#A07E3F] px-5 py-2"
+          >
             <FiLogIn className="text-lg" /> Login
-          </button>
+          </Button>
         </motion.ul>
       )}
     </motion.nav>

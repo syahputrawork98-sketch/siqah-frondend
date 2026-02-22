@@ -13,18 +13,18 @@ const ContactInfo = ({ adminData }) => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-2xl font-semibold text-[#B9914D] mb-4">Info Kontak</h2>
+      <h2 className="text-2xl font-semibold siqah-public-accent mb-4">Info Kontak</h2>
       <p className="flex items-center gap-2">
-        <FiMapPin className="text-[#B9914D]" /> {adminData.alamat}
+        <FiMapPin className="siqah-public-accent" /> {adminData.alamat}
       </p>
       <p className="flex items-center gap-2">
-        <FiMail className="text-[#B9914D]" />{" "}
+        <FiMail className="siqah-public-accent" />{" "}
         <a href={`mailto:${adminData.email}`} className="text-[#45624B] underline">
           {adminData.email}
         </a>
       </p>
       <p className="flex items-center gap-2">
-        <FiPhone className="text-[#B9914D]" />{" "}
+        <FiPhone className="siqah-public-accent" />{" "}
         <a href={`tel:${adminData.no_hp}`} className="text-[#45624B] underline">
           {adminData.no_hp}
         </a>

@@ -10,27 +10,27 @@ import {
 
 const advantages = [
   {
-    icon: <FaMosque className="text-4xl text-[#B9914D]" />,
+    icon: <FaMosque className="text-4xl siqah-public-accent" />,
     title: "Sesuai Syariat Islam",
     desc: "Seluruh proses aqiqah dan qurban dilaksanakan dengan tuntunan syariat yang benar dan diawasi langsung oleh ahlinya.",
   },
   {
-    icon: <FaHandsHelping className="text-4xl text-[#B9914D]" />,
+    icon: <FaHandsHelping className="text-4xl siqah-public-accent" />,
     title: "Amanah & Transparan",
     desc: "Setiap tahap dapat dipantau melalui sistem pelacakan Siqah agar pelanggan selalu merasa tenang dan percaya.",
   },
   {
-    icon: <FaShieldAlt className="text-4xl text-[#B9914D]" />,
+    icon: <FaShieldAlt className="text-4xl siqah-public-accent" />,
     title: "Kualitas Terjamin",
     desc: "Dari pemilihan hewan hingga hidangan akhir, semua dilakukan dengan kontrol mutu tinggi untuk hasil terbaik.",
   },
   {
-    icon: <FaUserCheck className="text-4xl text-[#B9914D]" />,
+    icon: <FaUserCheck className="text-4xl siqah-public-accent" />,
     title: "Tim Profesional",
     desc: "Dikelola oleh tenaga ahli dari peternakan, dapur, hingga kurir yang bekerja penuh tanggung jawab.",
   },
   {
-    icon: <FaSmileBeam className="text-4xl text-[#B9914D]" />,
+    icon: <FaSmileBeam className="text-4xl siqah-public-accent" />,
     title: "Kepuasan Pelanggan",
     desc: "Kami berkomitmen memberikan pengalaman aqiqah yang mudah, nyaman, dan penuh keberkahan.",
   },

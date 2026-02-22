@@ -47,16 +47,10 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
-          <a
-            href="#paket"
-            className="bg-[#B9914D] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-[#a6823e] transition"
-          >
+          <a href="#paket" className="siqah-public-btn px-6 py-3 shadow-lg">
             Lihat Paket Aqiqah
           </a>
-          <a
-            href="#kontak"
-            className="border border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white/10 transition"
-          >
+          <a href="#kontak" className="siqah-public-btn-outline px-6 py-3">
             Hubungi Kami
           </a>
         </motion.div>
@@ -95,12 +89,12 @@ const HeroSection = () => {
 
           {/* Floating Badge (di atas segalanya) */}
           <motion.div
-            className="absolute top-4 right-4 bg-[#B9914D] text-white px-4 py-2 rounded-full text-sm shadow-md backdrop-blur-md z-20"
+            className="absolute top-4 right-4 siqah-public-btn px-4 py-2 text-sm shadow-md backdrop-blur-md z-20"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.2, duration: 0.5 }}
           >
-            ðŸ•‹ Amanah & Halal
+            Amanah & Halal
           </motion.div>
         </div>
       </motion.div>

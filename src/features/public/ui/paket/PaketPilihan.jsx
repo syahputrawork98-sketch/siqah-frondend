@@ -35,7 +35,7 @@ const PaketPilihan = () => {
         </motion.p>
 
         <motion.button
-          className="px-8 py-4 bg-[#B9914D] text-[#45624B] font-bold text-lg rounded-full shadow-lg hover:shadow-xl hover:bg-[#d1a759] transition-all duration-300"
+          className="px-8 py-4 siqah-public-btn font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}

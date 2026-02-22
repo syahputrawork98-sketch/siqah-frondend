@@ -23,3 +23,125 @@ body {
     font-family: var(--font-family-body);
 }
 
+/* Shared interaction and shell primitives for dashboard roles */
+.siqah-accent-text {
+    color: var(--color-brand-primary);
+}
+
+.siqah-topbar {
+    background-color: rgb(255 255 255 / 80%);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e7e1d8;
+    box-shadow: var(--shadow-sm);
+}
+
+.siqah-chip {
+    background-color: rgb(255 255 255 / 60%);
+    border: 1px solid var(--color-brand-border-soft);
+    box-shadow: var(--shadow-sm);
+}
+
+.siqah-icon-button {
+    border-radius: 9999px;
+    padding: 0.5rem;
+    transition: all 160ms ease;
+}
+
+.siqah-icon-button:hover {
+    background-color: var(--color-brand-primary-soft);
+}
+
+.siqah-icon-button:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+}
+
+.siqah-link-action {
+    color: var(--color-text-default);
+    transition: color 160ms ease;
+}
+
+.siqah-link-action:hover {
+    color: var(--color-brand-primary);
+}
+
+.siqah-sidebar-shell {
+    background-color: rgb(255 255 255 / 90%);
+    backdrop-filter: blur(12px);
+    border-right: 1px solid #e7e1d8;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 4%);
+}
+
+.siqah-sidebar-header {
+    border-bottom: 1px solid var(--color-brand-border-soft);
+    background: linear-gradient(to right, #fefbf7, #f9f6ef);
+}
+
+.siqah-nav-item {
+    color: var(--color-text-default);
+    transition: all 160ms ease;
+}
+
+.siqah-nav-item:hover {
+    background-color: var(--color-brand-primary-soft);
+    color: var(--color-brand-primary);
+}
+
+.siqah-nav-item-active {
+    background-color: color-mix(in srgb, var(--color-brand-primary) 90%, white);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.siqah-sidebar-footer {
+    border-top: 1px solid var(--color-brand-border-soft);
+    background-color: rgb(255 255 255 / 60%);
+    color: #7a7368;
+}
+
+/* Public-facing brand helpers */
+.siqah-public-accent {
+    color: #b9914d;
+}
+
+.siqah-public-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background-color: #b9914d;
+    color: #fff;
+    font-weight: 600;
+    transition: all 180ms ease;
+}
+
+.siqah-public-btn:hover {
+    background-color: #a37f3e;
+}
+
+.siqah-public-btn:focus-visible {
+    outline: 2px solid #b9914d;
+    outline-offset: 2px;
+}
+
+.siqah-public-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 600;
+    transition: all 180ms ease;
+}
+
+.siqah-public-btn-outline:hover {
+    background-color: rgb(255 255 255 / 12%);
+}
+
+.siqah-public-link:hover {
+    color: #b9914d;
+}
+

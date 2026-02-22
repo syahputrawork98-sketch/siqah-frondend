@@ -1,6 +1,7 @@
 // src/components/contact/ContactForm.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/shared/ui";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ nama: "", email: "", hp: "", pesan: "" });
@@ -71,12 +72,13 @@ const ContactForm = () => {
           onChange={handleChange}
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#45624B]"
         />
-        <button
+        <Button
           type="submit"
-          className="w-full bg-[#45624B] text-white py-2 rounded hover:bg-[#B9914D] transition"
+          variant="primary"
+          className="w-full siqah-public-btn rounded"
         >
           Kirim Pesan
-        </button>
+        </Button>
       </form>
     </motion.div>
   );

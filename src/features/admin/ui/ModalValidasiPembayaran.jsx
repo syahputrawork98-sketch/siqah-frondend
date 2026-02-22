@@ -1,5 +1,6 @@
 import { X, CheckCircle, XCircle } from "lucide-react";
 import { formatCurrencyIdr } from "@/shared/lib";
+import { Button } from "@/shared/ui";
 
 export default function ModalValidasiPembayaran({ data, onClose }) {
   const proofImageUrl = data.buktiUrl || "https://placehold.co/400x250?text=Bukti+Transfer";
@@ -12,9 +13,9 @@ export default function ModalValidasiPembayaran({ data, onClose }) {
           <h2 className="text-lg font-semibold text-[#3b3b3b]">
             Validasi Pembayaran
           </h2>
-          <button onClick={onClose} className="hover:text-[#e2b97f]">
+          <Button variant="ghost" size="sm" onClick={onClose}>
             <X size={20} />
-          </button>
+          </Button>
         </div>
 
         {/* Konten */}
@@ -46,18 +47,15 @@ export default function ModalValidasiPembayaran({ data, onClose }) {
 
         {/* Footer aksi */}
         <div className="flex justify-end gap-3 p-4 border-t border-[#eee6da] bg-[#fefbf7] rounded-b-xl">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 text-sm text-[#3b3b3b] hover:text-[#e2b97f] transition"
-          >
+          <Button variant="ghost" onClick={onClose}>
             Batal
-          </button>
-          <button className="flex items-center gap-1 px-4 py-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg text-sm font-medium transition">
+          </Button>
+          <Button variant="danger">
             <XCircle size={16} /> Tolak
-          </button>
-          <button className="flex items-center gap-1 px-4 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg text-sm font-medium transition">
+          </Button>
+          <Button variant="success">
             <CheckCircle size={16} /> Setujui
-          </button>
+          </Button>
         </div>
       </div>
     </div>

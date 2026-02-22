@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Table,
   Modal,
+  Button,
   Card,
   CardContent,
   CardHeader,
@@ -57,12 +58,12 @@ export default function DataMaster() {
 
   const ActionButtons = () => (
     <div className="flex gap-2 justify-center">
-      <button className="p-1.5 text-[#45624B] hover:bg-[#E3EBD2] rounded-md transition">
+      <Button variant="ghost" size="sm" className="p-1.5 text-[#45624B] hover:bg-[#E3EBD2]">
         <Edit2 size={16} />
-      </button>
-      <button className="p-1.5 text-[#B9914D] hover:bg-[#FAF6E7] rounded-md transition">
+      </Button>
+      <Button variant="ghost" size="sm" className="p-1.5 text-[#B9914D] hover:bg-[#FAF6E7]">
         <Trash2 size={16} />
-      </button>
+      </Button>
     </div>
   );
 
@@ -94,13 +95,13 @@ export default function DataMaster() {
           </div>
 
           <div className="flex justify-end mb-4">
-            <button
+            <Button
               onClick={handleAdd}
-              className="flex items-center gap-2 bg-gradient-to-r from-[#45624B] to-[#B9914D] text-white px-4 py-2 rounded-lg shadow hover:opacity-90 transition"
+              variant="primary"
             >
               <PlusCircle size={18} />
               Tambah Data
-            </button>
+            </Button>
           </div>
 
           {isLoading ? (
@@ -138,19 +139,20 @@ export default function DataMaster() {
           </div>
 
           <div className="flex justify-end gap-2 pt-4">
-            <button
+            <Button
               type="button"
               onClick={() => setIsModalOpen(false)}
-              className="px-4 py-2 border border-[#e7e1d8] rounded-lg text-[#45624B] hover:bg-[#F8F4E3] transition"
+              variant="ghost"
+              className="border border-[#e7e1d8] text-[#45624B] hover:bg-[#F8F4E3]"
             >
               Batal
-            </button>
-            <button
+            </Button>
+            <Button
               type="submit"
-              className="bg-gradient-to-r from-[#45624B] to-[#B9914D] text-white px-5 py-2 rounded-lg shadow hover:opacity-90 transition"
+              variant="primary"
             >
               Simpan
-            </button>
+            </Button>
           </div>
         </form>
       </Modal>

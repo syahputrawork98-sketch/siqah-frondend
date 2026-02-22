@@ -45,7 +45,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-cormorant font-bold text-[#B9914D] mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-cormorant font-bold siqah-public-accent mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -63,7 +63,7 @@ const AboutSection = () => {
             menjalankan aqiqah dengan mudah, amanah, dan penuh keberkahan.
             <br />
             <br />
-            Sejak tahun <span className="text-[#B9914D] font-semibold">2025</span> di Bandung,
+            Sejak tahun <span className="siqah-public-accent font-semibold">2025</span> di Bandung,
             kami berkomitmen menghadirkan layanan aqiqah yang praktis, syarâ€™i, dan berkesan â€”
             mulai dari perawatan hewan, proses penyembelihan sesuai sunnah, hingga pengantaran
             hidangan terbaik untuk keluarga Anda.
@@ -75,10 +75,7 @@ const AboutSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <a
-              href="#tentang"
-              className="bg-[#B9914D] hover:bg-[#a37f3e] text-white font-semibold px-6 py-3 rounded-full shadow-md transition"
-            >
+            <a href="#tentang" className="siqah-public-btn px-6 py-3 shadow-md">
               Baca Lebih Lanjut
             </a>
           </motion.div>

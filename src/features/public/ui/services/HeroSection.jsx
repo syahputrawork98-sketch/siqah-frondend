@@ -25,13 +25,13 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-[#B9914D] drop-shadow-xl">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight siqah-public-accent drop-shadow-xl">
             Layanan Aqiqah & Qurban Terpadu
           </h1>
 
           <p className="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed">
             Siqah menghadirkan sistem layanan{" "}
-            <span className="text-[#B9914D] font-semibold">terintegrasi</span> â€” 
+            <span className="siqah-public-accent font-semibold">terintegrasi</span> - 
             mulai dari pemilihan hewan di kandang, pengolahan di dapur, hingga pengantaran oleh kurir terpercaya.
           </p>
 
@@ -40,7 +40,7 @@ const HeroSection = () => {
               href="#layanan"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#B9914D] hover:bg-[#a47e3a] text-white px-6 py-3 rounded-xl font-semibold shadow-md transition"
+              className="siqah-public-btn px-6 py-3 rounded-xl shadow-md"
             >
               Jelajahi Layanan
             </motion.a>
@@ -49,7 +49,7 @@ const HeroSection = () => {
               href="/paket"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="border border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#45624B] transition"
+              className="siqah-public-btn-outline px-6 py-3 rounded-xl"
             >
               Lihat Paket
             </motion.a>
@@ -68,7 +68,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.1 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="text-6xl text-[#B9914D] mb-3">
+            <div className="text-6xl siqah-public-accent mb-3">
               <GiGoat />
             </div>
             <h4 className="font-semibold text-lg">Peternakan Amanah</h4>
@@ -82,7 +82,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.1 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="text-6xl text-[#B9914D] mb-3">
+            <div className="text-6xl siqah-public-accent mb-3">
               <GiCookingPot />
             </div>
             <h4 className="font-semibold text-lg">Dapur Profesional</h4>
@@ -96,7 +96,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.1 }}
             className="flex flex-col items-center text-center"
           >
-            <div className="text-6xl text-[#B9914D] mb-3">
+            <div className="text-6xl siqah-public-accent mb-3">
               <GiDeliveryDrone />
             </div>
             <h4 className="font-semibold text-lg">Pengantaran Tepat Waktu</h4>

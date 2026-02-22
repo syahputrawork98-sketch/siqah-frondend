@@ -4,22 +4,22 @@ import { FaMapMarkedAlt, FaChartLine, FaBoxOpen, FaGift } from "react-icons/fa";
 
 const services = [
     {
-        icon: <FaMapMarkedAlt className="text-4xl text-[#B9914D]" />,
+        icon: <FaMapMarkedAlt className="text-4xl siqah-public-accent" />,
         title: "Teknologi Pelacakan Canggih",
         desc: "Pantau setiap tahap proses aqiqah dan qurban secara real-time melalui sistem tracking Siqah.",
     },
     {
-        icon: <FaChartLine className="text-4xl text-[#B9914D]" />,
+        icon: <FaChartLine className="text-4xl siqah-public-accent" />,
         title: "Laporan Proses Otomatis",
         desc: "Dapatkan pembaruan singkat dari perjalanan proses aqiqah Anda, mulai dari pemotongan hingga pengiriman.",
     },
     {
-        icon: <FaBoxOpen className="text-4xl text-[#B9914D]" />,
+        icon: <FaBoxOpen className="text-4xl siqah-public-accent" />,
         title: "Paket Sesuai Kebutuhan",
         desc: "Pilih berbagai paket aqiqah lengkap yang dapat disesuaikan dengan kebutuhan dan anggaran keluarga Anda.",
     },
     {
-        icon: <FaGift className="text-4xl text-[#B9914D]" />,
+        icon: <FaGift className="text-4xl siqah-public-accent" />,
         title: "Bonus & Hadiah Tambahan",
         desc: "Nikmati bonus menarik seperti mukena, sajadah, dan perlengkapan ibadah sebagai bentuk apresiasi dari Siqah.",
     },

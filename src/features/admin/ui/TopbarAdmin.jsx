@@ -15,12 +15,12 @@ export default function TopbarAdmin() {
   return (
     <header
       className="flex items-center justify-between px-6 py-3 
-      bg-white/80 backdrop-blur-md border-b border-[#e7e1d8] shadow-sm"
+      siqah-topbar"
     >
       {/* Kiri - Judul halaman */}
       <div>
         <h2 className="text-lg font-semibold text-[#3b3b3b] tracking-wide">
-          Panel <span className="text-[#e2b97f]">Admin</span>
+          Panel <span className="siqah-accent-text">Admin</span>
         </h2>
       </div>
 
@@ -30,12 +30,9 @@ export default function TopbarAdmin() {
         <div className="relative">
           <button
             onClick={() => setOpenNotif((prev) => !prev)}
-            className="relative p-2 rounded-full hover:bg-[#f9f6ef] transition-all"
+            className="relative siqah-icon-button"
           >
-            <Bell
-              size={20}
-              className="text-[#3b3b3b] hover:text-[#e2b97f] transition"
-            />
+            <Bell size={20} className="text-[#3b3b3b] transition" />
             <span
               className="absolute -top-0.5 -right-0.5 bg-[#e2b97f] text-white
               text-[10px] font-semibold rounded-full px-1.5 shadow-sm"
@@ -49,7 +46,7 @@ export default function TopbarAdmin() {
         </div>
 
         {/* ðŸ‘¤ Profil */}
-        <div className="flex items-center gap-3 bg-white/60 rounded-full px-3 py-1 border border-[#eee6da] shadow-sm">
+        <div className="siqah-chip flex items-center gap-3 rounded-full px-3 py-1">
           <img
             src={admin.avatar}
             alt="avatar"
@@ -63,7 +60,7 @@ export default function TopbarAdmin() {
 
         {/* ðŸšª Logout */}
         <button
-          className="flex items-center gap-1 text-[#3b3b3b] hover:text-[#e2b97f] transition-all"
+          className="siqah-link-action flex items-center gap-1"
           onClick={() => console.log("Logout clicked")}
         >
           <LogOut size={18} />

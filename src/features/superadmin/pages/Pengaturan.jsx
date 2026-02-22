@@ -115,7 +115,7 @@ export default function Pengaturan() {
                     <div>
                       <h3 className="text-lg font-semibold text-[#45624B]">{profil.nama}</h3>
                       <p className="text-gray-600 text-sm">{profil.email}</p>
-                      <p className="text-[#B9914D] text-xs italic">{profil.role}</p>
+                      <p className="siqah-accent-text text-xs italic">{profil.role}</p>
                     </div>
                   </div>
 

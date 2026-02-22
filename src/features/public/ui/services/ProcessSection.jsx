@@ -10,27 +10,27 @@ import {
 
 const processes = [
   {
-    icon: <GiGoat className="text-5xl text-[#B9914D]" />,
+    icon: <GiGoat className="text-5xl siqah-public-accent" />,
     title: "Pemilihan Hewan",
     desc: "Konsumen memilih hewan terbaik dari peternakan Siqah yang sehat dan terverifikasi.",
   },
   {
-    icon: <GiMeatCleaver className="text-5xl text-[#B9914D]" />,
+    icon: <GiMeatCleaver className="text-5xl siqah-public-accent" />,
     title: "Pemotongan Sesuai Syariat",
     desc: "Proses penyembelihan dilakukan oleh juru sembelih bersertifikat sesuai tuntunan syariat Islam.",
   },
   {
-    icon: <GiCookingPot className="text-5xl text-[#B9914D]" />,
+    icon: <GiCookingPot className="text-5xl siqah-public-accent" />,
     title: "Pengolahan di Dapur Siqah",
     desc: "Daging diolah oleh tim dapur profesional menjadi hidangan lezat dan higienis.",
   },
   {
-    icon: <GiBoxUnpacking className="text-5xl text-[#B9914D]" />,
+    icon: <GiBoxUnpacking className="text-5xl siqah-public-accent" />,
     title: "Pengemasan Aman",
     desc: "Setiap hidangan dikemas rapi dan higienis agar tetap segar saat diterima.",
   },
   {
-    icon: <GiDeliveryDrone className="text-5xl text-[#B9914D]" />,
+    icon: <GiDeliveryDrone className="text-5xl siqah-public-accent" />,
     title: "Pengantaran ke Lokasi",
     desc: "Pesanan dikirim langsung oleh kurir Siqah dengan sistem pelacakan modern.",
   },
@@ -60,7 +60,7 @@ const ProcessSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#B9914D]">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 siqah-public-accent">
             Proses Layanan Siqah
           </h2>
           <p className="text-lg text-gray-100 max-w-2xl mx-auto leading-relaxed">

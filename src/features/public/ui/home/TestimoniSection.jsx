@@ -87,7 +87,7 @@ const TestimoniSection = () => {
           {/* Tombol kiri */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 md:-left-12 text-[#B9914D] hover:text-[#a37f3e] p-3 rounded-full bg-white/70 shadow-md transition"
+            className="absolute left-0 md:-left-12 siqah-public-accent p-3 rounded-full bg-white/70 shadow-md transition"
           >
             <FaChevronLeft size={20} />
           </button>
@@ -126,7 +126,7 @@ const TestimoniSection = () => {
                 </p>
 
                 {/* Rating */}
-                <div className="flex justify-center text-[#B9914D]">
+                <div className="flex justify-center siqah-public-accent">
                   {[...Array(testimonials[index].rating)].map((_, i) => (
                     <FaStar key={i} className="mx-0.5" />
                   ))}
@@ -138,7 +138,7 @@ const TestimoniSection = () => {
           {/* Tombol kanan */}
           <button
             onClick={nextSlide}
-            className="absolute right-0 md:-right-12 text-[#B9914D] hover:text-[#a37f3e] p-3 rounded-full bg-white/70 shadow-md transition"
+            className="absolute right-0 md:-right-12 siqah-public-accent p-3 rounded-full bg-white/70 shadow-md transition"
           >
             <FaChevronRight size={20} />
           </button>

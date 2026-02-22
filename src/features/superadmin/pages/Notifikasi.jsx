@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Table,
+  Button,
   Card,
   CardContent,
   CardHeader,
@@ -79,7 +80,7 @@ export default function Notifikasi() {
               { key: "notifikasi", label: "Notifikasi", icon: <Bell size={16} /> },
               { key: "log", label: "Log Aktivitas", icon: <Activity size={16} /> },
             ].map((item) => (
-              <button
+              <Button
                 key={item.key}
                 onClick={() => setTab(item.key)}
                 className={`relative px-4 py-2 text-sm font-medium flex items-center gap-2 transition ${
@@ -87,19 +88,21 @@ export default function Notifikasi() {
                     ? "text-[#45624B] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-[#45624B] after:to-[#B9914D]"
                     : "text-gray-500 hover:text-[#45624B]"
                 }`}
+                variant="ghost"
+                size="sm"
               >
                 {item.icon}
                 {item.label}
-              </button>
+              </Button>
             ))}
           </div>
 
           {tab === "notifikasi" && (
             <div className="flex justify-end mb-3">
-              <button className="flex items-center gap-2 text-[#B9914D] hover:text-[#45624B] text-sm font-medium">
+              <Button variant="ghost" size="sm" className="text-[#B9914D] hover:text-[#45624B]">
                 <Trash2 size={16} />
                 Hapus Semua
-              </button>
+              </Button>
             </div>
           )}
 

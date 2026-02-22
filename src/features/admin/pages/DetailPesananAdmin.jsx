@@ -4,6 +4,7 @@ import {
   Card,
   CardHeader,
   CardContent,
+  Button,
   EmptyState,
   ErrorState,
   LoadingState,
@@ -34,17 +35,17 @@ export default function DetailPesananAdmin() {
 
   return (
     <div className="space-y-6">
-      <button
+      <Button
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-[#3b3b3b] hover:text-[#e2b97f] transition-all"
+        variant="ghost"
       >
         <ArrowLeft size={18} />
         <span className="text-sm font-medium">Kembali</span>
-      </button>
+      </Button>
 
       <div>
         <h2 className="text-xl font-semibold text-[#3b3b3b] tracking-wide">
-          Detail <span className="text-[#e2b97f]">Pesanan</span>
+          Detail <span className="siqah-accent-text">Pesanan</span>
         </h2>
         <p className="text-sm text-[#7a7368]">ID Pesanan: <strong>{id}</strong></p>
       </div>
@@ -80,7 +81,7 @@ export default function DetailPesananAdmin() {
           <Card className="bg-white/80 backdrop-blur-md border border-[#eee6da] shadow-sm">
             <CardHeader>
               <h3 className="text-lg font-semibold flex items-center gap-2 text-[#3b3b3b]">
-                <User size={18} className="text-[#e2b97f]" /> Data Konsumen
+                <User size={18} className="siqah-accent-text" /> Data Konsumen
               </h3>
             </CardHeader>
             <CardContent className="text-sm text-[#3b3b3b] space-y-1">
@@ -93,7 +94,7 @@ export default function DetailPesananAdmin() {
           <Card className="bg-white/80 backdrop-blur-md border border-[#eee6da] shadow-sm">
             <CardHeader>
               <h3 className="text-lg font-semibold flex items-center gap-2 text-[#3b3b3b]">
-                <CreditCard size={18} className="text-[#e2b97f]" /> Pembayaran
+                <CreditCard size={18} className="siqah-accent-text" /> Pembayaran
               </h3>
             </CardHeader>
             <CardContent className="text-sm text-[#3b3b3b] space-y-2">
@@ -118,7 +119,7 @@ export default function DetailPesananAdmin() {
           <Card className="bg-white/80 backdrop-blur-md border border-[#eee6da] shadow-sm">
             <CardHeader>
               <h3 className="text-lg font-semibold flex items-center gap-2 text-[#3b3b3b]">
-                <Package size={18} className="text-[#e2b97f]" /> Progress Pesanan
+                <Package size={18} className="siqah-accent-text" /> Progress Pesanan
               </h3>
             </CardHeader>
             <CardContent className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -129,11 +130,11 @@ export default function DetailPesananAdmin() {
                 >
                   <div className="flex items-center gap-2 text-[#3b3b3b] font-medium mb-2">
                     {idx === 0 ? (
-                      <Camera size={16} className="text-[#e2b97f]" />
+                      <Camera size={16} className="siqah-accent-text" />
                     ) : idx === 1 ? (
-                      <Utensils size={16} className="text-[#e2b97f]" />
+                      <Utensils size={16} className="siqah-accent-text" />
                     ) : (
-                      <Truck size={16} className="text-[#e2b97f]" />
+                      <Truck size={16} className="siqah-accent-text" />
                     )}
                     {p.tahap}
                   </div>
