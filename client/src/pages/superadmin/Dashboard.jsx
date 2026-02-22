@@ -1,5 +1,4 @@
 // client/src/pages/superadmin/Dashboard.jsx
-import { useEffect, useState } from "react";
 import { Users, ShoppingBag, CreditCard, Bell } from "lucide-react";
 import { Card, CardContent } from "../../components/ui/Card";
 import {
@@ -12,13 +11,13 @@ import {
 } from "recharts";
 
 export default function Dashboard() {
-  const [stats, setStats] = useState({
+  const stats = {
     totalUsers: 120,
     totalOrders: 87,
     waitingPayments: 5,
     totalRevenue: 22500000,
     newNotifications: 4,
-  });
+  };
 
   const dataChart = [
     { name: "Total Pesanan", value: stats.totalOrders },

@@ -4,6 +4,21 @@ Siqah Akikah adalah layanan akikah terpercaya dari Bandung sejak 2025, dengan fo
 
 Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan tim untuk skala project yang lebih besar.
 
+## Progress Log
+
+### 2026-02-23
+- [x] Membuat dokumentasi tim: `docs/ARCHITECTURE.md` dan `docs/CONTRIBUTING.md`.
+- [x] Merapikan `README.md` agar fokus sebagai onboarding + index dokumentasi.
+- [x] Fix baseline awal: syntax JSX invalid pada beberapa file pengunjung.
+- [x] Fix baseline awal: perbaikan penggunaan komponen `Modal` di tugas petugas kandang.
+- [x] Fix baseline awal: membersihkan link menu ke route yang belum tersedia.
+- [x] Menyamakan path navbar/footer publik ke lowercase sesuai route utama.
+- [x] Dependency project berhasil diinstall ulang (`npm install`).
+- [x] `npm run build` berhasil (Vite build sukses, ada warning ukuran bundle > 500kB).
+- [x] `npm run lint` berhasil setelah perbaikan konfigurasi dan cleanup unused code.
+- [x] Validasi ulang `npm run build` berhasil setelah fix lint.
+- [ ] Masih ada warning non-blocking di build: ukuran bundle > 500kB dan warning CSS `@property`.
+
 ## Tujuan Refactor
 
 - [ ] Migrasi bertahap dari struktur lama di folder `client/` ke root project `siqah-frondend/`.
@@ -64,9 +79,9 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 ## Roadmap Migrasi (Bertahap)
 
 ### Phase 0 - Baseline Stabilization
-- [ ] Perbaiki syntax error dan broken route.
-- [ ] Pastikan `npm run build` dan `npm run lint` lolos di baseline.
-- [ ] Inventaris area yang masih dummy data.
+- [x] Perbaiki syntax error dan broken route.
+- [x] Pastikan `npm run build` dan `npm run lint` lolos di baseline.
+- [x] Inventaris area yang masih dummy data.
 
 ### Phase 1 - Foundation di Root
 - [ ] Pindahkan konfigurasi inti dari `client/` ke root (`package`, `vite`, `tailwind`, `eslint`, `index.html`).

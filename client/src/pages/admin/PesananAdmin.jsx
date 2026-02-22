@@ -1,14 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card, CardHeader, CardContent } from "../../components/ui/Card";
 import { Search, Filter, Eye, CheckCircle, Clock, Package } from "lucide-react";
 
 export default function PesananAdmin() {
   const [search, setSearch] = useState("");
   const [filterStatus, setFilterStatus] = useState("Semua");
-  const [dataPesanan, setDataPesanan] = useState([]);
-
-  // Dummy data sementara sebelum koneksi backend
-  const dummyPesanan = [
+  const [dataPesanan] = useState([
     {
       id: "ORD-00123",
       nama: "Ahmad Fauzi",
@@ -30,11 +27,7 @@ export default function PesananAdmin() {
       total: 1500000,
       status: "Selesai",
     },
-  ];
-
-  useEffect(() => {
-    setDataPesanan(dummyPesanan);
-  }, []);
+  ]);
 
   const filteredData = dataPesanan.filter((p) => {
     const matchSearch = p.nama.toLowerCase().includes(search.toLowerCase());

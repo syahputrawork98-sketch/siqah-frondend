@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Card, CardHeader, CardContent } from "../../components/ui/Card";
 import {
   ArrowLeft,
@@ -13,9 +13,8 @@ import {
 } from "lucide-react";
 
 export default function DetailPesananAdmin() {
-  const { id } = useParams();
+  const { id: _id } = useParams();
   const navigate = useNavigate();
-  const [pesanan, setPesanan] = useState(null);
 
   // Dummy data sementara sebelum koneksi ke backend
   const dummyDetail = {
@@ -55,11 +54,7 @@ export default function DetailPesananAdmin() {
       },
     ],
   };
-
-  useEffect(() => {
-    // nanti diganti fetch(`/api/admin/pesanan/${id}`)
-    setPesanan(dummyDetail);
-  }, [id]);
+  const [pesanan] = useState(dummyDetail);
 
   if (!pesanan)
     return (

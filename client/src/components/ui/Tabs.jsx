@@ -1,7 +1,5 @@
 // client/src/components/ui/Tabs.jsx
-import { useState } from "react";
-
-export function Tabs({ value, onValueChange, children }) {
+export function Tabs({ children }) {
   return <div>{children}</div>;
 }
 
@@ -28,6 +26,6 @@ export function TabsTrigger({ value, active, children, onClick }) {
   );
 }
 
-export function TabsContent({ value, children }) {
+export function TabsContent({ children }) {
   return <div className="mt-4">{children}</div>;
 }

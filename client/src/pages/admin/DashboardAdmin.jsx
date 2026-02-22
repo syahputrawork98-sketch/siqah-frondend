@@ -1,5 +1,4 @@
 // client/src/pages/admin/DashboardAdmin.jsx
-import { useEffect, useState } from "react";
 import { Card, CardHeader, CardContent } from "../../components/ui/Card";
 import { Package, CheckCircle, Clock, CreditCard } from "lucide-react";
 
@@ -32,12 +31,7 @@ const dummyData = {
 };
 
 export default function DashboardAdmin() {
-  const [data, setData] = useState(dummyData);
-
-  // nanti bisa diganti dengan fetch('/api/admin/dashboard')
-  useEffect(() => {
-    // contoh async fetch data
-  }, []);
+  const data = dummyData;
 
   return (
     <div className="space-y-6">

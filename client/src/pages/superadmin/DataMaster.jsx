@@ -66,7 +66,7 @@ export default function DataMaster() {
     setIsModalOpen(true);
   };
 
-  const ActionButtons = ({ row }) => (
+  const ActionButtons = () => (
     <div className="flex gap-2 justify-center">
       <button className="p-1.5 text-[#45624B] hover:bg-[#E3EBD2] rounded-md transition">
         <Edit2 size={16} />

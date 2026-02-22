@@ -1,5 +1,4 @@
 // client/src/pages/petugas/kandang/DashboardPetugasKandang.jsx
-import { useEffect, useState } from "react";
 import { Card, CardHeader, CardContent } from "../../../components/ui/Card";
 import {
   Home,
@@ -47,11 +46,7 @@ const dummyData = {
 };
 
 export default function DashboardPetugasKandang() {
-  const [data, setData] = useState(dummyData);
-
-  useEffect(() => {
-    // nanti bisa diganti fetch('/api/petugas-kandang/dashboard')
-  }, []);
+  const data = dummyData;
 
   return (
     <div className="space-y-6">
