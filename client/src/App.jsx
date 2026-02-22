@@ -3,17 +3,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Layouts
 import PublicLayout from "@/app/layouts/PublicLayout";
-import SuperadminLayout from "./layouts/SuperadminLayout";
-import AdminLayout from "./layouts/AdminLayout";
+import AdminLayout from "@/app/layouts/AdminLayout";
+import SuperadminLayout from "@/app/layouts/SuperadminLayout";
 import PetugasKandangLayout from "./layouts/PetugasKandangLayout";
 
 // admin Pages
-import DashboardAdmin from "./pages/admin/DashboardAdmin";
-import PesananAdmin from "./pages/admin/PesananAdmin";
-import DetailPesananAdmin from "./pages/admin/DetailPesananAdmin";
-import PembayaranAdmin from "./pages/admin/PembayaranAdmin";
-import LogNotifikasiAdmin from "./pages/admin/LogNotifikasiAdmin";
-import PengaturanAdmin from "./pages/admin/PengaturanAdmin";
+import DashboardAdmin from "@/features/admin/pages/DashboardAdmin";
+import PesananAdmin from "@/features/admin/pages/PesananAdmin";
+import DetailPesananAdmin from "@/features/admin/pages/DetailPesananAdmin";
+import PembayaranAdmin from "@/features/admin/pages/PembayaranAdmin";
+import LogNotifikasiAdmin from "@/features/admin/pages/LogNotifikasiAdmin";
+import PengaturanAdmin from "@/features/admin/pages/PengaturanAdmin";
 
 //Data Master entitas
 import Data from "./pages/data-master/DashboardData"; //import
@@ -52,13 +52,13 @@ import PengaturanPetugasKandang from "./pages/petugas/kandang/PengaturanPetugasK
 
 
 // Superadmin Pages
-import Dashboard from "./pages/superadmin/Dashboard";
- import DataMaster from "./pages/superadmin/DataMaster";
- import Users from "./pages/superadmin/Users";
- import Monitoring from "./pages/superadmin/Monitoring";
- import Laporan from "./pages/superadmin/Laporan";
- import Pengaturan from "./pages/superadmin/Pengaturan";
- import Notifikasi from "./pages/superadmin/Notifikasi";
+import Dashboard from "@/features/superadmin/pages/Dashboard";
+ import DataMaster from "@/features/superadmin/pages/DataMaster";
+ import Users from "@/features/superadmin/pages/Users";
+ import Monitoring from "@/features/superadmin/pages/Monitoring";
+ import Laporan from "@/features/superadmin/pages/Laporan";
+ import Pengaturan from "@/features/superadmin/pages/Pengaturan";
+ import Notifikasi from "@/features/superadmin/pages/Notifikasi";
 
 // Public Pages
 import Home from "@/features/public/pages/Home";

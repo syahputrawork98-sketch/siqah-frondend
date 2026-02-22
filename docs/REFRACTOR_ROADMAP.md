@@ -30,6 +30,10 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Menambahkan `client/src/app/layouts/PublicLayout.jsx` sebagai layout publik di layer `app`.
 - [x] Menjaga compatibility selama transisi: file legacy `pages/pengunjung/*` dan `components/pengunjung/{Navbar,Footer}` menjadi wrapper ke module baru.
 - [x] Standardisasi naming clean code: istilah module dari `pengunjung` diganti menjadi `public`.
+- [x] Melanjutkan Phase 3: migrasi fitur `admin` ke struktur baru `client/src/features/admin` (pages + ui) dan layout admin ke `client/src/app/layouts/AdminLayout.jsx`.
+- [x] Menjaga compatibility selama transisi: file legacy `pages/admin/*`, `components/admin/*`, dan `layouts/AdminLayout.jsx` menjadi wrapper ke module baru.
+- [x] Melanjutkan Phase 3: migrasi fitur `superadmin` ke struktur baru `client/src/features/superadmin` (pages + ui) dan layout superadmin ke `client/src/app/layouts/SuperadminLayout.jsx`.
+- [x] Menjaga compatibility selama transisi: file legacy `pages/superadmin/*`, `components/superadmin/*`, dan `layouts/SuperadminLayout.jsx` menjadi wrapper ke module baru.
 
 ## Tujuan Refactor
 
@@ -107,8 +111,8 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 
 ### Phase 3 - Feature-by-Feature Migration
 - [x] Migrasi `pengunjung` ke struktur baru.
-- [ ] Migrasi `admin`.
-- [ ] Migrasi `superadmin`.
+- [x] Migrasi `admin`.
+- [x] Migrasi `superadmin`.
 - [ ] Migrasi `petugas-kandang`.
 - [ ] Tiap fitur: move -> fix import -> test -> build.
 
