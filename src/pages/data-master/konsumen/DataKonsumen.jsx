@@ -1,2 +1,0 @@
-﻿export { default } from "@/features/admin/pages/data-master/konsumen/DataKonsumen";
-

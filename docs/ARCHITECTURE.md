@@ -107,3 +107,9 @@ Selama masa transisi:
 - Source aktif berada di `src`.
 - Struktur target dibangun paralel di root.
 - Migrasi dilakukan per fitur agar aman.
+
+### Catatan Boundary Data Master Admin (Batch 2)
+
+- Source of truth halaman admin data master berada di `src/features/admin/pages/data-master`.
+- `src/pages/data-master` dipertahankan sementara sebagai compatibility layer (re-export) untuk menjaga backward compatibility import lama.
+- Route runtime admin harus mengimpor dari `features/admin`, bukan langsung dari `pages/data-master`.

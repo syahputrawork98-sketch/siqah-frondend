@@ -32,4 +32,26 @@ export default defineConfig([
       ],
     },
   },
+  {
+    files: ["src/features/**/*.{js,jsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: ["@/app/*"],
+        },
+      ],
+    },
+  },
+  {
+    files: ["src/shared/**/*.{js,jsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: ["@/app/*", "@/features/*", "@/entities/*", "@/widgets/*"],
+        },
+      ],
+    },
+  },
 ]);

@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/shared/ui";
 import {
   CreditCard,
   CheckCircle,
@@ -206,5 +206,8 @@ export default function DashboardPembayaran() {
     </div>
   );
 }
+
+
+
 
 

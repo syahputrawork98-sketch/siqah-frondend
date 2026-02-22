@@ -1,7 +1,6 @@
 ﻿import { useState, useEffect } from "react";
 import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/Card";
-import Modal from "@/components/ui/Modal";
+import { Card, CardContent, Modal } from "@/shared/ui";
 
 export default function DataPetugasDapur() {
   const [dataPetugas, setDataPetugas] = useState([]);
@@ -322,4 +321,7 @@ export default function DataPetugasDapur() {
     </div>
   );
 }
+
+
+
 

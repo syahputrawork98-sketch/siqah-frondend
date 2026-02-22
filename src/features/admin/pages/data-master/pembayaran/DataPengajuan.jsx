@@ -1,8 +1,6 @@
 ﻿import { useState, useEffect } from "react";
 import { Eye, Pencil, Trash2 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/Card";
-import Modal from "@/components/ui/Modal";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
+import { Card, CardContent, Modal, Tabs, TabsList, TabsTrigger, TabsContent } from "@/shared/ui";
 
 export default function DataPengajuan() {
   const [dataPengajuan, setDataPengajuan] = useState([]);
@@ -278,5 +276,8 @@ export default function DataPengajuan() {
     </div>
   );
 }
+
+
+
 
 

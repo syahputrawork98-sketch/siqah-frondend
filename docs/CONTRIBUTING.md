@@ -17,7 +17,7 @@ Format rekomendasi:
 
 Contoh:
 - `refactor(admin): split payment table into feature modules`
-- `fix(pengunjung): correct invalid overlay JSX`
+- `fix(public): correct invalid overlay JSX`
 - `docs(architecture): add layer dependency rules`
 
 Type yang dipakai:

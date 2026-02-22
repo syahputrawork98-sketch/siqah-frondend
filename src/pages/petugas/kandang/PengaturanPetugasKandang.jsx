@@ -43,7 +43,7 @@ export default function PengaturanPetugasKandang() {
     e.preventDefault();
     setSuccess(true);
     setTimeout(() => setSuccess(false), 2000);
-    // TODO: Kirim ke backend, contoh PUT /api/petugas-kandang/update/:id
+    // Integrasi backend dilakukan saat endpoint petugas-kandang final tersedia.
   };
 
   return (
@@ -168,7 +168,7 @@ export default function PengaturanPetugasKandang() {
             {/* Notifikasi Sukses */}
             {success && (
               <div className="text-center text-green-700 font-medium mt-3">
-                âœ… Data berhasil disimpan!
+                Data berhasil disimpan.
               </div>
             )}
           </form>

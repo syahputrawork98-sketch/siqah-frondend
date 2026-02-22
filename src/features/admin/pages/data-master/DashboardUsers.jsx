@@ -1,6 +1,6 @@
 ﻿// .jsx
 import { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/shared/ui";
 import {
   Users,
   Truck,
@@ -201,5 +201,8 @@ export default function DashboardUsers
     </div>
   );
 }
+
+
+
 
 

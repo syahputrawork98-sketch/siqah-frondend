@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/shared/ui";
 import {
   Warehouse,
   Drumstick,
@@ -208,5 +208,8 @@ export default function DashboardData() {
     </div>
   );
 }
+
+
+
 
 

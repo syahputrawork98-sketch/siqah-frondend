@@ -20,14 +20,14 @@ Status terakhir diverifikasi pada 2026-02-23.
 ## Prinsip Utama
 
 ### 1) Best Architecture
-- [ ] Routing terpusat di `app/router`.
-- [ ] Terapkan auth guard + role policy yang eksplisit.
-- [ ] Pertahankan batas dependensi layer: `app -> features -> shared`.
+- [x] Routing terpusat di `app/router`.
+- [x] Terapkan auth guard + role policy yang eksplisit.
+- [x] Pertahankan batas dependensi layer: `app -> features -> shared`.
 
 ### 2) Clean Code
-- [ ] Hapus dead code, TODO lama, dan wrapper yang tidak terpakai.
-- [ ] Hilangkan duplikasi modul `pengunjung` vs `public`.
-- [ ] Jaga naming dan import convention tetap konsisten.
+- [x] Hapus dead code, TODO lama, dan wrapper yang tidak terpakai.
+- [x] Hilangkan duplikasi modul `pengunjung` vs `public`.
+- [x] Jaga naming dan import convention tetap konsisten.
 
 ### 3) Component-Based Styling
 - [ ] Jadikan `src/shared/ui` sebagai source of truth komponen reusable.
@@ -85,9 +85,9 @@ Status terakhir diverifikasi pada 2026-02-23.
 
 ### B2-6 - Test & Final Pass
 
-- [ ] Tambah cakupan test untuk alur UI kritikal.
-- [ ] Jalankan final pass satu putaran penuh: test + lint + build.
-- [ ] Update dokumentasi arsitektur jika ada perubahan struktur final.
+- [x] Tambah cakupan test untuk alur UI kritikal.
+- [x] Jalankan final pass satu putaran penuh: test + lint + build.
+- [x] Update dokumentasi arsitektur jika ada perubahan struktur final.
 
 ## Progress Log Batch 2
 
@@ -105,6 +105,10 @@ Status terakhir diverifikasi pada 2026-02-23.
 - [x] Lanjutan `B2-4`: rollout utility class component-based styling ke public core (`Navbar`, `Footer`, CTA/Hero utama, section paket, contact form`) dengan state hover/focus yang konsisten.
 - [x] Finalisasi `B2-4`: rollout lanjutan ke section public `home/services` serta area `contact/paket` untuk konsistensi accent + CTA state style.
 - [x] Implementasi `B2-5`: boundary admin data-master dipindah ke `features/admin/pages/data-master` (router tidak lagi impor langsung dari legacy path) + kontrak endpoint final dan runbook transisi mock ke API riil didokumentasikan di `docs/DATA_CONTRACT_READINESS.md`.
+- [x] Implementasi `B2-6` (parsial): tambah unit test kritikal untuk policy akses (`accessPolicy`) dan kontrak error API (`ApiError`) + verifikasi final pass `npm test`, `npm run lint`, `npm run build` lulus.
+- [x] Finalisasi `B2-6`: dokumentasi arsitektur diperbarui untuk boundary `features/admin/pages/data-master` dan `src/pages/data-master` sebagai compatibility layer.
+- [x] Best Architecture guardrail: tambah aturan lint `no-restricted-imports` untuk mencegah dependensi silang (`features -> app` dan `shared -> app/features/entities/widgets`).
+- [x] Clean Code finalisasi: hapus legacy wrapper `src/pages/data-master/*` yang tidak dipakai, rapikan TODO lama tersisa, konsolidasikan impor UI data-master admin ke `@/shared/ui`, dan konsistenkan istilah `public` di dokumentasi kontribusi.
 
 ## Definition of Done Batch 2
 

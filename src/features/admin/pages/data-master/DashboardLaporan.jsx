@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/shared/ui";
 import {
   Receipt,
   CreditCard,
@@ -284,5 +284,8 @@ export default function DashboardLaporan() {
     </div>
   );
 }
+
+
+
 
 
