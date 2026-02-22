@@ -21,7 +21,6 @@ const menuItems = [
     icon: ClipboardList,
     children: [
       { name: "Daftar Tugas", path: "/petugas-kandang/tugas" },
-      { name: "Riwayat Proses", path: "/petugas-kandang/riwayat" },
     ],
   },
   {
@@ -29,7 +28,6 @@ const menuItems = [
     icon: PawPrint,
     children: [
       { name: "Hewan Tersedia", path: "/petugas-kandang/hewan" },
-      { name: "Kandang Saya", path: "/petugas-kandang/kandang" },
     ],
   },
   { name: "Laporan", icon: BarChart3, path: "/petugas-kandang/laporan" },

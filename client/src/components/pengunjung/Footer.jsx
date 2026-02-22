@@ -63,22 +63,22 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/Tentang" className="hover:text-[#B9914D] transition-colors duration-300">
+              <Link to="/tentang" className="hover:text-[#B9914D] transition-colors duration-300">
                 Tentang Kami
               </Link>
             </li>
             <li>
-              <Link to="/Layanan" className="hover:text-[#B9914D] transition-colors duration-300">
+              <Link to="/layanan" className="hover:text-[#B9914D] transition-colors duration-300">
                 Layanan
               </Link>
             </li>
             <li>
-              <Link to="/Paket" className="hover:text-[#B9914D] transition-colors duration-300">
+              <Link to="/paket" className="hover:text-[#B9914D] transition-colors duration-300">
                 Paket
               </Link>
             </li>
             <li>
-              <Link to="/Kontak" className="hover:text-[#B9914D] transition-colors duration-300">
+              <Link to="/kontak" className="hover:text-[#B9914D] transition-colors duration-300">
                 Kontak
               </Link>
             </li>

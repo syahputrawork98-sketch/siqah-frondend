@@ -39,7 +39,7 @@ const PaketSection = () => {
       }}
     >
       {/* Overlay gradasi lembut */}
-      <  div className="absolute inset-0 bg-gradient-to-b from-white/20 via-[#45624B]/20 to-white/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-[#45624B]/20 to-white/40" />
 
 
 

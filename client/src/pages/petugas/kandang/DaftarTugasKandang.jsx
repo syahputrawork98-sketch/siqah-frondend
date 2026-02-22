@@ -152,7 +152,11 @@ export default function DaftarTugasKandang() {
 
       {/* Modal Detail */}
       {showDetail && selected && (
-        <Modal title="Detail Proses Kandang" onClose={() => setShowDetail(false)}>
+        <Modal
+          isOpen={showDetail}
+          title="Detail Proses Kandang"
+          onClose={() => setShowDetail(false)}
+        >
           <div className="space-y-3 text-sm text-[#3b3b3b]">
             <p>
               <strong>ID Proses:</strong> {selected.id_proses}
@@ -176,7 +180,11 @@ export default function DaftarTugasKandang() {
 
       {/* Modal Update Status */}
       {showStatus && selected && (
-        <Modal title="Update Status Tugas" onClose={() => setShowStatus(false)}>
+        <Modal
+          isOpen={showStatus}
+          title="Update Status Tugas"
+          onClose={() => setShowStatus(false)}
+        >
           <div className="space-y-4 text-sm">
             <p className="text-[#3b3b3b]">
               Pilih status terbaru untuk proses <b>{selected.id_proses}</b>:

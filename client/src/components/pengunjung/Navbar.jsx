@@ -61,7 +61,7 @@ const Navbar = () => {
 
         {/* ========== TENGAH: LOGO ========== */}
         <div className="flex-none flex flex-col items-center justify-center mx-4 cursor-pointer group transition-transform duration-300 hover:scale-105">
-          <Link to="/Home">
+          <Link to="/">
             <img
               src="https://res.cloudinary.com/dcida9qys/image/upload/v1761098052/Siqah-logo-HD_fpetwm.png"
               alt="Siqah Logo"
