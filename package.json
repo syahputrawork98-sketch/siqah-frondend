@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test --experimental-test-isolation=none tests/*.test.js",
+    "test:coverage": "node --test --experimental-test-isolation=none --experimental-test-coverage tests/*.test.js"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

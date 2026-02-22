@@ -1,4 +1,4 @@
-// client/src/App.jsx
+// src/App.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Layouts

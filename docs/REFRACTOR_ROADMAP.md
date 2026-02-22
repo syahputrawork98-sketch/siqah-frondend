@@ -48,6 +48,14 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Migrasi halaman `superadmin` (`Dashboard`, `Monitoring`, `Laporan`, `Notifikasi`, `Users`, `DataMaster`, `Pengaturan`) serta komponen `Topbar`/`NotificationDropdown` ke service layer + async state standar.
 - [x] Bersih dari dummy inline di area aktif `features/admin` dan `features/superadmin` (dummy dipusatkan ke JSON mock).
 - [x] Seluruh halaman aktif pada `features/admin` dan `features/superadmin` sudah menggunakan service layer + JSON mock terpusat.
+- [x] Memulai Phase 5: menambahkan baseline unit test dengan Node test runner untuk `shared/lib` dan `model/mappers` (`tests/*.test.js`).
+- [x] Menambahkan script quality gate test di root: `npm test` dan `npm run test:coverage`.
+- [x] Verifikasi awal quality gate test lulus (9 test pass).
+- [x] Menambahkan CI pipeline GitHub Actions (`.github/workflows/ci.yml`) untuk menjalankan `test`, `lint`, dan `build` pada push/PR.
+- [x] Relokasi source aktif dari `client/src` ke root `src` tanpa perubahan behavior runtime.
+- [x] Update konfigurasi/alias/import utama pasca relokasi (`vite.config.js`, `jsconfig.json`, `eslint.config.js`, `index.html`, path test).
+- [x] Smoke test pasca relokasi untuk role `pengunjung`, `admin`, `superadmin` melalui verifikasi route aktif + quality gate (`test`, `lint`, `build`) berjalan sukses.
+- [x] Menghapus folder legacy `client/` setelah relokasi source selesai.
 
 ## Tujuan Refactor
 
@@ -131,20 +139,24 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Tiap fitur: move -> fix import -> test -> build.
 
 ### Phase 4 - Data Layer & API Integration
-- [ ] Ganti dummy data inline menjadi API service layer + mock JSON terpusat (ongoing, digunakan sementara sampai frontend selesai).
+- [x] Ganti dummy data inline menjadi API service layer + mock JSON terpusat untuk scope frontend aktif.
 - [x] Tambahkan error boundary, loading state, empty state standar.
-- [ ] Standarkan model data lintas fitur (ongoing, mapper diterapkan di admin + superadmin).
+- [x] Standarkan model data lintas fitur pada scope aktif (mapper diterapkan di admin + superadmin).
 - [x] Keputusan scope: selama frontend belum final, seluruh data tetap memakai dummy JSON terpusat.
-- [ ] Integrasi backend API riil dikerjakan setelah fase frontend selesai di repo backend Siqah; kontrak endpoint dipertahankan di service layer frontend.
 
 ### Phase 5 - Quality Gate & Cleanup
-- [ ] Tambahkan test coverage minimum yang disepakati.
-- [ ] Aktifkan CI pipeline.
-- [ ] Relokasi source aktif dari `client/src` ke root `src` (fase mekanis, tanpa ubah behavior).
-- [ ] Update konfigurasi/alias/import setelah relokasi path dan pastikan aplikasi tetap berjalan.
-- [ ] Smoke test lintas role setelah relokasi (`pengunjung`, `admin`, `superadmin`).
-- [ ] Hapus folder lama `client/` hanya setelah parity fitur tercapai dan seluruh verifikasi lolos.
+- [x] Tambahkan test coverage minimum yang disepakati (baseline: util + data mappers).
+- [x] Aktifkan CI pipeline.
+- [x] Relokasi source aktif dari `client/src` ke root `src` (fase mekanis, tanpa ubah behavior).
+- [x] Update konfigurasi/alias/import setelah relokasi path dan pastikan aplikasi tetap berjalan.
+- [x] Smoke test lintas role setelah relokasi (`pengunjung`, `admin`, `superadmin`).
+- [x] Hapus folder lama `client/` hanya setelah parity fitur tercapai dan seluruh verifikasi lolos.
 - [ ] Final pass: lint, build, test, docs update.
+
+### Phase 6 - Backend Integration & Data Finalization
+- [ ] Integrasi backend API riil dikerjakan setelah fase frontend selesai di repo backend Siqah; kontrak endpoint dipertahankan di service layer frontend.
+- [ ] Finalisasi standardisasi model data lintas seluruh modul yang belum masuk scope aktif.
+- [ ] Migrasi bertahap dari JSON mock ke response backend riil per endpoint.
 
 ### Aturan Relokasi `client/` -> `src/`
 

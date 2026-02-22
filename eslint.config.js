@@ -7,7 +7,7 @@ import { defineConfig, globalIgnores } from "eslint/config";
 export default defineConfig([
   globalIgnores(["dist", "node_modules", "client/dist", "client/node_modules"]),
   {
-    files: ["client/src/**/*.{js,jsx}", "*.config.js", "vite.config.js"],
+    files: ["src/**/*.{js,jsx}", "*.config.js", "vite.config.js"],
     extends: [
       js.configs.recommended,
       reactHooks.configs["recommended-latest"],

@@ -104,6 +104,6 @@ Urutan import:
 ## Migrasi Bertahap
 
 Selama masa transisi:
-- Source aktif masih dapat berada di `client/src`.
+- Source aktif berada di `src`.
 - Struktur target dibangun paralel di root.
 - Migrasi dilakukan per fitur agar aman.
