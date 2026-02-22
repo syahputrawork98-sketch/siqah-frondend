@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PublicLayout from "@/app/layouts/PublicLayout";
 import AdminLayout from "@/app/layouts/AdminLayout";
 import SuperadminLayout from "@/app/layouts/SuperadminLayout";
-import PetugasKandangLayout from "./layouts/PetugasKandangLayout";
 
 // admin Pages
 import DashboardAdmin from "@/features/admin/pages/DashboardAdmin";
@@ -25,7 +24,6 @@ import DataPaket from "./pages/data-master/dapur/DataPaket";
 
 //Data Master User
 import DataUser from "./pages/data-master/DashboardUsers"; 
-import DataPetugasKandang from "./pages/data-master/petugas/kandang/DataPetugasKandang";
 import DataPetugasDapur from "./pages/data-master/petugas/dapur/DataPetugasDapur";
 import DataPetugasKurir from "./pages/data-master/petugas/kurir/DataPetugasKurir";
 import DataKonsumen from "./pages/data-master/konsumen/DataKonsumen";
@@ -38,16 +36,6 @@ import DataPembayaran from "./pages/data-master/pembayaran/DataPembayaran";
 
 //laporan Master
 import DashboardLaporan from "./pages/data-master/DashboardLaporan";
-
-
-
-// Petugas Kandang Pages
-import DashboardPetugasKandang from "./pages/petugas/kandang/DashboardPetugasKandang";
-import DaftarTugasKandang from "./pages/petugas/kandang/DaftarTugasKandang";
-import DaftarHewanPetugasKandang from "./pages/petugas/kandang/DaftarHewanPetugasKandang";
-import DashboardLaporanPetugasKandang from "./pages/petugas/kandang/DashboardLaporanPetugasKandang";
-import LogNotifikasiPetugasKandang from "./pages/petugas/kandang/LogNotifikasiPetugasKandang";
-import PengaturanPetugasKandang from "./pages/petugas/kandang/PengaturanPetugasKandang";
 
 
 
@@ -108,7 +96,6 @@ function App() {
 
 
           <Route path="datauser" element={<DataUser />} />
-          <Route path="data-master/petugas/kandang" element={<DataPetugasKandang />} />
           <Route path="data-master/petugas/dapur" element={<DataPetugasDapur />} />
           <Route path="data-master/petugas/kurir" element={<DataPetugasKurir />} />
           <Route path="data-master/konsumen" element={<DataKonsumen />} />
@@ -126,22 +113,11 @@ function App() {
           <Route path="pengaturan" element={<PengaturanAdmin />} />           
         </Route>
 
-        {/* 🔹 ROUTE UNTUK PETUGAS KANDANG (LAYOUT KHUSUS PETUGAS KANDANG) */}
-        <Route path="/petugas-kandang" element={<PetugasKandangLayout />}>
-          <Route index element={<DashboardPetugasKandang />} />
-          <Route path="tugas" element={<DaftarTugasKandang />} />
-          <Route path="hewan" element={<DaftarHewanPetugasKandang />} />
-          
-
-          <Route path="laporan" element={<DashboardLaporanPetugasKandang />} />
-          <Route path="notifikasi" element={<LogNotifikasiPetugasKandang />} />
-          <Route path="pengaturan" element={<PengaturanPetugasKandang />} />
-        </Route>
-
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
 

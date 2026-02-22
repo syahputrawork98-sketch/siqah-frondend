@@ -2,6 +2,8 @@ import { X, CheckCircle, XCircle } from "lucide-react";
 import { formatCurrencyIdr } from "@/shared/lib";
 
 export default function ModalValidasiPembayaran({ data, onClose }) {
+  const proofImageUrl = data.buktiUrl || "https://placehold.co/400x250?text=Bukti+Transfer";
+
   return (
     <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center backdrop-blur-sm">
       <div className="bg-white/90 rounded-xl shadow-lg w-[90%] md:w-[550px] border border-[#eee6da]">
@@ -35,7 +37,7 @@ export default function ModalValidasiPembayaran({ data, onClose }) {
           <div>
             <span className="font-medium">Bukti Pembayaran:</span>
             <img
-              src="https://placehold.co/400x250?text=Bukti+Transfer"
+              src={proofImageUrl}
               alt="bukti"
               className="rounded-lg mt-2 border border-[#eee6da]"
             />

@@ -1,37 +1,16 @@
-// client/src/pages/admin/DashboardAdmin.jsx
 import { Card, CardHeader, CardContent } from "@/shared/ui";
+import { EmptyState, ErrorState, LoadingState } from "@/shared/ui";
 import { Package, CheckCircle, Clock, CreditCard } from "lucide-react";
+import { fetchAdminDashboardData } from "@/features/admin/api/adminApi";
+import { DEFAULT_DASHBOARD } from "@/features/admin/model/adminDataMappers";
+import { useAsyncData } from "@/shared/hooks";
 
-// Dummy data (sementara sebelum backend API dihubungkan)
-const dummyData = {
-  totalPesanan: 120,
-  pesananDiproses: 38,
-  pesananSelesai: 67,
-  pembayaranMenunggu: 15,
-  pesananTerbaru: [
-    {
-      id: "ORD-00120",
-      nama: "Ahmad Fauzi",
-      tanggal: "2025-11-01",
-      status: "Menunggu Pembayaran",
-    },
-    {
-      id: "ORD-00119",
-      nama: "Nur Aini",
-      tanggal: "2025-11-01",
-      status: "Diproses",
-    },
-    {
-      id: "ORD-00118",
-      nama: "Rizal Fathoni",
-      tanggal: "2025-10-31",
-      status: "Selesai",
-    },
-  ],
-};
+const DEFAULT_ERROR_MESSAGE = "Gagal memuat dashboard admin.";
 
 export default function DashboardAdmin() {
-  const data = dummyData;
+  const { data, error, isLoading, reload } = useAsyncData(fetchAdminDashboardData, {
+    initialData: DEFAULT_DASHBOARD,
+  });
 
   return (
     <div className="space-y-6">
@@ -45,74 +24,87 @@ export default function DashboardAdmin() {
         </p>
       </div>
 
-      {/* Statistik Card */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <StatCard
-          icon={Package}
-          title="Total Pesanan"
-          value={data.totalPesanan}
-          color="from-[#fefbf7] to-[#f9f6ef]"
+      {isLoading ? (
+        <LoadingState message="Memuat dashboard admin..." />
+      ) : error ? (
+        <ErrorState
+          message={error?.message || DEFAULT_ERROR_MESSAGE}
+          onRetry={reload}
         />
-        <StatCard
-          icon={Clock}
-          title="Pesanan Diproses"
-          value={data.pesananDiproses}
-          color="from-[#f9f6ef] to-[#f5efe3]"
-        />
-        <StatCard
-          icon={CreditCard}
-          title="Pembayaran Menunggu"
-          value={data.pembayaranMenunggu}
-          color="from-[#fff9ed] to-[#f6f0e4]"
-        />
-        <StatCard
-          icon={CheckCircle}
-          title="Pesanan Selesai"
-          value={data.pesananSelesai}
-          color="from-[#fefcf8] to-[#f9f3e7]"
-        />
-      </div>
-
-      {/* Tabel Pesanan Terbaru */}
-      <Card className="bg-white/80 backdrop-blur-md border border-[#eee6da] shadow-sm">
-        <CardHeader>
-          <h3 className="text-lg font-semibold text-[#3b3b3b]">
-            Pesanan Terbaru
-          </h3>
-          <p className="text-sm text-[#7a7368]">
-            Daftar beberapa pesanan terbaru dari konsumen
-          </p>
-        </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse">
-              <thead>
-                <tr className="text-left text-sm text-[#7a7368] border-b border-[#eee6da]">
-                  <th className="py-2 px-3">ID Pesanan</th>
-                  <th className="py-2 px-3">Nama Konsumen</th>
-                  <th className="py-2 px-3">Tanggal</th>
-                  <th className="py-2 px-3">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.pesananTerbaru.map((p) => (
-                  <tr
-                    key={p.id}
-                    className="text-sm text-[#3b3b3b] border-b border-[#f0ebe2] hover:bg-[#f9f6ef]/60 transition-colors"
-                  >
-                    <td className="py-2 px-3 font-medium">{p.id}</td>
-                    <td className="py-2 px-3">{p.nama}</td>
-                    <td className="py-2 px-3">{p.tanggal}</td>
-                    <td className="py-2 px-3">
-                      <StatusBadge status={p.status} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <StatCard
+              icon={Package}
+              title="Total Pesanan"
+              value={data.totalPesanan}
+              color="from-[#fefbf7] to-[#f9f6ef]"
+            />
+            <StatCard
+              icon={Clock}
+              title="Pesanan Diproses"
+              value={data.pesananDiproses}
+              color="from-[#f9f6ef] to-[#f5efe3]"
+            />
+            <StatCard
+              icon={CreditCard}
+              title="Pembayaran Menunggu"
+              value={data.pembayaranMenunggu}
+              color="from-[#fff9ed] to-[#f6f0e4]"
+            />
+            <StatCard
+              icon={CheckCircle}
+              title="Pesanan Selesai"
+              value={data.pesananSelesai}
+              color="from-[#fefcf8] to-[#f9f3e7]"
+            />
           </div>
-        </CardContent>
-      </Card>
+
+          <Card className="bg-white/80 backdrop-blur-md border border-[#eee6da] shadow-sm">
+            <CardHeader>
+              <h3 className="text-lg font-semibold text-[#3b3b3b]">
+                Pesanan Terbaru
+              </h3>
+              <p className="text-sm text-[#7a7368]">
+                Daftar beberapa pesanan terbaru dari konsumen
+              </p>
+            </CardHeader>
+            <CardContent>
+              {data.pesananTerbaru.length === 0 ? (
+                <EmptyState message="Belum ada pesanan terbaru." />
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full border-collapse">
+                    <thead>
+                      <tr className="text-left text-sm text-[#7a7368] border-b border-[#eee6da]">
+                        <th className="py-2 px-3">ID Pesanan</th>
+                        <th className="py-2 px-3">Nama Konsumen</th>
+                        <th className="py-2 px-3">Tanggal</th>
+                        <th className="py-2 px-3">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.pesananTerbaru.map((p) => (
+                        <tr
+                          key={p.id}
+                          className="text-sm text-[#3b3b3b] border-b border-[#f0ebe2] hover:bg-[#f9f6ef]/60 transition-colors"
+                        >
+                          <td className="py-2 px-3 font-medium">{p.id}</td>
+                          <td className="py-2 px-3">{p.nama}</td>
+                          <td className="py-2 px-3">{p.tanggal}</td>
+                          <td className="py-2 px-3">
+                            <StatusBadge status={p.status} />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </>
+      )}
     </div>
   );
 }

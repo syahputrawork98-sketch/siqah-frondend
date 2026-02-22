@@ -47,7 +47,6 @@ const menuItems = [
     icon: Users,
     children: [
       { name: "Dashboard User", path: "/admin/datauser" },
-      { name: "Data Petugas Kandang", path: "/admin/data-master/petugas/kandang" },
       { name: "Data Petugas Dapur", path: "/admin/data-master/petugas/dapur" },
       { name: "Data Kurir", path: "/admin/data-master/petugas/kurir" },
       { name: "Data konsumen", path: "/admin/data-master/konsumen" },

@@ -34,6 +34,14 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Menjaga compatibility selama transisi: file legacy `pages/admin/*`, `components/admin/*`, dan `layouts/AdminLayout.jsx` menjadi wrapper ke module baru.
 - [x] Melanjutkan Phase 3: migrasi fitur `superadmin` ke struktur baru `client/src/features/superadmin` (pages + ui) dan layout superadmin ke `client/src/app/layouts/SuperadminLayout.jsx`.
 - [x] Menjaga compatibility selama transisi: file legacy `pages/superadmin/*`, `components/superadmin/*`, dan `layouts/SuperadminLayout.jsx` menjadi wrapper ke module baru.
+- [x] Scope update: role `petugas-kandang` dikeluarkan sementara dari scope implementasi karena masih tahap perencanaan dan akan dibuat ulang saat requirement final.
+- [x] Route aktif `petugas-kandang` serta referensi menu admin ke data petugas kandang sudah dinonaktifkan dari jalur runtime utama.
+- [x] Memulai Phase 4: menambahkan API client terpusat di `client/src/shared/api` (`httpClient`, `ApiError`).
+- [x] Memulai Phase 4: menambahkan standar async state (`LoadingState`, `ErrorState`, `EmptyState`) di `client/src/shared/ui/async-state.jsx`.
+- [x] Memulai Phase 4: menambahkan hook server-state sederhana `client/src/shared/hooks/useAsyncData.js`.
+- [x] Memulai Phase 4: migrasi data layer fitur admin (`DashboardAdmin`, `PembayaranAdmin`, `LogNotifikasiAdmin`) ke `client/src/features/admin/api/adminApi.js`.
+- [x] Menambahkan global `AppErrorBoundary` di `client/src/app/providers/AppErrorBoundary.jsx` dan mengaktifkannya di `client/src/main.jsx`.
+- [ ] Sisa halaman admin/superadmin lain masih menggunakan dummy data dan akan dimigrasikan bertahap di lanjutan Phase 4.
 
 ## Tujuan Refactor
 
@@ -113,13 +121,13 @@ Dokumen ini adalah sumber utama rencana refactor frontend agar siap dikembangkan
 - [x] Migrasi `pengunjung` ke struktur baru.
 - [x] Migrasi `admin`.
 - [x] Migrasi `superadmin`.
-- [ ] Migrasi `petugas-kandang`.
-- [ ] Tiap fitur: move -> fix import -> test -> build.
+- [x] `petugas-kandang` ditunda (de-scoped sementara, akan dibuat ulang saat planning final).
+- [x] Tiap fitur: move -> fix import -> test -> build.
 
 ### Phase 4 - Data Layer & API Integration
-- [ ] Ganti dummy data dengan API service layer.
-- [ ] Tambahkan error boundary, loading state, empty state standar.
-- [ ] Standarkan model data lintas fitur.
+- [ ] Ganti dummy data dengan API service layer (ongoing, prioritas admin selesai sebagian).
+- [x] Tambahkan error boundary, loading state, empty state standar.
+- [ ] Standarkan model data lintas fitur (ongoing, dimulai dari mapper admin).
 
 ### Phase 5 - Quality Gate & Cleanup
 - [ ] Tambahkan test coverage minimum yang disepakati.
