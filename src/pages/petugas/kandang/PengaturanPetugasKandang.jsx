@@ -1,5 +1,4 @@
-// client/src/pages/petugas/kandang/PengaturanPetugasKandang.jsx
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import { Camera, Save, KeyRound } from "lucide-react";
 
@@ -169,7 +168,7 @@ export default function PengaturanPetugasKandang() {
             {/* Notifikasi Sukses */}
             {success && (
               <div className="text-center text-green-700 font-medium mt-3">
-                ✅ Data berhasil disimpan!
+                âœ… Data berhasil disimpan!
               </div>
             )}
           </form>
@@ -178,3 +177,4 @@ export default function PengaturanPetugasKandang() {
     </div>
   );
 }
+

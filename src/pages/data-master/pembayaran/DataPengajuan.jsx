@@ -1,5 +1,4 @@
-// client/src/pages/data-master/pembayaran/DataPengajuan.jsx
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import Modal from "../../../components/ui/Modal";
@@ -279,3 +278,4 @@ export default function DataPengajuan() {
     </div>
   );
 }
+

@@ -1,5 +1,4 @@
-// client/src/pages/petugas/kandang/DaftarTugasKandang.jsx
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Card, CardHeader, CardContent } from "../../../components/ui/Card";
 import { Eye, Edit3, UploadCloud } from "lucide-react";
 import Modal from "../../../components/ui/Modal";
@@ -208,7 +207,7 @@ export default function DaftarTugasKandang() {
         </Modal>
       )}
 
-      {/* ✅ Modal Upload Bukti */}
+      {/* âœ… Modal Upload Bukti */}
       {showUpload && selected && (
         <ModalUploadBukti
           proses={selected}
@@ -234,3 +233,4 @@ function StatusBadge({ status }) {
       return <span className={`${base} bg-gray-100 text-gray-700`}>{status}</span>;
   }
 }
+

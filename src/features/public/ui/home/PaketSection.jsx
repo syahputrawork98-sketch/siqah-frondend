@@ -1,5 +1,4 @@
-// client/src/components/home/PaketSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const PaketSection = () => {
@@ -17,7 +16,7 @@ const PaketSection = () => {
       id: 2,
       nama: "Paket Aqiqah Standar",
       harga: "Rp2.400.000",
-      deskripsi: "Pilihan ekonomis dengan rasa tetap nikmat dan syar’i.",
+      deskripsi: "Pilihan ekonomis dengan rasa tetap nikmat dan syarâ€™i.",
       gambar:
         "https://res.cloudinary.com/dcida9qys/image/upload/v1761262212/paket-standar_wzcoek.jpg",
     },
@@ -41,7 +40,7 @@ const PaketSection = () => {
           "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // 🔥 efek parallax di sini
+        backgroundAttachment: "fixed", // ðŸ”¥ efek parallax di sini
       }}
     >
       {/* Overlay lembut agar teks tetap jelas */}
@@ -60,7 +59,7 @@ const PaketSection = () => {
             Pilihan Paket Aqiqah
           </h2>
           <p className="text-base sm:text-lg text-[#45624B]/80 font-montserrat max-w-2xl mx-auto">
-            Kami menyediakan beragam paket aqiqah yang dirancang dengan cinta —
+            Kami menyediakan beragam paket aqiqah yang dirancang dengan cinta â€”
             untuk membantu keluarga Muslim merayakan kelahiran dengan penuh
             berkah dan kemudahan.
           </p>
@@ -125,3 +124,4 @@ const PaketSection = () => {
 };
 
 export default PaketSection;
+

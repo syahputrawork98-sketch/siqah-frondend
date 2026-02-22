@@ -1,5 +1,4 @@
-// client/src/pages/laporan/DashboardLaporan.jsx
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Card, CardContent } from "../../components/ui/Card";
 import {
   Receipt,
@@ -285,3 +284,4 @@ export default function DashboardLaporan() {
     </div>
   );
 }
+

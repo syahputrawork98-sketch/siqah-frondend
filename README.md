@@ -39,7 +39,8 @@ npm run preview
 
 ## Dokumentasi
 
-- [Refactor Roadmap](docs/REFRACTOR_ROADMAP.md)
+- [Refactor Roadmap V2](docs/Refactor Roadmap Batch 2.md)
+- [Refactor Roadmap (Legacy Pointer)](docs/REFRACTOR_ROADMAP.md)
 - [Architecture Guide](docs/ARCHITECTURE.md)
 - [Contributing Guide](docs/CONTRIBUTING.md)
 

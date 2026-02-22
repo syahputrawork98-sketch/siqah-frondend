@@ -1,6 +1,4 @@
-
-// client/src/layouts/PetugasKandangLayout.jsx
-import SidebarPetugasKandang from "../components/petugas/kandang/SidebarPetugasKandang";
+﻿import SidebarPetugasKandang from "../components/petugas/kandang/SidebarPetugasKandang";
 import TopbarPetugasKandang from "../components/petugas/kandang/TopbarPetugasKandang";
 import { Outlet } from "react-router-dom";
 
@@ -23,3 +21,4 @@ export default function PetugasKandangLayout() {
     </div>
   );
 }
+

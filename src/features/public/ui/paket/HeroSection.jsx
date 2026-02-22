@@ -1,5 +1,4 @@
-// client/src/components/paket/HeroSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -33,3 +32,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

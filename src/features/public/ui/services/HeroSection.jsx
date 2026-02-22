@@ -1,5 +1,4 @@
-// client/src/components/services/HeroSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 import { GiGoat, GiCookingPot, GiDeliveryDrone } from "react-icons/gi";
 
@@ -15,7 +14,7 @@ const HeroSection = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Overlay hijau gelap transparan — sama dengan CTASection */}
+      {/* Overlay hijau gelap transparan â€” sama dengan CTASection */}
       <div className="absolute inset-0 bg-[#45624B]/90" />
 
       <div className="relative z-10 w-full max-w-7xl px-8 py-20 flex flex-col md:flex-row items-center justify-between gap-12 text-white">
@@ -32,7 +31,7 @@ const HeroSection = () => {
 
           <p className="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed">
             Siqah menghadirkan sistem layanan{" "}
-            <span className="text-[#B9914D] font-semibold">terintegrasi</span> — 
+            <span className="text-[#B9914D] font-semibold">terintegrasi</span> â€” 
             mulai dari pemilihan hewan di kandang, pengolahan di dapur, hingga pengantaran oleh kurir terpercaya.
           </p>
 
@@ -115,3 +114,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

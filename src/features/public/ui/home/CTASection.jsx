@@ -1,5 +1,4 @@
-// client/src/components/home/CTASection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const CTASection = () => {
@@ -34,8 +33,8 @@ const CTASection = () => {
           transition={{ delay: 0.3, duration: 1 }}
           viewport={{ once: true }}
         >
-          Percayakan momen berharga keluarga Anda pada Siqah — layanan aqiqah
-          yang syar’i, terpercaya, dan siap memberikan pengalaman terbaik dari
+          Percayakan momen berharga keluarga Anda pada Siqah â€” layanan aqiqah
+          yang syarâ€™i, terpercaya, dan siap memberikan pengalaman terbaik dari
           kandang hingga rumah.
         </motion.p>
 
@@ -77,3 +76,4 @@ const CTASection = () => {
 };
 
 export default CTASection;
+

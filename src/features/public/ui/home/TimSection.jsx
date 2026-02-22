@@ -1,5 +1,4 @@
-// client/src/components/home/TimSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const teamMembers = [
@@ -41,7 +40,7 @@ const TimSection = () => {
           "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // 🔥 Efek parallax
+        backgroundAttachment: "fixed", // ðŸ”¥ Efek parallax
       }}
     
     
@@ -99,7 +98,7 @@ const TimSection = () => {
 
               {/* Quote */}
               <p className="text-sm text-[#45624B]/80 font-montserrat leading-relaxed">
-                “{person.quote}”
+                â€œ{person.quote}â€
               </p>
 
               {/* Subtle glow hover */}
@@ -123,3 +122,4 @@ const TimSection = () => {
 };
 
 export default TimSection;
+

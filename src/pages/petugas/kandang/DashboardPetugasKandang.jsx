@@ -1,5 +1,4 @@
-// client/src/pages/petugas/kandang/DashboardPetugasKandang.jsx
-import { Card, CardHeader, CardContent } from "../../../components/ui/Card";
+﻿import { Card, CardHeader, CardContent } from "../../../components/ui/Card";
 import {
   Home,
   PawPrint,
@@ -9,7 +8,7 @@ import {
   Activity,
 } from "lucide-react";
 
-// 🧩 Dummy data — nanti diganti fetch dari API
+// ðŸ§© Dummy data â€” nanti diganti fetch dari API
 const dummyData = {
   totalKandang: 5,
   totalHewan: 38,
@@ -154,3 +153,4 @@ function StatusBadge({ status }) {
       return <span className={`${base} bg-gray-100 text-gray-700`}>{status}</span>;
   }
 }
+

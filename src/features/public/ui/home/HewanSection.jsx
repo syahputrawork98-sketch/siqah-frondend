@@ -1,5 +1,4 @@
-// client/src/components/home/HewanSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 import { GiGoat, GiCow } from "react-icons/gi";
 import { FaCheckCircle } from "react-icons/fa";
@@ -40,7 +39,7 @@ const HewanSection = () => {
           "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // 🔥 Efek parallax
+        backgroundAttachment: "fixed", // ðŸ”¥ Efek parallax
       }}
     >
       {/* Overlay lembut agar teks tetap terbaca */}
@@ -129,3 +128,4 @@ const HewanSection = () => {
 };
 
 export default HewanSection;
+

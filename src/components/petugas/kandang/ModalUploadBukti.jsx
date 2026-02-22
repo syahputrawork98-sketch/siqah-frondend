@@ -1,5 +1,4 @@
-// client/src/components/petugas/kandang/ModalUploadBukti.jsx
-import { useState } from "react";
+﻿import { useState } from "react";
 import { UploadCloud, X } from "lucide-react";
 
 export default function ModalUploadBukti({ onClose, onSubmit, proses }) {
@@ -127,3 +126,4 @@ export default function ModalUploadBukti({ onClose, onSubmit, proses }) {
     </div>
   );
 }
+

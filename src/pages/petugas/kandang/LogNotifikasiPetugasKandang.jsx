@@ -1,5 +1,4 @@
-// client/src/pages/petugas/kandang/LogNotifikasiPetugasKandang.jsx
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import {
   Bell,
@@ -265,3 +264,4 @@ export default function LogNotifikasiPetugasKandang() {
     </div>
   );
 }
+

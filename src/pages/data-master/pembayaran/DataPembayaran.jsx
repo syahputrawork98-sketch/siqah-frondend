@@ -1,5 +1,4 @@
-// client/src/pages/data-master/pembayaran/DataPembayaran.jsx
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import Modal from "../../../components/ui/Modal";
@@ -283,3 +282,4 @@ export default function DataPembayaran() {
     </div>
   );
 }
+

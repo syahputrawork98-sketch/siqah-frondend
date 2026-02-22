@@ -1,5 +1,4 @@
-// client/src/components/admin/TopbarAdmin.jsx
-import { Bell, LogOut } from "lucide-react";
+﻿import { Bell, LogOut } from "lucide-react";
 import { useState } from "react";
 import NotificationDropdown from "@/features/superadmin/ui/NotificationDropdown";
 
@@ -27,7 +26,7 @@ export default function TopbarAdmin() {
 
       {/* Kanan - Notifikasi, Profil, Logout */}
       <div className="flex items-center gap-5">
-        {/* 🔔 Notifikasi */}
+        {/* ðŸ”” Notifikasi */}
         <div className="relative">
           <button
             onClick={() => setOpenNotif((prev) => !prev)}
@@ -49,7 +48,7 @@ export default function TopbarAdmin() {
           )}
         </div>
 
-        {/* 👤 Profil */}
+        {/* ðŸ‘¤ Profil */}
         <div className="flex items-center gap-3 bg-white/60 rounded-full px-3 py-1 border border-[#eee6da] shadow-sm">
           <img
             src={admin.avatar}
@@ -62,7 +61,7 @@ export default function TopbarAdmin() {
           </div>
         </div>
 
-        {/* 🚪 Logout */}
+        {/* ðŸšª Logout */}
         <button
           className="flex items-center gap-1 text-[#3b3b3b] hover:text-[#e2b97f] transition-all"
           onClick={() => console.log("Logout clicked")}
@@ -74,3 +73,4 @@ export default function TopbarAdmin() {
     </header>
   );
 }
+

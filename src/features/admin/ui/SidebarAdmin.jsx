@@ -1,5 +1,4 @@
-// client/src/components/admin/SidebarAdmin.jsx
-import { NavLink, useLocation } from "react-router-dom";
+﻿import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import {
   LayoutDashboard,
@@ -53,7 +52,7 @@ const menuItems = [
     ],
   },
   { name: "Laporan", icon: BarChart3, path: "/admin/laporan" },
-  { name: "Notifikasi", icon: Bell, path: "/admin/Notifikasiadmin" },
+  { name: "Notifikasi", icon: Bell, path: "/admin/notifikasi" },
   { name: "Pengaturan", icon: Settings, path: "/admin/pengaturan" },
 ];
 
@@ -170,7 +169,7 @@ export default function SidebarAdmin() {
 
         {/* Footer */}
         <div className="p-4 border-t border-[#eee6da] text-xs text-[#7a7368] bg-white/60 text-center">
-          © {getCurrentYear()}{" "}
+          Â© {getCurrentYear()}{" "}
           <span className="font-semibold">Siqah Aqiqah</span>
         </div>
       </aside>
@@ -185,4 +184,5 @@ export default function SidebarAdmin() {
     </>
   );
 }
+
 

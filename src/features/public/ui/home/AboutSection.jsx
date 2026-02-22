@@ -1,5 +1,4 @@
-// client/src/components/home/AboutSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const AboutSection = () => {
@@ -65,7 +64,7 @@ const AboutSection = () => {
             <br />
             <br />
             Sejak tahun <span className="text-[#B9914D] font-semibold">2025</span> di Bandung,
-            kami berkomitmen menghadirkan layanan aqiqah yang praktis, syar’i, dan berkesan —
+            kami berkomitmen menghadirkan layanan aqiqah yang praktis, syarâ€™i, dan berkesan â€”
             mulai dari perawatan hewan, proses penyembelihan sesuai sunnah, hingga pengantaran
             hidangan terbaik untuk keluarga Anda.
           </motion.p>
@@ -90,3 +89,4 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+

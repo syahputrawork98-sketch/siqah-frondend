@@ -1,5 +1,4 @@
-// client/src/components/superadmin/Sidebar.jsx
-import { NavLink, useLocation } from "react-router-dom";
+﻿import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import {
   LayoutDashboard,
@@ -83,7 +82,7 @@ export default function Sidebar() {
 
         {/* Footer kecil di sidebar */}
         <div className="p-4 border-t border-[#eee6da] text-xs text-[#7a7368] bg-white/60 text-center">
-          © {getCurrentYear()} <span className="font-semibold">Siqah Aqiqah</span>
+          Â© {getCurrentYear()} <span className="font-semibold">Siqah Aqiqah</span>
         </div>
       </aside>
 
@@ -97,4 +96,5 @@ export default function Sidebar() {
     </>
   );
 }
+
 

@@ -1,5 +1,4 @@
-// client/src/components/home/TestimoniSection.jsx
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -58,7 +57,7 @@ const TestimoniSection = () => {
           "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // 🔥 Efek parallax
+        backgroundAttachment: "fixed", // ðŸ”¥ Efek parallax
       }}
     >
       {/* Overlay lembut agar teks tetap terbaca */}
@@ -78,7 +77,7 @@ const TestimoniSection = () => {
             Apa Kata Mereka
           </h2>
           <p className="text-base sm:text-lg text-[#45624B]/80 font-montserrat max-w-2xl mx-auto">
-            Suara hati para keluarga yang telah merasakan layanan Siqah —
+            Suara hati para keluarga yang telah merasakan layanan Siqah â€”
             penuh amanah, cita rasa, dan keberkahan.
           </p>
         </motion.div>
@@ -123,7 +122,7 @@ const TestimoniSection = () => {
 
                 {/* Teks */}
                 <p className="text-[#45624B]/80 font-montserrat text-sm leading-relaxed max-w-2xl mb-6">
-                  “{testimonials[index].text}”
+                  â€œ{testimonials[index].text}â€
                 </p>
 
                 {/* Rating */}
@@ -165,3 +164,4 @@ const TestimoniSection = () => {
 };
 
 export default TestimoniSection;
+

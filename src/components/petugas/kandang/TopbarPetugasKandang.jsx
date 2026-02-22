@@ -1,7 +1,6 @@
-// client/src/components/petugas/kandang/TopbarPetugasKandang.jsx
 import { Bell, LogOut } from "lucide-react";
 import { useState } from "react";
-import NotificationDropdown from "../../superadmin/NotificationDropdown";
+import NotificationDropdown from "@/features/superadmin/ui/NotificationDropdown";
 
 export default function TopbarPetugasKandang() {
   const [openNotif, setOpenNotif] = useState(false);

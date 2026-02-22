@@ -1,5 +1,4 @@
-// client/src/pages/petugas/kandang/DashboardLaporanPetugasKandang.jsx
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import {
   Activity,
@@ -238,3 +237,4 @@ export default function DashboardLaporanPetugasKandang() {
     </div>
   );
 }
+

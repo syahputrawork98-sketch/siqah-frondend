@@ -1,5 +1,4 @@
-// client/src/components/paket/PaketSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const PaketSection = () => {
@@ -35,7 +34,7 @@ const PaketSection = () => {
           "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // 🔥 efek parallax di sini
+        backgroundAttachment: "fixed", // ðŸ”¥ efek parallax di sini
       }}
     >
       {/* Overlay gradasi lembut */}
@@ -96,3 +95,4 @@ const PaketSection = () => {
 };
 
 export default PaketSection;
+

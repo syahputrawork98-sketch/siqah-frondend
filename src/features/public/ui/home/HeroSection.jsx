@@ -1,5 +1,4 @@
-// client/src/components/home/HeroSection.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -38,7 +37,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Siqah menghadirkan layanan aqiqah yang praktis, syar’i, dan hangat —
+          Siqah menghadirkan layanan aqiqah yang praktis, syarâ€™i, dan hangat â€”
           dari pemilihan hewan hingga pengantaran ke rumah Anda dengan penuh amanah.
         </motion.p>
 
@@ -101,7 +100,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.2, duration: 0.5 }}
           >
-            🕋 Amanah & Halal
+            ðŸ•‹ Amanah & Halal
           </motion.div>
         </div>
       </motion.div>
@@ -110,3 +109,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

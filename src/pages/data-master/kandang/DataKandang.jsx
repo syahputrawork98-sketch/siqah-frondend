@@ -1,5 +1,4 @@
-//  client/src/pages/data-master/kandang/DataKandang.jsx
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/Card";
 import Modal from "../../../components/ui/Modal";
@@ -323,3 +322,4 @@ export default function DataKandang() {
     </div>
   );
 }
+

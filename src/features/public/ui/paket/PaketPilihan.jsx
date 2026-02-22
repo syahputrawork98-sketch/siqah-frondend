@@ -1,5 +1,4 @@
-// client/src/components/paket/PaketPilihan.jsx
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 
 const PaketPilihan = () => {
@@ -49,3 +48,4 @@ const PaketPilihan = () => {
 };
 
 export default PaketPilihan;
+
