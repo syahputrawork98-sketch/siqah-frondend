@@ -17,4 +17,5 @@ export { default as BackofficeNotificationDropdown } from "./backoffice-notifica
 export { default as BackofficeSidebar } from "./backoffice-sidebar";
 export { default as BackofficeRoleTopbar } from "./backoffice-role-topbar";
 export { default as BackofficeRoleSidebar } from "./backoffice-role-sidebar";
+export { default as BackofficeFooter } from "./backoffice-footer";
 export { default as CrudRowActions } from "./crud-row-actions";

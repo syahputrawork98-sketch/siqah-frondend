@@ -2,8 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import RoleGuard from "@/app/router/RoleGuard";
 import { ACCESS_POLICY } from "@/app/router/accessPolicy";
 import PublicLayout from "@/app/layouts/PublicLayout";
-import AdminLayout from "@/app/layouts/AdminLayout";
-import SuperadminLayout from "@/app/layouts/SuperadminLayout";
+import RoleLayout from "@/app/layouts/RoleLayout";
 import {
   ADMIN_ROUTES,
   PUBLIC_ROUTES,
@@ -41,13 +40,13 @@ export default function AppRouter() {
         </Route>
 
         <Route element={<RoleGuard allowedRoles={ACCESS_POLICY.superadmin} />}>
-          <Route path="/superadmin" element={<SuperadminLayout />}>
+          <Route path="/superadmin" element={<RoleLayout role="superadmin" />}>
             {renderRoutes(SUPERADMIN_ROUTES, "superadmin")}
           </Route>
         </Route>
 
         <Route element={<RoleGuard allowedRoles={ACCESS_POLICY.admin} />}>
-          <Route path="/admin" element={<AdminLayout />}>
+          <Route path="/admin" element={<RoleLayout role="admin" />}>
             {renderRoutes(ADMIN_ROUTES, "admin")}
           </Route>
         </Route>
