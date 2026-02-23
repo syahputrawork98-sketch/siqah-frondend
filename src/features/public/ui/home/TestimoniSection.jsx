@@ -1,14 +1,15 @@
-﻿import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
+import { PublicCard, PublicSection, SectionHeading } from "@/shared/ui";
 
 const testimonials = [
   {
     id: 1,
-    nama: "Hafidz & Aisyah",
+    nama: "Hafidz dan Aisyah",
     role: "Orang Tua Bayi",
     img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761262211/family-1_sxghss.jpg",
-    text: "Layanannya cepat, hewannya sehat, dan masakannya enak banget. Terima kasih Siqah, aqiqah anak kami jadi lebih mudah dan penuh berkah.",
+    text: "Layanannya cepat, hewannya sehat, dan masakannya enak. Terima kasih Siqah, aqiqah anak kami jadi lebih mudah dan penuh berkah.",
     rating: 5,
   },
   {
@@ -32,7 +33,6 @@ const testimonials = [
 const TestimoniSection = () => {
   const [index, setIndex] = useState(0);
 
-  // Ganti otomatis setiap 6 detik
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
@@ -40,128 +40,82 @@ const TestimoniSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const prevSlide = () =>
-    setIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  const nextSlide = () =>
-    setIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
+  const prevSlide = () => setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  const nextSlide = () => setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
 
   return (
-    <section 
-    className="relative py-20 px-6 md:px-16 bg-gradient-to-b from-[#f9f6ef] to-[#fefbf7] overflow-hidden"
-      style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed", // ðŸ”¥ Efek parallax
-      }}
-    >
-      {/* Overlay lembut agar teks tetap terbaca */}
-      <div className="absolute inset-0 bg-white/70"></div>
+    <PublicSection className="bg-gradient-to-b from-[#f9f6ef] to-[#fefbf7]" containerClassName="max-w-4xl text-center">
+      <SectionHeading
+        className="mb-12"
+        title="Apa Kata Mereka"
+        description="Suara keluarga yang telah merasakan layanan Siqah yang amanah, rapi, dan penuh keberkahan."
+      />
 
-
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="mb-12"
+      <div className="relative flex items-center justify-center">
+        <button
+          onClick={prevSlide}
+          className="absolute left-0 rounded-full bg-white/70 p-3 text-[var(--color-public-accent)] shadow-md transition md:-left-12"
+          aria-label="Sebelumnya"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-cormorant font-bold text-[#45624B] mb-4">
-            Apa Kata Mereka
-          </h2>
-          <p className="text-base sm:text-lg text-[#45624B]/80 font-montserrat max-w-2xl mx-auto">
-            Suara hati para keluarga yang telah merasakan layanan Siqah â€”
-            penuh amanah, cita rasa, dan keberkahan.
-          </p>
-        </motion.div>
+          <FaChevronLeft size={20} />
+        </button>
 
-        {/* Carousel */}
-        <div className="relative flex items-center justify-center">
-          {/* Tombol kiri */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 md:-left-12 siqah-public-accent p-3 rounded-full bg-white/70 shadow-md transition"
-          >
-            <FaChevronLeft size={20} />
-          </button>
-
-          {/* Animasi perpindahan */}
-          <div className="overflow-hidden w-full">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={testimonials[index].id}
-                initial={{ opacity: 0, x: 80 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -80 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="bg-white rounded-3xl shadow-lg p-10 flex flex-col items-center text-center"
-              >
-                {/* Foto profil */}
-                <div className="w-28 h-28 rounded-full overflow-hidden mb-4 border-4 border-[#B9914D]/80 shadow-md">
-                  <img
-                    src={testimonials[index].img}
-                    alt={testimonials[index].nama}
-                    className="w-full h-full object-cover"
-                  />
+        <div className="w-full overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={testimonials[index].id}
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -80 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <PublicCard className="p-10 text-center">
+                <div className="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-full border-4 border-[var(--color-public-accent)]/80 shadow-md">
+                  <img src={testimonials[index].img} alt={testimonials[index].nama} className="h-full w-full object-cover" />
                 </div>
 
-                {/* Nama & Role */}
-                <h3 className="text-xl font-cormorant font-bold text-[#45624B]">
-                  {testimonials[index].nama}
-                </h3>
-                <p className="text-sm text-[#45624B]/70 mb-4 font-montserrat">
-                  {testimonials[index].role}
+                <h3 className="font-heading text-xl font-bold text-[var(--color-public-primary)]">{testimonials[index].nama}</h3>
+                <p className="mb-4 text-sm text-[color-mix(in_srgb,var(--color-public-primary)_70%,#fff)]">{testimonials[index].role}</p>
+
+                <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-[color-mix(in_srgb,var(--color-public-primary)_80%,#fff)]">
+                  "{testimonials[index].text}"
                 </p>
 
-                {/* Teks */}
-                <p className="text-[#45624B]/80 font-montserrat text-sm leading-relaxed max-w-2xl mb-6">
-                  â€œ{testimonials[index].text}â€
-                </p>
-
-                {/* Rating */}
-                <div className="flex justify-center siqah-public-accent">
-                  {[...Array(testimonials[index].rating)].map((_, i) => (
-                    <FaStar key={i} className="mx-0.5" />
+                <div className="flex justify-center text-[var(--color-public-accent)]">
+                  {[...Array(testimonials[index].rating)].map((_, starIndex) => (
+                    <FaStar key={starIndex} className="mx-0.5" />
                   ))}
                 </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Tombol kanan */}
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 md:-right-12 siqah-public-accent p-3 rounded-full bg-white/70 shadow-md transition"
-          >
-            <FaChevronRight size={20} />
-          </button>
+              </PublicCard>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Dots indikator */}
-        <div className="flex justify-center mt-6 gap-2">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === index
-                  ? "bg-[#B9914D]"
-                  : "bg-[#B9914D]/30 hover:bg-[#B9914D]/60"
-              }`}
-            />
-          ))}
-        </div>
+        <button
+          onClick={nextSlide}
+          className="absolute right-0 rounded-full bg-white/70 p-3 text-[var(--color-public-accent)] shadow-md transition md:-right-12"
+          aria-label="Selanjutnya"
+        >
+          <FaChevronRight size={20} />
+        </button>
       </div>
-    </section>
+
+      <div className="mt-6 flex justify-center gap-2">
+        {testimonials.map((item, dotIndex) => (
+          <button
+            key={item.id}
+            onClick={() => setIndex(dotIndex)}
+            className={`h-3 w-3 rounded-full transition-all duration-300 ${
+              dotIndex === index
+                ? "bg-[var(--color-public-accent)]"
+                : "bg-[var(--color-public-accent)]/30 hover:bg-[var(--color-public-accent)]/60"
+            }`}
+            aria-label={`Pindah ke testimonial ${dotIndex + 1}`}
+          />
+        ))}
+      </div>
+    </PublicSection>
   );
 };
 
 export default TestimoniSection;
-

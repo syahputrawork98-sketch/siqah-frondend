@@ -1,89 +1,58 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import { PublicButton, PublicSection, SectionHeading } from "@/shared/ui";
 
 const AboutSection = () => {
   return (
-    <section
-      className="relative py-20 px-6 md:px-16 overflow-hidden bg-fixed bg-center bg-cover"
-      style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
-      }}
-    >
-      {/* Overlay lembut agar teks tetap terbaca */}
-      <div className="absolute inset-0 bg-[#45624B]/70 mix-blend-multiply"></div>
-
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-40">
-        {/* LEFT: Logo */}
+    <PublicSection overlay="dark" className="bg-fixed bg-center bg-cover">
+      <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:gap-32">
         <motion.div
-          className="basis-1/2 flex justify-center md:justify-end items-center relative"
+          className="relative flex basis-1/2 justify-center md:justify-end"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {/* Lingkaran cahaya di belakang logo */}
-          <div className="absolute w-72 h-72 bg-[#B9914D]/20 rounded-full blur-3xl -z-0"></div>
-
-          {/* Logo utama */}
+          <div className="absolute -z-0 h-72 w-72 rounded-full bg-[var(--color-public-accent)]/20 blur-3xl" />
           <motion.img
             src="https://res.cloudinary.com/dcida9qys/image/upload/v1761098052/Siqah-logo-HD_fpetwm.png"
             alt="Logo Siqah"
-            className="w-80 h-50 md:w-80 md:h-70 relative z-10 drop-shadow-2xl"
+            className="relative z-10 h-52 w-80 drop-shadow-2xl md:h-72 md:w-80"
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1 }}
           />
         </motion.div>
 
-        {/* RIGHT: Text */}
         <motion.div
-          className="basis-1/2 text-center md:text-left text-white"
+          className="basis-1/2 text-white"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-cormorant font-bold siqah-public-accent mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            Tentang Siqah
-          </motion.h2>
+          <SectionHeading
+            title="Tentang Siqah"
+            align="left"
+            titleClassName="text-[var(--color-public-accent)]"
+            descriptionClassName="mx-0 text-gray-100/90"
+            description="Siqah lahir dari doa dan harapan para orang tua Muslim yang ingin menjalankan aqiqah dengan mudah, amanah, dan penuh keberkahan."
+          />
 
-          <motion.p
-            className="text-base sm:text-lg font-montserrat leading-relaxed text-gray-100/90 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            Siqah lahir dari doa dan harapan para orang tua Muslim yang ingin
-            menjalankan aqiqah dengan mudah, amanah, dan penuh keberkahan.
-            <br />
-            <br />
-            Sejak tahun <span className="siqah-public-accent font-semibold">2025</span> di Bandung,
-            kami berkomitmen menghadirkan layanan aqiqah yang praktis, syarâ€™i, dan berkesan â€”
+          <p className="mb-6 text-base leading-relaxed text-gray-100/90 sm:text-lg">
+            Sejak tahun <span className="font-semibold text-[var(--color-public-accent)]">2025</span> di Bandung,
+            kami berkomitmen menghadirkan layanan aqiqah yang praktis, syari, dan berkesan -
             mulai dari perawatan hewan, proses penyembelihan sesuai sunnah, hingga pengantaran
             hidangan terbaik untuk keluarga Anda.
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="flex justify-center md:justify-start"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <a href="#tentang" className="siqah-public-btn px-6 py-3 shadow-md">
-              Baca Lebih Lanjut
-            </a>
-          </motion.div>
+          <PublicButton as="a" href="#tentang" className="shadow-md">
+            Baca Lebih Lanjut
+          </PublicButton>
         </motion.div>
       </div>
-    </section>
+    </PublicSection>
   );
 };
 
 export default AboutSection;
-

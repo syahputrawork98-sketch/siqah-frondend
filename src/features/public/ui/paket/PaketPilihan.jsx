@@ -1,51 +1,35 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import { PublicButton, PublicSection, SectionHeading } from "@/shared/ui";
 
 const PaketPilihan = () => {
   return (
-    <section 
-     className="relative py-24 px-6 md:px-16 text-center overflow-hidden bg-fixed bg-center bg-cover"
-      style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
-      }}
-    >
+    <PublicSection className="py-24 text-center" overlay="dark" containerClassName="max-w-4xl px-6 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <SectionHeading
+          title="Buat Paket Aqiqah Sesuai Keinginan Anda"
+          titleClassName="text-white"
+          descriptionClassName="font-sans text-gray-100"
+          description="Pilih menu, jumlah hewan, dan layanan tambahan sesuai kebutuhan keluarga Anda. Kami siap membantu mewujudkan paket aqiqah yang sempurna dan sesuai syariat."
+          className="mb-10"
+        />
 
-    {/* Overlay hijau lembut */}
-      <div className="absolute inset-0 bg-[#45624B]/75 mix-blend-multiply"></div>
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <motion.h2
-          className="text-3xl md:text-5xl font-cormorant font-bold text-[#F8F8F5] mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Buat Paket Aqiqah Sesuai Keinginan Anda
-        </motion.h2>
-        <motion.p
-          className="text-lg md:text-xl font-montserrat text-gray-100 mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Pilih menu, jumlah hewan, dan layanan tambahan sesuai kebutuhan
-          keluarga Anda. Kami siap membantu mewujudkan paket aqiqah yang
-          sempurna dan sesuai syariat.
-        </motion.p>
-
-        <motion.button
-          className="px-8 py-4 siqah-public-btn font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Buat Paket Saya
-        </motion.button>
-      </div>
-    </section>
+          <PublicButton size="lg" className="font-bold shadow-lg hover:shadow-xl">
+            Buat Paket Saya
+          </PublicButton>
+        </motion.div>
+      </motion.div>
+    </PublicSection>
   );
 };
 
 export default PaketPilihan;
-

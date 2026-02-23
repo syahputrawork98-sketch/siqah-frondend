@@ -1,36 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PublicSection, PublicStat, SectionHeading } from "@/shared/ui";
 
 const HeroSection = () => {
   return (
-    <section
-       className="relative py-24 px-6 md:px-16 text-center overflow-hidden bg-fixed bg-center bg-cover"
-      style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
-      }}
-    >
-      {/* Overlay hijau lembut */}
-      <div className="absolute inset-0 bg-[#45624B]/75 mix-blend-multiply"></div>
-
+    <PublicSection className="py-24 text-center" overlay="dark" containerClassName="max-w-3xl px-6 text-center">
       <motion.div
-        className="relative z-10 text-center max-w-3xl px-6 mx-auto"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-4xl md:text-5xl font-cormorant font-bold mb-4 siqah-public-accent">
-          Pilih Paket Aqiqah Terbaik untuk Keluarga Anda
-        </h1>
-        <p className="text-lg md:text-xl font-montserrat text-gray-100">
-          Disiapkan oleh catering profesional, disembelih sesuai syariat, dan
-          dikirim dengan amanah.
-        </p>
+        <SectionHeading
+          title="Pilih Paket Aqiqah Terbaik untuk Keluarga Anda"
+          titleClassName="text-[var(--color-public-accent)]"
+          descriptionClassName="font-sans text-gray-100"
+          description="Disiapkan oleh catering profesional, disembelih sesuai syariat, dan dikirim dengan amanah."
+        />
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <PublicStat label="Mulai Harga" value="Rp2,0jt" helper="Paket hemat" />
+          <PublicStat label="Menu" value="15+" helper="Variasi olahan" />
+          <PublicStat label="On-time" value="99%" helper="Pengantaran tepat" />
+        </div>
       </motion.div>
-    </section>
+    </PublicSection>
   );
 };
 
 export default HeroSection;
-
-

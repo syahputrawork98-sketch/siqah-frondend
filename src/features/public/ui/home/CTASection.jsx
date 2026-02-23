@@ -1,73 +1,51 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import { PublicButton, PublicSection, SectionHeading } from "@/shared/ui";
 
 const CTASection = () => {
   return (
-    <section
-      className="relative py-24 px-6 md:px-16 text-center overflow-hidden bg-fixed bg-center bg-cover"
-      style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
-      }}
+    <PublicSection
+      className="py-24 text-center"
+      overlay="dark"
+      containerClassName="max-w-4xl text-white"
     >
-      {/* Overlay hijau lembut */}
-      <div className="absolute inset-0 bg-[#45624B]/75 mix-blend-multiply"></div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <SectionHeading
+          title="Wujudkan Aqiqah Penuh Berkah Bersama Siqah"
+          titleClassName="text-[var(--color-public-accent)]"
+          descriptionClassName="text-gray-100"
+          description="Percayakan momen berharga keluarga Anda pada Siqah, layanan aqiqah yang berkualitas, terpercaya, dan siap memberi pengalaman terbaik dari kandang hingga rumah."
+          className="mb-10"
+        />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-white">
-        {/* Judul */}
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-cormorant font-bold siqah-public-accent mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          Wujudkan Aqiqah Penuh Berkah Bersama Siqah
-        </motion.h2>
-
-        {/* Deskripsi */}
-        <motion.p
-          className="text-base sm:text-lg font-montserrat text-gray-100 mb-10 leading-relaxed max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 1 }}
-          viewport={{ once: true }}
-        >
-          Percayakan momen berharga keluarga Anda pada Siqah â€” layanan aqiqah
-          yang syarâ€™i, terpercaya, dan siap memberikan pengalaman terbaik dari
-          kandang hingga rumah.
-        </motion.p>
-
-        {/* Tombol CTA */}
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center gap-4"
+          className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1 }}
           viewport={{ once: true }}
         >
-          <a href="#paket" className="siqah-public-btn px-8 py-3 shadow-md">
+          <PublicButton as="a" href="#paket" size="lg" className="shadow-md">
             Lihat Paket Aqiqah
-          </a>
-          <a href="#kontak" className="siqah-public-btn px-8 py-3 shadow-md">
+          </PublicButton>
+          <PublicButton as="a" href="#kontak" size="lg" className="shadow-md">
             Konsultasi Sekarang
-          </a>
+          </PublicButton>
         </motion.div>
-      </div>
+      </motion.div>
 
-      {/* Soft floating glow */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-[#ffffff22] to-transparent rounded-none"
+        className="absolute inset-0 bg-gradient-to-t from-[#ffffff22] to-transparent"
         animate={{ opacity: [0.2, 0.4, 0.2] }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
-    </section>
+    </PublicSection>
   );
 };
 
 export default CTASection;
-

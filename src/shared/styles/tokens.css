@@ -12,6 +12,22 @@
   --color-brand-primary-soft: #fefbf7;
   --color-brand-border-soft: #eee6da;
   --color-overlay: rgb(0 0 0 / 50%);
+  --color-public-primary: #45624b;
+  --color-public-primary-strong: #2f4b3a;
+  --color-public-accent: #b9914d;
+  --color-public-accent-hover: #a37f3e;
+  --color-public-text-on-dark: #f8fafc;
+  --color-public-surface: rgb(255 255 255 / 92%);
+  --color-public-surface-border: rgb(185 145 77 / 24%);
+  --color-public-overlay-soft: rgb(255 255 255 / 72%);
+  --color-public-overlay-strong: rgb(69 98 75 / 76%);
+  --color-public-overlay-hero: linear-gradient(
+    to bottom right,
+    rgb(69 98 75 / 80%),
+    rgb(69 98 75 / 60%),
+    rgb(185 145 77 / 50%)
+  );
+  --image-public-background: url("https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg");
 
   /* Typography */
   --font-family-body: "Montserrat", sans-serif;

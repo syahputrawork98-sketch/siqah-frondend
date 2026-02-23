@@ -1,36 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  GiGoat,
-  GiMeatCleaver,
-  GiCookingPot,
-  GiBoxUnpacking,
-  GiDeliveryDrone,
-} from "react-icons/gi";
+import { GiBoxUnpacking, GiCookingPot, GiDeliveryDrone, GiGoat, GiMeatCleaver } from "react-icons/gi";
+import { PublicCard, PublicSection, SectionHeading } from "@/shared/ui";
 
 const processes = [
   {
-    icon: <GiGoat className="text-5xl siqah-public-accent" />,
+    icon: <GiGoat className="text-5xl text-[var(--color-public-accent)]" />,
     title: "Pemilihan Hewan",
     desc: "Konsumen memilih hewan terbaik dari peternakan Siqah yang sehat dan terverifikasi.",
   },
   {
-    icon: <GiMeatCleaver className="text-5xl siqah-public-accent" />,
+    icon: <GiMeatCleaver className="text-5xl text-[var(--color-public-accent)]" />,
     title: "Pemotongan Sesuai Syariat",
     desc: "Proses penyembelihan dilakukan oleh juru sembelih bersertifikat sesuai tuntunan syariat Islam.",
   },
   {
-    icon: <GiCookingPot className="text-5xl siqah-public-accent" />,
+    icon: <GiCookingPot className="text-5xl text-[var(--color-public-accent)]" />,
     title: "Pengolahan di Catering Siqah",
     desc: "Daging diolah oleh tim catering profesional menjadi hidangan lezat dan higienis.",
   },
   {
-    icon: <GiBoxUnpacking className="text-5xl siqah-public-accent" />,
+    icon: <GiBoxUnpacking className="text-5xl text-[var(--color-public-accent)]" />,
     title: "Pengemasan Aman",
     desc: "Setiap hidangan dikemas rapi dan higienis agar tetap segar saat diterima.",
   },
   {
-    icon: <GiDeliveryDrone className="text-5xl siqah-public-accent" />,
+    icon: <GiDeliveryDrone className="text-5xl text-[var(--color-public-accent)]" />,
     title: "Pengantaran ke Lokasi",
     desc: "Pesanan dikirim langsung oleh kurir Siqah dengan sistem pelacakan modern.",
   },
@@ -38,61 +33,40 @@ const processes = [
 
 const ProcessSection = () => {
   return (
-    <section
-      className="relative py-24 bg-[#45624B] text-center overflow-hidden"
-      style={{
-        backgroundImage:
-          'url("https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+    <PublicSection
+      className="py-24"
+      overlay="dark"
+      overlayClassName="bg-gradient-to-b from-[var(--color-public-primary)]/95 via-[var(--color-public-primary)]/80 to-[var(--color-public-primary)]/95"
+      containerClassName="text-white"
     >
-      {/* Overlay gradasi lembut */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#45624B]/95 via-[#45624B]/80 to-[#45624B]/95" />
+      <SectionHeading
+        className="mb-16"
+        title="Proses Layanan Siqah"
+        titleClassName="text-[var(--color-public-accent)]"
+        descriptionClassName="text-gray-100"
+        description="Kami memastikan setiap tahap dilakukan dengan penuh amanah, transparansi, dan profesionalisme."
+      />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-white">
-        {/* Judul */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 siqah-public-accent">
-            Proses Layanan Siqah
-          </h2>
-          <p className="text-lg text-gray-100 max-w-2xl mx-auto leading-relaxed">
-            Kami memastikan setiap tahap dilakukan dengan penuh amanah, transparansi, dan profesionalisme.
-          </p>
-        </motion.div>
-
-        {/* Timeline proses */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-6 flex-wrap">
-          {processes.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center w-full md:w-[18%] hover:bg-white/20 hover:-translate-y-1 transition-all duration-300"
-            >
+      <div className="flex flex-col flex-wrap items-center justify-between gap-12 md:flex-row md:gap-6">
+        {processes.map((step, index) => (
+          <motion.div
+            key={step.title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="w-full md:w-[18%]"
+          >
+            <PublicCard className="flex flex-col items-center bg-white/10 p-6 text-center backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/20">
               <div className="mb-4">{step.icon}</div>
-              <h3 className="text-lg font-semibold text-[#FFD88D] mb-2">
-                {step.title}
-              </h3>
-              <p className="text-sm text-gray-200 leading-relaxed">
-                {step.desc}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+              <h3 className="mb-2 text-lg font-semibold text-[#FFD88D]">{step.title}</h3>
+              <p className="text-sm leading-relaxed text-gray-200">{step.desc}</p>
+            </PublicCard>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </PublicSection>
   );
 };
 
 export default ProcessSection;
-

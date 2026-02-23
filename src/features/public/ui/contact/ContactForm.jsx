@@ -1,85 +1,85 @@
-// src/components/contact/ContactForm.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/shared/ui";
+import { PublicButton, PublicCard } from "@/shared/ui";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ nama: "", email: "", hp: "", pesan: "" });
   const [status, setStatus] = useState(null);
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (event) =>
+    setFormData({ ...formData, [event.target.name]: event.target.value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (!formData.nama || !formData.email || !formData.pesan) {
       setStatus({ type: "error", message: "Harap isi semua field yang wajib." });
       return;
     }
+
     setTimeout(() => {
-      setStatus({ type: "success", message: "Pesan berhasil dikirim!" });
+      setStatus({ type: "success", message: "Pesan berhasil dikirim." });
       setFormData({ nama: "", email: "", hp: "", pesan: "" });
     }, 1000);
   };
 
   return (
     <motion.div
-      className="bg-white bg-opacity-90 p-6 rounded-2xl shadow-md text-gray-900"
       initial={{ x: 50, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-xl font-semibold mb-4 text-[#45624B]">Kirim Pesan</h2>
-      {status && (
-        <div
-          className={`p-2 mb-4 rounded ${
-            status.type === "success" ? "bg-green-200 text-green-900" : "bg-red-200 text-red-900"
-          }`}
-        >
-          {status.message}
-        </div>
-      )}
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="nama"
-          placeholder="Nama Lengkap"
-          value={formData.nama}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#45624B]"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#45624B]"
-        />
-        <input
-          type="text"
-          name="hp"
-          placeholder="Nomor HP"
-          value={formData.hp}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#45624B]"
-        />
-        <textarea
-          name="pesan"
-          placeholder="Pesan Anda"
-          rows="4"
-          value={formData.pesan}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#45624B]"
-        />
-        <Button
-          type="submit"
-          variant="primary"
-          className="w-full siqah-public-btn rounded"
-        >
-          Kirim Pesan
-        </Button>
-      </form>
+      <PublicCard className="h-full p-6 text-[var(--color-public-primary)]">
+        <h2 className="mb-4 font-heading text-2xl font-semibold text-[var(--color-public-primary)]">Kirim Pesan</h2>
+        {status && (
+          <div
+            className={`mb-4 rounded p-2 ${
+              status.type === "success" ? "bg-green-200 text-green-900" : "bg-red-200 text-red-900"
+            }`}
+          >
+            {status.message}
+          </div>
+        )}
+
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="nama"
+            placeholder="Nama Lengkap"
+            value={formData.nama}
+            onChange={handleChange}
+            className="siqah-field"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="siqah-field"
+          />
+          <input
+            type="text"
+            name="hp"
+            placeholder="Nomor HP"
+            value={formData.hp}
+            onChange={handleChange}
+            className="siqah-field"
+          />
+          <textarea
+            name="pesan"
+            placeholder="Pesan Anda"
+            rows="4"
+            value={formData.pesan}
+            onChange={handleChange}
+            className="siqah-field"
+          />
+
+          <PublicButton type="submit" className="w-full">
+            Kirim Pesan
+          </PublicButton>
+        </form>
+      </PublicCard>
     </motion.div>
   );
 };
