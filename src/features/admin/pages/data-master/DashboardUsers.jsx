@@ -23,7 +23,7 @@ export default function DashboardUsers
     konsumen: 0,
     kurir: 0,
     kandang: 0,
-    dapur: 0,
+    catering: 0,
   });
 
   // --- Dummy data untuk chart & aktivitas (nanti diganti API real) ---
@@ -36,14 +36,14 @@ export default function DashboardUsers
       konsumen: 152,
       kurir: 5,
       kandang: 7,
-      dapur: 4,
+      catering: 4,
     });
 
     setChartData([
       { name: "Konsumen", value: 152 },
       { name: "Mitra Kurir", value: 5 },
       { name: "Mitra Kandang", value: 7 },
-      { name: "Mitra Dapur", value: 4 },
+      { name: "Mitra Catering", value: 4 },
     ]);
 
     setActivities([
@@ -59,7 +59,7 @@ export default function DashboardUsers
       },
       {
         tanggal: "31 Okt 2025",
-        user: "Mitra Dapur - Siti Nurhaliza",
+        user: "Mitra Catering - Siti Nurhaliza",
         aktivitas: "Memasak pesanan untuk 15 paket Aqiqah.",
       },
       {
@@ -93,8 +93,8 @@ export default function DashboardUsers
       color: "from-[#f8ecf8] to-[#f3def4]",
     },
     {
-      title: "Total Mitra Dapur",
-      value: data.dapur,
+      title: "Total Mitra Catering",
+      value: data.catering,
       icon: UtensilsCrossed,
       color: "from-[#e9f2fb] to-[#dceaf9]",
     },
@@ -201,6 +201,7 @@ export default function DashboardUsers
     </div>
   );
 }
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { GiGoat, GiCookingPot, GiDeliveryDrone } from "react-icons/gi";
 
@@ -14,7 +14,7 @@ const HeroSection = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Overlay hijau gelap transparan â€” sama dengan CTASection */}
+      {/* Overlay hijau gelap transparan — sama dengan CTASection */}
       <div className="absolute inset-0 bg-[#45624B]/90" />
 
       <div className="relative z-10 w-full max-w-7xl px-8 py-20 flex flex-col md:flex-row items-center justify-between gap-12 text-white">
@@ -32,7 +32,7 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed">
             Siqah menghadirkan sistem layanan{" "}
             <span className="siqah-public-accent font-semibold">terintegrasi</span> - 
-            mulai dari pemilihan hewan di kandang, pengolahan di dapur, hingga pengantaran oleh kurir terpercaya.
+            mulai dari pemilihan hewan di kandang, pengolahan di catering, hingga pengantaran oleh kurir terpercaya.
           </p>
 
           <div className="flex gap-4 justify-center items-center">
@@ -77,7 +77,7 @@ const HeroSection = () => {
             </p>
           </motion.div>
 
-          {/* Dapur */}
+          {/* Catering */}
           <motion.div
             whileHover={{ scale: 1.1 }}
             className="flex flex-col items-center text-center"
@@ -85,7 +85,7 @@ const HeroSection = () => {
             <div className="text-6xl siqah-public-accent mb-3">
               <GiCookingPot />
             </div>
-            <h4 className="font-semibold text-lg">Dapur Profesional</h4>
+            <h4 className="font-semibold text-lg">Catering Profesional</h4>
             <p className="text-sm text-gray-200 text-center w-40">
               Diolah oleh juru masak berpengalaman.
             </p>
@@ -114,4 +114,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 

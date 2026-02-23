@@ -21,10 +21,10 @@
       "foto": "https://placehold.co/100x100?text=Kandang"
     },
     {
-      "tahap": "Pemotongan & Dapur",
+      "tahap": "Pemotongan & Catering",
       "mitra": "Siti Aminah",
       "waktu": "2025-11-01 10:00",
-      "foto": "https://placehold.co/100x100?text=Dapur"
+      "foto": "https://placehold.co/100x100?text=Catering"
     },
     {
       "tahap": "Pengantaran",
@@ -34,5 +34,6 @@
     }
   ]
 }
+
 
 

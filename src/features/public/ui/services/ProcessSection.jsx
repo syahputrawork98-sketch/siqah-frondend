@@ -21,8 +21,8 @@ const processes = [
   },
   {
     icon: <GiCookingPot className="text-5xl siqah-public-accent" />,
-    title: "Pengolahan di Dapur Siqah",
-    desc: "Daging diolah oleh tim dapur profesional menjadi hidangan lezat dan higienis.",
+    title: "Pengolahan di Catering Siqah",
+    desc: "Daging diolah oleh tim catering profesional menjadi hidangan lezat dan higienis.",
   },
   {
     icon: <GiBoxUnpacking className="text-5xl siqah-public-accent" />,
@@ -95,3 +95,4 @@ const ProcessSection = () => {
 };
 
 export default ProcessSection;
+

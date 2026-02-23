@@ -32,8 +32,8 @@ const TimelineSection = () => {
     {
       id: 4,
       icon: <GiCook className="text-3xl siqah-public-accent" />,
-      title: "Pengolahan Dapur",
-      desc: "Tim dapur menyiapkan hidangan dengan cita rasa terbaik.",
+      title: "Pengolahan Catering",
+      desc: "Tim catering menyiapkan hidangan dengan cita rasa terbaik.",
     },
     {
       id: 5,
@@ -131,5 +131,6 @@ const TimelineSection = () => {
 };
 
 export default TimelineSection;
+
 
 

@@ -27,7 +27,7 @@ const advantages = [
   {
     icon: <FaUserCheck className="text-4xl siqah-public-accent" />,
     title: "Tim Profesional",
-    desc: "Dikelola oleh tenaga ahli dari peternakan, dapur, hingga kurir yang bekerja penuh tanggung jawab.",
+    desc: "Dikelola oleh tenaga ahli dari peternakan, catering, hingga kurir yang bekerja penuh tanggung jawab.",
   },
   {
     icon: <FaSmileBeam className="text-4xl siqah-public-accent" />,
@@ -95,3 +95,4 @@ const AdvantagesSection = () => {
 };
 
 export default AdvantagesSection;
+

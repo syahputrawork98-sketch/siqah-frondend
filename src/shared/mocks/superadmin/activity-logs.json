@@ -11,7 +11,7 @@
     "aksi": "Edit Role",
     "user": "Superadmin Siqah",
     "waktu": "2025-11-01 20:55",
-    "keterangan": "Mengubah hak akses Mitra Dapur"
+    "keterangan": "Mengubah hak akses Mitra Catering"
   },
   {
     "id": 3,
@@ -21,5 +21,6 @@
     "keterangan": "Menambahkan akun Mitra Kurir 1"
   }
 ]
+
 
 

@@ -2,62 +2,62 @@ import { useState, useEffect } from "react";
 import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent, Modal } from "@/shared/ui";
 
-export default function DataMitraKurir() {
-  const [dataKurir, setDataKurir] = useState([]);
-  const [selectedKurir, setSelectedKurir] = useState(null);
+export default function DataMitraCatering() {
+  const [dataMitra, setDataMitra] = useState([]);
+  const [selectedMitra, setSelectedMitra] = useState(null);
   const [modalView, setModalView] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
   const [modalTambah, setModalTambah] = useState(false);
 
   useEffect(() => {
-    // Data dummy kurir
-    setDataKurir([
+    // Dummy data simulasi (nanti diganti API)
+    setDataMitra([
       {
-        id_kurir: 1,
-        kode_kurir: "KR001",
-        nama_kurir: "Ahmad Hidayat",
-        no_hp: "081234567890",
-        alamat: "Jl. Sukamaju No.12, Bandung",
-        plat_nomor: "D 1234 AB",
-        status_aktif: true,
-        created_at: "2025-10-28",
+        id_mitra_catering: 1,
+        kode_mitra: "PTGDP001",
+        nama_mitra: "Siti Aminah",
+        no_telp: "081234567890",
+        alamat: "Jl. Melati No. 5, Bandung",
+        nama_catering: "Catering Utama 1",
+        status: "Aktif",
+        created_at: "2025-10-25",
       },
       {
-        id_kurir: 2,
-        kode_kurir: "KR002",
-        nama_kurir: "Siti Marlina",
-        no_hp: "081345678901",
-        alamat: "Jl. Mekarwangi No.8, Cimahi",
-        plat_nomor: "D 5678 CD",
-        status_aktif: true,
-        created_at: "2025-10-30",
+        id_mitra_catering: 2,
+        kode_mitra: "PTGDP002",
+        nama_mitra: "Rahmat Hidayat",
+        no_telp: "082134567890",
+        alamat: "Jl. Raya Cipadung No. 10, Cimahi",
+        nama_catering: "Catering Aqiqah Sejahtera",
+        status: "Aktif",
+        created_at: "2025-10-27",
       },
       {
-        id_kurir: 3,
-        kode_kurir: "KR003",
-        nama_kurir: "Rizky Firmansyah",
-        no_hp: "081298765432",
-        alamat: "Jl. Cibiru Wetan No.10, Kab. Bandung",
-        plat_nomor: "D 9012 EF",
-        status_aktif: false,
+        id_mitra_catering: 3,
+        kode_mitra: "PTGDP003",
+        nama_mitra: "Lina Marlina",
+        no_telp: "081298765432",
+        alamat: "Desa Cibiru, Kab. Bandung",
+        nama_catering: "Catering Berkah",
+        status: "Tidak Aktif",
         created_at: "2025-11-01",
       },
     ]);
   }, []);
 
-  const handleView = (k) => {
-    setSelectedKurir(k);
+  const handleView = (p) => {
+    setSelectedMitra(p);
     setModalView(true);
   };
 
-  const handleEdit = (k) => {
-    setSelectedKurir(k);
+  const handleEdit = (p) => {
+    setSelectedMitra(p);
     setModalEdit(true);
   };
 
-  const handleDelete = (k) => {
-    setSelectedKurir(k);
+  const handleDelete = (p) => {
+    setSelectedMitra(p);
     setModalDelete(true);
   };
 
@@ -67,10 +67,10 @@ export default function DataMitraKurir() {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-semibold text-[#3b3b3b]">
-            Data Mitra Kurir
+            Data Mitra Catering
           </h1>
           <p className="text-sm text-[#7a7368]">
-            Daftar mitra kurir dan informasi kendaraan mereka.
+            Daftar semua mitra catering dan unit kerja mereka.
           </p>
         </div>
         <button
@@ -78,7 +78,7 @@ export default function DataMitraKurir() {
           className="siqah-btn-primary shadow-sm"
         >
           <Plus size={16} />
-          Tambah Kurir
+          Tambah Mitra
         </button>
       </div>
 
@@ -88,51 +88,51 @@ export default function DataMitraKurir() {
           <table className="w-full text-sm text-left border-collapse">
             <thead className="siqah-table-head">
               <tr>
-                <th className="px-4 py-3">Kode Kurir</th>
-                <th className="px-4 py-3">Nama Kurir</th>
+                <th className="px-4 py-3">Kode Mitra</th>
+                <th className="px-4 py-3">Nama Mitra</th>
                 <th className="px-4 py-3">No. Telepon</th>
-                <th className="px-4 py-3">Plat Nomor</th>
+                <th className="px-4 py-3">Nama Catering</th>
                 <th className="px-4 py-3 text-center">Status</th>
                 <th className="px-4 py-3 text-center">Aksi</th>
               </tr>
             </thead>
             <tbody>
-              {dataKurir.map((k) => (
+              {dataMitra.map((p) => (
                 <tr
-                  key={k.id_kurir}
+                  key={p.id_mitra_catering}
                   className="siqah-table-row"
                 >
-                  <td className="px-4 py-3">{k.kode_kurir}</td>
-                  <td className="px-4 py-3">{k.nama_kurir}</td>
-                  <td className="px-4 py-3">{k.no_hp}</td>
-                  <td className="px-4 py-3">{k.plat_nomor}</td>
+                  <td className="px-4 py-3">{p.kode_mitra}</td>
+                  <td className="px-4 py-3">{p.nama_mitra}</td>
+                  <td className="px-4 py-3">{p.no_telp}</td>
+                  <td className="px-4 py-3">{p.nama_catering}</td>
                   <td className="px-4 py-3 text-center">
                     <span
                       className={`siqah-status-badge ${
-                        k.status_aktif
+                        p.status === "Aktif"
                           ? "siqah-status-success"
                           : "siqah-status-danger"
                       }`}
                     >
-                      {k.status_aktif ? "Aktif" : "Nonaktif"}
+                      {p.status}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-center">
                     <div className="flex justify-center gap-2">
                       <button
-                        onClick={() => handleView(k)}
+                        onClick={() => handleView(p)}
                         className="siqah-icon-action siqah-icon-action-view"
                       >
                         <Eye size={16} />
                       </button>
                       <button
-                        onClick={() => handleEdit(k)}
+                        onClick={() => handleEdit(p)}
                         className="siqah-icon-action siqah-icon-action-edit"
                       >
                         <Pencil size={16} />
                       </button>
                       <button
-                        onClick={() => handleDelete(k)}
+                        onClick={() => handleDelete(p)}
                         className="siqah-icon-action siqah-icon-action-delete"
                       >
                         <Trash2 size={16} />
@@ -148,19 +148,19 @@ export default function DataMitraKurir() {
 
       {/* Modal View */}
       <Modal isOpen={modalView} onClose={() => setModalView(false)}>
-        {selectedKurir && (
+        {selectedMitra && (
           <div className="p-5 space-y-3">
             <h2 className="text-lg font-semibold text-[#3b3b3b]">
-              Detail Mitra Kurir
+              Detail Mitra Catering
             </h2>
             <div className="grid grid-cols-2 gap-3 text-sm">
-              <p><strong>Kode:</strong> {selectedKurir.kode_kurir}</p>
-              <p><strong>Nama:</strong> {selectedKurir.nama_kurir}</p>
-              <p><strong>No. HP:</strong> {selectedKurir.no_hp}</p>
-              <p><strong>Plat Nomor:</strong> {selectedKurir.plat_nomor}</p>
-              <p><strong>Status:</strong> {selectedKurir.status_aktif ? "Aktif" : "Nonaktif"}</p>
+              <p><strong>Kode:</strong> {selectedMitra.kode_mitra}</p>
+              <p><strong>Nama:</strong> {selectedMitra.nama_mitra}</p>
+              <p><strong>No. Telepon:</strong> {selectedMitra.no_telp}</p>
+              <p><strong>Nama Catering:</strong> {selectedMitra.nama_catering}</p>
+              <p><strong>Status:</strong> {selectedMitra.status}</p>
               <p className="col-span-2">
-                <strong>Alamat:</strong> {selectedKurir.alamat}
+                <strong>Alamat:</strong> {selectedMitra.alamat}
               </p>
             </div>
           </div>
@@ -169,52 +169,52 @@ export default function DataMitraKurir() {
 
       {/* Modal Edit */}
       <Modal isOpen={modalEdit} onClose={() => setModalEdit(false)}>
-        {selectedKurir && (
+        {selectedMitra && (
           <div className="p-5 space-y-3">
             <h2 className="text-lg font-semibold text-[#3b3b3b]">
-              Edit Data Kurir
+              Edit Data Mitra Catering
             </h2>
             <form className="space-y-3">
               <div>
-                <label className="text-sm font-medium">Nama Kurir</label>
+                <label className="text-sm font-medium">Nama Mitra</label>
                 <input
                   type="text"
-                  defaultValue={selectedKurir.nama_kurir}
+                  defaultValue={selectedMitra.nama_mitra}
                   className="siqah-field"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium">No. HP</label>
+                <label className="text-sm font-medium">No. Telepon</label>
                 <input
                   type="text"
-                  defaultValue={selectedKurir.no_hp}
+                  defaultValue={selectedMitra.no_telp}
                   className="siqah-field"
                 />
               </div>
               <div>
                 <label className="text-sm font-medium">Alamat</label>
                 <textarea
-                  defaultValue={selectedKurir.alamat}
-                  rows="3"
+                  defaultValue={selectedMitra.alamat}
                   className="siqah-field"
+                  rows="3"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium">Plat Nomor</label>
+                <label className="text-sm font-medium">Nama Catering</label>
                 <input
                   type="text"
-                  defaultValue={selectedKurir.plat_nomor}
+                  defaultValue={selectedMitra.nama_catering}
                   className="siqah-field"
                 />
               </div>
               <div>
                 <label className="text-sm font-medium">Status</label>
                 <select
-                  defaultValue={selectedKurir.status_aktif ? "Aktif" : "Nonaktif"}
+                  defaultValue={selectedMitra.status}
                   className="siqah-field"
                 >
                   <option value="Aktif">Aktif</option>
-                  <option value="Nonaktif">Nonaktif</option>
+                  <option value="Tidak Aktif">Tidak Aktif</option>
                 </select>
               </div>
               <div className="flex justify-end pt-3">
@@ -233,14 +233,14 @@ export default function DataMitraKurir() {
 
       {/* Modal Delete */}
       <Modal isOpen={modalDelete} onClose={() => setModalDelete(false)}>
-        {selectedKurir && (
+        {selectedMitra && (
           <div className="p-6 text-center space-y-3">
             <Trash2 size={40} className="mx-auto text-red-500" />
             <h3 className="text-lg font-semibold text-[#3b3b3b]">
-              Hapus Mitra Kurir?
+              Hapus Mitra Catering?
             </h3>
             <p className="text-sm text-[#7a7368]">
-              Data kurir <strong>{selectedKurir.nama_kurir}</strong> akan dihapus dari sistem.
+              Data mitra <strong>{selectedMitra.nama_mitra}</strong> akan dihapus dari sistem.
             </p>
             <div className="flex justify-center gap-3 pt-2">
               <button
@@ -264,19 +264,19 @@ export default function DataMitraKurir() {
       <Modal isOpen={modalTambah} onClose={() => setModalTambah(false)}>
         <div className="p-5 space-y-3">
           <h2 className="text-lg font-semibold text-[#3b3b3b]">
-            Tambah Mitra Kurir
+            Tambah Mitra Catering Baru
           </h2>
           <form className="space-y-3">
             <div>
-              <label className="text-sm font-medium">Nama Kurir</label>
+              <label className="text-sm font-medium">Nama Mitra</label>
               <input
                 type="text"
-                placeholder="Masukkan nama kurir"
+                placeholder="Masukkan nama mitra"
                 className="siqah-field"
               />
             </div>
             <div>
-              <label className="text-sm font-medium">No. HP</label>
+              <label className="text-sm font-medium">No. Telepon</label>
               <input
                 type="text"
                 placeholder="Masukkan nomor telepon"
@@ -286,16 +286,16 @@ export default function DataMitraKurir() {
             <div>
               <label className="text-sm font-medium">Alamat</label>
               <textarea
-                placeholder="Masukkan alamat kurir"
+                placeholder="Masukkan alamat mitra"
                 rows="3"
                 className="siqah-field"
               />
             </div>
             <div>
-              <label className="text-sm font-medium">Plat Nomor</label>
+              <label className="text-sm font-medium">Nama Catering</label>
               <input
                 type="text"
-                placeholder="Masukkan plat nomor kendaraan"
+                placeholder="Masukkan nama catering"
                 className="siqah-field"
               />
             </div>
@@ -303,7 +303,7 @@ export default function DataMitraKurir() {
               <label className="text-sm font-medium">Status</label>
               <select className="siqah-field">
                 <option value="Aktif">Aktif</option>
-                <option value="Nonaktif">Nonaktif</option>
+                <option value="Tidak Aktif">Tidak Aktif</option>
               </select>
             </div>
             <div className="flex justify-end pt-3">
@@ -321,6 +321,7 @@ export default function DataMitraKurir() {
     </div>
   );
 }
+
 
 
 

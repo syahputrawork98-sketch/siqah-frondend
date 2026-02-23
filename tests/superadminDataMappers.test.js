@@ -39,7 +39,7 @@ test("normalizeMonitoringOrders falls back to default status labels", () => {
     tanggal: "2025-01-01",
     status: "Menunggu",
     kandang: "Menunggu",
-    dapur: "Menunggu",
+    catering: "Menunggu",
     kurir: "Menunggu",
   });
 });
@@ -69,3 +69,4 @@ test("normalizeUsers returns normalized user shape", () => {
     { id: 1, nama: "Superadmin", email: "a@b.c", role: "Superadmin" },
   ]);
 });
+

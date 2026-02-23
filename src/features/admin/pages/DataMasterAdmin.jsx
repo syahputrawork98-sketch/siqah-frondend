@@ -6,9 +6,9 @@ const DataMasterAdmin = () => {
     { title: "Data Hewan", count: 23, icon: Sheep, link: "/admin/data-master/hewan", color: "bg-green-500" },
     { title: "Data Menu", count: 12, icon: Soup, link: "/admin/data-master/menu", color: "bg-yellow-500" },
     { title: "Data Paket", count: 8, icon: Package, link: "/admin/data-master/paket", color: "bg-blue-500" },
-    { title: "Mitra Dapur", count: 4, icon: ChefHat, link: "/admin/data-master/mitra/dapur", color: "bg-orange-500" },
+    { title: "Mitra Catering", count: 4, icon: ChefHat, link: "/admin/data-master/mitra/catering", color: "bg-orange-500" },
     { title: "Mitra Kurir", count: 5, icon: Truck, link: "/admin/data-master/mitra/kurir", color: "bg-cyan-500" },
-    { title: "Data Dapur", count: 2, icon: Warehouse, link: "/admin/data-master/dapur", color: "bg-pink-500" },
+    { title: "Data Catering", count: 2, icon: Warehouse, link: "/admin/data-master/catering", color: "bg-pink-500" },
     { title: "Data Kandang", count: 3, icon: Warehouse, link: "/admin/data-master/kandang", color: "bg-teal-500" },
   ];
 
@@ -27,5 +27,6 @@ const DataMasterAdmin = () => {
 };
 
 export default DataMasterAdmin;
+
 
 

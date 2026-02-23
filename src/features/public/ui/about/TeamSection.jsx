@@ -17,9 +17,9 @@ const teamData = [
       "Bertanggung jawab atas kesehatan dan kelayakan hewan aqiqah, memastikan setiap hewan dipelihara dengan penuh kasih dan sesuai syariat.",
   },
   {
-    nama: "Mitra Dapur",
+    nama: "Mitra Catering",
     jabatan: "Pengolahan & Penyajian Menu",
-    foto: "https://res.cloudinary.com/dcida9qys/image/upload/v1761272551/dapur_siqah_xcw9ry.png",
+    foto: "https://res.cloudinary.com/dcida9qys/image/upload/v1761272551/catering_siqah_xcw9ry.png",
     deskripsi:
       "Menyiapkan olahan daging aqiqah dengan standar kebersihan tinggi, cita rasa terbaik, dan penuh keberkahan.",
   },
@@ -127,4 +127,5 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
+
 

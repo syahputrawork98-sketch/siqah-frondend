@@ -19,8 +19,8 @@ export default function Monitoring() {
       render: (row) => <StatusBadge status={row.kandang} />,
     },
     {
-      header: "Status Dapur",
-      render: (row) => <StatusBadge status={row.dapur} />,
+      header: "Status Catering",
+      render: (row) => <StatusBadge status={row.catering} />,
     },
     {
       header: "Status Kurir",
@@ -85,8 +85,8 @@ export default function Monitoring() {
             />
             <StageCard
               title="Pengolahan"
-              status={selectedOrder.dapur}
-              detail="Mitra dapur sedang mengolah daging."
+              status={selectedOrder.catering}
+              detail="Mitra catering sedang mengolah daging."
             />
             <StageCard
               title="Pengantaran"
@@ -153,4 +153,5 @@ function StageCard({ title, status, detail }) {
     </div>
   );
 }
+
 

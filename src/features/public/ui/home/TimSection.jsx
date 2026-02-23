@@ -12,8 +12,8 @@ const teamMembers = [
   {
     id: 2,
     nama: "Siti Rahmah",
-    role: "Mitra Dapur",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-dapur_f3e0ro.jpg",
+    role: "Mitra Catering",
+    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-catering_f3e0ro.jpg",
     quote: "Menyiapkan hidangan aqiqah dengan cita rasa terbaik dan penuh keberkahan.",
   },
   {
@@ -122,5 +122,6 @@ const TimSection = () => {
 };
 
 export default TimSection;
+
 
 

@@ -21,14 +21,14 @@ const values = [
     icon: "🔍",
     color: "text-yellow-600",
     description:
-      "Dengan sistem digital Siqah, pelanggan dapat memantau progres aqiqah secara langsung — dari kandang, dapur, hingga pengiriman.",
+      "Dengan sistem digital Siqah, pelanggan dapat memantau progres aqiqah secara langsung — dari kandang, catering, hingga pengiriman.",
   },
   {
     title: "Kualitas",
     icon: "🌿",
     color: "text-emerald-700",
     description:
-      "Kami menjamin kualitas terbaik dalam setiap aspek: hewan sehat, dapur higienis, dan cita rasa masakan yang lezat serta berkah.",
+      "Kami menjamin kualitas terbaik dalam setiap aspek: hewan sehat, catering higienis, dan cita rasa masakan yang lezat serta berkah.",
   },
 ];
 
@@ -123,3 +123,4 @@ const ValuesSection = () => {
 };
 
 export default ValuesSection;
+

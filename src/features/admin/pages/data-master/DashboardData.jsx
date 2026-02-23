@@ -19,7 +19,7 @@ import {
 export default function DashboardData() {
   // --- Data State ---
   const [data, setData] = useState({
-    dapur: 0,
+    catering: 0,
     kandang: 0,
     paket: 0,
     menu: 0,
@@ -33,7 +33,7 @@ export default function DashboardData() {
   useEffect(() => {
     // Simulasi fetch data dari API
     setData({
-      dapur: 4,
+      catering: 4,
       kandang: 7,
       paket: 12,
       menu: 9,
@@ -54,12 +54,12 @@ export default function DashboardData() {
       },
       {
         tanggal: "01 Nov 2025",
-        mitra: "Mitra Dapur B",
+        mitra: "Mitra Catering B",
         aktivitas: "Menambahkan menu baru (Gulai Domba)",
       },
       {
         tanggal: "31 Okt 2025",
-        mitra: "Mitra Dapur C",
+        mitra: "Mitra Catering C",
         aktivitas: "Memperbarui stok Paket Hemat",
       },
       {
@@ -75,8 +75,8 @@ export default function DashboardData() {
   // --- Card Statistik ---
   const cards = [
     {
-      title: "Total Dapur",
-      value: data.dapur,
+      title: "Total Catering",
+      value: data.catering,
       icon: UtensilsCrossed,
       color: "from-[#fff7e8] to-[#fbeed7]",
     },
@@ -115,7 +115,7 @@ export default function DashboardData() {
         </h1>
         <p className="text-sm text-[#7a7368]">
           Lihat ringkasan data yang telah diinput oleh mitra kandang dan
-          dapur.
+          catering.
         </p>
       </div>
 
@@ -208,6 +208,7 @@ export default function DashboardData() {
     </div>
   );
 }
+
 
 
 

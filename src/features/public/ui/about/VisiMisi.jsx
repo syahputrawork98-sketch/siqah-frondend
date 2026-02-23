@@ -68,11 +68,11 @@ const VisiMisi = () => {
               </li>
               <li>
                 Memberdayakan <strong>peternak lokal</strong> dan{" "}
-                <strong>dapur halal</strong>
+                <strong>catering halal</strong>
               </li>
               <li>
                 Menjaga <strong>kualitas hewan</strong> &{" "}
-                <strong>kebersihan dapur</strong>
+                <strong>kebersihan catering</strong>
               </li>
               <li>
                 Memberikan pengalaman <strong>mudah</strong> dan{" "}
@@ -87,3 +87,4 @@ const VisiMisi = () => {
 };
 
 export default VisiMisi;
+

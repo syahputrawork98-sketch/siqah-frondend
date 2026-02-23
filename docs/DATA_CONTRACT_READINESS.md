@@ -42,7 +42,7 @@ Service file: `src/features/superadmin/api/superadminApi.js`
 | `fetchSuperadminDashboard` | `GET` | `/superadmin/dashboard` | `{ totalUsers:number,totalOrders:number,waitingPayments:number,totalRevenue:number,newNotifications:number }` | `src/shared/mocks/superadmin/dashboard.json` | 1) Sinkron tipe numerik. 2) Uji data nol. 3) Lepas mock dashboard. |
 | `fetchSuperadminProfile` | `GET` | `/superadmin/profile` | `{ name,email,avatar }` | `src/shared/mocks/superadmin/topbar-profile.json` | 1) Validasi fallback avatar kosong. 2) Lepas mock profile. |
 | `fetchTopbarNotifications` | `GET` | `/superadmin/topbar-notifications` | `Array<{ id,title,message }>` | `src/shared/mocks/superadmin/topbar-notifications.json` | 1) Pastikan urutan terbaru-pertama. 2) Lepas mock topbar notification. |
-| `fetchMonitoringOrders` | `GET` | `/superadmin/monitoring/orders` | `Array<{ id,konsumen,paket,tanggal,status,kandang,dapur,kurir }>` | `src/shared/mocks/superadmin/monitoring-orders.json` | 1) Sinkron enum status lintas mitra. 2) Lepas mock monitoring. |
+| `fetchMonitoringOrders` | `GET` | `/superadmin/monitoring/orders` | `Array<{ id,konsumen,paket,tanggal,status,kandang,catering,kurir }>` | `src/shared/mocks/superadmin/monitoring-orders.json` | 1) Sinkron enum status lintas mitra. 2) Lepas mock monitoring. |
 | `fetchReports` | `GET` | `/superadmin/reports` | `Array<{ id,tanggal,konsumen,total:number,status }>` | `src/shared/mocks/superadmin/reports.json` | 1) Pastikan format tanggal. 2) Lepas mock reports list. |
 | `fetchReportChart` | `GET` | `/superadmin/reports/chart` | `Array<{ bulan,total:number }>` | `src/shared/mocks/superadmin/report-chart.json` | 1) Tetapkan granularitas periode (bulanan). 2) Lepas mock chart. |
 | `fetchSystemNotifications` | `GET` | `/superadmin/notifications` | `Array<{ id,pesan,waktu,status }>` | `src/shared/mocks/superadmin/notifications.json` | 1) Sinkron status baca. 2) Lepas mock notifikasi sistem. |
@@ -60,4 +60,5 @@ Service file: `src/features/superadmin/api/superadminApi.js`
 4. Tambahkan regresi test mapper saat ditemukan gap field/tipe dari backend.
 5. Setelah endpoint stabil 2 sprint, hapus dependency JSON mock endpoint terkait dari `mock*Api.js`.
 6. Setelah semua endpoint siap, nonaktifkan mode mock sebagai default (`VITE_ENABLE_MOCK=false`).
+
 

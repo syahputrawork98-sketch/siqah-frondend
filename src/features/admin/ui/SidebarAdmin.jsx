@@ -26,7 +26,7 @@ const menuItems = [
       { name: "Dashboard Data", path: "/admin/data" },
       { name: "Data Kandang", path: "/admin/data-master/kandang" },
       { name: "Data Hewan", path: "/admin/data-master/hewan" },
-      { name: "Data Dapur", path: "/admin/data-master/dapur" },
+      { name: "Data Catering", path: "/admin/data-master/catering" },
       { name: "Data Paket", path: "/admin/data-master/paket" },
       { name: "Data Menu", path: "/admin/data-master/menu" },
     ],
@@ -46,7 +46,7 @@ const menuItems = [
     icon: Users,
     children: [
       { name: "Dashboard User", path: "/admin/datauser" },
-      { name: "Data Mitra Dapur", path: "/admin/data-master/mitra/dapur" },
+      { name: "Data Mitra Catering", path: "/admin/data-master/mitra/catering" },
       { name: "Data Kurir", path: "/admin/data-master/mitra/kurir" },
       { name: "Data konsumen", path: "/admin/data-master/konsumen" },
     ],
@@ -182,6 +182,7 @@ export default function SidebarAdmin() {
     </>
   );
 }
+
 
 
 

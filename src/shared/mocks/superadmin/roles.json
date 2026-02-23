@@ -16,8 +16,8 @@
   },
   {
     "id": 4,
-    "nama_role": "Mitra Dapur",
-    "deskripsi": "Menginput proses dapur"
+    "nama_role": "Mitra Catering",
+    "deskripsi": "Menginput proses catering"
   },
   {
     "id": 5,
@@ -30,5 +30,6 @@
     "deskripsi": "Melihat pesanan dan status"
   }
 ]
+
 
 

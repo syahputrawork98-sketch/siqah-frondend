@@ -10,11 +10,11 @@ import PengaturanAdmin from "@/features/admin/pages/PengaturanAdmin";
 import DashboardData from "@/features/admin/pages/data-master/DashboardData";
 import DataHewan from "@/features/admin/pages/data-master/kandang/DataHewan";
 import DataKandang from "@/features/admin/pages/data-master/kandang/DataKandang";
-import DataDapur from "@/features/admin/pages/data-master/dapur/DataDapur";
-import DataMenu from "@/features/admin/pages/data-master/dapur/DataMenu";
-import DataPaket from "@/features/admin/pages/data-master/dapur/DataPaket";
+import DataCatering from "@/features/admin/pages/data-master/catering/DataCatering";
+import DataMenu from "@/features/admin/pages/data-master/catering/DataMenu";
+import DataPaket from "@/features/admin/pages/data-master/catering/DataPaket";
 import DashboardUsers from "@/features/admin/pages/data-master/DashboardUsers";
-import DataMitraDapur from "@/features/admin/pages/data-master/mitra/dapur/DataMitraDapur";
+import DataMitraCatering from "@/features/admin/pages/data-master/mitra/catering/DataMitraCatering";
 import DataMitraKurir from "@/features/admin/pages/data-master/mitra/kurir/DataMitraKurir";
 import DataKonsumen from "@/features/admin/pages/data-master/konsumen/DataKonsumen";
 import DashboardPembayaran from "@/features/admin/pages/data-master/DashboardPembayaran";
@@ -31,11 +31,11 @@ export const ADMIN_ROUTES = [
   { path: "data", element: <DashboardData /> },
   { path: "data-master/hewan", element: <DataHewan /> },
   { path: "data-master/kandang", element: <DataKandang /> },
-  { path: "data-master/dapur", element: <DataDapur /> },
+  { path: "data-master/catering", element: <DataCatering /> },
   { path: "data-master/menu", element: <DataMenu /> },
   { path: "data-master/paket", element: <DataPaket /> },
   { path: "datauser", element: <DashboardUsers /> },
-  { path: "data-master/mitra/dapur", element: <DataMitraDapur /> },
+  { path: "data-master/mitra/catering", element: <DataMitraCatering /> },
   { path: "data-master/mitra/kurir", element: <DataMitraKurir /> },
   { path: "data-master/konsumen", element: <DataKonsumen /> },
   { path: "dashboardpembayaran", element: <DashboardPembayaran /> },
@@ -48,4 +48,5 @@ export const ADMIN_ROUTES = [
   { path: "Notifikasiadmin", element: <Navigate to="/admin/notifikasi" replace /> },
   { path: "pengaturan", element: <PengaturanAdmin /> },
 ];
+
 

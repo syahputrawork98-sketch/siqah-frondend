@@ -186,7 +186,7 @@ export default function Users() {
               <option>Superadmin</option>
               <option>Admin</option>
               <option>Mitra Kandang</option>
-              <option>Mitra Dapur</option>
+              <option>Mitra Catering</option>
               <option>Mitra Kurir</option>
               <option>Konsumen</option>
             </select>
@@ -213,4 +213,5 @@ export default function Users() {
     </div>
   );
 }
+
 

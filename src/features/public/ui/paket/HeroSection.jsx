@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -23,7 +23,7 @@ const HeroSection = () => {
           Pilih Paket Aqiqah Terbaik untuk Keluarga Anda
         </h1>
         <p className="text-lg md:text-xl font-montserrat text-gray-100">
-          Disiapkan oleh dapur profesional, disembelih sesuai syariat, dan
+          Disiapkan oleh catering profesional, disembelih sesuai syariat, dan
           dikirim dengan amanah.
         </p>
       </motion.div>
@@ -32,4 +32,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 

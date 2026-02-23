@@ -19,9 +19,9 @@
   },
   {
     "id": 4,
-    "nama": "Mitra Dapur 1",
-    "email": "dapur1@siqah.id",
-    "role": "Mitra Dapur"
+    "nama": "Mitra Catering 1",
+    "email": "catering1@siqah.id",
+    "role": "Mitra Catering"
   },
   {
     "id": 5,
@@ -36,5 +36,6 @@
     "role": "Konsumen"
   }
 ]
+
 
 

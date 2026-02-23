@@ -48,7 +48,7 @@ export const normalizeMonitoringOrders = (raw) => {
     tanggal: item.tanggal ?? "-",
     status: item.status ?? "Menunggu",
     kandang: item.kandang ?? "Menunggu",
-    dapur: item.dapur ?? "Menunggu",
+    catering: item.catering ?? "Menunggu",
     kurir: item.kurir ?? "Menunggu",
   }));
 };
@@ -150,3 +150,4 @@ export const normalizeSettingsProfile = (raw) => {
     avatar: source.avatar ?? "",
   };
 };
+

@@ -46,7 +46,7 @@ const StorySection = () => {
             <span className="font-semibold text-emerald-700">Siqah</span> lahir
             dari keinginan untuk menjawab kebutuhan banyak keluarga Muslim yang
             ingin menjalankan ibadah aqiqah dengan tenang, tanpa harus bingung
-            mengurus hewan, dapur, atau distribusi. Kami menyadari bahwa
+            mengurus hewan, catering, atau distribusi. Kami menyadari bahwa
             momen aqiqah bukan sekadar acara, tapi bentuk rasa syukur dan doa
             keluarga atas anugerah Allah.
           </p>
@@ -96,7 +96,7 @@ const StorySection = () => {
               Kolaborasi Penuh Amanah
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Siqah membangun ekosistem yang melibatkan peternak, dapur halal,
+              Siqah membangun ekosistem yang melibatkan peternak, catering halal,
               dan kurir yang bekerja dengan penuh tanggung jawab.
             </p>
           </motion.div>
@@ -116,7 +116,7 @@ const StorySection = () => {
             </h3>
             <p className="text-gray-700 leading-relaxed">
               Dengan sistem digital, setiap proses aqiqah kini bisa dipantau
-              langsung — dari hewan, dapur, hingga pengantaran.
+              langsung — dari hewan, catering, hingga pengantaran.
             </p>
           </motion.div>
         </motion.div>
@@ -142,3 +142,4 @@ const StorySection = () => {
 };
 
 export default StorySection;
+

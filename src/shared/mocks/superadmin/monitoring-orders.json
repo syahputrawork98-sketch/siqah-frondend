@@ -6,7 +6,7 @@
     "tanggal": "2025-11-01",
     "status": "Selesai",
     "kandang": "Selesai",
-    "dapur": "Selesai",
+    "catering": "Selesai",
     "kurir": "Terkirim"
   },
   {
@@ -16,7 +16,7 @@
     "tanggal": "2025-11-01",
     "status": "Proses",
     "kandang": "Selesai",
-    "dapur": "Proses",
+    "catering": "Proses",
     "kurir": "Menunggu"
   },
   {
@@ -26,8 +26,9 @@
     "tanggal": "2025-10-30",
     "status": "Menunggu",
     "kandang": "Menunggu",
-    "dapur": "Menunggu",
+    "catering": "Menunggu",
     "kurir": "Menunggu"
   }
 ]
+
 

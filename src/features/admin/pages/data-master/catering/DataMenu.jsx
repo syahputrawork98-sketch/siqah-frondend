@@ -2,62 +2,62 @@ import { useState, useEffect } from "react";
 import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent, Modal } from "@/shared/ui";
 
-export default function DataMitraDapur() {
-  const [dataMitra, setDataMitra] = useState([]);
-  const [selectedMitra, setSelectedMitra] = useState(null);
+export default function DataMenu() {
+  const [dataMenu, setDataMenu] = useState([]);
+  const [selectedMenu, setSelectedMenu] = useState(null);
   const [modalView, setModalView] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
   const [modalTambah, setModalTambah] = useState(false);
 
   useEffect(() => {
-    // Dummy data simulasi (nanti diganti API)
-    setDataMitra([
+    // Dummy data sesuai tb_menu
+    setDataMenu([
       {
-        id_mitra_dapur: 1,
-        kode_mitra: "PTGDP001",
-        nama_mitra: "Siti Aminah",
-        no_telp: "081234567890",
-        alamat: "Jl. Melati No. 5, Bandung",
-        nama_dapur: "Dapur Utama 1",
-        status: "Aktif",
+        id_menu: 1,
+        kode_menu: "MNU001",
+        nama_menu: "Gulai Kambing",
+        kategori: "Daging",
+        deskripsi: "Gulai kambing dengan bumbu rempah pilihan dan santan gurih.",
+        harga: 45000,
+        status_aktif: true,
         created_at: "2025-10-25",
       },
       {
-        id_mitra_dapur: 2,
-        kode_mitra: "PTGDP002",
-        nama_mitra: "Rahmat Hidayat",
-        no_telp: "082134567890",
-        alamat: "Jl. Raya Cipadung No. 10, Cimahi",
-        nama_dapur: "Dapur Aqiqah Sejahtera",
-        status: "Aktif",
-        created_at: "2025-10-27",
+        id_menu: 2,
+        kode_menu: "MNU002",
+        nama_menu: "Sate Domba",
+        kategori: "Grill",
+        deskripsi: "Sate domba empuk dengan bumbu kacang khas Siqah.",
+        harga: 40000,
+        status_aktif: true,
+        created_at: "2025-10-28",
       },
       {
-        id_mitra_dapur: 3,
-        kode_mitra: "PTGDP003",
-        nama_mitra: "Lina Marlina",
-        no_telp: "081298765432",
-        alamat: "Desa Cibiru, Kab. Bandung",
-        nama_dapur: "Dapur Berkah",
-        status: "Tidak Aktif",
+        id_menu: 3,
+        kode_menu: "MNU003",
+        nama_menu: "Tongseng Kambing",
+        kategori: "Daging",
+        deskripsi: "Tongseng dengan kuah kental manis pedas nikmat.",
+        harga: 50000,
+        status_aktif: false,
         created_at: "2025-11-01",
       },
     ]);
   }, []);
 
-  const handleView = (p) => {
-    setSelectedMitra(p);
+  const handleView = (m) => {
+    setSelectedMenu(m);
     setModalView(true);
   };
 
-  const handleEdit = (p) => {
-    setSelectedMitra(p);
+  const handleEdit = (m) => {
+    setSelectedMenu(m);
     setModalEdit(true);
   };
 
-  const handleDelete = (p) => {
-    setSelectedMitra(p);
+  const handleDelete = (m) => {
+    setSelectedMenu(m);
     setModalDelete(true);
   };
 
@@ -66,11 +66,9 @@ export default function DataMitraDapur() {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-semibold text-[#3b3b3b]">
-            Data Mitra Dapur
-          </h1>
+          <h1 className="text-2xl font-semibold text-[#3b3b3b]">Data Menu</h1>
           <p className="text-sm text-[#7a7368]">
-            Daftar semua mitra dapur dan unit kerja mereka.
+            Daftar menu olahan aqiqah yang tersedia di catering Siqah.
           </p>
         </div>
         <button
@@ -78,7 +76,7 @@ export default function DataMitraDapur() {
           className="siqah-btn-primary shadow-sm"
         >
           <Plus size={16} />
-          Tambah Mitra
+          Tambah Menu
         </button>
       </div>
 
@@ -88,51 +86,55 @@ export default function DataMitraDapur() {
           <table className="w-full text-sm text-left border-collapse">
             <thead className="siqah-table-head">
               <tr>
-                <th className="px-4 py-3">Kode Mitra</th>
-                <th className="px-4 py-3">Nama Mitra</th>
-                <th className="px-4 py-3">No. Telepon</th>
-                <th className="px-4 py-3">Nama Dapur</th>
+                <th className="px-4 py-3">Kode Menu</th>
+                <th className="px-4 py-3">Nama Menu</th>
+                <th className="px-4 py-3">Kategori</th>
+                <th className="px-4 py-3">Deskripsi</th>
+                <th className="px-4 py-3 text-center">Harga</th>
                 <th className="px-4 py-3 text-center">Status</th>
                 <th className="px-4 py-3 text-center">Aksi</th>
               </tr>
             </thead>
             <tbody>
-              {dataMitra.map((p) => (
+              {dataMenu.map((m) => (
                 <tr
-                  key={p.id_mitra_dapur}
+                  key={m.id_menu}
                   className="siqah-table-row"
                 >
-                  <td className="px-4 py-3">{p.kode_mitra}</td>
-                  <td className="px-4 py-3">{p.nama_mitra}</td>
-                  <td className="px-4 py-3">{p.no_telp}</td>
-                  <td className="px-4 py-3">{p.nama_dapur}</td>
+                  <td className="px-4 py-3">{m.kode_menu}</td>
+                  <td className="px-4 py-3">{m.nama_menu}</td>
+                  <td className="px-4 py-3">{m.kategori}</td>
+                  <td className="px-4 py-3">{m.deskripsi}</td>
+                  <td className="px-4 py-3 text-center">
+                    Rp {m.harga.toLocaleString("id-ID")}
+                  </td>
                   <td className="px-4 py-3 text-center">
                     <span
                       className={`siqah-status-badge ${
-                        p.status === "Aktif"
+                        m.status_aktif
                           ? "siqah-status-success"
                           : "siqah-status-danger"
                       }`}
                     >
-                      {p.status}
+                      {m.status_aktif ? "Aktif" : "Nonaktif"}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-center">
                     <div className="flex justify-center gap-2">
                       <button
-                        onClick={() => handleView(p)}
+                        onClick={() => handleView(m)}
                         className="siqah-icon-action siqah-icon-action-view"
                       >
                         <Eye size={16} />
                       </button>
                       <button
-                        onClick={() => handleEdit(p)}
+                        onClick={() => handleEdit(m)}
                         className="siqah-icon-action siqah-icon-action-edit"
                       >
                         <Pencil size={16} />
                       </button>
                       <button
-                        onClick={() => handleDelete(p)}
+                        onClick={() => handleDelete(m)}
                         className="siqah-icon-action siqah-icon-action-delete"
                       >
                         <Trash2 size={16} />
@@ -148,20 +150,21 @@ export default function DataMitraDapur() {
 
       {/* Modal View */}
       <Modal isOpen={modalView} onClose={() => setModalView(false)}>
-        {selectedMitra && (
+        {selectedMenu && (
           <div className="p-5 space-y-3">
             <h2 className="text-lg font-semibold text-[#3b3b3b]">
-              Detail Mitra Dapur
+              Detail Menu
             </h2>
             <div className="grid grid-cols-2 gap-3 text-sm">
-              <p><strong>Kode:</strong> {selectedMitra.kode_mitra}</p>
-              <p><strong>Nama:</strong> {selectedMitra.nama_mitra}</p>
-              <p><strong>No. Telepon:</strong> {selectedMitra.no_telp}</p>
-              <p><strong>Nama Dapur:</strong> {selectedMitra.nama_dapur}</p>
-              <p><strong>Status:</strong> {selectedMitra.status}</p>
+              <p><strong>Kode:</strong> {selectedMenu.kode_menu}</p>
+              <p><strong>Nama Menu:</strong> {selectedMenu.nama_menu}</p>
+              <p><strong>Kategori:</strong> {selectedMenu.kategori}</p>
+              <p><strong>Harga:</strong> Rp {selectedMenu.harga.toLocaleString("id-ID")}</p>
               <p className="col-span-2">
-                <strong>Alamat:</strong> {selectedMitra.alamat}
+                <strong>Deskripsi:</strong> {selectedMenu.deskripsi}
               </p>
+              <p><strong>Status:</strong> {selectedMenu.status_aktif ? "Aktif" : "Nonaktif"}</p>
+              <p><strong>Tanggal Input:</strong> {selectedMenu.created_at}</p>
             </div>
           </div>
         )}
@@ -169,53 +172,55 @@ export default function DataMitraDapur() {
 
       {/* Modal Edit */}
       <Modal isOpen={modalEdit} onClose={() => setModalEdit(false)}>
-        {selectedMitra && (
+        {selectedMenu && (
           <div className="p-5 space-y-3">
             <h2 className="text-lg font-semibold text-[#3b3b3b]">
-              Edit Data Mitra Dapur
+              Edit Data Menu
             </h2>
             <form className="space-y-3">
               <div>
-                <label className="text-sm font-medium">Nama Mitra</label>
+                <label className="text-sm font-medium">Nama Menu</label>
                 <input
                   type="text"
-                  defaultValue={selectedMitra.nama_mitra}
+                  defaultValue={selectedMenu.nama_menu}
                   className="siqah-field"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium">No. Telepon</label>
+                <label className="text-sm font-medium">Kategori</label>
                 <input
                   type="text"
-                  defaultValue={selectedMitra.no_telp}
+                  defaultValue={selectedMenu.kategori}
                   className="siqah-field"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium">Alamat</label>
+                <label className="text-sm font-medium">Deskripsi</label>
                 <textarea
-                  defaultValue={selectedMitra.alamat}
+                  defaultValue={selectedMenu.deskripsi}
                   className="siqah-field"
                   rows="3"
                 />
               </div>
-              <div>
-                <label className="text-sm font-medium">Nama Dapur</label>
-                <input
-                  type="text"
-                  defaultValue={selectedMitra.nama_dapur}
-                  className="siqah-field"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium">Status</label>
-                <select
-                  defaultValue={selectedMitra.status}
-                  className="siqah-field"
-                >
-                  <option value="Aktif">Aktif</option>
-                  <option value="Tidak Aktif">Tidak Aktif</option>
-                </select>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-sm font-medium">Harga</label>
+                  <input
+                    type="number"
+                    defaultValue={selectedMenu.harga}
+                    className="siqah-field"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium">Status</label>
+                  <select
+                    defaultValue={selectedMenu.status_aktif ? "Aktif" : "Nonaktif"}
+                    className="siqah-field"
+                  >
+                    <option value="Aktif">Aktif</option>
+                    <option value="Nonaktif">Nonaktif</option>
+                  </select>
+                </div>
               </div>
               <div className="flex justify-end pt-3">
                 <button
@@ -233,14 +238,14 @@ export default function DataMitraDapur() {
 
       {/* Modal Delete */}
       <Modal isOpen={modalDelete} onClose={() => setModalDelete(false)}>
-        {selectedMitra && (
+        {selectedMenu && (
           <div className="p-6 text-center space-y-3">
             <Trash2 size={40} className="mx-auto text-red-500" />
             <h3 className="text-lg font-semibold text-[#3b3b3b]">
-              Hapus Mitra Dapur?
+              Hapus Menu?
             </h3>
             <p className="text-sm text-[#7a7368]">
-              Data mitra <strong>{selectedMitra.nama_mitra}</strong> akan dihapus dari sistem.
+              Data menu <strong>{selectedMenu.nama_menu}</strong> akan dihapus dari sistem.
             </p>
             <div className="flex justify-center gap-3 pt-2">
               <button
@@ -264,47 +269,49 @@ export default function DataMitraDapur() {
       <Modal isOpen={modalTambah} onClose={() => setModalTambah(false)}>
         <div className="p-5 space-y-3">
           <h2 className="text-lg font-semibold text-[#3b3b3b]">
-            Tambah Mitra Dapur Baru
+            Tambah Menu Baru
           </h2>
           <form className="space-y-3">
             <div>
-              <label className="text-sm font-medium">Nama Mitra</label>
+              <label className="text-sm font-medium">Nama Menu</label>
               <input
                 type="text"
-                placeholder="Masukkan nama mitra"
+                placeholder="Masukkan nama menu"
                 className="siqah-field"
               />
             </div>
             <div>
-              <label className="text-sm font-medium">No. Telepon</label>
+              <label className="text-sm font-medium">Kategori</label>
               <input
                 type="text"
-                placeholder="Masukkan nomor telepon"
+                placeholder="Masukkan kategori menu"
                 className="siqah-field"
               />
             </div>
             <div>
-              <label className="text-sm font-medium">Alamat</label>
+              <label className="text-sm font-medium">Deskripsi</label>
               <textarea
-                placeholder="Masukkan alamat mitra"
+                placeholder="Masukkan deskripsi menu"
                 rows="3"
                 className="siqah-field"
               />
             </div>
-            <div>
-              <label className="text-sm font-medium">Nama Dapur</label>
-              <input
-                type="text"
-                placeholder="Masukkan nama dapur"
-                className="siqah-field"
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium">Status</label>
-              <select className="siqah-field">
-                <option value="Aktif">Aktif</option>
-                <option value="Tidak Aktif">Tidak Aktif</option>
-              </select>
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="text-sm font-medium">Harga</label>
+                <input
+                  type="number"
+                  placeholder="Masukkan harga menu"
+                  className="siqah-field"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">Status</label>
+                <select className="siqah-field">
+                  <option value="Aktif">Aktif</option>
+                  <option value="Nonaktif">Nonaktif</option>
+                </select>
+              </div>
             </div>
             <div className="flex justify-end pt-3">
               <button
