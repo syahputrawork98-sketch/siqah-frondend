@@ -22,12 +22,12 @@ export function Footer() {
   return (
     <footer
       id="footer"
-      className={`relative text-white py-16 px-6 font-sans transition-opacity duration-1000 ease-out ${
+      className={`relative py-16 px-6 font-sans text-[var(--color-public-text-on-dark)] transition-opacity duration-1000 ease-out ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#45624B] to-[#2f4233] z-0" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#B9914D]/20 rounded-full blur-3xl z-0" />
+      <div className="absolute inset-0 z-0 bg-[image:var(--color-public-footer-gradient)]" />
+      <div className="absolute bottom-10 right-10 z-0 h-80 w-80 rounded-full bg-[var(--color-public-footer-glow)] blur-3xl" />
 
       <motion.div
         className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-3 gap-12 items-start"
@@ -46,14 +46,14 @@ export function Footer() {
           <h3 className="font-cormorant text-2xl siqah-public-accent font-bold mb-2">
             Siap Aqiqah
           </h3>
-          <p className="text-sm text-gray-200/80 max-w-xs leading-relaxed text-center md:text-left">
+          <p className="max-w-xs text-center text-sm leading-relaxed text-[var(--color-public-footer-text)] md:text-left">
             Kami berkomitmen memberikan layanan aqiqah terbaik dengan penuh amanah dan profesional.
           </p>
         </div>
 
         <div className="flex flex-col items-center md:items-start">
           <h4 className="text-lg font-semibold mb-4 siqah-public-accent">Navigasi</h4>
-          <ul className="space-y-3 text-gray-200/90">
+          <ul className="space-y-3 text-[var(--color-public-footer-text)]">
             <li>
               <Link to="/" className="siqah-public-link transition-colors duration-300">
                 Home
@@ -105,7 +105,7 @@ export function Footer() {
         </div>
       </motion.div>
 
-      <div className="relative z-10 mt-12 text-center border-t border-white/20 pt-6 text-sm text-gray-300">
+      <div className="relative z-10 mt-12 border-t border-[var(--color-public-divider-soft)] pt-6 text-center text-sm text-[var(--color-public-footer-text-subtle)]">
         (c) {getCurrentYear()} Siap Aqiqah. All rights reserved.
       </div>
     </footer>

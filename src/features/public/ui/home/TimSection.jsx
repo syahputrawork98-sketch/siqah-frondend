@@ -1,41 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { PublicCard, PublicSection, SectionHeading } from "@/shared/ui";
-
-const teamMembers = [
-  {
-    id: 1,
-    nama: "Ahmad Fauzi",
-    role: "Tim Kandang",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-kandang_tzqlbo.jpg",
-    quote: "Merawat hewan dengan penuh tanggung jawab dan kasih sayang.",
-  },
-  {
-    id: 2,
-    nama: "Siti Rahmah",
-    role: "Mitra Catering",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-catering_f3e0ro.jpg",
-    quote: "Menyiapkan hidangan aqiqah dengan cita rasa terbaik dan penuh keberkahan.",
-  },
-  {
-    id: 3,
-    nama: "Rizky Pratama",
-    role: "Kurir Siqah",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-kurir_rjhecz.jpg",
-    quote: "Mengantar pesanan aqiqah Anda dengan aman, cepat, dan ramah.",
-  },
-  {
-    id: 4,
-    nama: "Nur Aulia",
-    role: "Admin dan Layanan Pelanggan",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-admin_wtrdcj.jpg",
-    quote: "Membantu setiap pelanggan dengan pelayanan yang jujur dan amanah.",
-  },
-];
+import teamMembers from "@/shared/mocks/public/home/team-members.json";
 
 const TimSection = () => {
   return (
-    <PublicSection className="bg-gradient-to-b from-[#f9f6ef] to-[#fefbf7]">
+    <PublicSection className="siqah-public-bg-reverse">
       <SectionHeading
         className="mb-12"
         title="Tim Amanah Siqah"
@@ -52,13 +22,13 @@ const TimSection = () => {
             viewport={{ once: true }}
           >
             <PublicCard className="relative p-6 text-center">
-              <div className="mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full border-4 border-[var(--color-public-accent)]/80">
+              <div className="siqah-public-avatar-ring mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full border-4">
                 <img src={person.img} alt={person.nama} className="h-full w-full object-cover" />
               </div>
 
               <h3 className="mb-1 font-heading text-lg font-bold text-[var(--color-public-primary)]">{person.nama}</h3>
               <p className="mb-3 text-sm font-semibold text-[var(--color-public-accent)]">{person.role}</p>
-              <p className="text-sm leading-relaxed text-[color-mix(in_srgb,var(--color-public-primary)_80%,#fff)]">
+              <p className="siqah-public-text-soft text-sm leading-relaxed">
                 "{person.quote}"
               </p>
             </PublicCard>

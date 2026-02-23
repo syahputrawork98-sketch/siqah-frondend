@@ -3,11 +3,11 @@ const baseClassName =
 
 const variantClassName = {
   solid:
-    "bg-[var(--color-public-accent)] text-white hover:bg-[var(--color-public-accent-hover)] focus-visible:outline-[var(--color-public-accent)]",
+    "bg-[var(--color-public-accent)] text-[var(--color-text-inverse)] hover:bg-[var(--color-public-accent-hover)] focus-visible:outline-[var(--color-public-accent)]",
   outline:
-    "border border-white text-white hover:bg-white/10 focus-visible:outline-white",
+    "border border-[var(--color-text-inverse)] text-[var(--color-text-inverse)] hover:bg-white/10 focus-visible:outline-[var(--color-text-inverse)]",
   light:
-    "bg-white/90 text-[var(--color-public-primary)] hover:bg-white focus-visible:outline-white",
+    "bg-white/90 text-[var(--color-public-primary)] hover:bg-white focus-visible:outline-[var(--color-text-inverse)]",
 };
 
 const sizeClassName = {

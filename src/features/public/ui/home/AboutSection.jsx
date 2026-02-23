@@ -35,11 +35,11 @@ const AboutSection = () => {
             title="Tentang Siqah"
             align="left"
             titleClassName="text-[var(--color-public-accent)]"
-            descriptionClassName="mx-0 text-gray-100/90"
+            descriptionClassName="siqah-public-text-on-dark-soft mx-0"
             description="Siqah lahir dari doa dan harapan para orang tua Muslim yang ingin menjalankan aqiqah dengan mudah, amanah, dan penuh keberkahan."
           />
 
-          <p className="mb-6 text-base leading-relaxed text-gray-100/90 sm:text-lg">
+          <p className="siqah-public-text-on-dark-soft mb-6 text-base leading-relaxed sm:text-lg">
             Sejak tahun <span className="font-semibold text-[var(--color-public-accent)]">2025</span> di Bandung,
             kami berkomitmen menghadirkan layanan aqiqah yang praktis, syari, dan berkesan -
             mulai dari perawatan hewan, proses penyembelihan sesuai sunnah, hingga pengantaran

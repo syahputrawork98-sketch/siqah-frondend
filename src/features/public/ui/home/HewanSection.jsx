@@ -2,37 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import { PublicButton, PublicCard, PublicSection, SectionHeading } from "@/shared/ui";
-
-const hewanList = [
-  {
-    id: 1,
-    nama: "Kambing Jawa Super",
-    berat: "25-30 kg",
-    harga: "Rp 2.450.000",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761097682/goat-1_vpqckt.jpg",
-    ready: true,
-  },
-  {
-    id: 2,
-    nama: "Kambing Etawa Premium",
-    berat: "30-35 kg",
-    harga: "Rp 2.950.000",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761097701/goat-2_fpt7xt.jpg",
-    ready: true,
-  },
-  {
-    id: 3,
-    nama: "Domba Garut Pilihan",
-    berat: "28-33 kg",
-    harga: "Rp 2.750.000",
-    img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761097715/goat-3_lrrmbl.jpg",
-    ready: true,
-  },
-];
+import hewanList from "@/shared/mocks/public/home/hewan.json";
 
 const HewanSection = () => {
   return (
-    <PublicSection className="bg-gradient-to-b from-[#f9f6ef] to-[#fefbf7]">
+    <PublicSection className="siqah-public-bg-reverse">
       <SectionHeading
         className="mb-12"
         title="Pilihan Hewan Aqiqah"
@@ -56,7 +30,7 @@ const HewanSection = () => {
                   className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {hewan.ready && (
-                  <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-[var(--color-public-accent)] px-3 py-1 text-xs font-semibold text-white shadow-md">
+                  <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-[var(--color-public-accent)] px-3 py-1 text-xs font-semibold text-[var(--color-text-inverse)] shadow-md">
                     <FaCheckCircle />
                     Siap Aqiqah
                   </div>
@@ -65,7 +39,7 @@ const HewanSection = () => {
 
               <div className="p-6 text-center">
                 <h3 className="mb-2 font-heading text-xl font-bold text-[var(--color-public-primary)]">{hewan.nama}</h3>
-                <p className="mb-1 text-sm text-[color-mix(in_srgb,var(--color-public-primary)_80%,#fff)]">Berat: {hewan.berat}</p>
+                <p className="siqah-public-text-soft mb-1 text-sm">Berat: {hewan.berat}</p>
                 <p className="text-lg font-bold text-[var(--color-public-accent)]">{hewan.harga}</p>
 
                 <PublicButton className="mt-4" size="sm">

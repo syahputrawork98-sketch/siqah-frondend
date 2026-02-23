@@ -1,26 +1,136 @@
 :root {
-  /* Theme */
+  /* -------------------------------------------------------------------------- */
+  /* Core Foundations                                                            */
+  /* -------------------------------------------------------------------------- */
+
+  /* Neutrals */
+  --core-white: #ffffff;
+  --core-black: #000000;
+  --core-neutral-50: #f9fafb;
+  --core-neutral-100: #f3f4f6;
+  --core-neutral-200: #e5e7eb;
+  --core-neutral-300: #d1d5db;
+  --core-neutral-400: #9ca3af;
+  --core-neutral-500: #6b7280;
+  --core-neutral-700: #374151;
+  --core-neutral-800: #1f2937;
+
+  /* Brand */
+  --core-brand-primary: #e2b97f;
+  --core-brand-primary-strong: #c99f65;
+  --core-brand-primary-soft: #fefbf7;
+  --core-brand-border-soft: #eee6da;
+
+  /* Public brand */
+  --core-public-primary: #45624b;
+  --core-public-primary-strong: #2f4b3a;
+  --core-public-accent: #b9914d;
+  --core-public-accent-hover: #a37f3e;
+  --core-public-bg-start: #fefbf7;
+  --core-public-bg-end: #f9f6ef;
+
+  /* Status */
+  --core-success-100: #dcfce7;
+  --core-success-700: #15803d;
+  --core-warning-100: #fef9c3;
+  --core-warning-700: #a16207;
+  --core-danger-100: #fee2e2;
+  --core-danger-600: #dc2626;
+  --core-danger-700: #b91c1c;
+
+  /* Base overlays */
+  --core-overlay-50: rgb(0 0 0 / 50%);
+  --core-overlay-white-60: rgb(255 255 255 / 60%);
+  --core-overlay-white-70: rgb(255 255 255 / 70%);
+  --core-overlay-white-80: rgb(255 255 255 / 80%);
+
+  /* -------------------------------------------------------------------------- */
+  /* Semantic Tokens                                                             */
+  /* -------------------------------------------------------------------------- */
+
+  /* Surface & text */
   --color-bg-page: #f8fafc;
-  --color-bg-surface: #ffffff;
-  --color-bg-subtle: #f9fafb;
-  --color-border-default: #e5e7eb;
-  --color-text-primary: #1f2937;
-  --color-text-secondary: #6b7280;
-  --color-text-muted: #9ca3af;
+  --color-bg-surface: var(--core-white);
+  --color-bg-subtle: var(--core-neutral-50);
+  --color-border-default: var(--core-neutral-200);
+  --color-text-primary: var(--core-neutral-800);
+  --color-text-secondary: var(--core-neutral-500);
+  --color-text-muted: var(--core-neutral-400);
   --color-text-default: #3b3b3b;
-  --color-brand-primary: #e2b97f;
-  --color-brand-primary-soft: #fefbf7;
-  --color-brand-border-soft: #eee6da;
-  --color-overlay: rgb(0 0 0 / 50%);
-  --color-public-primary: #45624b;
-  --color-public-primary-strong: #2f4b3a;
-  --color-public-accent: #b9914d;
-  --color-public-accent-hover: #a37f3e;
+  --color-text-inverse: var(--core-white);
+
+  /* Brand semantic */
+  --color-brand-primary: var(--core-brand-primary);
+  --color-brand-primary-soft: var(--core-brand-primary-soft);
+  --color-brand-border-soft: var(--core-brand-border-soft);
+
+  /* Status semantic */
+  --color-state-success-bg: var(--core-success-100);
+  --color-state-success-text: var(--core-success-700);
+  --color-state-warning-bg: var(--core-warning-100);
+  --color-state-warning-text: var(--core-warning-700);
+  --color-state-danger-bg: var(--core-danger-100);
+  --color-state-danger-text: var(--core-danger-700);
+  --color-state-danger-fill: var(--core-danger-600);
+  --color-state-info-fill: #3b82f6;
+
+  /* Shared overlays */
+  --color-overlay: var(--core-overlay-50);
+  --color-shell-muted: #7a7368;
+
+  /* Public semantic */
+  --color-public-primary: var(--core-public-primary);
+  --color-public-primary-strong: var(--core-public-primary-strong);
+  --color-public-accent: var(--core-public-accent);
+  --color-public-accent-hover: var(--core-public-accent-hover);
   --color-public-text-on-dark: #f8fafc;
+  --color-public-text-soft: color-mix(in srgb, var(--color-public-primary) 82%, var(--core-white));
+  --color-public-text-muted: color-mix(in srgb, var(--color-public-primary) 72%, var(--core-white));
   --color-public-surface: rgb(255 255 255 / 92%);
   --color-public-surface-border: rgb(185 145 77 / 24%);
   --color-public-overlay-soft: rgb(255 255 255 / 72%);
   --color-public-overlay-strong: rgb(69 98 75 / 76%);
+  --color-public-overlay-white-blur: rgb(255 255 255 / 85%);
+  --color-public-overlay-light: rgb(255 255 255 / 70%);
+  --color-public-overlay-elevated: rgb(255 255 255 / 95%);
+  --color-public-overlay-mobile: rgb(255 255 255 / 90%);
+  --color-public-border-soft: rgb(185 145 77 / 20%);
+  --color-public-divider-soft: rgb(255 255 255 / 20%);
+  --color-public-footer-text: rgb(229 231 235 / 88%);
+  --color-public-footer-text-subtle: #d1d5db;
+  --color-public-text-on-dark-soft: rgb(243 244 246 / 92%);
+  --color-public-text-on-dark-muted: rgb(229 231 235 / 82%);
+  --color-public-control-bg: rgb(255 255 255 / 70%);
+  --color-public-control-bg-hover: rgb(255 255 255 / 84%);
+  --color-public-surface-border-strong: rgb(255 255 255 / 70%);
+  --color-public-accent-ring: rgb(185 145 77 / 80%);
+  --color-public-accent-line: rgb(185 145 77 / 50%);
+  --color-public-footer-gradient: linear-gradient(
+    to bottom right,
+    var(--color-public-primary),
+    var(--color-public-primary-strong)
+  );
+  --color-public-footer-glow: rgb(185 145 77 / 20%);
+  --color-public-overlay-image-bottom: linear-gradient(
+    to top,
+    rgb(0 0 0 / 40%),
+    transparent
+  );
+  --color-public-overlay-soft-glow: linear-gradient(
+    to top,
+    rgb(255 255 255 / 13%),
+    transparent
+  );
+  --color-public-gradient-base: linear-gradient(
+    to bottom,
+    var(--core-public-bg-start),
+    var(--core-public-bg-end)
+  );
+  --color-public-gradient-reverse: linear-gradient(
+    to bottom,
+    var(--core-public-bg-end),
+    var(--core-public-bg-start)
+  );
   --color-public-overlay-hero: linear-gradient(
     to bottom right,
     rgb(69 98 75 / 80%),
@@ -28,6 +138,15 @@
     rgb(185 145 77 / 50%)
   );
   --image-public-background: url("https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg");
+
+  /* Component intent tokens */
+  --color-button-primary-bg: var(--color-brand-primary);
+  --color-button-primary-text: var(--color-text-inverse);
+  --color-button-danger-bg: var(--color-state-danger-fill);
+  --color-button-danger-text: var(--color-text-inverse);
+  --color-field-bg: var(--color-bg-surface);
+  --color-field-border: var(--color-brand-border-soft);
+  --color-field-placeholder: var(--color-text-muted);
 
   /* Typography */
   --font-family-body: "Montserrat", sans-serif;

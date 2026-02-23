@@ -5,7 +5,7 @@ import { PublicButton, PublicSection } from "@/shared/ui";
 const HeroSection = () => {
   return (
     <PublicSection
-      className="bg-gradient-to-br from-[#fefbf7] to-[#f9f6ef]"
+      className="siqah-public-bg-base"
       containerClassName="flex flex-col-reverse items-center justify-center gap-10 md:flex-row md:gap-20"
       overlay="hero"
       backgroundImage="https://images.unsplash.com/photo-1716047866102-ec21d084fe0e?q=80&w=1170&auto=format&fit=crop"
@@ -28,7 +28,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          className="mb-6 text-lg leading-relaxed text-gray-100"
+          className="siqah-public-text-on-dark-soft mb-6 text-lg leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
@@ -58,9 +58,9 @@ const HeroSection = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.6, duration: 1 }}
       >
-        <div className="relative overflow-hidden rounded-3xl border-4 border-white/70 shadow-2xl">
+        <div className="relative overflow-hidden rounded-3xl border-4 border-[var(--color-public-surface-border-strong)] shadow-2xl">
           <motion.div
-            className="absolute inset-0 z-10 rounded-3xl bg-gradient-to-tr from-[#ffffff33] to-transparent"
+            className="siqah-public-overlay-soft-glow absolute inset-0 z-10 rounded-3xl"
             animate={{ opacity: [0.2, 0.5, 0.2] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -75,7 +75,7 @@ const HeroSection = () => {
           />
 
           <motion.div
-            className="absolute right-4 top-4 z-20 rounded-full bg-[var(--color-public-accent)] px-4 py-2 text-sm font-semibold text-white shadow-md backdrop-blur-md"
+            className="absolute right-4 top-4 z-20 rounded-full bg-[var(--color-public-accent)] px-4 py-2 text-sm font-semibold text-[var(--color-text-inverse)] shadow-md backdrop-blur-md"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.2, duration: 0.5 }}

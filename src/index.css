@@ -29,14 +29,14 @@ body {
 }
 
 .siqah-topbar {
-    background-color: rgb(255 255 255 / 80%);
+    background-color: var(--core-overlay-white-80);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e7e1d8;
+    border-bottom: 1px solid var(--color-brand-border-soft);
     box-shadow: var(--shadow-sm);
 }
 
 .siqah-chip {
-    background-color: rgb(255 255 255 / 60%);
+    background-color: var(--core-overlay-white-60);
     border: 1px solid var(--color-brand-border-soft);
     box-shadow: var(--shadow-sm);
 }
@@ -68,13 +68,13 @@ body {
 .siqah-sidebar-shell {
     background-color: rgb(255 255 255 / 90%);
     backdrop-filter: blur(12px);
-    border-right: 1px solid #e7e1d8;
+    border-right: 1px solid var(--color-brand-border-soft);
     box-shadow: 0 4px 12px rgb(0 0 0 / 4%);
 }
 
 .siqah-sidebar-header {
     border-bottom: 1px solid var(--color-brand-border-soft);
-    background: linear-gradient(to right, #fefbf7, #f9f6ef);
+    background: linear-gradient(to right, var(--core-public-bg-start), var(--core-public-bg-end));
 }
 
 .siqah-nav-item {
@@ -88,15 +88,15 @@ body {
 }
 
 .siqah-nav-item-active {
-    background-color: color-mix(in srgb, var(--color-brand-primary) 90%, white);
-    color: #fff;
+    background-color: color-mix(in srgb, var(--color-brand-primary) 90%, var(--core-white));
+    color: var(--color-text-inverse);
     box-shadow: var(--shadow-sm);
 }
 
 .siqah-sidebar-footer {
     border-top: 1px solid var(--color-brand-border-soft);
-    background-color: rgb(255 255 255 / 60%);
-    color: #7a7368;
+    background-color: var(--core-overlay-white-60);
+    color: var(--color-shell-muted);
 }
 
 /* Public-facing brand helpers */
@@ -111,7 +111,7 @@ body {
     gap: 0.5rem;
     border-radius: 9999px;
     background-color: var(--color-public-accent);
-    color: #fff;
+    color: var(--color-text-inverse);
     font-weight: 600;
     transition: all 180ms ease;
 }
@@ -131,8 +131,8 @@ body {
     justify-content: center;
     gap: 0.5rem;
     border-radius: 9999px;
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid var(--color-text-inverse);
+    color: var(--color-text-inverse);
     font-weight: 600;
     transition: all 180ms ease;
 }
@@ -158,7 +158,51 @@ body {
 }
 
 .siqah-public-body {
-    color: color-mix(in srgb, var(--color-public-primary) 82%, #fff);
+    color: var(--color-public-text-soft);
+}
+
+.siqah-public-bg-base {
+    background-image: var(--color-public-gradient-base);
+}
+
+.siqah-public-bg-reverse {
+    background-image: var(--color-public-gradient-reverse);
+}
+
+.siqah-public-text-soft {
+    color: var(--color-public-text-soft);
+}
+
+.siqah-public-text-muted {
+    color: var(--color-public-text-muted);
+}
+
+.siqah-public-text-on-dark-soft {
+    color: var(--color-public-text-on-dark-soft);
+}
+
+.siqah-public-text-on-dark-muted {
+    color: var(--color-public-text-on-dark-muted);
+}
+
+.siqah-public-control-circle {
+    background-color: var(--color-public-control-bg);
+}
+
+.siqah-public-control-circle:hover {
+    background-color: var(--color-public-control-bg-hover);
+}
+
+.siqah-public-avatar-ring {
+    border-color: var(--color-public-accent-ring);
+}
+
+.siqah-public-overlay-image-bottom {
+    background-image: var(--color-public-overlay-image-bottom);
+}
+
+.siqah-public-overlay-soft-glow {
+    background-image: var(--color-public-overlay-soft-glow);
 }
 
 /* Shared UI primitives for admin/superadmin feature pages */
@@ -172,7 +216,7 @@ body {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     background-color: var(--color-brand-primary);
-    color: #fff;
+    color: var(--color-button-primary-text);
     transition: all 160ms ease;
 }
 
@@ -205,7 +249,7 @@ body {
     padding: 0.5rem 1rem;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    background-color: #fff;
+    background-color: var(--color-bg-surface);
     color: var(--color-text-default);
     transition: all 160ms ease;
 }
@@ -228,33 +272,33 @@ body {
     padding: 0.5rem 1rem;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    background-color: #ef4444;
-    color: #fff;
+    background-color: var(--color-button-danger-bg);
+    color: var(--color-button-danger-text);
     transition: all 160ms ease;
 }
 
 .siqah-btn-danger:hover {
-    background-color: #dc2626;
+    background-color: var(--color-state-danger-fill);
 }
 
 .siqah-btn-danger:focus-visible {
-    outline: 2px solid #f87171;
+    outline: 2px solid color-mix(in srgb, var(--color-state-danger-fill) 65%, var(--core-white));
     outline-offset: 2px;
 }
 
 .siqah-field {
     width: 100%;
-    border: 1px solid var(--color-brand-border-soft);
+    border: 1px solid var(--color-field-border);
     border-radius: var(--radius-md);
     padding: 0.5rem 0.75rem;
     margin-top: 0.25rem;
     font-size: var(--font-size-sm);
     color: var(--color-text-primary);
-    background-color: #fff;
+    background-color: var(--color-field-bg);
 }
 
 .siqah-field::placeholder {
-    color: var(--color-text-muted);
+    color: var(--color-field-placeholder);
 }
 
 .siqah-field:focus {
@@ -264,8 +308,8 @@ body {
 }
 
 .siqah-field[aria-invalid="true"] {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 2px rgb(239 68 68 / 15%);
+    border-color: var(--color-state-danger-fill);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-state-danger-fill) 25%, transparent);
 }
 
 .siqah-table-card {
@@ -311,11 +355,11 @@ body {
 }
 
 .siqah-icon-action-edit {
-    color: #3b82f6;
+    color: var(--color-state-info-fill);
 }
 
 .siqah-icon-action-delete {
-    color: #ef4444;
+    color: var(--color-state-danger-fill);
 }
 
 .siqah-status-badge {
@@ -328,17 +372,17 @@ body {
 }
 
 .siqah-status-success {
-    background-color: #dcfce7;
-    color: #15803d;
+    background-color: var(--color-state-success-bg);
+    color: var(--color-state-success-text);
 }
 
 .siqah-status-warning {
-    background-color: #fef9c3;
-    color: #a16207;
+    background-color: var(--color-state-warning-bg);
+    color: var(--color-state-warning-text);
 }
 
 .siqah-status-danger {
-    background-color: #fee2e2;
-    color: #b91c1c;
+    background-color: var(--color-state-danger-bg);
+    color: var(--color-state-danger-text);
 }
 

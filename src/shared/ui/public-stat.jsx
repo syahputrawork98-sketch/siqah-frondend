@@ -15,7 +15,7 @@ export default function PublicStat({
         {value}
       </p>
       {helper && (
-        <p className="mt-1 text-sm text-[color-mix(in_srgb,var(--color-public-primary)_72%,#fff)]">
+        <p className="mt-1 text-sm text-[var(--color-public-text-muted)]">
           {helper}
         </p>
       )}

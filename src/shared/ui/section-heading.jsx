@@ -20,7 +20,7 @@ export default function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mx-auto mt-4 max-w-3xl text-base leading-relaxed text-[color-mix(in_srgb,var(--color-public-primary)_82%,#fff)] sm:text-lg ${descriptionClassName}`.trim()}
+          className={`mx-auto mt-4 max-w-3xl text-base leading-relaxed text-[var(--color-public-text-soft)] sm:text-lg ${descriptionClassName}`.trim()}
         >
           {description}
         </p>

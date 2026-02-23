@@ -10,12 +10,12 @@ const Navbar = () => {
   const location = useLocation();
 
   const menuItems = [
-  { name: "Home", path: "/" },
-  { name: "Tentang", path: "/tentang" },
-  { name: "Layanan", path: "/layanan" },
-  { name: "Paket", path: "/paket" },
-  { name: "Kontak", path: "/kontak" },
-];
+    { name: "Home", path: "/" },
+    { name: "Tentang", path: "/tentang" },
+    { name: "Layanan", path: "/layanan" },
+    { name: "Paket", path: "/paket" },
+    { name: "Kontak", path: "/kontak" },
+  ];
 
   // Ubah background saat scroll
   useEffect(() => {
@@ -31,13 +31,13 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 px-6 py-3 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 shadow-md backdrop-blur-lg border-b border-[#B9914D]/20"
-          : "bg-white/70 backdrop-blur-md"
+          ? "border-b border-[var(--color-public-border-soft)] bg-[var(--color-public-overlay-elevated)] shadow-md backdrop-blur-lg"
+          : "bg-[var(--color-public-overlay-light)] backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* ========== KIRI: MENU DESKTOP ========== */}
-        <ul className="hidden lg:flex flex-1 justify-start items-center gap-8 font-montserrat font-semibold text-[#45624B]">
+        <ul className="hidden lg:flex flex-1 justify-start items-center gap-8 font-sans font-semibold text-[var(--color-public-primary)]">
           {menuItems.map((item, idx) => {
             const isActive = location.pathname === item.path;
             return (
@@ -51,7 +51,7 @@ const Navbar = () => {
                   {item.name}
                 </Link>
                 <span
-                  className={`absolute left-0 -bottom-1 h-[2px] bg-[#B9914D] transition-all duration-300 ${
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-[var(--color-public-accent)] transition-all duration-300 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 ></span>
@@ -75,7 +75,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <Button
             variant="primary"
-            className="hidden lg:flex rounded-xl bg-[#B9914D] hover:bg-[#A07E3F] px-4 py-2"
+            className="hidden lg:flex rounded-xl bg-[var(--color-public-accent)] px-4 py-2 hover:bg-[var(--color-public-accent-hover)]"
           >
             <FiLogIn className="text-lg" /> Login
           </Button>
@@ -86,17 +86,17 @@ const Navbar = () => {
             className="lg:hidden flex flex-col justify-center items-center space-y-1"
           >
             <span
-              className={`block h-0.5 w-6 bg-[#45624B] transition-all duration-300 ${
+              className={`block h-0.5 w-6 bg-[var(--color-public-primary)] transition-all duration-300 ${
                 mobileOpen ? "rotate-45 translate-y-2" : ""
               }`}
             ></span>
             <span
-              className={`block h-0.5 w-6 bg-[#45624B] transition-all duration-300 ${
+              className={`block h-0.5 w-6 bg-[var(--color-public-primary)] transition-all duration-300 ${
                 mobileOpen ? "opacity-0" : ""
               }`}
             ></span>
             <span
-              className={`block h-0.5 w-6 bg-[#45624B] transition-all duration-300 ${
+              className={`block h-0.5 w-6 bg-[var(--color-public-primary)] transition-all duration-300 ${
                 mobileOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             ></span>
@@ -109,7 +109,7 @@ const Navbar = () => {
         <motion.ul
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden flex flex-col items-center gap-6 mt-4 pb-4 font-semibold text-[#45624B] bg-white/90 backdrop-blur-md rounded-xl shadow-md"
+          className="lg:hidden flex flex-col items-center gap-6 mt-4 pb-4 font-semibold text-[var(--color-public-primary)] bg-[var(--color-public-overlay-mobile)] backdrop-blur-md rounded-xl shadow-md"
         >
           {menuItems.map((item, idx) => {
             const isActive = location.pathname === item.path;
@@ -129,7 +129,7 @@ const Navbar = () => {
           })}
           <Button
             variant="primary"
-            className="flex rounded-xl bg-[#B9914D] hover:bg-[#A07E3F] px-5 py-2"
+            className="flex rounded-xl bg-[var(--color-public-accent)] px-5 py-2 hover:bg-[var(--color-public-accent-hover)]"
           >
             <FiLogIn className="text-lg" /> Login
           </Button>
