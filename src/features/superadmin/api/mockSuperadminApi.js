@@ -86,3 +86,21 @@ export async function getMockSettingsProfile() {
   await wait();
   return normalizeSettingsProfile(settingsProfileMock);
 }
+
+export async function approveMockSuperadminPaymentValidation(paymentId) {
+  await wait();
+  return {
+    id: paymentId,
+    status: "Diterima",
+    message: "Pembayaran berhasil disetujui oleh superadmin.",
+  };
+}
+
+export async function rejectMockSuperadminPaymentValidation(paymentId) {
+  await wait();
+  return {
+    id: paymentId,
+    status: "Pengajuan",
+    message: "Pembayaran ditolak oleh superadmin.",
+  };
+}

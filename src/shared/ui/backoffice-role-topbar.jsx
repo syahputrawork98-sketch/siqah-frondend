@@ -1,39 +1,35 @@
 import BackofficeTopbar from "@/shared/ui/backoffice-topbar";
-import { useAsyncData } from "@/shared/hooks";
 import { BACKOFFICE_ROLE_UI } from "@/shared/config/backoffice";
-import {
-  fetchSuperadminProfile,
-  fetchTopbarNotifications,
-} from "@/features/superadmin/api/superadminApi";
+import { useAdminTopbarData } from "@/features/admin/hooks/useAdminTopbarData";
+import { useSuperadminTopbarData } from "@/features/superadmin/hooks/useSuperadminTopbarData";
 
 export default function BackofficeRoleTopbar({ role = "admin" }) {
   const roleUi = BACKOFFICE_ROLE_UI[role] ?? BACKOFFICE_ROLE_UI.admin;
+  const isAdmin = role === "admin";
   const isSuperadmin = role === "superadmin";
-  const adminFallback = BACKOFFICE_ROLE_UI.admin.topbar;
 
-  const { data: superadminProfile } = useAsyncData(fetchSuperadminProfile, {
-    immediate: isSuperadmin,
-    initialData: BACKOFFICE_ROLE_UI.superadmin.topbar.initialProfile,
-  });
-  const { data: superadminNotifications } = useAsyncData(fetchTopbarNotifications, {
-    immediate: isSuperadmin,
-    initialData: BACKOFFICE_ROLE_UI.superadmin.topbar.notifications,
-  });
+  const adminTopbar = useAdminTopbarData({ enabled: isAdmin });
+  const superadminTopbar = useSuperadminTopbarData({ enabled: isSuperadmin });
 
-  const profile = isSuperadmin ? superadminProfile : adminFallback.initialProfile;
-  const notifications = isSuperadmin
-    ? superadminNotifications
-    : adminFallback.notifications;
-  const notificationCount = isSuperadmin
-    ? undefined
-    : adminFallback.notificationCount;
+  const fallbackTopbar = roleUi.topbar ?? BACKOFFICE_ROLE_UI.admin.topbar;
+
+  const topbarData = isSuperadmin
+    ? superadminTopbar
+    : isAdmin
+    ? adminTopbar
+    : {
+        profile: fallbackTopbar.initialProfile,
+        notifications: fallbackTopbar.notifications,
+        notificationCount:
+          fallbackTopbar.notificationCount ?? fallbackTopbar.notifications?.length ?? 0,
+      };
 
   return (
     <BackofficeTopbar
       panelRole={roleUi.panelRole}
-      profile={profile}
-      notificationCount={notificationCount}
-      notifications={notifications}
+      profile={topbarData.profile}
+      notificationCount={topbarData.notificationCount}
+      notifications={topbarData.notifications}
     />
   );
 }

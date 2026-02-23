@@ -11,17 +11,20 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
+  ModalValidasiPembayaran,
 } from "@/shared/ui";
 import { Eye, CreditCard, Clock, CheckCircle, FileCheck } from "lucide-react";
-import ModalValidasiPembayaran from "@/features/admin/ui/ModalValidasiPembayaran";
 import { formatCurrencyIdr } from "@/shared/lib";
 import { fetchAdminPayments } from "@/features/admin/api/adminApi";
 import { useAsyncData } from "@/shared/hooks";
+import { useAdminPaymentValidationActions } from "@/features/admin/hooks/useAdminPaymentValidationActions";
 
 export default function Pembayaran() {
   const [activeTab, setActiveTab] = useState("pengajuan");
   const [selectedData, setSelectedData] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [loadingAction, setLoadingAction] = useState(null);
+  const { approve, reject, isSubmitting } = useAdminPaymentValidationActions();
   const { data, error, isLoading, reload } = useAsyncData(fetchAdminPayments, {
     initialData: [],
   });
@@ -46,6 +49,48 @@ export default function Pembayaran() {
   const handleOpenModal = (item) => {
     setSelectedData(item);
     setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    if (isSubmitting) {
+      return;
+    }
+    setShowModal(false);
+  };
+
+  const handleApplyValidationResult = (status) => {
+    if (!selectedData?.id || !status) {
+      return;
+    }
+    const nextItem = {
+      ...selectedData,
+      status,
+    };
+    setSelectedData(nextItem);
+    const nextTab = status === "Diterima" ? "validasi" : status === "Lunas" ? "lunas" : "pengajuan";
+    setActiveTab(nextTab);
+    reload();
+    setShowModal(false);
+  };
+
+  const handleApprove = async () => {
+    setLoadingAction("approve");
+    try {
+      const result = await approve(selectedData?.id);
+      handleApplyValidationResult(result?.status ?? "Diterima");
+    } finally {
+      setLoadingAction(null);
+    }
+  };
+
+  const handleReject = async () => {
+    setLoadingAction("reject");
+    try {
+      const result = await reject(selectedData?.id);
+      handleApplyValidationResult(result?.status ?? "Pengajuan");
+    } finally {
+      setLoadingAction(null);
+    }
   };
 
   return (
@@ -156,7 +201,11 @@ export default function Pembayaran() {
       {showModal && selectedData && (
         <ModalValidasiPembayaran
           data={selectedData}
-          onClose={() => setShowModal(false)}
+          onClose={handleCloseModal}
+          onApprove={handleApprove}
+          onReject={handleReject}
+          isSubmitting={isSubmitting}
+          loadingAction={loadingAction}
         />
       )}
     </div>

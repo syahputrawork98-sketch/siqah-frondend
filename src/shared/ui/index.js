@@ -19,3 +19,4 @@ export { default as BackofficeRoleTopbar } from "./backoffice-role-topbar";
 export { default as BackofficeRoleSidebar } from "./backoffice-role-sidebar";
 export { default as BackofficeFooter } from "./backoffice-footer";
 export { default as CrudRowActions } from "./crud-row-actions";
+export { default as ModalValidasiPembayaran } from "./payments/ModalValidasiPembayaran";

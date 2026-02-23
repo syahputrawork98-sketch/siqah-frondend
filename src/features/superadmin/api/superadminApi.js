@@ -27,6 +27,8 @@ import {
   getMockSystemNotifications,
   getMockTopbarNotifications,
   getMockUsers,
+  approveMockSuperadminPaymentValidation,
+  rejectMockSuperadminPaymentValidation,
 } from "@/features/superadmin/api/mockSuperadminApi";
 
 export async function fetchSuperadminDashboard() {
@@ -135,4 +137,24 @@ export async function fetchSettingsProfile() {
 
   const response = await httpRequest("/superadmin/settings/profile");
   return normalizeSettingsProfile(response);
+}
+
+export async function approveSuperadminPaymentValidation(paymentId) {
+  if (runtimeConfig.enableMock) {
+    return approveMockSuperadminPaymentValidation(paymentId);
+  }
+
+  return httpRequest(`/superadmin/payments/${paymentId}/approve`, {
+    method: "POST",
+  });
+}
+
+export async function rejectSuperadminPaymentValidation(paymentId) {
+  if (runtimeConfig.enableMock) {
+    return rejectMockSuperadminPaymentValidation(paymentId);
+  }
+
+  return httpRequest(`/superadmin/payments/${paymentId}/reject`, {
+    method: "POST",
+  });
 }

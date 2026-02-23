@@ -145,3 +145,21 @@ export async function getMockMasterReportsDashboard() {
   await wait();
   return normalizeMasterReportsDashboard(dataMasterReportsDashboardMock);
 }
+
+export async function approveMockPaymentValidation(paymentId) {
+  await wait();
+  return {
+    id: paymentId,
+    status: "Diterima",
+    message: "Pembayaran berhasil disetujui.",
+  };
+}
+
+export async function rejectMockPaymentValidation(paymentId) {
+  await wait();
+  return {
+    id: paymentId,
+    status: "Pengajuan",
+    message: "Pembayaran ditolak dan dikembalikan ke pengajuan.",
+  };
+}

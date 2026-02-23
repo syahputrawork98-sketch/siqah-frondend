@@ -39,9 +39,11 @@ import {
   getMockMenus,
   getMockNotifications,
   getMockOrderDetail,
+  approveMockPaymentValidation,
   getMockPackages,
   getMockPaymentRecords,
   getMockPayments,
+  rejectMockPaymentValidation,
   getMockValidationSubmissions,
 } from "@/features/admin/api/mockAdminApi";
 
@@ -223,4 +225,24 @@ export async function fetchAdminMasterReportsDashboard() {
 
   const response = await httpRequest("/admin/data-master/reports/dashboard");
   return normalizeMasterReportsDashboard(response);
+}
+
+export async function approveAdminPaymentValidation(paymentId) {
+  if (runtimeConfig.enableMock) {
+    return approveMockPaymentValidation(paymentId);
+  }
+
+  return httpRequest(`/admin/payments/${paymentId}/approve`, {
+    method: "POST",
+  });
+}
+
+export async function rejectAdminPaymentValidation(paymentId) {
+  if (runtimeConfig.enableMock) {
+    return rejectMockPaymentValidation(paymentId);
+  }
+
+  return httpRequest(`/admin/payments/${paymentId}/reject`, {
+    method: "POST",
+  });
 }
