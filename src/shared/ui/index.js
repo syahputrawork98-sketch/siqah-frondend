@@ -12,3 +12,6 @@ export { default as SectionHeading } from "./section-heading";
 export { default as PublicCard } from "./public-card";
 export { default as PublicBadge } from "./public-badge";
 export { default as PublicStat } from "./public-stat";
+export { default as BackofficeTopbar } from "./backoffice-topbar";
+export { default as BackofficeNotificationDropdown } from "./backoffice-notification-dropdown";
+export { default as BackofficeSidebar } from "./backoffice-sidebar";
