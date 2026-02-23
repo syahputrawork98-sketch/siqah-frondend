@@ -5,7 +5,7 @@ import { useAsyncData } from "@/shared/hooks";
 import { fetchAdminProfile } from "@/features/admin/api/adminApi";
 import { DEFAULT_ADMIN_PROFILE } from "@/features/admin/model/adminDataMappers";
 
-export default function PengaturanAdmin() {
+export default function Pengaturan() {
   const { data, error, isLoading, reload } = useAsyncData(fetchAdminProfile, {
     initialData: DEFAULT_ADMIN_PROFILE,
   });
@@ -154,4 +154,5 @@ export default function PengaturanAdmin() {
     </div>
   );
 }
+
 

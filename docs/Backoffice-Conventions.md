@@ -64,4 +64,10 @@ Tetap di `src/features/<role>` jika:
 - Sidebar `admin` dan `superadmin` sudah memakai `BackofficeSidebar`.
 - `NotificationDropdown` `superadmin` menjadi re-export ke shared.
 - Implementasi utama halaman `admin` sudah dipindah ke nama netral.
-- File lama `*Admin.jsx` tetap tersedia sebagai wrapper re-export.
+- File legacy halaman `*Admin.jsx` sudah dihapus.
+- `DataCatering`, `DataMenu`, dan `DataKonsumen` sudah memakai API/mock layer, bukan JSON inline di page.
+- `DataMitraCatering` sudah memakai API/mock layer.
+- `DataMitraKurir` sudah memakai API/mock layer.
+- `DataPaket`, `DataHewan`, `DataKandang`, `DataPengajuan`, `DataInvoice`, dan `DataPembayaran` sudah memakai API/mock layer.
+- `DashboardData`, `DashboardUsers`, `DashboardPembayaran`, dan `DashboardLaporan` sudah memakai API/mock layer.
+- Reusable `useCrudModalState` dan `CrudRowActions` dipakai untuk mengurangi duplikasi CRUD page.

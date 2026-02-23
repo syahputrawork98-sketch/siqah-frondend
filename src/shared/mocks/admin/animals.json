@@ -1,0 +1,35 @@
+[
+  {
+    "id_hewan": 1,
+    "kode_hewan": "KDG001-001",
+    "jenis_hewan": "Kambing",
+    "nama_kandang": "Kandang Utama",
+    "berat": 35,
+    "harga": 2500000,
+    "foto": "/images/hewan/kambing1.jpg",
+    "status": "Aktif",
+    "created_at": "2025-10-30"
+  },
+  {
+    "id_hewan": 2,
+    "kode_hewan": "KDG002-001",
+    "jenis_hewan": "Domba",
+    "nama_kandang": "Kandang Selatan",
+    "berat": 42,
+    "harga": 2800000,
+    "foto": "/images/hewan/domba1.jpg",
+    "status": "Terjual",
+    "created_at": "2025-10-31"
+  },
+  {
+    "id_hewan": 3,
+    "kode_hewan": "KDG003-002",
+    "jenis_hewan": "Sapi",
+    "nama_kandang": "Kandang Timur",
+    "berat": 215,
+    "harga": 14500000,
+    "foto": "/images/hewan/sapi1.jpg",
+    "status": "Aktif",
+    "created_at": "2025-11-01"
+  }
+]

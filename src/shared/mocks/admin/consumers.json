@@ -1,0 +1,32 @@
+[
+  {
+    "id_konsumen": 1,
+    "kode_konsumen": "KSM001",
+    "nama_lengkap": "Ahmad Fauzi",
+    "no_hp": "081234567890",
+    "email": "ahmadfauzi@mail.com",
+    "alamat": "Jl. Aqiqah No. 15, Bandung",
+    "status_aktif": true,
+    "created_at": "2025-10-25"
+  },
+  {
+    "id_konsumen": 2,
+    "kode_konsumen": "KSM002",
+    "nama_lengkap": "Siti Rahmawati",
+    "no_hp": "081345678901",
+    "email": "sitirahma@mail.com",
+    "alamat": "Jl. Cisaranten Kulon No. 8, Cimahi",
+    "status_aktif": true,
+    "created_at": "2025-10-28"
+  },
+  {
+    "id_konsumen": 3,
+    "kode_konsumen": "KSM003",
+    "nama_lengkap": "Rizki Hidayat",
+    "no_hp": "081298765432",
+    "email": "rizkihidayat@mail.com",
+    "alamat": "Jl. Mekarwangi No. 10, Kab. Bandung",
+    "status_aktif": false,
+    "created_at": "2025-11-01"
+  }
+]

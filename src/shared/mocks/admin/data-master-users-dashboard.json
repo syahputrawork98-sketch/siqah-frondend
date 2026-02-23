@@ -1,0 +1,29 @@
+{
+  "counts": {
+    "public": 152,
+    "admin": 5,
+    "superadmin": 2
+  },
+  "chartData": [
+    { "name": "Public", "value": 152 },
+    { "name": "Admin", "value": 5 },
+    { "name": "Superadmin", "value": 2 }
+  ],
+  "activities": [
+    {
+      "tanggal": "02 Nov 2025",
+      "user": "Public - Ahmad Fauzi",
+      "aktivitas": "Melakukan pemesanan Paket Aqiqah Premium."
+    },
+    {
+      "tanggal": "01 Nov 2025",
+      "user": "Admin - Rudi Hartono",
+      "aktivitas": "Memvalidasi pembayaran pesanan PSN-00120."
+    },
+    {
+      "tanggal": "31 Okt 2025",
+      "user": "Superadmin - Siti Nurhaliza",
+      "aktivitas": "Memperbarui kebijakan role sistem."
+    }
+  ]
+}

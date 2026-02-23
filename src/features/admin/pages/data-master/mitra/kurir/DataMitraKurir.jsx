@@ -1,69 +1,49 @@
-import { useState, useEffect } from "react";
-import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
-import { Card, CardContent, Modal } from "@/shared/ui";
+import { useEffect, useState } from "react";
+import { Plus, Trash2 } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CrudRowActions,
+  EmptyState,
+  ErrorState,
+  LoadingState,
+  Modal,
+} from "@/shared/ui";
+import { useAsyncData, useCrudModalState } from "@/shared/hooks";
+import { fetchAdminCourierPartners } from "@/features/admin/api/adminApi";
+import { DEFAULT_COURIER_PARTNER_LIST } from "@/features/admin/model/adminDataMappers";
 
 export default function DataMitraKurir() {
-  const [dataKurir, setDataKurir] = useState([]);
-  const [selectedKurir, setSelectedKurir] = useState(null);
-  const [modalView, setModalView] = useState(false);
-  const [modalEdit, setModalEdit] = useState(false);
-  const [modalDelete, setModalDelete] = useState(false);
-  const [modalTambah, setModalTambah] = useState(false);
+  const {
+    data: fetchedCouriers,
+    error,
+    isLoading,
+    reload,
+  } = useAsyncData(fetchAdminCourierPartners, {
+    initialData: DEFAULT_COURIER_PARTNER_LIST,
+  });
+  const [dataKurir, setDataKurir] = useState(DEFAULT_COURIER_PARTNER_LIST);
+  const {
+    selectedItem: selectedKurir,
+    modalView,
+    modalEdit,
+    modalDelete,
+    modalTambah,
+    setModalView,
+    setModalEdit,
+    setModalDelete,
+    setModalTambah,
+    openView: handleView,
+    openEdit: handleEdit,
+    openDelete: handleDelete,
+  } = useCrudModalState();
 
   useEffect(() => {
-    // Data dummy kurir
-    setDataKurir([
-      {
-        id_kurir: 1,
-        kode_kurir: "KR001",
-        nama_kurir: "Ahmad Hidayat",
-        no_hp: "081234567890",
-        alamat: "Jl. Sukamaju No.12, Bandung",
-        plat_nomor: "D 1234 AB",
-        status_aktif: true,
-        created_at: "2025-10-28",
-      },
-      {
-        id_kurir: 2,
-        kode_kurir: "KR002",
-        nama_kurir: "Siti Marlina",
-        no_hp: "081345678901",
-        alamat: "Jl. Mekarwangi No.8, Cimahi",
-        plat_nomor: "D 5678 CD",
-        status_aktif: true,
-        created_at: "2025-10-30",
-      },
-      {
-        id_kurir: 3,
-        kode_kurir: "KR003",
-        nama_kurir: "Rizky Firmansyah",
-        no_hp: "081298765432",
-        alamat: "Jl. Cibiru Wetan No.10, Kab. Bandung",
-        plat_nomor: "D 9012 EF",
-        status_aktif: false,
-        created_at: "2025-11-01",
-      },
-    ]);
-  }, []);
-
-  const handleView = (k) => {
-    setSelectedKurir(k);
-    setModalView(true);
-  };
-
-  const handleEdit = (k) => {
-    setSelectedKurir(k);
-    setModalEdit(true);
-  };
-
-  const handleDelete = (k) => {
-    setSelectedKurir(k);
-    setModalDelete(true);
-  };
+    setDataKurir(fetchedCouriers);
+  }, [fetchedCouriers]);
 
   return (
     <div className="p-6 space-y-6">
-      {/* Header */}
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-semibold text-[#3b3b3b]">
@@ -82,71 +62,66 @@ export default function DataMitraKurir() {
         </button>
       </div>
 
-      {/* Table */}
-      <Card className="siqah-table-card overflow-hidden">
-        <CardContent className="p-0">
-          <table className="w-full text-sm text-left border-collapse">
-            <thead className="siqah-table-head">
-              <tr>
-                <th className="px-4 py-3">Kode Kurir</th>
-                <th className="px-4 py-3">Nama Kurir</th>
-                <th className="px-4 py-3">No. Telepon</th>
-                <th className="px-4 py-3">Plat Nomor</th>
-                <th className="px-4 py-3 text-center">Status</th>
-                <th className="px-4 py-3 text-center">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dataKurir.map((k) => (
-                <tr
-                  key={k.id_kurir}
-                  className="siqah-table-row"
-                >
-                  <td className="px-4 py-3">{k.kode_kurir}</td>
-                  <td className="px-4 py-3">{k.nama_kurir}</td>
-                  <td className="px-4 py-3">{k.no_hp}</td>
-                  <td className="px-4 py-3">{k.plat_nomor}</td>
-                  <td className="px-4 py-3 text-center">
-                    <span
-                      className={`siqah-status-badge ${
-                        k.status_aktif
-                          ? "siqah-status-success"
-                          : "siqah-status-danger"
-                      }`}
-                    >
-                      {k.status_aktif ? "Aktif" : "Nonaktif"}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-center">
-                    <div className="flex justify-center gap-2">
-                      <button
-                        onClick={() => handleView(k)}
-                        className="siqah-icon-action siqah-icon-action-view"
-                      >
-                        <Eye size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleEdit(k)}
-                        className="siqah-icon-action siqah-icon-action-edit"
-                      >
-                        <Pencil size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(k)}
-                        className="siqah-icon-action siqah-icon-action-delete"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </td>
+      {isLoading ? (
+        <LoadingState message="Memuat data mitra kurir..." />
+      ) : error ? (
+        <ErrorState
+          message={error?.message || "Gagal memuat data mitra kurir."}
+          onRetry={reload}
+        />
+      ) : dataKurir.length === 0 ? (
+        <EmptyState message="Belum ada data mitra kurir." />
+      ) : (
+        <Card className="siqah-table-card overflow-hidden">
+          <CardContent className="p-0">
+            <table className="w-full text-sm text-left border-collapse">
+              <thead className="siqah-table-head">
+                <tr>
+                  <th className="px-4 py-3">Kode Kurir</th>
+                  <th className="px-4 py-3">Nama Kurir</th>
+                  <th className="px-4 py-3">No. Telepon</th>
+                  <th className="px-4 py-3">Plat Nomor</th>
+                  <th className="px-4 py-3 text-center">Status</th>
+                  <th className="px-4 py-3 text-center">Aksi</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </CardContent>
-      </Card>
+              </thead>
+              <tbody>
+                {dataKurir.map((k) => (
+                  <tr
+                    key={k.id_kurir}
+                    className="siqah-table-row"
+                  >
+                    <td className="px-4 py-3">{k.kode_kurir}</td>
+                    <td className="px-4 py-3">{k.nama_kurir}</td>
+                    <td className="px-4 py-3">{k.no_hp}</td>
+                    <td className="px-4 py-3">{k.plat_nomor}</td>
+                    <td className="px-4 py-3 text-center">
+                      <span
+                        className={`siqah-status-badge ${
+                          k.status_aktif
+                            ? "siqah-status-success"
+                            : "siqah-status-danger"
+                        }`}
+                      >
+                        {k.status_aktif ? "Aktif" : "Nonaktif"}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <CrudRowActions
+                        item={k}
+                        onView={handleView}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </CardContent>
+        </Card>
+      )}
 
-      {/* Modal View */}
       <Modal isOpen={modalView} onClose={() => setModalView(false)}>
         {selectedKurir && (
           <div className="p-5 space-y-3">
@@ -167,7 +142,6 @@ export default function DataMitraKurir() {
         )}
       </Modal>
 
-      {/* Modal Edit */}
       <Modal isOpen={modalEdit} onClose={() => setModalEdit(false)}>
         {selectedKurir && (
           <div className="p-5 space-y-3">
@@ -231,7 +205,6 @@ export default function DataMitraKurir() {
         )}
       </Modal>
 
-      {/* Modal Delete */}
       <Modal isOpen={modalDelete} onClose={() => setModalDelete(false)}>
         {selectedKurir && (
           <div className="p-6 text-center space-y-3">
@@ -260,7 +233,6 @@ export default function DataMitraKurir() {
         )}
       </Modal>
 
-      {/* Modal Tambah */}
       <Modal isOpen={modalTambah} onClose={() => setModalTambah(false)}>
         <div className="p-5 space-y-3">
           <h2 className="text-lg font-semibold text-[#3b3b3b]">
@@ -321,10 +293,3 @@ export default function DataMitraKurir() {
     </div>
   );
 }
-
-
-
-
-
-
-

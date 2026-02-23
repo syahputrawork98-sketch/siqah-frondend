@@ -1,0 +1,32 @@
+[
+  {
+    "id_pembayaran": 1,
+    "id_invoice": 101,
+    "tanggal_pembayaran": "2025-11-01",
+    "jumlah_bayar": 3500000,
+    "metode_pembayaran": "TRANSFER",
+    "bukti_pembayaran": "bukti_transfer_1.jpg",
+    "status_pembayaran": "MENUNGGU_VALIDASI",
+    "catatan_admin": "Menunggu validasi admin keuangan."
+  },
+  {
+    "id_pembayaran": 2,
+    "id_invoice": 102,
+    "tanggal_pembayaran": "2025-11-02",
+    "jumlah_bayar": 4200000,
+    "metode_pembayaran": "TRANSFER",
+    "bukti_pembayaran": "bukti_transfer_2.jpg",
+    "status_pembayaran": "VALID",
+    "catatan_admin": "Pembayaran sudah diverifikasi."
+  },
+  {
+    "id_pembayaran": 3,
+    "id_invoice": 103,
+    "tanggal_pembayaran": "2025-11-02",
+    "jumlah_bayar": 5000000,
+    "metode_pembayaran": "TUNAI",
+    "bukti_pembayaran": null,
+    "status_pembayaran": "DITOLAK",
+    "catatan_admin": "Nominal tidak sesuai dengan total invoice."
+  }
+]

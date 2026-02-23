@@ -24,7 +24,7 @@ import {
   Clock,
 } from "lucide-react";
 
-export default function DetailPesananAdmin() {
+export default function DetailPesanan() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -181,5 +181,6 @@ function StatusBadge({ status }) {
       return <span className={`${base} bg-gray-100 text-gray-700`}>{status}</span>;
   }
 }
+
 
 

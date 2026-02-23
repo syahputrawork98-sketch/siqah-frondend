@@ -1,0 +1,38 @@
+[
+  {
+    "id_validasi": 1,
+    "id_pesanan": 101,
+    "tanggal_validasi": "2025-10-30",
+    "status_validasi": "MENUNGGU",
+    "catatan_admin": "Menunggu konfirmasi admin",
+    "status_invoice": "BELUM_DIBUAT",
+    "status_tracking": "BELUM_MULAI"
+  },
+  {
+    "id_validasi": 2,
+    "id_pesanan": 102,
+    "tanggal_validasi": "2025-10-31",
+    "status_validasi": "DISETUJUI",
+    "catatan_admin": "Pesanan disetujui dan diteruskan ke proses invoice.",
+    "status_invoice": "DIBUAT",
+    "status_tracking": "PROSES"
+  },
+  {
+    "id_validasi": 3,
+    "id_pesanan": 103,
+    "tanggal_validasi": "2025-11-01",
+    "status_validasi": "DITOLAK",
+    "catatan_admin": "Data hewan tidak valid.",
+    "status_invoice": "BELUM_DIBUAT",
+    "status_tracking": "BATAL"
+  },
+  {
+    "id_validasi": 4,
+    "id_pesanan": 104,
+    "tanggal_validasi": "2025-11-02",
+    "status_validasi": "MENUNGGU",
+    "catatan_admin": "Menunggu konfirmasi ulang admin.",
+    "status_invoice": "BELUM_DIBUAT",
+    "status_tracking": "BELUM_MULAI"
+  }
+]

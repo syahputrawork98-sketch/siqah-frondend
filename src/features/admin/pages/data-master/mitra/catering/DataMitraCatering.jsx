@@ -1,69 +1,49 @@
-import { useState, useEffect } from "react";
-import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
-import { Card, CardContent, Modal } from "@/shared/ui";
+import { useEffect, useState } from "react";
+import { Plus, Trash2 } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CrudRowActions,
+  EmptyState,
+  ErrorState,
+  LoadingState,
+  Modal,
+} from "@/shared/ui";
+import { useAsyncData, useCrudModalState } from "@/shared/hooks";
+import { fetchAdminCateringPartners } from "@/features/admin/api/adminApi";
+import { DEFAULT_CATERING_PARTNER_LIST } from "@/features/admin/model/adminDataMappers";
 
 export default function DataMitraCatering() {
-  const [dataMitra, setDataMitra] = useState([]);
-  const [selectedMitra, setSelectedMitra] = useState(null);
-  const [modalView, setModalView] = useState(false);
-  const [modalEdit, setModalEdit] = useState(false);
-  const [modalDelete, setModalDelete] = useState(false);
-  const [modalTambah, setModalTambah] = useState(false);
+  const {
+    data: fetchedPartners,
+    error,
+    isLoading,
+    reload,
+  } = useAsyncData(fetchAdminCateringPartners, {
+    initialData: DEFAULT_CATERING_PARTNER_LIST,
+  });
+  const [dataMitra, setDataMitra] = useState(DEFAULT_CATERING_PARTNER_LIST);
+  const {
+    selectedItem: selectedMitra,
+    modalView,
+    modalEdit,
+    modalDelete,
+    modalTambah,
+    setModalView,
+    setModalEdit,
+    setModalDelete,
+    setModalTambah,
+    openView: handleView,
+    openEdit: handleEdit,
+    openDelete: handleDelete,
+  } = useCrudModalState();
 
   useEffect(() => {
-    // Dummy data simulasi (nanti diganti API)
-    setDataMitra([
-      {
-        id_mitra_catering: 1,
-        kode_mitra: "PTGDP001",
-        nama_mitra: "Siti Aminah",
-        no_telp: "081234567890",
-        alamat: "Jl. Melati No. 5, Bandung",
-        nama_catering: "Catering Utama 1",
-        status: "Aktif",
-        created_at: "2025-10-25",
-      },
-      {
-        id_mitra_catering: 2,
-        kode_mitra: "PTGDP002",
-        nama_mitra: "Rahmat Hidayat",
-        no_telp: "082134567890",
-        alamat: "Jl. Raya Cipadung No. 10, Cimahi",
-        nama_catering: "Catering Aqiqah Sejahtera",
-        status: "Aktif",
-        created_at: "2025-10-27",
-      },
-      {
-        id_mitra_catering: 3,
-        kode_mitra: "PTGDP003",
-        nama_mitra: "Lina Marlina",
-        no_telp: "081298765432",
-        alamat: "Desa Cibiru, Kab. Bandung",
-        nama_catering: "Catering Berkah",
-        status: "Tidak Aktif",
-        created_at: "2025-11-01",
-      },
-    ]);
-  }, []);
-
-  const handleView = (p) => {
-    setSelectedMitra(p);
-    setModalView(true);
-  };
-
-  const handleEdit = (p) => {
-    setSelectedMitra(p);
-    setModalEdit(true);
-  };
-
-  const handleDelete = (p) => {
-    setSelectedMitra(p);
-    setModalDelete(true);
-  };
+    setDataMitra(fetchedPartners);
+  }, [fetchedPartners]);
 
   return (
     <div className="p-6 space-y-6">
-      {/* Header */}
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-semibold text-[#3b3b3b]">
@@ -82,71 +62,66 @@ export default function DataMitraCatering() {
         </button>
       </div>
 
-      {/* Table */}
-      <Card className="siqah-table-card overflow-hidden">
-        <CardContent className="p-0">
-          <table className="w-full text-sm text-left border-collapse">
-            <thead className="siqah-table-head">
-              <tr>
-                <th className="px-4 py-3">Kode Mitra</th>
-                <th className="px-4 py-3">Nama Mitra</th>
-                <th className="px-4 py-3">No. Telepon</th>
-                <th className="px-4 py-3">Nama Catering</th>
-                <th className="px-4 py-3 text-center">Status</th>
-                <th className="px-4 py-3 text-center">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dataMitra.map((p) => (
-                <tr
-                  key={p.id_mitra_catering}
-                  className="siqah-table-row"
-                >
-                  <td className="px-4 py-3">{p.kode_mitra}</td>
-                  <td className="px-4 py-3">{p.nama_mitra}</td>
-                  <td className="px-4 py-3">{p.no_telp}</td>
-                  <td className="px-4 py-3">{p.nama_catering}</td>
-                  <td className="px-4 py-3 text-center">
-                    <span
-                      className={`siqah-status-badge ${
-                        p.status === "Aktif"
-                          ? "siqah-status-success"
-                          : "siqah-status-danger"
-                      }`}
-                    >
-                      {p.status}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-center">
-                    <div className="flex justify-center gap-2">
-                      <button
-                        onClick={() => handleView(p)}
-                        className="siqah-icon-action siqah-icon-action-view"
-                      >
-                        <Eye size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleEdit(p)}
-                        className="siqah-icon-action siqah-icon-action-edit"
-                      >
-                        <Pencil size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(p)}
-                        className="siqah-icon-action siqah-icon-action-delete"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </td>
+      {isLoading ? (
+        <LoadingState message="Memuat data mitra catering..." />
+      ) : error ? (
+        <ErrorState
+          message={error?.message || "Gagal memuat data mitra catering."}
+          onRetry={reload}
+        />
+      ) : dataMitra.length === 0 ? (
+        <EmptyState message="Belum ada data mitra catering." />
+      ) : (
+        <Card className="siqah-table-card overflow-hidden">
+          <CardContent className="p-0">
+            <table className="w-full text-sm text-left border-collapse">
+              <thead className="siqah-table-head">
+                <tr>
+                  <th className="px-4 py-3">Kode Mitra</th>
+                  <th className="px-4 py-3">Nama Mitra</th>
+                  <th className="px-4 py-3">No. Telepon</th>
+                  <th className="px-4 py-3">Nama Catering</th>
+                  <th className="px-4 py-3 text-center">Status</th>
+                  <th className="px-4 py-3 text-center">Aksi</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </CardContent>
-      </Card>
+              </thead>
+              <tbody>
+                {dataMitra.map((p) => (
+                  <tr
+                    key={p.id_mitra_catering}
+                    className="siqah-table-row"
+                  >
+                    <td className="px-4 py-3">{p.kode_mitra}</td>
+                    <td className="px-4 py-3">{p.nama_mitra}</td>
+                    <td className="px-4 py-3">{p.no_telp}</td>
+                    <td className="px-4 py-3">{p.nama_catering}</td>
+                    <td className="px-4 py-3 text-center">
+                      <span
+                        className={`siqah-status-badge ${
+                          p.status === "Aktif"
+                            ? "siqah-status-success"
+                            : "siqah-status-danger"
+                        }`}
+                      >
+                        {p.status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <CrudRowActions
+                        item={p}
+                        onView={handleView}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </CardContent>
+        </Card>
+      )}
 
-      {/* Modal View */}
       <Modal isOpen={modalView} onClose={() => setModalView(false)}>
         {selectedMitra && (
           <div className="p-5 space-y-3">
@@ -167,7 +142,6 @@ export default function DataMitraCatering() {
         )}
       </Modal>
 
-      {/* Modal Edit */}
       <Modal isOpen={modalEdit} onClose={() => setModalEdit(false)}>
         {selectedMitra && (
           <div className="p-5 space-y-3">
@@ -231,7 +205,6 @@ export default function DataMitraCatering() {
         )}
       </Modal>
 
-      {/* Modal Delete */}
       <Modal isOpen={modalDelete} onClose={() => setModalDelete(false)}>
         {selectedMitra && (
           <div className="p-6 text-center space-y-3">
@@ -260,7 +233,6 @@ export default function DataMitraCatering() {
         )}
       </Modal>
 
-      {/* Modal Tambah */}
       <Modal isOpen={modalTambah} onClose={() => setModalTambah(false)}>
         <div className="p-5 space-y-3">
           <h2 className="text-lg font-semibold text-[#3b3b3b]">
@@ -321,11 +293,3 @@ export default function DataMitraCatering() {
     </div>
   );
 }
-
-
-
-
-
-
-
-

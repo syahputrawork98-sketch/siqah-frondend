@@ -1,0 +1,32 @@
+[
+  {
+    "id_mitra_catering": 1,
+    "kode_mitra": "PTGDP001",
+    "nama_mitra": "Siti Aminah",
+    "no_telp": "081234567890",
+    "alamat": "Jl. Melati No. 5, Bandung",
+    "nama_catering": "Catering Utama 1",
+    "status": "Aktif",
+    "created_at": "2025-10-25"
+  },
+  {
+    "id_mitra_catering": 2,
+    "kode_mitra": "PTGDP002",
+    "nama_mitra": "Rahmat Hidayat",
+    "no_telp": "082134567890",
+    "alamat": "Jl. Raya Cipadung No. 10, Cimahi",
+    "nama_catering": "Catering Aqiqah Sejahtera",
+    "status": "Aktif",
+    "created_at": "2025-10-27"
+  },
+  {
+    "id_mitra_catering": 3,
+    "kode_mitra": "PTGDP003",
+    "nama_mitra": "Lina Marlina",
+    "no_telp": "081298765432",
+    "alamat": "Desa Cibiru, Kab. Bandung",
+    "nama_catering": "Catering Berkah",
+    "status": "Tidak Aktif",
+    "created_at": "2025-11-01"
+  }
+]

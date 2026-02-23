@@ -1,0 +1,32 @@
+[
+  {
+    "id_kurir": 1,
+    "kode_kurir": "KR001",
+    "nama_kurir": "Ahmad Hidayat",
+    "no_hp": "081234567890",
+    "alamat": "Jl. Sukamaju No.12, Bandung",
+    "plat_nomor": "D 1234 AB",
+    "status_aktif": true,
+    "created_at": "2025-10-28"
+  },
+  {
+    "id_kurir": 2,
+    "kode_kurir": "KR002",
+    "nama_kurir": "Siti Marlina",
+    "no_hp": "081345678901",
+    "alamat": "Jl. Mekarwangi No.8, Cimahi",
+    "plat_nomor": "D 5678 CD",
+    "status_aktif": true,
+    "created_at": "2025-10-30"
+  },
+  {
+    "id_kurir": 3,
+    "kode_kurir": "KR003",
+    "nama_kurir": "Rizky Firmansyah",
+    "no_hp": "081298765432",
+    "alamat": "Jl. Cibiru Wetan No.10, Kab. Bandung",
+    "plat_nomor": "D 9012 EF",
+    "status_aktif": false,
+    "created_at": "2025-11-01"
+  }
+]

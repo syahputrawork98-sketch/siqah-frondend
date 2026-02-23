@@ -1,0 +1,32 @@
+[
+  {
+    "id_invoice": 1,
+    "id_pesanan": 101,
+    "kode_invoice": "INV-20251101-001",
+    "tanggal_invoice": "2025-11-01",
+    "total_biaya": 3500000,
+    "status_invoice": "BELUM_DIBAYAR",
+    "bukti_pembayaran": null,
+    "catatan_admin": "Menunggu pembayaran dari konsumen."
+  },
+  {
+    "id_invoice": 2,
+    "id_pesanan": 102,
+    "kode_invoice": "INV-20251101-002",
+    "tanggal_invoice": "2025-11-01",
+    "total_biaya": 4200000,
+    "status_invoice": "MENUNGGU_VALIDASI",
+    "bukti_pembayaran": "bukti_102.jpg",
+    "catatan_admin": "Menunggu validasi admin."
+  },
+  {
+    "id_invoice": 3,
+    "id_pesanan": 103,
+    "kode_invoice": "INV-20251102-003",
+    "tanggal_invoice": "2025-11-02",
+    "total_biaya": 5000000,
+    "status_invoice": "LUNAS",
+    "bukti_pembayaran": "bukti_103.jpg",
+    "catatan_admin": "Pembayaran sudah diterima."
+  }
+]

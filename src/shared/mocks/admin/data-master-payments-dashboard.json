@@ -1,0 +1,38 @@
+{
+  "summary": {
+    "pengajuan": 45,
+    "validasi": 37,
+    "invoice": 52,
+    "dibayar": 30,
+    "lunas": 25
+  },
+  "chartData": [
+    { "name": "Pengajuan", "value": 45 },
+    { "name": "Tervalidasi", "value": 37 },
+    { "name": "Invoice", "value": 52 },
+    { "name": "Dibayar", "value": 30 },
+    { "name": "Lunas", "value": 25 }
+  ],
+  "activities": [
+    {
+      "tanggal": "02 Nov 2025",
+      "user": "Konsumen - Ahmad Fauzi",
+      "aktivitas": "Mengajukan pembayaran untuk INV-023."
+    },
+    {
+      "tanggal": "01 Nov 2025",
+      "user": "Admin - Nurul Aini",
+      "aktivitas": "Memvalidasi pembayaran INV-018."
+    },
+    {
+      "tanggal": "31 Okt 2025",
+      "user": "Konsumen - Dedi Pratama",
+      "aktivitas": "Melakukan pembayaran sebesar Rp1.500.000."
+    },
+    {
+      "tanggal": "30 Okt 2025",
+      "user": "Admin - Rina Dewi",
+      "aktivitas": "Menandai INV-015 sebagai LUNAS."
+    }
+  ]
+}

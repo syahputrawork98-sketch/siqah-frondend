@@ -12,7 +12,7 @@ import {
 import { fetchAdminNotifications } from "@/features/admin/api/adminApi";
 import { useAsyncData } from "@/shared/hooks";
 
-export default function LogNotifikasiAdmin() {
+export default function Notifikasi() {
   const { data, setData, error, isLoading, reload } = useAsyncData(
     fetchAdminNotifications,
     {
@@ -221,5 +221,6 @@ export default function LogNotifikasiAdmin() {
     </div>
   );
 }
+
 
 

@@ -1,0 +1,32 @@
+[
+  {
+    "id_catering": 1,
+    "kode_catering": "DPR001",
+    "nama_catering": "Catering Utama",
+    "lokasi": "Jl. Raya Aqiqah No. 10, Bandung",
+    "kapasitas": 50,
+    "penanggung_jawab": "Siti Aminah",
+    "status_aktif": true,
+    "created_at": "2025-10-25"
+  },
+  {
+    "id_catering": 2,
+    "kode_catering": "DPR002",
+    "nama_catering": "Catering Selatan",
+    "lokasi": "Desa Cisaranten, Bandung",
+    "kapasitas": 30,
+    "penanggung_jawab": "Rahmat Hidayat",
+    "status_aktif": true,
+    "created_at": "2025-10-28"
+  },
+  {
+    "id_catering": 3,
+    "kode_catering": "DPR003",
+    "nama_catering": "Catering Timur",
+    "lokasi": "Jl. Sukamaju No. 8, Cimahi",
+    "kapasitas": 40,
+    "penanggung_jawab": "Dewi Lestari",
+    "status_aktif": false,
+    "created_at": "2025-11-01"
+  }
+]

@@ -7,7 +7,7 @@ import { useAsyncData } from "@/shared/hooks";
 
 const DEFAULT_ERROR_MESSAGE = "Gagal memuat dashboard admin.";
 
-export default function DashboardAdmin() {
+export default function Dashboard() {
   const { data, error, isLoading, reload } = useAsyncData(fetchAdminDashboardData, {
     initialData: DEFAULT_DASHBOARD,
   });

@@ -15,3 +15,4 @@ export { default as PublicStat } from "./public-stat";
 export { default as BackofficeTopbar } from "./backoffice-topbar";
 export { default as BackofficeNotificationDropdown } from "./backoffice-notification-dropdown";
 export { default as BackofficeSidebar } from "./backoffice-sidebar";
+export { default as CrudRowActions } from "./crud-row-actions";

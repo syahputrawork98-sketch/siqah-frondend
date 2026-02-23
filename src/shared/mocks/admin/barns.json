@@ -1,0 +1,35 @@
+[
+  {
+    "id_kandang": 1,
+    "kode_kandang": "KDG001",
+    "nama_kandang": "Kandang Utama",
+    "lokasi": "Jl. Raya Aqiqah No.12, Bandung",
+    "kapasitas": 20,
+    "jumlah_hewan": 12,
+    "penanggung_jawab": "Tim Kandang A",
+    "status": "Aktif",
+    "created_at": "2025-10-30"
+  },
+  {
+    "id_kandang": 2,
+    "kode_kandang": "KDG002",
+    "nama_kandang": "Kandang Selatan",
+    "lokasi": "Desa Cikole, Lembang",
+    "kapasitas": 15,
+    "jumlah_hewan": 15,
+    "penanggung_jawab": "Tim Kandang B",
+    "status": "Penuh",
+    "created_at": "2025-10-31"
+  },
+  {
+    "id_kandang": 3,
+    "kode_kandang": "KDG003",
+    "nama_kandang": "Kandang Timur",
+    "lokasi": "Jl. Sukamaju No.9, Cimahi",
+    "kapasitas": 25,
+    "jumlah_hewan": 10,
+    "penanggung_jawab": "Tim Kandang C",
+    "status": "Aktif",
+    "created_at": "2025-11-01"
+  }
+]

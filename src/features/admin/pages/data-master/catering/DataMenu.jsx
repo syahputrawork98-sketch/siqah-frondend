@@ -1,69 +1,49 @@
-import { useState, useEffect } from "react";
-import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
-import { Card, CardContent, Modal } from "@/shared/ui";
+import { useEffect, useState } from "react";
+import { Plus, Trash2 } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CrudRowActions,
+  EmptyState,
+  ErrorState,
+  LoadingState,
+  Modal,
+} from "@/shared/ui";
+import { useAsyncData, useCrudModalState } from "@/shared/hooks";
+import { fetchAdminMenus } from "@/features/admin/api/adminApi";
+import { DEFAULT_MENU_LIST } from "@/features/admin/model/adminDataMappers";
 
 export default function DataMenu() {
-  const [dataMenu, setDataMenu] = useState([]);
-  const [selectedMenu, setSelectedMenu] = useState(null);
-  const [modalView, setModalView] = useState(false);
-  const [modalEdit, setModalEdit] = useState(false);
-  const [modalDelete, setModalDelete] = useState(false);
-  const [modalTambah, setModalTambah] = useState(false);
+  const {
+    data: fetchedMenus,
+    error,
+    isLoading,
+    reload,
+  } = useAsyncData(fetchAdminMenus, {
+    initialData: DEFAULT_MENU_LIST,
+  });
+  const [dataMenu, setDataMenu] = useState(DEFAULT_MENU_LIST);
+  const {
+    selectedItem: selectedMenu,
+    modalView,
+    modalEdit,
+    modalDelete,
+    modalTambah,
+    setModalView,
+    setModalEdit,
+    setModalDelete,
+    setModalTambah,
+    openView: handleView,
+    openEdit: handleEdit,
+    openDelete: handleDelete,
+  } = useCrudModalState();
 
   useEffect(() => {
-    // Dummy data sesuai tb_menu
-    setDataMenu([
-      {
-        id_menu: 1,
-        kode_menu: "MNU001",
-        nama_menu: "Gulai Kambing",
-        kategori: "Daging",
-        deskripsi: "Gulai kambing dengan bumbu rempah pilihan dan santan gurih.",
-        harga: 45000,
-        status_aktif: true,
-        created_at: "2025-10-25",
-      },
-      {
-        id_menu: 2,
-        kode_menu: "MNU002",
-        nama_menu: "Sate Domba",
-        kategori: "Grill",
-        deskripsi: "Sate domba empuk dengan bumbu kacang khas Siqah.",
-        harga: 40000,
-        status_aktif: true,
-        created_at: "2025-10-28",
-      },
-      {
-        id_menu: 3,
-        kode_menu: "MNU003",
-        nama_menu: "Tongseng Kambing",
-        kategori: "Daging",
-        deskripsi: "Tongseng dengan kuah kental manis pedas nikmat.",
-        harga: 50000,
-        status_aktif: false,
-        created_at: "2025-11-01",
-      },
-    ]);
-  }, []);
-
-  const handleView = (m) => {
-    setSelectedMenu(m);
-    setModalView(true);
-  };
-
-  const handleEdit = (m) => {
-    setSelectedMenu(m);
-    setModalEdit(true);
-  };
-
-  const handleDelete = (m) => {
-    setSelectedMenu(m);
-    setModalDelete(true);
-  };
+    setDataMenu(fetchedMenus);
+  }, [fetchedMenus]);
 
   return (
     <div className="p-6 space-y-6">
-      {/* Header */}
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-semibold text-[#3b3b3b]">Data Menu</h1>
@@ -80,75 +60,70 @@ export default function DataMenu() {
         </button>
       </div>
 
-      {/* Table */}
-      <Card className="siqah-table-card overflow-hidden">
-        <CardContent className="p-0">
-          <table className="w-full text-sm text-left border-collapse">
-            <thead className="siqah-table-head">
-              <tr>
-                <th className="px-4 py-3">Kode Menu</th>
-                <th className="px-4 py-3">Nama Menu</th>
-                <th className="px-4 py-3">Kategori</th>
-                <th className="px-4 py-3">Deskripsi</th>
-                <th className="px-4 py-3 text-center">Harga</th>
-                <th className="px-4 py-3 text-center">Status</th>
-                <th className="px-4 py-3 text-center">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dataMenu.map((m) => (
-                <tr
-                  key={m.id_menu}
-                  className="siqah-table-row"
-                >
-                  <td className="px-4 py-3">{m.kode_menu}</td>
-                  <td className="px-4 py-3">{m.nama_menu}</td>
-                  <td className="px-4 py-3">{m.kategori}</td>
-                  <td className="px-4 py-3">{m.deskripsi}</td>
-                  <td className="px-4 py-3 text-center">
-                    Rp {m.harga.toLocaleString("id-ID")}
-                  </td>
-                  <td className="px-4 py-3 text-center">
-                    <span
-                      className={`siqah-status-badge ${
-                        m.status_aktif
-                          ? "siqah-status-success"
-                          : "siqah-status-danger"
-                      }`}
-                    >
-                      {m.status_aktif ? "Aktif" : "Nonaktif"}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-center">
-                    <div className="flex justify-center gap-2">
-                      <button
-                        onClick={() => handleView(m)}
-                        className="siqah-icon-action siqah-icon-action-view"
-                      >
-                        <Eye size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleEdit(m)}
-                        className="siqah-icon-action siqah-icon-action-edit"
-                      >
-                        <Pencil size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(m)}
-                        className="siqah-icon-action siqah-icon-action-delete"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </td>
+      {isLoading ? (
+        <LoadingState message="Memuat data menu..." />
+      ) : error ? (
+        <ErrorState
+          message={error?.message || "Gagal memuat data menu."}
+          onRetry={reload}
+        />
+      ) : dataMenu.length === 0 ? (
+        <EmptyState message="Belum ada data menu." />
+      ) : (
+        <Card className="siqah-table-card overflow-hidden">
+          <CardContent className="p-0">
+            <table className="w-full text-sm text-left border-collapse">
+              <thead className="siqah-table-head">
+                <tr>
+                  <th className="px-4 py-3">Kode Menu</th>
+                  <th className="px-4 py-3">Nama Menu</th>
+                  <th className="px-4 py-3">Kategori</th>
+                  <th className="px-4 py-3">Deskripsi</th>
+                  <th className="px-4 py-3 text-center">Harga</th>
+                  <th className="px-4 py-3 text-center">Status</th>
+                  <th className="px-4 py-3 text-center">Aksi</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </CardContent>
-      </Card>
+              </thead>
+              <tbody>
+                {dataMenu.map((m) => (
+                  <tr
+                    key={m.id_menu}
+                    className="siqah-table-row"
+                  >
+                    <td className="px-4 py-3">{m.kode_menu}</td>
+                    <td className="px-4 py-3">{m.nama_menu}</td>
+                    <td className="px-4 py-3">{m.kategori}</td>
+                    <td className="px-4 py-3">{m.deskripsi}</td>
+                    <td className="px-4 py-3 text-center">
+                      Rp {m.harga.toLocaleString("id-ID")}
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <span
+                        className={`siqah-status-badge ${
+                          m.status_aktif
+                            ? "siqah-status-success"
+                            : "siqah-status-danger"
+                        }`}
+                      >
+                        {m.status_aktif ? "Aktif" : "Nonaktif"}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <CrudRowActions
+                        item={m}
+                        onView={handleView}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </CardContent>
+        </Card>
+      )}
 
-      {/* Modal View */}
       <Modal isOpen={modalView} onClose={() => setModalView(false)}>
         {selectedMenu && (
           <div className="p-5 space-y-3">
@@ -170,7 +145,6 @@ export default function DataMenu() {
         )}
       </Modal>
 
-      {/* Modal Edit */}
       <Modal isOpen={modalEdit} onClose={() => setModalEdit(false)}>
         {selectedMenu && (
           <div className="p-5 space-y-3">
@@ -236,7 +210,6 @@ export default function DataMenu() {
         )}
       </Modal>
 
-      {/* Modal Delete */}
       <Modal isOpen={modalDelete} onClose={() => setModalDelete(false)}>
         {selectedMenu && (
           <div className="p-6 text-center space-y-3">
@@ -265,7 +238,6 @@ export default function DataMenu() {
         )}
       </Modal>
 
-      {/* Modal Tambah */}
       <Modal isOpen={modalTambah} onClose={() => setModalTambah(false)}>
         <div className="p-5 space-y-3">
           <h2 className="text-lg font-semibold text-[#3b3b3b]">
@@ -328,10 +300,3 @@ export default function DataMenu() {
     </div>
   );
 }
-
-
-
-
-
-
-

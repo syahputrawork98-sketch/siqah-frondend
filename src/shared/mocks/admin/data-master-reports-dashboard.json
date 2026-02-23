@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "totalPesanan": 124,
+    "totalInvoice": 210,
+    "totalPembayaran": 185,
+    "totalPendapatan": 85000000,
+    "pesananSelesai": 98,
+    "totalKonsumen": 75
+  },
+  "chartPendapatan": [
+    { "bulan": "Jan", "total": 5000000 },
+    { "bulan": "Feb", "total": 7000000 },
+    { "bulan": "Mar", "total": 9000000 },
+    { "bulan": "Apr", "total": 6500000 },
+    { "bulan": "Mei", "total": 8000000 },
+    { "bulan": "Jun", "total": 12000000 },
+    { "bulan": "Jul", "total": 9500000 },
+    { "bulan": "Agu", "total": 10500000 },
+    { "bulan": "Sep", "total": 11500000 },
+    { "bulan": "Okt", "total": 9800000 },
+    { "bulan": "Nov", "total": 8700000 }
+  ],
+  "chartStatusPembayaran": [
+    { "name": "Belum Lunas", "value": 24 },
+    { "name": "DP", "value": 46 },
+    { "name": "Lunas", "value": 55 }
+  ],
+  "recentTransaksi": [
+    {
+      "tanggal": "03 Nov 2025",
+      "kode": "PSN00124",
+      "konsumen": "Ahmad Fauzi",
+      "total": "Rp 2.500.000",
+      "status": "Lunas"
+    },
+    {
+      "tanggal": "02 Nov 2025",
+      "kode": "PSN00123",
+      "konsumen": "Rina Mulyani",
+      "total": "Rp 1.800.000",
+      "status": "DP"
+    },
+    {
+      "tanggal": "01 Nov 2025",
+      "kode": "PSN00122",
+      "konsumen": "Budi Santoso",
+      "total": "Rp 3.200.000",
+      "status": "Lunas"
+    },
+    {
+      "tanggal": "31 Okt 2025",
+      "kode": "PSN00121",
+      "konsumen": "Fitri Ayu",
+      "total": "Rp 2.000.000",
+      "status": "Belum Lunas"
+    }
+  ]
+}

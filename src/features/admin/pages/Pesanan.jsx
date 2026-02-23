@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Card, CardHeader, CardContent } from "@/shared/ui";
 import { Search, Filter, Eye, CheckCircle, Clock, Package } from "lucide-react";
 
-export default function PesananAdmin() {
+export default function Pesanan() {
   const [search, setSearch] = useState("");
   const [filterStatus, setFilterStatus] = useState("Semua");
   const [dataPesanan] = useState([
@@ -173,5 +173,6 @@ function StatusBadge({ status }) {
       );
   }
 }
+
 
 

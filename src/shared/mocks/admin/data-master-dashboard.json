@@ -1,0 +1,36 @@
+{
+  "counts": {
+    "catering": 4,
+    "kandang": 7,
+    "paket": 12,
+    "menu": 9,
+    "hewan": 28
+  },
+  "chartData": [
+    { "name": "Kambing", "value": 18 },
+    { "name": "Domba", "value": 6 },
+    { "name": "Sapi", "value": 4 }
+  ],
+  "activities": [
+    {
+      "tanggal": "02 Nov 2025",
+      "mitra": "Tim Kandang A",
+      "aktivitas": "Menambah hewan baru (Kambing)"
+    },
+    {
+      "tanggal": "01 Nov 2025",
+      "mitra": "Mitra Catering B",
+      "aktivitas": "Menambahkan menu baru (Gulai Domba)"
+    },
+    {
+      "tanggal": "31 Okt 2025",
+      "mitra": "Mitra Catering C",
+      "aktivitas": "Memperbarui stok Paket Hemat"
+    },
+    {
+      "tanggal": "29 Okt 2025",
+      "mitra": "Tim Kandang B",
+      "aktivitas": "Menambahkan kandang baru (KDG-003)"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ import { formatCurrencyIdr } from "@/shared/lib";
 import { fetchAdminPayments } from "@/features/admin/api/adminApi";
 import { useAsyncData } from "@/shared/hooks";
 
-export default function PembayaranAdmin() {
+export default function Pembayaran() {
   const [activeTab, setActiveTab] = useState("pengajuan");
   const [selectedData, setSelectedData] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -196,4 +196,5 @@ function StatusBadge({ status }) {
       return <span className={`${base} bg-gray-100 text-gray-700`}>{status}</span>;
   }
 }
+
 
