@@ -1,4 +1,4 @@
-﻿// .jsx
+// .jsx
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/shared/ui";
 import {
@@ -41,9 +41,9 @@ export default function DashboardUsers
 
     setChartData([
       { name: "Konsumen", value: 152 },
-      { name: "Petugas Kurir", value: 5 },
-      { name: "Petugas Kandang", value: 7 },
-      { name: "Petugas Dapur", value: 4 },
+      { name: "Mitra Kurir", value: 5 },
+      { name: "Mitra Kandang", value: 7 },
+      { name: "Mitra Dapur", value: 4 },
     ]);
 
     setActivities([
@@ -54,17 +54,17 @@ export default function DashboardUsers
       },
       {
         tanggal: "01 Nov 2025",
-        user: "Petugas Kurir - Rudi Hartono",
+        user: "Mitra Kurir - Rudi Hartono",
         aktivitas: "Mengantarkan pesanan ke daerah Antapani.",
       },
       {
         tanggal: "31 Okt 2025",
-        user: "Petugas Dapur - Siti Nurhaliza",
+        user: "Mitra Dapur - Siti Nurhaliza",
         aktivitas: "Memasak pesanan untuk 15 paket Aqiqah.",
       },
       {
         tanggal: "29 Okt 2025",
-        user: "Petugas Kandang - Samsul Anwar",
+        user: "Mitra Kandang - Samsul Anwar",
         aktivitas: "Menambahkan hewan baru di KDG-003.",
       },
     ]);
@@ -81,19 +81,19 @@ export default function DashboardUsers
       color: "from-[#fff7e8] to-[#fbeed7]",
     },
     {
-      title: "Total Petugas Kurir",
+      title: "Total Mitra Kurir",
       value: data.kurir,
       icon: Truck,
       color: "from-[#eafaf3] to-[#dcf7ec]",
     },
     {
-      title: "Total Petugas Kandang",
+      title: "Total Mitra Kandang",
       value: data.kandang,
       icon: Warehouse,
       color: "from-[#f8ecf8] to-[#f3def4]",
     },
     {
-      title: "Total Petugas Dapur",
+      title: "Total Mitra Dapur",
       value: data.dapur,
       icon: UtensilsCrossed,
       color: "from-[#e9f2fb] to-[#dceaf9]",
@@ -108,7 +108,7 @@ export default function DashboardUsers
           Dashboard User
         </h1>
         <p className="text-sm text-[#7a7368]">
-          Lihat ringkasan jumlah konsumen dan seluruh petugas operasional Siqah.
+          Lihat ringkasan jumlah konsumen dan seluruh mitra operasional Siqah.
         </p>
       </div>
 
@@ -201,6 +201,7 @@ export default function DashboardUsers
     </div>
   );
 }
+
 
 
 

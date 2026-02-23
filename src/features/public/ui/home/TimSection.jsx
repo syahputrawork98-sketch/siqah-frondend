@@ -1,18 +1,18 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const teamMembers = [
   {
     id: 1,
     nama: "Ahmad Fauzi",
-    role: "Petugas Kandang",
+    role: "Mitra Kandang",
     img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-kandang_tzqlbo.jpg",
     quote: "Merawat hewan dengan penuh tanggung jawab dan kasih sayang.",
   },
   {
     id: 2,
     nama: "Siti Rahmah",
-    role: "Petugas Dapur",
+    role: "Mitra Dapur",
     img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-dapur_f3e0ro.jpg",
     quote: "Menyiapkan hidangan aqiqah dengan cita rasa terbaik dan penuh keberkahan.",
   },
@@ -40,7 +40,7 @@ const TimSection = () => {
           "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // ðŸ”¥ Efek parallax
+        backgroundAttachment: "fixed", // 🔥 Efek parallax
       }}
     
     
@@ -98,7 +98,7 @@ const TimSection = () => {
 
               {/* Quote */}
               <p className="text-sm text-[#45624B]/80 font-montserrat leading-relaxed">
-                â€œ{person.quote}â€
+                “{person.quote}”
               </p>
 
               {/* Subtle glow hover */}
@@ -122,4 +122,5 @@ const TimSection = () => {
 };
 
 export default TimSection;
+
 

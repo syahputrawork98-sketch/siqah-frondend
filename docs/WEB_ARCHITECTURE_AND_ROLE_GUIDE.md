@@ -1,4 +1,4 @@
-﻿# Web Architecture & Role Extension Guide
+# Web Architecture & Role Extension Guide
 
 Dokumen ini jadi panduan utama tim untuk memahami struktur frontend Siqah dan menambah role baru secara aman.
 
@@ -9,7 +9,7 @@ Siqah Frontend adalah aplikasi multi-role dengan 3 role runtime aktif saat ini:
 - `admin`
 - `superadmin`
 
-Role lain (contoh: petugas) tetap boleh dikembangkan, tetapi tidak masuk jalur runtime utama sampai requirement final ditetapkan.
+Role lain (contoh: mitra) tetap boleh dikembangkan, tetapi tidak masuk jalur runtime utama sampai requirement final ditetapkan.
 
 ## 2. Tech Stack
 
@@ -204,3 +204,4 @@ Update dokumen berikut jika role baru jadi runtime aktif:
 - Hindari menaruh fetch langsung di komponen presentational.
 - Prioritaskan reuse komponen di `shared/ui` daripada copy style per halaman.
 - Tambah route baru hanya lewat modul route per role, bukan hardcode acak di file lain.
+

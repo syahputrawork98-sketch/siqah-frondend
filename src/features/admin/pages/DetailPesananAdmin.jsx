@@ -138,7 +138,7 @@ export default function DetailPesananAdmin() {
                     )}
                     {p.tahap}
                   </div>
-                  <p className="text-xs text-[#7a7368]">Petugas: <span className="font-medium">{p.petugas}</span></p>
+                  <p className="text-xs text-[#7a7368]">Mitra: <span className="font-medium">{p.mitra}</span></p>
                   <p className="text-xs text-[#7a7368] mb-2">Waktu: {p.waktu}</p>
                   <img
                     src={p.foto}
@@ -181,3 +181,4 @@ function StatusBadge({ status }) {
       return <span className={`${base} bg-gray-100 text-gray-700`}>{status}</span>;
   }
 }
+

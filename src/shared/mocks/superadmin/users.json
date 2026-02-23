@@ -13,21 +13,21 @@
   },
   {
     "id": 3,
-    "nama": "Petugas Kandang 1",
+    "nama": "Mitra Kandang 1",
     "email": "kandang1@siqah.id",
-    "role": "Petugas Kandang"
+    "role": "Mitra Kandang"
   },
   {
     "id": 4,
-    "nama": "Petugas Dapur 1",
+    "nama": "Mitra Dapur 1",
     "email": "dapur1@siqah.id",
-    "role": "Petugas Dapur"
+    "role": "Mitra Dapur"
   },
   {
     "id": 5,
-    "nama": "Petugas Kurir 1",
+    "nama": "Mitra Kurir 1",
     "email": "kurir1@siqah.id",
-    "role": "Petugas Kurir"
+    "role": "Mitra Kurir"
   },
   {
     "id": 6,
@@ -36,4 +36,5 @@
     "role": "Konsumen"
   }
 ]
+
 

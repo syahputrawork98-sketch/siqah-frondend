@@ -1,4 +1,4 @@
-﻿import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import {
   LayoutDashboard,
@@ -46,8 +46,8 @@ const menuItems = [
     icon: Users,
     children: [
       { name: "Dashboard User", path: "/admin/datauser" },
-      { name: "Data Petugas Dapur", path: "/admin/data-master/petugas/dapur" },
-      { name: "Data Kurir", path: "/admin/data-master/petugas/kurir" },
+      { name: "Data Mitra Dapur", path: "/admin/data-master/mitra/dapur" },
+      { name: "Data Kurir", path: "/admin/data-master/mitra/kurir" },
       { name: "Data konsumen", path: "/admin/data-master/konsumen" },
     ],
   },
@@ -182,5 +182,6 @@ export default function SidebarAdmin() {
     </>
   );
 }
+
 
 

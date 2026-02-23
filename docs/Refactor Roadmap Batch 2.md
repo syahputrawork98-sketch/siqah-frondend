@@ -49,7 +49,7 @@ Status terakhir diverifikasi pada 2026-02-23.
 
 - [x] Source aktif tetap di root `src/` (migrasi `client/` dianggap selesai di Batch 1).
 - [x] Fokus role aktif: `public`, `admin`, `superadmin`.
-- [ ] `petugas-kandang` tetap di luar scope runtime utama sampai requirement final.
+- [ ] `mitra-kandang` tetap di luar scope runtime utama sampai requirement final.
 
 ## Roadmap Batch 2
 
@@ -117,3 +117,4 @@ Status terakhir diverifikasi pada 2026-02-23.
 - [ ] Tidak ada wrapper legacy non-esensial yang tertinggal di jalur runtime.
 - [ ] Quality gate lokal dan CI lulus konsisten (`test`, `lint`, `build`).
 - [ ] Dokumentasi roadmap dan arsitektur sinkron dengan kode.
+

@@ -1,4 +1,4 @@
-﻿# Data Contract Readiness (B2-5)
+# Data Contract Readiness (B2-5)
 
 Status: selesai untuk scope Batch 2 role aktif (`admin`, `superadmin`, `public`) pada 2026-02-23.
 
@@ -30,7 +30,7 @@ Service file: `src/features/admin/api/adminApi.js`
 | `fetchAdminDashboardData` | `GET` | `/admin/dashboard` | `{ totalPesanan:number, pesananDiproses:number, pesananSelesai:number, pembayaranMenunggu:number, pesananTerbaru:Array<{ id,nama,tanggal,status }> }` | `src/shared/mocks/admin/dashboard.json` via `getMockDashboardData()` | 1) Backend kirim field canonical di atas (boleh tetap dalam `data`). 2) UAT dengan `VITE_ENABLE_MOCK=false`. 3) Jika stabil, hentikan update file mock dashboard. |
 | `fetchAdminPayments` | `GET` | `/admin/payments` | `Array<{ id,konsumen,tanggal,jumlah:number,status,buktiUrl|null }>` | `src/shared/mocks/admin/payments.json` via `getMockPayments()` | 1) Samakan enum status pembayaran backend dengan UI. 2) Validasi daftar kosong/error state. 3) Bekukan mock pembayaran setelah parity. |
 | `fetchAdminNotifications` | `GET` | `/admin/notifications` | `Array<{ id,judul,pesan,tipe,waktu,status_baca:boolean }>` | `src/shared/mocks/admin/notifications.json` via `getMockNotifications()` | 1) Pastikan `id` stabil dan unik. 2) Pastikan timezone `waktu` konsisten. 3) Nonaktifkan fallback mock endpoint ini saat backend ready. |
-| `fetchAdminOrderDetail(orderId)` | `GET` | `/admin/orders/{orderId}` | `{ id,tanggal,total:number,status,konsumen:{ nama,telepon,alamat },pembayaran:{ status,metode,bukti },progress:Array<{ tahap,petugas,waktu,foto }> }` | `src/shared/mocks/admin/order-detail.json` via `getMockOrderDetail(orderId)` | 1) Uji order valid/tidak ditemukan. 2) Cocokkan nested object + progress timeline. 3) Tambah monitoring error 404 agar UX fallback jelas. |
+| `fetchAdminOrderDetail(orderId)` | `GET` | `/admin/orders/{orderId}` | `{ id,tanggal,total:number,status,konsumen:{ nama,telepon,alamat },pembayaran:{ status,metode,bukti },progress:Array<{ tahap,mitra,waktu,foto }> }` | `src/shared/mocks/admin/order-detail.json` via `getMockOrderDetail(orderId)` | 1) Uji order valid/tidak ditemukan. 2) Cocokkan nested object + progress timeline. 3) Tambah monitoring error 404 agar UX fallback jelas. |
 | `fetchAdminProfile` | `GET` | `/admin/profile` | `{ username,email,nama_admin,no_telp,alamat,foto }` | `src/shared/mocks/admin/profile.json` via `getMockAdminProfile()` | 1) Map `nama_admin/no_telp` backend bila snake/camel berubah. 2) Uji avatar null/invalid URL. 3) Bekukan mock profile setelah parity. |
 
 ## Modul Superadmin
@@ -42,7 +42,7 @@ Service file: `src/features/superadmin/api/superadminApi.js`
 | `fetchSuperadminDashboard` | `GET` | `/superadmin/dashboard` | `{ totalUsers:number,totalOrders:number,waitingPayments:number,totalRevenue:number,newNotifications:number }` | `src/shared/mocks/superadmin/dashboard.json` | 1) Sinkron tipe numerik. 2) Uji data nol. 3) Lepas mock dashboard. |
 | `fetchSuperadminProfile` | `GET` | `/superadmin/profile` | `{ name,email,avatar }` | `src/shared/mocks/superadmin/topbar-profile.json` | 1) Validasi fallback avatar kosong. 2) Lepas mock profile. |
 | `fetchTopbarNotifications` | `GET` | `/superadmin/topbar-notifications` | `Array<{ id,title,message }>` | `src/shared/mocks/superadmin/topbar-notifications.json` | 1) Pastikan urutan terbaru-pertama. 2) Lepas mock topbar notification. |
-| `fetchMonitoringOrders` | `GET` | `/superadmin/monitoring/orders` | `Array<{ id,konsumen,paket,tanggal,status,kandang,dapur,kurir }>` | `src/shared/mocks/superadmin/monitoring-orders.json` | 1) Sinkron enum status lintas petugas. 2) Lepas mock monitoring. |
+| `fetchMonitoringOrders` | `GET` | `/superadmin/monitoring/orders` | `Array<{ id,konsumen,paket,tanggal,status,kandang,dapur,kurir }>` | `src/shared/mocks/superadmin/monitoring-orders.json` | 1) Sinkron enum status lintas mitra. 2) Lepas mock monitoring. |
 | `fetchReports` | `GET` | `/superadmin/reports` | `Array<{ id,tanggal,konsumen,total:number,status }>` | `src/shared/mocks/superadmin/reports.json` | 1) Pastikan format tanggal. 2) Lepas mock reports list. |
 | `fetchReportChart` | `GET` | `/superadmin/reports/chart` | `Array<{ bulan,total:number }>` | `src/shared/mocks/superadmin/report-chart.json` | 1) Tetapkan granularitas periode (bulanan). 2) Lepas mock chart. |
 | `fetchSystemNotifications` | `GET` | `/superadmin/notifications` | `Array<{ id,pesan,waktu,status }>` | `src/shared/mocks/superadmin/notifications.json` | 1) Sinkron status baca. 2) Lepas mock notifikasi sistem. |
@@ -60,3 +60,4 @@ Service file: `src/features/superadmin/api/superadminApi.js`
 4. Tambahkan regresi test mapper saat ditemukan gap field/tipe dari backend.
 5. Setelah endpoint stabil 2 sprint, hapus dependency JSON mock endpoint terkait dari `mock*Api.js`.
 6. Setelah semua endpoint siap, nonaktifkan mode mock sebagai default (`VITE_ENABLE_MOCK=false`).
+

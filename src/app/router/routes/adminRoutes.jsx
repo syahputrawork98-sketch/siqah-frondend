@@ -1,4 +1,4 @@
-﻿import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import DashboardAdmin from "@/features/admin/pages/DashboardAdmin";
 import PesananAdmin from "@/features/admin/pages/PesananAdmin";
@@ -14,8 +14,8 @@ import DataDapur from "@/features/admin/pages/data-master/dapur/DataDapur";
 import DataMenu from "@/features/admin/pages/data-master/dapur/DataMenu";
 import DataPaket from "@/features/admin/pages/data-master/dapur/DataPaket";
 import DashboardUsers from "@/features/admin/pages/data-master/DashboardUsers";
-import DataPetugasDapur from "@/features/admin/pages/data-master/petugas/dapur/DataPetugasDapur";
-import DataPetugasKurir from "@/features/admin/pages/data-master/petugas/kurir/DataPetugasKurir";
+import DataMitraDapur from "@/features/admin/pages/data-master/mitra/dapur/DataMitraDapur";
+import DataMitraKurir from "@/features/admin/pages/data-master/mitra/kurir/DataMitraKurir";
 import DataKonsumen from "@/features/admin/pages/data-master/konsumen/DataKonsumen";
 import DashboardPembayaran from "@/features/admin/pages/data-master/DashboardPembayaran";
 import DataPengajuan from "@/features/admin/pages/data-master/pembayaran/DataPengajuan";
@@ -35,8 +35,8 @@ export const ADMIN_ROUTES = [
   { path: "data-master/menu", element: <DataMenu /> },
   { path: "data-master/paket", element: <DataPaket /> },
   { path: "datauser", element: <DashboardUsers /> },
-  { path: "data-master/petugas/dapur", element: <DataPetugasDapur /> },
-  { path: "data-master/petugas/kurir", element: <DataPetugasKurir /> },
+  { path: "data-master/mitra/dapur", element: <DataMitraDapur /> },
+  { path: "data-master/mitra/kurir", element: <DataMitraKurir /> },
   { path: "data-master/konsumen", element: <DataKonsumen /> },
   { path: "dashboardpembayaran", element: <DashboardPembayaran /> },
   { path: "pembayaran/pengajuan", element: <DataPengajuan /> },
@@ -48,3 +48,4 @@ export const ADMIN_ROUTES = [
   { path: "Notifikasiadmin", element: <Navigate to="/admin/notifikasi" replace /> },
   { path: "pengaturan", element: <PengaturanAdmin /> },
 ];
+

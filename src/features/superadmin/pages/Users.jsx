@@ -26,8 +26,8 @@ export default function Users() {
     if (activeTab === "semua") {
       return users;
     }
-    if (activeTab === "petugas") {
-      return users.filter((item) => item.role.includes("Petugas"));
+    if (activeTab === "mitra") {
+      return users.filter((item) => item.role.includes("Mitra"));
     }
     return users.filter((item) => item.role.toLowerCase() === activeTab);
   }, [activeTab, users]);
@@ -44,7 +44,7 @@ export default function Users() {
               ? "bg-purple-50 border-purple-200 text-purple-700"
               : row.role === "Admin"
               ? "bg-amber-50 border-amber-200 text-amber-700"
-              : row.role.includes("Petugas")
+              : row.role.includes("Mitra")
               ? "bg-green-50 border-green-200 text-green-700"
               : "bg-gray-50 border-gray-200 text-gray-700"
           }`}
@@ -99,7 +99,7 @@ export default function Users() {
     { key: "semua", label: "Semua" },
     { key: "superadmin", label: "Superadmin" },
     { key: "admin", label: "Admin" },
-    { key: "petugas", label: "Petugas" },
+    { key: "mitra", label: "Mitra" },
     { key: "konsumen", label: "Konsumen" },
   ];
 
@@ -185,9 +185,9 @@ export default function Users() {
               <option value="">Pilih Role</option>
               <option>Superadmin</option>
               <option>Admin</option>
-              <option>Petugas Kandang</option>
-              <option>Petugas Dapur</option>
-              <option>Petugas Kurir</option>
+              <option>Mitra Kandang</option>
+              <option>Mitra Dapur</option>
+              <option>Mitra Kurir</option>
               <option>Konsumen</option>
             </select>
           </div>
@@ -213,3 +213,4 @@ export default function Users() {
     </div>
   );
 }
+

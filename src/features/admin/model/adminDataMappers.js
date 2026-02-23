@@ -102,7 +102,7 @@ export const normalizeOrderDetail = (raw) => {
     },
     progress: toSafeArray(source.progress).map((item) => ({
       tahap: item.tahap ?? "-",
-      petugas: item.petugas ?? "-",
+      mitra: item.mitra ?? "-",
       waktu: item.waktu ?? "-",
       foto: item.foto ?? "",
     })),
@@ -122,3 +122,4 @@ export const normalizeAdminProfile = (raw) => {
 };
 
 export { DEFAULT_ADMIN_PROFILE, DEFAULT_DASHBOARD, DEFAULT_ORDER_DETAIL };
+

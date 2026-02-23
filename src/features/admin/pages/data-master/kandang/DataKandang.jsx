@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Plus, Eye, Pencil, Trash2 } from "lucide-react";
 import { Card, CardContent, Modal } from "@/shared/ui";
 
@@ -20,7 +20,7 @@ export default function DataKandang() {
         lokasi: "Jl. Raya Aqiqah No.12, Bandung",
         kapasitas: 20,
         jumlah_hewan: 12,
-        penanggung_jawab: "Petugas Kandang A",
+        penanggung_jawab: "Mitra Kandang A",
         status: "Aktif",
         created_at: "2025-10-30",
       },
@@ -31,7 +31,7 @@ export default function DataKandang() {
         lokasi: "Desa Cikole, Lembang",
         kapasitas: 15,
         jumlah_hewan: 15,
-        penanggung_jawab: "Petugas Kandang B",
+        penanggung_jawab: "Mitra Kandang B",
         status: "Penuh",
         created_at: "2025-10-31",
       },
@@ -42,7 +42,7 @@ export default function DataKandang() {
         lokasi: "Jl. Sukamaju No.9, Cimahi",
         kapasitas: 25,
         jumlah_hewan: 10,
-        penanggung_jawab: "Petugas Kandang C",
+        penanggung_jawab: "Mitra Kandang C",
         status: "Aktif",
         created_at: "2025-11-01",
       },
@@ -71,7 +71,7 @@ export default function DataKandang() {
         <div>
           <h1 className="text-2xl font-semibold text-[#3b3b3b]">Data Kandang</h1>
           <p className="text-sm text-[#7a7368]">
-            Daftar semua kandang yang terdaftar dan aktif digunakan oleh petugas.
+            Daftar semua kandang yang terdaftar dan aktif digunakan oleh mitra.
           </p>
         </div>
         <button
@@ -302,7 +302,7 @@ export default function DataKandang() {
               <label className="text-sm font-medium">Penanggung Jawab</label>
               <input
                 type="text"
-                placeholder="Masukkan nama petugas kandang"
+                placeholder="Masukkan nama mitra kandang"
                 className="siqah-field"
               />
             </div>
@@ -321,6 +321,7 @@ export default function DataKandang() {
     </div>
   );
 }
+
 
 
 

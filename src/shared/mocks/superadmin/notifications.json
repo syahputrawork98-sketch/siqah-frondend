@@ -7,15 +7,16 @@
   },
   {
     "id": 2,
-    "pesan": "Petugas dapur telah mengunggah bukti proses pengolahan.",
+    "pesan": "Mitra dapur telah mengunggah bukti proses pengolahan.",
     "waktu": "2025-11-02 09:40",
     "status": "Sudah Dibaca"
   },
   {
     "id": 3,
-    "pesan": "Admin menambahkan pengguna baru: Petugas Kandang 2",
+    "pesan": "Admin menambahkan pengguna baru: Mitra Kandang 2",
     "waktu": "2025-11-01 18:25",
     "status": "Sudah Dibaca"
   }
 ]
+
 

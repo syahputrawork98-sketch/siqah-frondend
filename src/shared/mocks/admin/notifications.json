@@ -18,7 +18,7 @@
   {
     "id": 3,
     "judul": "Proses Kandang Selesai",
-    "pesan": "Petugas Kandang A telah menyelesaikan penyembelihan hewan untuk pesanan PSN-00120.",
+    "pesan": "Mitra Kandang A telah menyelesaikan penyembelihan hewan untuk pesanan PSN-00120.",
     "tipe": "Operasional",
     "waktu": "01 Nov 2025, 10:15",
     "status_baca": false
@@ -32,4 +32,5 @@
     "status_baca": true
   }
 ]
+
 

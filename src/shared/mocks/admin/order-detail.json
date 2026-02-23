@@ -16,22 +16,23 @@
   "progress": [
     {
       "tahap": "Penyembelihan",
-      "petugas": "Ahmad Fauzi",
+      "mitra": "Ahmad Fauzi",
       "waktu": "2025-11-01 08:30",
       "foto": "https://placehold.co/100x100?text=Kandang"
     },
     {
       "tahap": "Pemotongan & Dapur",
-      "petugas": "Siti Aminah",
+      "mitra": "Siti Aminah",
       "waktu": "2025-11-01 10:00",
       "foto": "https://placehold.co/100x100?text=Dapur"
     },
     {
       "tahap": "Pengantaran",
-      "petugas": "Rizal Fathoni",
+      "mitra": "Rizal Fathoni",
       "waktu": "2025-11-01 12:30",
       "foto": "https://placehold.co/100x100?text=Kurir"
     }
   ]
 }
+
 

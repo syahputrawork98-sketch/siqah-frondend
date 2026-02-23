@@ -1,6 +1,6 @@
-﻿# Siqah Frontend
+# Siqah Frontend
 
-Frontend aplikasi Siqah Aqiqah untuk kanal pengunjung, admin, superadmin, dan petugas operasional.
+Frontend aplikasi Siqah Aqiqah untuk kanal pengunjung, admin, superadmin, dan mitra operasional.
 
 ## Tech Stack
 
@@ -48,3 +48,4 @@ npm run preview
 ## Catatan
 
 Refactor berjalan bertahap dengan target arsitektur yang lebih scalable untuk kolaborasi tim.
+

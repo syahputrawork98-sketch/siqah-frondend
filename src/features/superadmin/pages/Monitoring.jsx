@@ -81,17 +81,17 @@ export default function Monitoring() {
             <StageCard
               title="Penyembelihan"
               status={selectedOrder.kandang}
-              detail="Petugas kandang telah mengunggah bukti foto/video."
+              detail="Mitra kandang telah mengunggah bukti foto/video."
             />
             <StageCard
               title="Pengolahan"
               status={selectedOrder.dapur}
-              detail="Petugas dapur sedang mengolah daging."
+              detail="Mitra dapur sedang mengolah daging."
             />
             <StageCard
               title="Pengantaran"
               status={selectedOrder.kurir}
-              detail="Petugas kurir sedang mengantarkan pesanan."
+              detail="Mitra kurir sedang mengantarkan pesanan."
             />
           </div>
 
@@ -153,3 +153,4 @@ function StageCard({ title, status, detail }) {
     </div>
   );
 }
+

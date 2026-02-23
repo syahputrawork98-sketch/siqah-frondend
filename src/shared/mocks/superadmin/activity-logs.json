@@ -11,14 +11,15 @@
     "aksi": "Edit Role",
     "user": "Superadmin Siqah",
     "waktu": "2025-11-01 20:55",
-    "keterangan": "Mengubah hak akses Petugas Dapur"
+    "keterangan": "Mengubah hak akses Mitra Dapur"
   },
   {
     "id": 3,
     "aksi": "Tambah User",
     "user": "Superadmin Siqah",
     "waktu": "2025-11-01 18:12",
-    "keterangan": "Menambahkan akun Petugas Kurir 1"
+    "keterangan": "Menambahkan akun Mitra Kurir 1"
   }
 ]
+
 

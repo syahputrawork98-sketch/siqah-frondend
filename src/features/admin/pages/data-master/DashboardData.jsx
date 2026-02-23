@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/shared/ui";
 import {
   Warehouse,
@@ -49,22 +49,22 @@ export default function DashboardData() {
     setActivities([
       {
         tanggal: "02 Nov 2025",
-        petugas: "Petugas Kandang A",
+        mitra: "Mitra Kandang A",
         aktivitas: "Menambah hewan baru (Kambing)",
       },
       {
         tanggal: "01 Nov 2025",
-        petugas: "Petugas Dapur B",
+        mitra: "Mitra Dapur B",
         aktivitas: "Menambahkan menu baru (Gulai Domba)",
       },
       {
         tanggal: "31 Okt 2025",
-        petugas: "Petugas Dapur C",
+        mitra: "Mitra Dapur C",
         aktivitas: "Memperbarui stok Paket Hemat",
       },
       {
         tanggal: "29 Okt 2025",
-        petugas: "Petugas Kandang B",
+        mitra: "Mitra Kandang B",
         aktivitas: "Menambahkan kandang baru (KDG-003)",
       },
     ]);
@@ -114,7 +114,7 @@ export default function DashboardData() {
           Dashboard Data Master
         </h1>
         <p className="text-sm text-[#7a7368]">
-          Lihat ringkasan data yang telah diinput oleh petugas kandang dan
+          Lihat ringkasan data yang telah diinput oleh mitra kandang dan
           dapur.
         </p>
       </div>
@@ -175,17 +175,17 @@ export default function DashboardData() {
           </ResponsiveContainer>
         </div>
 
-        {/* Aktivitas Terbaru Petugas */}
+        {/* Aktivitas Terbaru Mitra */}
         <div className="bg-white/80 backdrop-blur-md border border-[#eee6da] rounded-2xl p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-[#3b3b3b] mb-4">
-            Aktivitas Terbaru Petugas
+            Aktivitas Terbaru Mitra
           </h3>
           <div className="overflow-y-auto max-h-72">
             <table className="w-full text-sm">
               <thead className="text-[#7a7368] border-b border-[#eee6da]">
                 <tr>
                   <th className="text-left py-2">Tanggal</th>
-                  <th className="text-left py-2">Petugas</th>
+                  <th className="text-left py-2">Mitra</th>
                   <th className="text-left py-2">Aktivitas</th>
                 </tr>
               </thead>
@@ -196,7 +196,7 @@ export default function DashboardData() {
                     className="siqah-table-row"
                   >
                     <td className="py-2">{act.tanggal}</td>
-                    <td className="py-2">{act.petugas}</td>
+                    <td className="py-2">{act.mitra}</td>
                     <td className="py-2">{act.aktivitas}</td>
                   </tr>
                 ))}
@@ -208,6 +208,7 @@ export default function DashboardData() {
     </div>
   );
 }
+
 
 
 

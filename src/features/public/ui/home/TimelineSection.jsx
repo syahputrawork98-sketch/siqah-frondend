@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   FiShoppingCart,
@@ -21,7 +21,7 @@ const TimelineSection = () => {
       id: 2,
       icon: <GiGoat className="text-3xl siqah-public-accent" />,
       title: "Pemilihan Hewan",
-      desc: "Hewan dipilih langsung dari petugas kandang yang terpercaya.",
+      desc: "Hewan dipilih langsung dari mitra kandang yang terpercaya.",
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const TimelineSection = () => {
       id: 6,
       icon: <FiCheckCircle className="text-3xl siqah-public-accent" />,
       title: "Selesai",
-      desc: "Aqiqah terselenggara dengan lancar, penuh keberkahan. ðŸ¤²",
+      desc: "Aqiqah terselenggara dengan lancar, penuh keberkahan. 🤲",
     },
   ];
 
@@ -57,7 +57,7 @@ const TimelineSection = () => {
           "url('https://res.cloudinary.com/dcida9qys/image/upload/v1761094380/background-siqah_vcgib5.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed", // ðŸ”¥ Efek parallax
+        backgroundAttachment: "fixed", // 🔥 Efek parallax
       }}
     >
       {/* Overlay lembut agar teks tetap terbaca */}
@@ -77,7 +77,7 @@ const TimelineSection = () => {
           </h2>
           <p className="text-base sm:text-lg text-[#45624B]/80 font-montserrat max-w-2xl mx-auto">
             Kami memastikan setiap tahapan aqiqah berjalan sesuai syariat dan
-            penuh keberkahan â€” dari pemesanan hingga hidangan siap disantap.
+            penuh keberkahan — dari pemesanan hingga hidangan siap disantap.
           </p>
         </motion.div>
 
@@ -131,4 +131,5 @@ const TimelineSection = () => {
 };
 
 export default TimelineSection;
+
 

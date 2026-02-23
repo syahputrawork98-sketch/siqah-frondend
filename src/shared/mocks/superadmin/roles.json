@@ -11,17 +11,17 @@
   },
   {
     "id": 3,
-    "nama_role": "Petugas Kandang",
+    "nama_role": "Mitra Kandang",
     "deskripsi": "Menginput penyembelihan"
   },
   {
     "id": 4,
-    "nama_role": "Petugas Dapur",
+    "nama_role": "Mitra Dapur",
     "deskripsi": "Menginput proses dapur"
   },
   {
     "id": 5,
-    "nama_role": "Petugas Kurir",
+    "nama_role": "Mitra Kurir",
     "deskripsi": "Menginput pengantaran"
   },
   {
@@ -30,4 +30,5 @@
     "deskripsi": "Melihat pesanan dan status"
   }
 ]
+
 

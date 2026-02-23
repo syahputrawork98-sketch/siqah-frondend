@@ -10,21 +10,21 @@ const teamData = [
       "Mengelola sistem, memastikan proses layanan berjalan lancar, dan menjaga komunikasi dengan pelanggan agar selalu puas dan tenang.",
   },
   {
-    nama: "Petugas Kandang",
+    nama: "Mitra Kandang",
     jabatan: "Perawatan & Pemilihan Hewan",
     foto: "https://res.cloudinary.com/dcida9qys/image/upload/v1761272551/kandang_siqah_fphlfv.png",
     deskripsi:
       "Bertanggung jawab atas kesehatan dan kelayakan hewan aqiqah, memastikan setiap hewan dipelihara dengan penuh kasih dan sesuai syariat.",
   },
   {
-    nama: "Petugas Dapur",
+    nama: "Mitra Dapur",
     jabatan: "Pengolahan & Penyajian Menu",
     foto: "https://res.cloudinary.com/dcida9qys/image/upload/v1761272551/dapur_siqah_xcw9ry.png",
     deskripsi:
       "Menyiapkan olahan daging aqiqah dengan standar kebersihan tinggi, cita rasa terbaik, dan penuh keberkahan.",
   },
   {
-    nama: "Petugas Kurir",
+    nama: "Mitra Kurir",
     jabatan: "Pengantaran & Ketepatan Waktu",
     foto: "https://res.cloudinary.com/dcida9qys/image/upload/v1761272551/kurir_siqah_yu7nmp.png",
     deskripsi:
@@ -127,3 +127,4 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
+
