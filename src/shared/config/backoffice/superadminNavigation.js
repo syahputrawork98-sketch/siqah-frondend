@@ -7,9 +7,8 @@ import {
   Settings,
   Bell,
 } from "lucide-react";
-import { BackofficeSidebar } from "@/shared/ui";
 
-const menuItems = [
+export const SUPERADMIN_SIDEBAR_MENU = [
   { name: "Dashboard", icon: LayoutDashboard, path: "/superadmin" },
   { name: "Data Master", icon: Database, path: "/superadmin/data-master" },
   { name: "Manajemen User", icon: Users, path: "/superadmin/users" },
@@ -18,13 +17,3 @@ const menuItems = [
   { name: "Pengaturan", icon: Settings, path: "/superadmin/pengaturan" },
   { name: "Notifikasi & Log", icon: Bell, path: "/superadmin/notifikasi" },
 ];
-
-export default function Sidebar() {
-  return (
-    <BackofficeSidebar
-      menuItems={menuItems}
-      roleLabel="Superadmin"
-      navClassName="space-y-2"
-    />
-  );
-}

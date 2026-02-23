@@ -8,9 +8,8 @@ import {
   Settings,
   BarChart3,
 } from "lucide-react";
-import { BackofficeSidebar } from "@/shared/ui";
 
-const menuItems = [
+export const ADMIN_SIDEBAR_MENU = [
   { name: "Dashboard", icon: LayoutDashboard, path: "/admin" },
   { name: "Pesanan", icon: Package, path: "/admin/pesanan" },
   {
@@ -49,11 +48,3 @@ const menuItems = [
   { name: "Notifikasi", icon: Bell, path: "/admin/notifikasi" },
   { name: "Pengaturan", icon: Settings, path: "/admin/pengaturan" },
 ];
-
-export default function SidebarAdmin() {
-  return <BackofficeSidebar menuItems={menuItems} roleLabel="Admin" navClassName="space-y-1" />;
-}
-
-
-
-

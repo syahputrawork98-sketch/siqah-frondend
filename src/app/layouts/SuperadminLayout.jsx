@@ -1,17 +1,16 @@
 import BackofficeLayout from "@/app/layouts/BackofficeLayout";
 import Footer from "@/features/superadmin/ui/Footer";
-import Sidebar from "@/features/superadmin/ui/Sidebar";
-import Topbar from "@/features/superadmin/ui/Topbar";
+import { BackofficeRoleSidebar, BackofficeRoleTopbar } from "@/shared/ui";
 
 export default function SuperadminLayout() {
   return (
     <BackofficeLayout
       sidebar={
         <aside className="fixed left-0 top-0 h-full w-64 z-40 bg-white/90 backdrop-blur-md border-r border-[#e7e1d8] shadow-md">
-          <Sidebar />
+          <BackofficeRoleSidebar role="superadmin" />
         </aside>
       }
-      topbar={<Topbar />}
+      topbar={<BackofficeRoleTopbar role="superadmin" />}
       footer={<Footer />}
       rootClassName="min-h-screen flex text-siqah-dark"
       rootStyle={{
