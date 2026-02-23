@@ -10,5 +10,5 @@
       "@/shared/*": ["src/shared/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "client/node_modules", "client/dist"]
+  "exclude": ["node_modules", "dist"]
 }
