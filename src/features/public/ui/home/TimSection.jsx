@@ -5,7 +5,7 @@ const teamMembers = [
   {
     id: 1,
     nama: "Ahmad Fauzi",
-    role: "Mitra Kandang",
+    role: "Tim Kandang",
     img: "https://res.cloudinary.com/dcida9qys/image/upload/v1761263221/team-kandang_tzqlbo.jpg",
     quote: "Merawat hewan dengan penuh tanggung jawab dan kasih sayang.",
   },
@@ -122,6 +122,7 @@ const TimSection = () => {
 };
 
 export default TimSection;
+
 
 
 

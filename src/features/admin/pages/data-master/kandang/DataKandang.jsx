@@ -20,7 +20,7 @@ export default function DataKandang() {
         lokasi: "Jl. Raya Aqiqah No.12, Bandung",
         kapasitas: 20,
         jumlah_hewan: 12,
-        penanggung_jawab: "Mitra Kandang A",
+        penanggung_jawab: "Tim Kandang A",
         status: "Aktif",
         created_at: "2025-10-30",
       },
@@ -31,7 +31,7 @@ export default function DataKandang() {
         lokasi: "Desa Cikole, Lembang",
         kapasitas: 15,
         jumlah_hewan: 15,
-        penanggung_jawab: "Mitra Kandang B",
+        penanggung_jawab: "Tim Kandang B",
         status: "Penuh",
         created_at: "2025-10-31",
       },
@@ -42,7 +42,7 @@ export default function DataKandang() {
         lokasi: "Jl. Sukamaju No.9, Cimahi",
         kapasitas: 25,
         jumlah_hewan: 10,
-        penanggung_jawab: "Mitra Kandang C",
+        penanggung_jawab: "Tim Kandang C",
         status: "Aktif",
         created_at: "2025-11-01",
       },
@@ -321,6 +321,7 @@ export default function DataKandang() {
     </div>
   );
 }
+
 
 
 

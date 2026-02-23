@@ -5,7 +5,6 @@
     "paket": "Paket Premium",
     "tanggal": "2025-11-01",
     "status": "Selesai",
-    "kandang": "Selesai",
     "catering": "Selesai",
     "kurir": "Terkirim"
   },
@@ -15,7 +14,6 @@
     "paket": "Paket Hemat",
     "tanggal": "2025-11-01",
     "status": "Proses",
-    "kandang": "Selesai",
     "catering": "Proses",
     "kurir": "Menunggu"
   },
@@ -25,10 +23,7 @@
     "paket": "Paket Standar",
     "tanggal": "2025-10-30",
     "status": "Menunggu",
-    "kandang": "Menunggu",
     "catering": "Menunggu",
     "kurir": "Menunggu"
   }
 ]
-
-

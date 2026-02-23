@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/shared/ui";
 import {
   Users,
-  Truck,
-  Warehouse,
-  UtensilsCrossed,
+  ShieldCheck,
+  UserRound,
 } from "lucide-react";
 import {
   PieChart,
@@ -20,10 +19,9 @@ export default function DashboardUsers
 () {
   // --- Data State ---
   const [data, setData] = useState({
-    konsumen: 0,
-    kurir: 0,
-    kandang: 0,
-    catering: 0,
+    public: 0,
+    admin: 0,
+    superadmin: 0,
   });
 
   // --- Dummy data untuk chart & aktivitas (nanti diganti API real) ---
@@ -33,39 +31,32 @@ export default function DashboardUsers
   useEffect(() => {
     // Simulasi fetch data dari API
     setData({
-      konsumen: 152,
-      kurir: 5,
-      kandang: 7,
-      catering: 4,
+      public: 152,
+      admin: 5,
+      superadmin: 2,
     });
 
     setChartData([
-      { name: "Konsumen", value: 152 },
-      { name: "Mitra Kurir", value: 5 },
-      { name: "Mitra Kandang", value: 7 },
-      { name: "Mitra Catering", value: 4 },
+      { name: "Public", value: 152 },
+      { name: "Admin", value: 5 },
+      { name: "Superadmin", value: 2 },
     ]);
 
     setActivities([
       {
         tanggal: "02 Nov 2025",
-        user: "Konsumen - Ahmad Fauzi",
+        user: "Public - Ahmad Fauzi",
         aktivitas: "Melakukan pemesanan Paket Aqiqah Premium.",
       },
       {
         tanggal: "01 Nov 2025",
-        user: "Mitra Kurir - Rudi Hartono",
-        aktivitas: "Mengantarkan pesanan ke daerah Antapani.",
+        user: "Admin - Rudi Hartono",
+        aktivitas: "Memvalidasi pembayaran pesanan PSN-00120.",
       },
       {
         tanggal: "31 Okt 2025",
-        user: "Mitra Catering - Siti Nurhaliza",
-        aktivitas: "Memasak pesanan untuk 15 paket Aqiqah.",
-      },
-      {
-        tanggal: "29 Okt 2025",
-        user: "Mitra Kandang - Samsul Anwar",
-        aktivitas: "Menambahkan hewan baru di KDG-003.",
+        user: "Superadmin - Siti Nurhaliza",
+        aktivitas: "Memperbarui kebijakan role sistem.",
       },
     ]);
   }, []);
@@ -75,27 +66,21 @@ export default function DashboardUsers
   // --- Card Statistik ---
   const cards = [
     {
-      title: "Total Konsumen",
-      value: data.konsumen,
+      title: "Total Public",
+      value: data.public,
       icon: Users,
       color: "from-[#fff7e8] to-[#fbeed7]",
     },
     {
-      title: "Total Mitra Kurir",
-      value: data.kurir,
-      icon: Truck,
+      title: "Total Admin",
+      value: data.admin,
+      icon: UserRound,
       color: "from-[#eafaf3] to-[#dcf7ec]",
     },
     {
-      title: "Total Mitra Kandang",
-      value: data.kandang,
-      icon: Warehouse,
-      color: "from-[#f8ecf8] to-[#f3def4]",
-    },
-    {
-      title: "Total Mitra Catering",
-      value: data.catering,
-      icon: UtensilsCrossed,
+      title: "Total Superadmin",
+      value: data.superadmin,
+      icon: ShieldCheck,
       color: "from-[#e9f2fb] to-[#dceaf9]",
     },
   ];
@@ -108,12 +93,12 @@ export default function DashboardUsers
           Dashboard User
         </h1>
         <p className="text-sm text-[#7a7368]">
-          Lihat ringkasan jumlah konsumen dan seluruh mitra operasional Siqah.
+          Lihat ringkasan jumlah pengguna berdasarkan role aktif sistem.
         </p>
       </div>
 
       {/* Statistik Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
         {cards.map((card) => {
           const Icon = card.icon;
           return (
@@ -201,6 +186,7 @@ export default function DashboardUsers
     </div>
   );
 }
+
 
 
 

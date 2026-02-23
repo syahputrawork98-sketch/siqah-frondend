@@ -26,9 +26,6 @@ export default function Users() {
     if (activeTab === "semua") {
       return users;
     }
-    if (activeTab === "mitra") {
-      return users.filter((item) => item.role.includes("Mitra"));
-    }
     return users.filter((item) => item.role.toLowerCase() === activeTab);
   }, [activeTab, users]);
 
@@ -44,7 +41,7 @@ export default function Users() {
               ? "bg-purple-50 border-purple-200 text-purple-700"
               : row.role === "Admin"
               ? "bg-amber-50 border-amber-200 text-amber-700"
-              : row.role.includes("Mitra")
+              : row.role === "Public"
               ? "bg-green-50 border-green-200 text-green-700"
               : "bg-gray-50 border-gray-200 text-gray-700"
           }`}
@@ -99,8 +96,7 @@ export default function Users() {
     { key: "semua", label: "Semua" },
     { key: "superadmin", label: "Superadmin" },
     { key: "admin", label: "Admin" },
-    { key: "mitra", label: "Mitra" },
-    { key: "konsumen", label: "Konsumen" },
+    { key: "public", label: "Public" },
   ];
 
   return (
@@ -185,10 +181,7 @@ export default function Users() {
               <option value="">Pilih Role</option>
               <option>Superadmin</option>
               <option>Admin</option>
-              <option>Mitra Kandang</option>
-              <option>Mitra Catering</option>
-              <option>Mitra Kurir</option>
-              <option>Konsumen</option>
+              <option>Public</option>
             </select>
           </div>
 

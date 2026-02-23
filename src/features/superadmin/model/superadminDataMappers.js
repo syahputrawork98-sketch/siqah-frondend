@@ -47,7 +47,6 @@ export const normalizeMonitoringOrders = (raw) => {
     paket: item.paket ?? "-",
     tanggal: item.tanggal ?? "-",
     status: item.status ?? "Menunggu",
-    kandang: item.kandang ?? "Menunggu",
     catering: item.catering ?? "Menunggu",
     kurir: item.kurir ?? "Menunggu",
   }));

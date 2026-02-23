@@ -38,7 +38,6 @@ test("normalizeMonitoringOrders falls back to default status labels", () => {
     paket: "Paket A",
     tanggal: "2025-01-01",
     status: "Menunggu",
-    kandang: "Menunggu",
     catering: "Menunggu",
     kurir: "Menunggu",
   });

@@ -49,7 +49,7 @@ export default function DashboardData() {
     setActivities([
       {
         tanggal: "02 Nov 2025",
-        mitra: "Mitra Kandang A",
+        mitra: "Tim Kandang A",
         aktivitas: "Menambah hewan baru (Kambing)",
       },
       {
@@ -64,7 +64,7 @@ export default function DashboardData() {
       },
       {
         tanggal: "29 Okt 2025",
-        mitra: "Mitra Kandang B",
+        mitra: "Tim Kandang B",
         aktivitas: "Menambahkan kandang baru (KDG-003)",
       },
     ]);
@@ -114,8 +114,7 @@ export default function DashboardData() {
           Dashboard Data Master
         </h1>
         <p className="text-sm text-[#7a7368]">
-          Lihat ringkasan data yang telah diinput oleh mitra kandang dan
-          catering.
+          Lihat ringkasan data master yang dikelola oleh tim operasional.
         </p>
       </div>
 
@@ -208,6 +207,7 @@ export default function DashboardData() {
     </div>
   );
 }
+
 
 
 

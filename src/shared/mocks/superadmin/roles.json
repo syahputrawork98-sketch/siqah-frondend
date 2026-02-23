@@ -11,25 +11,7 @@
   },
   {
     "id": 3,
-    "nama_role": "Mitra Kandang",
-    "deskripsi": "Menginput penyembelihan"
-  },
-  {
-    "id": 4,
-    "nama_role": "Mitra Catering",
-    "deskripsi": "Menginput proses catering"
-  },
-  {
-    "id": 5,
-    "nama_role": "Mitra Kurir",
-    "deskripsi": "Menginput pengantaran"
-  },
-  {
-    "id": 6,
-    "nama_role": "Konsumen",
-    "deskripsi": "Melihat pesanan dan status"
+    "nama_role": "Public",
+    "deskripsi": "Akses halaman publik aplikasi"
   }
 ]
-
-
-

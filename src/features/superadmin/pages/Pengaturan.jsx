@@ -200,7 +200,7 @@ export default function Pengaturan() {
             <label className="block text-sm font-medium mb-1 text-[#45624B]">Nama Role</label>
             <input
               type="text"
-              placeholder="Contoh: Mitra Kandang"
+              placeholder="Contoh: Public"
               className="w-full border border-[#E7E1D8] rounded-lg p-2 focus:ring focus:ring-[#E3EBD2] focus:outline-none"
             />
           </div>

@@ -13,29 +13,20 @@
   },
   {
     "id": 3,
-    "nama": "Mitra Kandang 1",
-    "email": "kandang1@siqah.id",
-    "role": "Mitra Kandang"
+    "nama": "Public User 1",
+    "email": "public1@siqah.id",
+    "role": "Public"
   },
   {
     "id": 4,
-    "nama": "Mitra Catering 1",
-    "email": "catering1@siqah.id",
-    "role": "Mitra Catering"
+    "nama": "Public User 2",
+    "email": "public2@siqah.id",
+    "role": "Public"
   },
   {
     "id": 5,
-    "nama": "Mitra Kurir 1",
-    "email": "kurir1@siqah.id",
-    "role": "Mitra Kurir"
-  },
-  {
-    "id": 6,
-    "nama": "Konsumen 1",
-    "email": "konsumen1@siqah.id",
-    "role": "Konsumen"
+    "nama": "Public User 3",
+    "email": "public3@siqah.id",
+    "role": "Public"
   }
 ]
-
-
-

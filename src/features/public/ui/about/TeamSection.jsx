@@ -10,7 +10,7 @@ const teamData = [
       "Mengelola sistem, memastikan proses layanan berjalan lancar, dan menjaga komunikasi dengan pelanggan agar selalu puas dan tenang.",
   },
   {
-    nama: "Mitra Kandang",
+    nama: "Tim Kandang",
     jabatan: "Perawatan & Pemilihan Hewan",
     foto: "https://res.cloudinary.com/dcida9qys/image/upload/v1761272551/kandang_siqah_fphlfv.png",
     deskripsi:
@@ -127,5 +127,6 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
+
 
 

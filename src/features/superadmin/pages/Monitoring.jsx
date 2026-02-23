@@ -15,10 +15,6 @@ export default function Monitoring() {
     { header: "Paket", accessor: "paket" },
     { header: "Tanggal", accessor: "tanggal" },
     {
-      header: "Status Kandang",
-      render: (row) => <StatusBadge status={row.kandang} />,
-    },
-    {
       header: "Status Catering",
       render: (row) => <StatusBadge status={row.catering} />,
     },
@@ -51,7 +47,7 @@ export default function Monitoring() {
       <Card className="border border-[#e7e1d8] bg-white/90 backdrop-blur-md rounded-2xl shadow-md">
         <CardHeader
           title={<span className="text-[#45624B] font-semibold text-lg">Monitoring Proses Aqiqah</span>}
-          subtitle="Pantau setiap tahap penyembelihan, pengolahan, dan pengantaran"
+          subtitle="Pantau setiap tahap pengolahan dan pengantaran"
         />
         <CardContent>
           {isLoading ? (
@@ -77,12 +73,7 @@ export default function Monitoring() {
             Detail Proses - {selectedOrder.konsumen}
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            <StageCard
-              title="Penyembelihan"
-              status={selectedOrder.kandang}
-              detail="Mitra kandang telah mengunggah bukti foto/video."
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <StageCard
               title="Pengolahan"
               status={selectedOrder.catering}
